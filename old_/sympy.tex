@@ -1,0 +1,657 @@
+\chapter{SymPy: un sistema de álgebra computacional}
+
+SymPy es un sistema de álgebra computacional (CAS) escrito en Python puro, está desarrollado con un enfoque 
+en la extensibilidad y facilidad de uso, tanto a través de aplicaciones interactivas como programáticas. Estas 
+características le han permitido a SymPy convertirse en una librería de cómputo simbólico muy popular en 
+el ecosistema científico de Python. \cite{sympy2017}
+
+En todo el capítulo se asumirá que se ha importado la librería SymPy, con las siguientes instrucciones:
+
+\begin{python}
+>>> from sympy import *
+\end{python}
+
+\section{Variables simbólicas}
+
+Las variables simbólicas son el \textit{alma} de SymPy, todas las operaciones de álgebra simbólica se basan en estas. 
+A una variable simbólica se le asigna un símbolo que la representa mediante la función \code{symbols}:
+
+\begin{python}
+>>> x = symbols("x")
+>>> print(type(x))
+<class 'sympy.core.symbol.Symbol'>
+\end{python}
+
+Con la función \code{symbols} se define una nueva variable simbólica que se guarda en \code{x}, se verifica 
+que se crea un objeto de la clase \code{Symbol}. Con la variable \code{x} ya definida se puede comenzar 
+a formar expresiones algebraicas y manipular matemáticamente.
+
+\begin{python}
+>>> x + 2
+x + 2
+>>> x**2 - 2*x - 10
+x**2 - 2*x - 10
+>>> sqrt(x) - sin(x)
+sqrt(x) - sin(x)
+\end{python}
+
+Puede definir múltiples variables separando por comas cada representación simbólica:
+
+\begin{python}
+>>> p,q,r = symbols("p,q,r")
+>>> p**q + r/q
+p**q + r/q
+\end{python}
+
+Además de la forma anterior, también es posible tener variables simbólicas disponibles si se importan 
+del módulo \code{abc} de SymPy:
+
+\begin{python}
+>>> from sympy.abc import a,b,c,d
+>>> (a + b)*(c + d)
+(a + b)*(c + d)
+\end{python}
+
+
+\section{Manipulación algebraica}
+
+SymPy es una poderosa herramienta de manipulación y simplificación algebraica, en lo subsiguiente se revisarán 
+algunos casos elementales y se describirá el uso de las herramientas (funciones) que proporciona.
+
+En primera instancia se definen algunas variables simbólicas a utilizar:
+
+\begin{python}
+>>> x,y,z = symbols("x,y,z")
+>>> a,b,c,d,k,m,n = symbols("a,b,c,d,k,m,n")
+\end{python}
+
+Para las expresiones algebraicas formadas en SymPy por default se \textit{evalúan} y simplifican los términos semejantes. 
+Vea los siguientes casos:
+
+\begin{python}
+>>> x**2 + 5*x**3 - 10*x**2 + 5*x - 10*(x + 1)
+5*x**3 - 9*x**2 - 5*x - 10
+>>> a*b + c*d + x/y - 7*a*b
+-6*a*b + c*d + x/y
+\end{python}
+
+Naturalmente para simplificaciones y operaciones un poco menos obvias, habrá que especificarle lo que se requiere.
+
+Una de las operaciones elementales de simplificación en álgebra es la factorización, SymPy dispone de la 
+función \code{factor}, la cual toma una expresión algebraica y la factoriza conforme sea posible. 
+Por ejemplo, suponiendo que se tiene la expresión $ab + ac$, es sencillo identificar que se puede  
+factorizar como $a(b+c)$, SymPy hace lo mismo sin sobresalto alguno.
+
+\begin{python}
+>>> factor(a*b + a*c)
+a*(b + c)
+\end{python}
+
+De igual forma se sabe que una expresión de la forma $ ac + ad + bc + bd $ se puede factorizar como 
+$ (a + b) (d + c) $.
+
+\begin{python}
+>>> factor( a*c + a*d + b*c + b*d )
+(a + b)*(c + d)
+\end{python}
+
+Así, para un binomio al cuadrado se sabe que, $ (a+b)(a+b) $ es la factorización de una expresión del tipo
+$ a^2 + 2ab + b^2 $.
+
+\begin{python}
+>>> factor(a**2 + 2*a*b + b**2)
+(a + b)**2
+\end{python}
+
+% \begin{python}
+% >>> factor( x**2 - 10*x + 21 )
+% (x - 7)*(x - 3)
+% \end{python}
+
+¿Se puede hacer el proceso \textit{inverso}, es decir, dados dos factores obtener su expresión \textit{expandida}? 
+Por supuesto, para ello se hace uso de la función \code{expand}. 
+
+\begin{python}
+>>> expand( (x-7)*(x-3) )
+x**2 - 10*x + 21
+\end{python}
+
+SymPy puede manejar cualquier cantidad de factores y devolver la expresión que resulta de realizar la multiplicación 
+algebraica, sin estar limitada siquiera por la cantidad de variables simbólicas.
+
+\begin{python}
+>>> expand( (x + y)*(x - y) )
+x**2 - y**2
+>>> expand( (x + y)*(x+y) )
+x**2 + 2*x*y + y**2
+>>> expand( (x + y)**2 )
+x**2 + 2*x*y + y**2
+>>> expand( (x + y)**3 )
+x**3 + 3*x**2*y + 3*x*y**2 + y**3
+>>> expand( a*(m + n)**2 )
+a*m**2 + 2*a*m*n + a*n**2
+\end{python}
+
+De manera general, si requiere simplificar una expresión algebraica SymPy dispone de una función más o menos universal que funcionará en la mayoría de los casos: \code{simplify}. Por ejemplo, suponiendo que 
+se tiene la siguiente expresión algebraica racional y se requiere reducir lo más posible:
+
+$$ \frac{x^2 - 3x}{x^2 + 3x}$$
+
+Se puede notar que tanto en el numerador como en el denominador se puede factorizar $x$, lo cual conduce a:
+
+$$ \frac{x(x - 3)}{x(x + 3)} = \frac{x-3}{x+3} $$
+
+Con SymPy:
+
+\begin{python}
+>>> simplify( (x**2 - 3*x)/(x**2 + 3*x) )
+(x - 3)/(x + 3)
+\end{python}
+
+Lo mismo para una expresión que involucre funciones trigonométricas, por ejemplo, cualquiera que haya cursado matemáticas 
+del nivel secundario, al menos, sabe que $\sin^2 x + \cos^2 x = 1 $, y también \textit{lo sabe} SymPy:
+
+\begin{python}
+>>> simplify( sin(x)**2 + cos(x)**2 )
+1
+\end{python}
+
+Pero también \textit{sabe} que $ \cos x \cos y - \sin x \sin y = \cos(x+y) $.
+
+\begin{python}
+>>> simplify( cos(x)*cos(y) - sin(x)*sin(y) )
+cos(x + y)
+\end{python}
+
+Incluso simplificaciones que no son, en principio, evidentes:
+
+\begin{python}
+>>> simplify( (1+tan(x)**2)/(1+cot(x)**2) )
+tan(x)**2
+\end{python}
+
+Habitualmente para la manipulación de expresiones que contienen funciones trigonométricas se suele utilizar 
+la función \code{trigsimp} que en muchos casos lo que devuelva coincidirá con \code{simplify}. 
+Sin embargo, si en lugar de reducir una expresión trigonométrica se requiere expandirla, como 
+en el caso del coseno o seno de la suma de dos ángulos, probablemente por intuición se utilizaría \code{expand}, 
+pero aquí no funciona como puede verificar.
+
+\begin{python}
+>>> expand( sin(x + y) )
+sin(x + y)
+\end{python}
+
+En este caso puede utilizar la función \code{expand\_trig}, la cual maneja de mejor manera las manipulaciones trigonométricas:
+
+\begin{python}
+>>> expand_trig( sin(x+y) )
+sin(x)*cos(y) + sin(y)*cos(x)
+\end{python}
+
+
+\begin{ejemplo}{Simplificaciones algebraicas}
+
+Utilizando SymPy simplifique la siguiente expresión:
+
+$$ \frac{\sin(2x)}{1 + \cos(2x)} $$
+
+\solu
+
+\begin{python}
+>>> x = symbols("x")
+>>> trigsimp( sin(2*x)/(1 + cos(2*x)) )
+tan(x)
+\end{python}
+\end{ejemplo}
+
+
+\begin{ejemplo}{Reescribiendo expresiones}
+
+Reescriba la expresión $ \cos t + \sin t $ en términos de la función tangente.
+
+\solu
+
+\begin{python}
+>>> t = symbols("t")
+>>> ( cos(t) + sin(t) ).rewrite(tan)
+(-tan(t/2)**2 + 1)/(tan(t/2)**2 + 1) + 2*tan(t/2)/(tan(t/2)**2 + 1)
+\end{python}
+\end{ejemplo}
+
+
+\section{Resolviendo ecuaciones e inecuaciones}
+
+SymPy dispone de la función \code{solve}, la cual resuelve desde ecuaciones polinomiales, sistemas de ecuaciones lineales, 
+inecuaciones, hasta sistemas de ecuaciones no lineales. La sintaxis de \code{solve} es polimórfica y en general depende 
+de lo que se requiera resolver, tendiendo siempre a que sea posible especificar el mínimo número de parámetros.
+
+En las siguientes subsecciones se describen algunos casos, se asumirá en lo subsiguiente que además de importar SymPy 
+se definieron las siguientes variables simbólicas:
+
+\begin{python}
+>>> x,y,z = symbols("x,y,z")
+>>> a,b,c = symbols("a,b,c")
+\end{python}
+
+\subsection{Ecuaciones polinómicas}
+
+La sintaxis más elemental de \code{solve} es pasando un sólo argumento, el cual se espera sea una expresión algebraica 
+y se considera que esta estará igualada a cero. Por ejemplo para resolver la ecuación lineal $ x - 3 = 0 $:
+
+\begin{python}
+>>> solve( x - 3 )
+[3]
+\end{python}
+
+Para una ecuación cuadrática $ x^2 + 2x + 2 = 0 $: 
+
+\begin{python}
+>>> solve(x**2 + 2*x + 2)
+[-1 - I, -1 + I]
+\end{python}
+
+En este caso la ecuación tiene soluciones complejas, la unidad imaginaria en SymPy se especifica mediante 
+el símbolo \code{I}.
+
+Si se quisiera resolver la ecuación cuadrática en su forma general:
+
+\begin{python}
+>>> solve(a*x**2 + b*x + c)
+[{a: -(b*x + c)/x**2}]
+\end{python}
+
+Note que el problema está en que al haber más de una variable simbólica, SymPy no sabe con respecto a qué variable debe 
+resolver y toma la primera en orden alfabético. Para especificar explícitamente respecto a qué variable resolver, 
+se puede indicar mediante un segundo argumento:
+
+\begin{python}
+>>> solve(a*x**2 + b*x + c, x)
+[(-b + sqrt(-4*a*c + b**2))/(2*a), -(b + sqrt(-4*a*c + b**2))/(2*a)]
+\end{python}
+
+Puede verificar que devuelve, en efecto, la tan conocida fórmula general.
+
+
+\subsection{Ecuaciones trigonométricas}
+
+
+
+
+\section{Cálculo}
+
+\subsection{Límites}
+
+Para calcular límites matemáticos SymPy dispone de la función \code{limit}, la cual requiere al menos tres 
+argumentos de entrada: la función, variable y valor al que tiende. Por ejemplo, si se quiere calcular 
+el siguiente límite:
+
+$$ \lim_{x \to 0} \frac{\sin x}{x} $$
+
+Tendría que teclearse lo siguiente:
+
+\begin{python}
+>>> limit(sin(x)/x, x, 0)
+1
+\end{python}
+
+Para calcular limites laterales debe pasarse un cuarto argumento, por ejemplo:
+
+\begin{python}
+>>> limit(1/(x-5), x, 5, "-")
+-oo
+>>> limit(1/(x-5), x, 5, "+")
+oo
+\end{python}
+
+El símbolo \code{+} denota el cálculo de un límite lateral por la derecha, 
+el símbolo \code{-} un límite lateral por la izquierda.
+
+\subsection{Derivadas}
+
+Las derivadas en Python se calculan utilizando la función \code{diff}, misma que en su forma más simple espera 
+al menos dos argumentos: una expresión algebraica y una variable respecto a la cual derivar. Por ejemplo:
+
+\begin{python}
+>>> diff(exp(x)*cos(x), x)
+-exp(x)*sin(x) + exp(x)*cos(x)
+\end{python}
+
+Es posible también especificar una derivada de orden superior mediante un tercer argumento:
+
+\begin{python}
+>>> diff(5*x**2 + 3*x - 10, x, 2)
+10
+\end{python}
+
+La instrucción anterior calcula la segunda derivada de la función $ f(x) = 5x^2 + 3x - 10 $. 
+
+\subsection{Integrales}
+
+Para calcular integrales vamos a utilizar la función \code{integrate}, la cual acepta al menos dos 
+argumentos: la función a integrar y la expresión respecto a la cual se integra, por ejemplo:
+
+\begin{python}
+>>> integrate(x**2 + 3*x - 7, x)
+x**3/3 + 3*x**2/2 - 7*x
+\end{python}
+
+Esa instrucción calcula la integral:
+
+$$ \int \left( x^2 + 3x - 7 \, \right) \,\, dx = \frac{x^3}{3} + \frac{3x^2}{2} - 7x + C $$
+
+Note que la expresión algebraica devuelta por Python no contiene la constante de integración, por default SymPy 
+no la considera. Sí en algún caso específico necesita referir a la constante de integración puede adicionarla 
+manualmente.
+
+Las integrales definidas se pueden calcular si el segundo argumento se hace una tupla de la forma 
+\code{(variable, a, b)}, donde \code{a} y \code{b} indican el límite inferior y superior a 
+evaluar en la integral:
+
+\begin{python}
+>>> integrate(sin(x), (x, 0, pi))
+2
+>>> integrate(z**2, (z,-5,5))
+250/3
+\end{python}
+
+
+\section{Vectores}
+
+Un vector denota una cantidad física que tiene magnitud y orientación en un determinado sistema de referencia. 
+En SymPy los vectores se pueden definir mediante la clase \code{Matrix} del módulo \code{matrices}, de tal 
+manera que en primera instancia haría falta importar dicho módulo, para esto hacemos:
+
+\begin{python}
+>>> from sympy.matrices import Matrix
+\end{python}
+
+Ahora vamos a definir dos vectores $\vec{u}$ y $\vec{v}$:
+
+$$ \vec{u} = \colvec{2}{1}{-5} \qquad ; \qquad \vec{v} = \colvec{4}{-1}{3} $$
+
+\begin{python}
+>>> u = Matrix([2,1,-5])
+>>> v = Matrix([4,-1,3])
+\end{python}
+
+Una suma y resta vectorial se pueden ejecutar sin muchas complicaciones, mediante los operadores 
+aritméticos ya conocidos.
+
+\begin{python}
+>>> u + v
+Matrix([
+[ 6],
+[ 0],
+[-2]])
+>>> v - u
+Matrix([
+[ 2],
+[-2],
+[ 8]])
+\end{python}
+
+La magnitud de un vector se puede calcular utilizando el método \code{norm}.
+
+\begin{python}
+>>> u.norm()
+sqrt(30)
+>>> v.norm()
+sqrt(26)
+\end{python}
+
+Recuerde que si requiere ver las expresiones resultantes como fracciones decimales 
+debe usar \code{evalf}.
+
+El producto escalar de dos vectores puede calcularlo utilizando el método \code{dot}, por 
+ejemplo $ \vec{u} \cdot \vec{v} $ lo puede especificar como:
+
+\begin{python}
+>>> u.dot(v)
+-8
+\end{python}
+
+Para calcular el producto vectorial utilice el método \code{cross}, por ejemplo 
+$ \vec{u} \times \vec{v} $:
+
+\begin{python}
+>>> u.cross(v)
+Matrix([
+[ -2],
+[-26],
+[ -6]])
+\end{python}
+
+Recuerde que el producto vectorial no es conmutativo, por tanto, $\vec{v} \times \vec{u} $ resultará en un vector 
+diferente al obtenido anteriormente, como puede verificar enseguida:
+
+\begin{python}
+>>> v.cross(u)
+Matrix([
+[ 2],
+[26],
+[ 6]])
+\end{python}
+
+
+\begin{ejemplo}{Ángulo entre vectores}
+
+Compruebe que el ángulo entre los vectores unitarios $\vec{i}$ y $\vec{j}$ es de 90°.
+
+\solu
+
+Del álgebra vectorial recordará que el producto punto de dos vectores está dado por:
+
+$$ \vec{u} \cdot \vec{v} = uv \cos\theta $$
+
+Donde $ \theta $ es el ángulo formado entre los vectores. Naturalmente, podríamos 
+despejar al ángulo de esta ecuación:
+
+$$ \theta = \arccos \left( \frac{ \vec{u} \cdot \vec{v} }{uv} \right) $$
+
+En el caso de vectores unitarios, el producto de las magnitudes es unitario y podríamos reescribir como:
+
+$$ \theta = \arccos \left( \vec{u} \cdot \vec{v} \right) $$
+
+En Python:
+
+\begin{python}
+>>> from sympy import *
+>>> from sympy.matrices import *
+>>> vi = Matrix([1,0,0])
+>>> vj = Matrix([0,1,0])
+>>> acos( vi.dot(vj) )
+pi/2
+\end{python}
+
+Para obtener el resultado en grados, podemos utilizar la función \code{deg}:
+
+\begin{python}
+>>> deg( acos( vi.dot(vj) ) )
+90
+\end{python}
+
+
+\end{ejemplo}
+
+
+
+\section{Matrices}
+
+Las matrices son arreglos rectangulares de números o cantidades simbólicas. En SymPy, 
+se definen utilizando la clase \code{Matrix}, pasándole como argumentos una lista de 
+listas, donde cada sublista corresponde a una fila de la matriz.
+
+Por ejemplo, vamos a definir las matrices $A$, $B$ y $C$, dadas por:
+
+$$ A = \begin{bmatrix}
+20 & 50 & 100 \\
+10 & 35 & 200 \\
+-30 & 20 & 80 
+\end{bmatrix}
+\qquad
+B = \begin{bmatrix}
+12 & 26 & 45 \\
+3 & -15 & 18 \\
+54 & 20 & 0 
+\end{bmatrix}
+\qquad
+C = \begin{bmatrix}
+5 & 9 \\
+2 & 3 \\
+-10 & 8
+\end{bmatrix}
+ $$
+
+Primero, importamos la clase \code{Matrix} del módulo \code{matrices}:
+
+\begin{python}
+>>> from sympy.matrices import Matrix
+\end{python}
+
+Luego, escribiríamos:
+
+\begin{python}
+>>> A = Matrix([[20,50,100], [10,35,200], [-30,20,80]])
+>>> B = Matrix([[12,26,45],[3,-15,18],[54,20,0]])
+>>> C = Matrix([[5,9], [2,3], [-10,8]])
+\end{python}
+
+De manera muy sencilla podríamos realizar operaciones matriciales básicas, por 
+ejemplo, una suma:
+
+\begin{python}
+>>> A + B
+Matrix([
+[32, 76, 145],
+[13, 20, 218],
+[24, 40,  80]])
+\end{python}
+
+Naturalmente, y como es esperable, SymPy \textit{conoce} y aplica las reglas de álgebra de matrices, observe:
+
+\begin{python}
+>>> A + C
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\delos\Anaconda3\lib\site-packages\sympy\core\decorators.py", line 132, in binary_op_wrapper
+    return func(self, other)
+  File "C:\Users\delos\Anaconda3\lib\site-packages\sympy\matrices\common.py", line 1951, in __add__
+    self.shape, other.shape))
+sympy.matrices.common.ShapeError: Matrix size mismatch: (3, 3) + (3, 2)
+\end{python}
+
+SymPy es muy explícito en ese tipo de situaciones y nos imprime un mensaje de error suficientemente descriptivo. 
+De igual forma que es válido realizar el producto $AC$, pero no $CA$:
+
+\begin{python}
+>>> A*C
+Matrix([
+[ -800, 1130],
+[-1880, 1795],
+[ -910,  430]])
+>>> C*A
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\delos\Anaconda3\lib\site-packages\sympy\core\decorators.py", line 132, in binary_op_wrapper
+    return func(self, other)
+  File "C:\Users\delos\Anaconda3\lib\site-packages\sympy\matrices\common.py", line 2008, in __mul__
+    self.shape, other.shape))
+sympy.matrices.common.ShapeError: Matrix size mismatch: (3, 2) * (3, 3).
+\end{python}
+
+El \textbf{determinante} de una matriz podemos calcularlo mediante la función \code{det}:
+
+\begin{python}
+>>> det(B)
+60102
+\end{python}
+
+O bien, mediante el propio método \code{det}:
+
+\begin{python}
+>>> B.det()
+60102
+\end{python}
+
+La \textbf{matriz inversa} podemos calcularla utilizando el método \code{inv}:
+
+\begin{python}
+>>> A.inv()
+Matrix([
+[ 6/1195,    2/239, -13/478],
+[34/1195, -23/1195,   3/239],
+[ -5/956,  19/2390, -1/1195]])
+>>> A.inv()*A
+Matrix([
+[1, 0, 0],
+[0, 1, 0],
+[0, 0, 1]])
+\end{python}
+
+La \textbf{transpuesta} de una matriz se puede obtener accediendo al atributo \code{T}: 
+
+\begin{python}
+>>> C.T
+Matrix([
+[5, 2, -10],
+[9, 3,   8]])
+\end{python}
+
+
+\section{Ejercicios}
+
+Utilice Python/SymPy para resolver los siguientes ejercicios:
+
+\begin{enumerate}
+\item Resuelva las siguientes ecuaciones (para la variable $x$):
+\begin{enumerate}
+  \item $ x + 3x = 10 $
+  \item $ 2x^2 - 10x + 5 = 0 $
+  \item $ \frac{a}{x} + bx - 8 = 0 $
+  \item $ \cos x + \sin x = 10 $
+  \item $ kx - 10 = x^2 $
+\end{enumerate}
+
+\item Calcule las siguientes derivadas:
+\begin{enumerate}
+  \item $ \frac{d}{dx} \left( \cos x \right) $
+  \item $ \frac{d}{dt} \left( at^2 - 2\tan t - \frac{10}{t} \right) $
+  \item $ \frac{d}{dz} \left( z^5 - 10 e^{-z}  \right) $
+\end{enumerate}
+
+\item Calcule las siguientes integrales indefinidas:
+
+\begin{enumerate}
+  \item $ \int \cos x \, dx $
+  \item $ \int \left( x^3 - 8x \right)\, dx $
+  \item $ \int \left( e^{-3x} \sin x \right) \, dx $
+  \item $ \int \left( s^2 + ks - m \right) \, ds $
+\end{enumerate}
+
+\item Calcule las siguientes integrales definidas:
+
+\begin{enumerate}
+  \item $ \int_{a}^{b} \sin x \, dx $
+  \item $ \int_{-10}^{5} x^2 + 10x \, dx $
+  \item $ \int_{0}^{2} 10e^{-z} \, dz  $
+\end{enumerate}
+
+
+\item Resuelva la siguiente ecuación diferencial:
+
+$$ \frac{dS}{dr} = kS $$
+
+\item Al sacar un pastel del horno, su temperatura es de 300 °F. Después de 3 minutos, 200 °F. 
+¿En cuanto tiempo se enfriará hasta la temperatura ambiente de 70 °F?
+
+\item Escriba una función que dados como entrada dos vectores, determine sí estos son 
+paralelos.
+
+\item Desarrolle una función llamada \code{calcula\_fuerza\_resultante} que reciba como datos de entrada 
+un conjunto de vectores fuerza y devuelva el vector de fuerza resultante.
+
+\item Escriba un función llamada \code{calcula\_momento\_resultante} que reciba como datos de entrada un conjunto de 
+vectores fuerza y un conjunto de vectores de posición del punto de aplicación de la fuerza con respecto 
+a un cierto punto. Se deberá devolver el momento total producido por las fuerzas con respecto al punto.
+
+\end{enumerate}

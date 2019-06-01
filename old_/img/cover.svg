@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:export-ydpi="90"
+   inkscape:export-xdpi="90"
+   inkscape:export-filename="C:\Users\User\Desktop\LABPro\master-thesis\src\ch3\diagrama_metodologia.png"
+   sodipodi:docname="cover.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   version="1.1"
+   id="svg2"
+   height="299mm"
+   width="210mm">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="520.18782"
+     inkscape:cy="675.08254"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     width="298mm"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     showguides="false"
+     inkscape:guide-bbox="true"
+     units="mm">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4131"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,77.716913)">
+    <rect
+       style="opacity:0.5;fill:#ffff00;fill-opacity:1;stroke:#800080;stroke-width:1.41859663;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       id="rect45"
+       width="840.2019"
+       height="879.50214"
+       x="-14.736582"
+       y="198.32506"
+       ry="12.110012" />
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.47180176px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.65448761"
+       x="486.06174"
+       y="310.4147"
+       id="text95"
+       transform="skewX(-31.996298)"><tspan
+         sodipodi:role="line"
+         id="tspan93"
+         x="486.06174"
+         y="310.4147"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold Italic';fill:#000000;stroke-width:0.65448761">    <tspan
+   style="font-size:7.85385084px;fill:#000000;stroke-width:0.65448761;-inkscape-font-specification:'Courier New Bold Italic';font-family:'Courier New';font-weight:bold;font-style:italic;font-stretch:normal;font-variant:normal"
+   id="tspan133">@property</tspan></tspan><tspan
+         sodipodi:role="line"
+         x="486.06174"
+         y="323.50446"
+         id="tspan97"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.85385084px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold Italic';fill:#000000;stroke-width:0.65448761">    def B(self):</tspan><tspan
+         sodipodi:role="line"
+         x="486.06174"
+         y="336.59421"
+         id="tspan99"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.85385084px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold Italic';fill:#000000;stroke-width:0.65448761">        ni, nj, nm = self.nodes</tspan><tspan
+         sodipodi:role="line"
+         x="486.06174"
+         y="349.68396"
+         id="tspan101"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.85385084px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold Italic';fill:#000000;stroke-width:0.65448761">        A = self.A</tspan><tspan
+         sodipodi:role="line"
+         x="486.06174"
+         y="362.77371"
+         id="tspan103"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.85385084px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold Italic';fill:#000000;stroke-width:0.65448761">        betai = nj.y - nm.y</tspan><tspan
+         sodipodi:role="line"
+         x="486.06174"
+         y="375.86346"
+         id="tspan105"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.85385084px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold Italic';fill:#000000;stroke-width:0.65448761">        betaj = nm.y - ni.y</tspan><tspan
+         sodipodi:role="line"
+         x="486.06174"
+         y="388.95322"
+         id="tspan107"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.85385084px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold Italic';fill:#000000;stroke-width:0.65448761">        betam = ni.y - nj.y</tspan><tspan
+         sodipodi:role="line"
+         x="486.06174"
+         y="402.04297"
+         id="tspan109"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.85385084px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold Italic';fill:#000000;stroke-width:0.65448761">        gammai = nm.x - nj.x</tspan><tspan
+         sodipodi:role="line"
+         x="486.06174"
+         y="415.13272"
+         id="tspan111"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.85385084px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold Italic';fill:#000000;stroke-width:0.65448761">        gammaj = ni.x - nm.x</tspan><tspan
+         sodipodi:role="line"
+         x="486.06174"
+         y="428.22247"
+         id="tspan113"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.85385084px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold Italic';fill:#000000;stroke-width:0.65448761">        gammam = nj.x - ni.x</tspan><tspan
+         sodipodi:role="line"
+         x="486.06174"
+         y="441.31223"
+         id="tspan115"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.85385084px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold Italic';fill:#000000;stroke-width:0.65448761">        B = (1/(2*A))*np.array([[betai, 0, betaj, 0, betam, 0],</tspan><tspan
+         sodipodi:role="line"
+         x="486.06174"
+         y="454.40198"
+         id="tspan117"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.85385084px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold Italic';fill:#000000;stroke-width:0.65448761">                                 [0, gammai, 0, gammaj, 0, gammam],</tspan><tspan
+         sodipodi:role="line"
+         x="486.06174"
+         y="467.49173"
+         id="tspan119"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.85385084px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold Italic';fill:#000000;stroke-width:0.65448761">                                 [gammai, betai, gammaj, betaj, gammam, betam]</tspan><tspan
+         sodipodi:role="line"
+         x="486.06174"
+         y="480.58148"
+         id="tspan121"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.85385084px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold Italic';fill:#000000;stroke-width:0.65448761">                                 ])</tspan><tspan
+         sodipodi:role="line"
+         x="486.06174"
+         y="493.67123"
+         id="tspan123"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.85385084px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold Italic';fill:#000000;stroke-width:0.65448761">        return Bpuntes</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot125"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"><flowRegion
+         id="flowRegion127"><rect
+           id="rect129"
+           width="86.873116"
+           height="83.842659"
+           x="129.29953"
+           y="294.94925" /></flowRegion><flowPara
+         id="flowPara131" /></flowRoot>    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:36.68330765px;line-height:1.25;font-family:'Strange Magic';-inkscape-font-specification:'Strange Magic';letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:2.29270673;text-anchor:middle;text-align:center;"
+       x="363.0809"
+       y="35.813068"
+       id="text35"><tspan
+         sodipodi:role="line"
+         id="tspan33"
+         x="117.1881"
+         y="35.813068"
+         style="fill:#0000ff;stroke-width:2.29270673;text-anchor:middle;text-align:center;">UNA INTRODUCCIÓN </tspan><tspan
+         sodipodi:role="line"
+         x="117.1881"
+         y="81.667206"
+         style="fill:#0000ff;stroke-width:2.29270673;text-anchor:middle;text-align:center;"
+         id="tspan41"></tspan><tspan
+         sodipodi:role="line"
+         x="117.1881"
+         y="127.52134"
+         style="fill:#0000ff;stroke-width:2.29270673;text-anchor:middle;text-align:center;"
+         id="tspan43">A PYTHON</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:57.39945602px;line-height:1.25;font-family:'Brooke Smith Script';-inkscape-font-specification:'Brooke Smith Script';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.587466"
+       x="598.95239"
+       y="1032.6094"
+       id="text39"><tspan
+         sodipodi:role="line"
+         id="tspan37"
+         x="598.95239"
+         y="1032.6094"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'Antonine Personal Use';-inkscape-font-specification:'Antonine Personal Use';stroke-width:3.587466">P. J.  De Los Santos</tspan></text>
+  </g>
+</svg>

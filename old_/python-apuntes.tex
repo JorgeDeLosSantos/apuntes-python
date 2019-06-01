@@ -1,0 +1,63 @@
+\documentclass[11pt,letterpaper,twoside]{book}
+
+\input{latex-config/cfg-cime}
+
+\author{
+Pedro Jorge De Los Santos
+}
+
+\title{
+% \vspace{-20mm}
+{\normalsize Universidad Politécnica de Guanajuato} \\[-4mm]
+{\normalsize Departamento de Ingeniería Robótica} \\
+{\bfseries Una introducción a Python}
+% \includegraphics{img/cover.pdf}
+}
+
+% \date{}
+
+% =================================================================
+% =================================================================
+%                              CONTENIDO
+% =================================================================
+% =================================================================
+
+\begin{document}
+% Config
+% \setlength{\abovedisplayskip}{0pt}
+% \setlength{\belowdisplayskip}{0pt}
+% Contenido
+% \includepdf[pages=-]{img/cover.pdf}
+\maketitle
+\tableofcontents
+
+
+\input{ch00}
+\input{fundamentos}
+\input{numpy}
+\input{matplotlib}
+\input{sympy}
+\input{pandas}
+\input{poo}
+\input{gui-wxpython}
+
+
+% Referencias
+\pagestyle{plain}
+\bibliographystyle{unsrt}
+\addcontentsline{toc}{chapter}{Referencias}
+\bibliography{referencias}
+
+% \input{src/anexos}
+
+% \begin{thebibliography}{10}
+% \bibitem{norton} Norton, R. L. (2012). Diseño de maquinaria: Síntesis y análisis de máquinas y mecanismos. México D.F: McGraw-Hill.
+% \bibitem{mabie} Mabie, H. H., & Reinholtz, C. F. (2008). Mecanismos y dinámica de maquinaria. México: Limusa.
+% \bibitem{myszka} Myszka, D. H. (2002). Machines & mechanism: Applied kinematic analysis. Upper Saddle River, N.J: Prentice Hall.
+% \bibitem{erdman} Erdman, A. G., Sandor, G. N., & Kota, S. (2004). Mechanism design: Analysis and synthesis. Taipei: Pearson Education Taiwan.
+% \bibitem{hernandez} Hernández, A. (). Cinemática de mecanismos, análisis y diseño. Madrid: Síntesis.
+% \bibitem{beer} Beer, F. P., Mazurek, D. F., Johnston, E. R., & Cornwell, P. J. (2013). Mecánica vectorial para ingenieros. México: McGraw-Hill.
+% \end{thebibliography}
+
+
+\end{document}

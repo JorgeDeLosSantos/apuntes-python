@@ -1,0 +1,286 @@
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla]{babel}
+\decimalpoint
+\let\cleardoublepage\clearpage
+\usepackage[bitstream-charter]{mathdesign}
+\usepackage[T1]{fontenc}
+\newcommand{\selectSans}{\usefont{T1}{qhv}{m}{n}\selectfont} % sans-serif TeX Gyre Heros font
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{makeidx}
+\usepackage{pdflscape}
+\makeindex
+\usepackage{anysize}
+\usepackage{anyfontsize}
+\usepackage{pdfpages}
+\usepackage[x11names,table]{xcolor}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable,listings,theorems}
+\usepackage[hidelinks]{hyperref}
+\usepackage[labelfont=bf]{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\captionsetup[table]{labelsep=space}
+\captionsetup[figure]{labelsep=space}
+\usepackage{setspace} % Para modificar espacios/interlineados
+\usepackage{listings}
+\usepackage{array,ragged2e}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{enumitem}
+% \usepackage{structuralanalysis}
+\usepackage[titletoc]{appendix} % Para apéndices
+\usepackage[left=2cm,top=2cm,right=2cm,bottom=2cm]{geometry}
+\setlength{\parindent}{0cm}
+\usepackage[printwatermark]{xwatermark}
+\newwatermark[allpages,color=gray!10,angle=45,scale=3,xpos=0,ypos=0]{Borrador}
+\tcbset{colback=green!5!white, colframe=gray!10!black, coltitle=green!20!black, 
+fonttitle=\bfseries, colbacktitle=white, coltext=gray!30!black}
+\addto\captionsspanish{
+  \renewcommand{\figurename}{{\bf Figura}}% 
+}
+\addto\captionsspanish{
+  \renewcommand{\chaptername}{{\bf}}% 
+}
+\usepackage{cancel}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{newunicodechar}
+\newunicodechar{°}{\degree}
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+\renewcommand{\vecg}[1]{\boldsymbol{#1}}
+
+\newcommand{\colvec}[3]{\begin{bmatrix}#1\\#2\\#3\end{bmatrix}}
+
+\usepackage{epigraph}
+\usepackage{fontawesome}
+\usepackage[Bjornstrup]{fncychap}
+
+\renewcommand{\baselinestretch}{1.00}
+\newcommand{\hl}[1]{%
+  \colorbox{red!50}{$\displaystyle#1$}} % Para cuadros colorizados
+
+\newcommand{\answer}[1]{%
+  \colorbox{green!50}{$\displaystyle#1$}} % Para cuadros colorizados
+\newcommand{\sifu}[3]{\langle #1 - #2 \rangle^{#3}} % Funciones de singularidad
+
+% \renewcommand{\familydefault}{\sfdefault}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\iszero}[1]{\cancelto{0}{#1}}
+
+
+
+
+% Colores
+\definecolor{verdep}{RGB}{166,206,58}
+\definecolor{ccap}{RGB}{10,10,50}
+\definecolor{csec}{RGB}{50,50,100}
+\definecolor{csubsec}{RGB}{80,80,120}
+\definecolor{header_table_color}{RGB}{200,255,180}
+\definecolor{info_color}{RGB}{100,100,200}
+\definecolor{csol}{rgb}{0.2,0.8,0.1}
+\definecolor{backcode}{rgb}{0.98,0.98,0.99}
+\definecolor{crule}{rgb}{0.9,0.9,0.9}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{probsec}{RGB}{3,165,183}
+\definecolor{codeinline}{RGB}{30,30,150}
+
+
+% \newtcolorbox{ejemplo}[2][]
+% {
+%   breakable,
+%   colframe = gray!100,
+%   colback  = gray!0,
+%   coltitle = gray!20!black,
+%   title    =  \faEdit \hspace{5 mm} #2,
+% }
+
+\newcommand{\uno}{ ( \faStarO ) }
+\newcommand{\dos}{ ( \faStarO\faStarO ) }
+\newcommand{\tres}{ ( \faStarO\faStarO\faStarO ) }
+
+
+\definecolor{extitle}{RGB}{0,50,0}
+\definecolor{extitleback}{RGB}{225,225,225}
+\definecolor{exback}{RGB}{255,255,255}
+\definecolor{probtitleback}{RGB}{200,200,100}
+\definecolor{probback}{RGB}{255,255,255}
+
+\definecolor{solucolor}{RGB}{150,50,50}
+\newcommand{\solu}{{\it\color{solucolor} Solución}}
+
+
+\newtcolorbox[auto counter,number within=section]{ejemplo}[2][]{
+  breakable,
+  enhanced,
+  colback=exback,
+  boxrule=0.75pt,
+  arc=6pt,
+  % outer arc=0pt,
+  title=\faEdit \hspace{5 mm}Ejemplo~\thetcbcounter \hspace{3mm} #2,
+  fonttitle=\bfseries\sffamily\normalsize\strut,
+  coltitle=extitle,
+  colbacktitle=extitleback,
+  % title style={exercisebgblue},
+}
+
+\newtcolorbox[auto counter,number within=section]{problema}[2][]{
+  breakable,
+  enhanced,
+  colback=probback,
+  boxrule=0.75pt,
+  arc=6pt,
+  % outer arc=0pt,
+  title=\faEdit \hspace{5 mm}Problema~\thetcbcounter \hspace{3mm} #2,
+  fonttitle=\bfseries\sffamily\normalsize\strut,
+  coltitle=extitle,
+  colbacktitle=extitleback,
+  % title style={exercisebgblue},
+}
+
+\definecolor{infotitle}{RGB}{0,0,50}
+\definecolor{infotitleback}{RGB}{195,240,255}
+\definecolor{infoback}{RGB}{242,252,255}
+\definecolor{infoframe}{RGB}{50,50,50}
+
+\newtcolorbox{informacion}[2][]
+{
+  breakable,
+  colframe = infoframe,
+  colback  = infoback,
+  coltitle = infotitle,
+  colbacktitle = infotitleback,
+  title    = \faInfo \hspace{5 mm} #2,
+}
+
+\newtcolorbox{recomendacion}[2][]
+{
+  breakable,
+  colframe = green!25,
+  colback  = green!10,
+  coltitle = green!20!black,
+  title    = #2,
+}
+
+
+% \newtcolorbox{outscript}[1][]
+% {
+%   breakable,
+%   colframe = green!25,
+%   colback  = green!10,
+%   coltitle = green!20!black,
+% }
+
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}m{#1}}
+\newcommand{\ccol}{>{\centering\tt\arraybackslash}}
+
+% Nuevos comandos
+
+\usepackage{titlesec}%--
+% \newcommand{\hsp}{\hspace{5pt}}
+% \titleformat{\chapter}[hang]{\huge\bfseries\color{ccap}}
+% {\color{verdep}{\vrule height 2.5cm width 1mm}\hsp{\fontsize{100}{5}\selectfont\thechapter}\hsp%
+% {\vrule height 2.5cm width 1mm}\hsp{\fontsize{30}{5}\selectfont}}{5pt}{\huge\bfseries}
+
+\titleformat{\section}[hang]{\normalfont\color{csec}}%
+{\filright\large\enspace\thesection\enspace}%
+{8pt}{\Large\bfseries\filright}%
+
+\titleformat{\subsection}[hang]{\normalfont\color{csec}}%
+{\filright\large\enspace\thesubsection\enspace}%
+{8pt}{\large\bfseries\filright}%
+
+
+% For programming 
+\newcommand{\code}[1]{{\tt\bfseries\color{codeinline} #1}}
+\newcommand{\link}[1]{{\sffamily\color{codeinline}\url{#1}}}
+
+
+% Code
+\lstnewenvironment{python}{\lstset{frame=single,
+  frameround=tttt,
+  backgroundcolor=\color{backcode},
+  rulecolor=\color{crule},
+  language=python,
+  aboveskip=4mm,
+  belowskip=4mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4,
+  extendedchars=true,
+  inputencoding=utf8,
+  literate=%
+  {°}{{\,\,$^\circ$\,\,}}1
+  {á}{{\'a}}1
+  {é}{{\'e}}1
+  {í}{{\'i}}1
+  {ó}{{\'o}}1
+  {ú}{{\'u}}1
+  {Á}{{\'A}}1
+  {É}{{\'E}}1
+  {Í}{{\'I}}1
+  {Ó}{{\'O}}1
+  {Ú}{{\'U}}1
+  {α}{{$alpha$}}1
+  {₁}{{$ _1 $}}1
+}}{}
+
+
+
+\definecolor{backout}{RGB}{220,220,230}
+\definecolor{textout}{RGB}{10,10,110}
+
+% Code
+\lstnewenvironment{outscript}{\lstset{frame=single,
+  frameround=tttt,
+  backgroundcolor=\color{backout},
+  rulecolor=\color{crule},
+  language=python,
+  aboveskip=0mm,
+  belowskip=4mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily\color{textout}},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4,
+  extendedchars=true,
+  inputencoding=utf8,
+  literate=%
+  {°}{{\,\,$^\circ$\,\,}}1
+  {á}{{\'a}}1
+  {é}{{\'e}}1
+  {í}{{\'i}}1
+  {ó}{{\'o}}1
+  {ú}{{\'u}}1
+  {Á}{{\'A}}1
+  {É}{{\'E}}1
+  {Í}{{\'I}}1
+  {Ó}{{\'O}}1
+  {Ú}{{\'U}}1
+  {α}{{$alpha$}}1
+  {₁}{{$ _1 $}}1
+}}{}
+

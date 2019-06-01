@@ -1,0 +1,52 @@
+\BOOKMARK [0][-]{chapter.1}{Fundamentos del lenguaje}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Python}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Instalando Python}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{La consola de Python como una calculadora b\341sica}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.4}{Variables y tipos de datos}{chapter.1}% 5
+\BOOKMARK [2][-]{subsection.1.4.1}{Variables}{section.1.4}% 6
+\BOOKMARK [2][-]{subsection.1.4.2}{Enteros}{section.1.4}% 7
+\BOOKMARK [2][-]{subsection.1.4.3}{De coma flotante}{section.1.4}% 8
+\BOOKMARK [2][-]{subsection.1.4.4}{Cadenas de caracteres}{section.1.4}% 9
+\BOOKMARK [2][-]{subsection.1.4.5}{Booleanos}{section.1.4}% 10
+\BOOKMARK [2][-]{subsection.1.4.6}{Listas}{section.1.4}% 11
+\BOOKMARK [2][-]{subsection.1.4.7}{Tuplas}{section.1.4}% 12
+\BOOKMARK [2][-]{subsection.1.4.8}{Diccionarios}{section.1.4}% 13
+\BOOKMARK [1][-]{section.1.5}{Operadores relacionales y l\363gicos}{chapter.1}% 14
+\BOOKMARK [1][-]{section.1.6}{Control de flujo}{chapter.1}% 15
+\BOOKMARK [2][-]{subsection.1.6.1}{Condicional if-elif-else}{section.1.6}% 16
+\BOOKMARK [2][-]{subsection.1.6.2}{Bucle for}{section.1.6}% 17
+\BOOKMARK [2][-]{subsection.1.6.3}{Bucle while}{section.1.6}% 18
+\BOOKMARK [1][-]{section.1.7}{Funciones}{chapter.1}% 19
+\BOOKMARK [2][-]{subsection.1.7.1}{Funciones nativas de Python \(built-in\)}{section.1.7}% 20
+\BOOKMARK [2][-]{subsection.1.7.2}{Funciones definidas por el usuario}{section.1.7}% 21
+\BOOKMARK [1][-]{section.1.8}{Ejercicios}{chapter.1}% 22
+\BOOKMARK [0][-]{chapter.2}{NumPy: operaciones matriciales}{}% 23
+\BOOKMARK [0][-]{chapter.3}{Matplotlib: visualizaci\363n gr\341fica}{}% 24
+\BOOKMARK [1][-]{section.3.1}{Una primera aproximaci\363n}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.2}{La funci\363n codeinline plot}{chapter.3}% 26
+\BOOKMARK [2][-]{subsection.3.2.1}{Graficando funciones matem\341ticas}{section.3.2}% 27
+\BOOKMARK [2][-]{subsection.3.2.2}{Modificando el color, estilo y grosor de l\355nea}{section.3.2}% 28
+\BOOKMARK [2][-]{subsection.3.2.3}{T\355tulo de gr\341fica, etiquetas de ejes y nombres de curvas}{section.3.2}% 29
+\BOOKMARK [2][-]{subsection.3.2.4}{Anotaciones}{section.3.2}% 30
+\BOOKMARK [1][-]{section.3.3}{Gr\341ficas en coordenadas polares}{chapter.3}% 31
+\BOOKMARK [1][-]{section.3.4}{Gr\341ficas de barras}{chapter.3}% 32
+\BOOKMARK [1][-]{section.3.5}{Gr\341ficas de curvas param\351tricas en el espacio}{chapter.3}% 33
+\BOOKMARK [1][-]{section.3.6}{Gr\341ficas de superficies}{chapter.3}% 34
+\BOOKMARK [1][-]{section.3.7}{Ejercicios}{chapter.3}% 35
+\BOOKMARK [0][-]{chapter.4}{SymPy: un sistema de \341lgebra computacional}{}% 36
+\BOOKMARK [1][-]{section.4.1}{Variables simb\363licas}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.2}{Manipulaci\363n algebraica}{chapter.4}% 38
+\BOOKMARK [1][-]{section.4.3}{Resolviendo ecuaciones e inecuaciones}{chapter.4}% 39
+\BOOKMARK [2][-]{subsection.4.3.1}{Ecuaciones polin\363micas}{section.4.3}% 40
+\BOOKMARK [2][-]{subsection.4.3.2}{Ecuaciones trigonom\351tricas}{section.4.3}% 41
+\BOOKMARK [1][-]{section.4.4}{C\341lculo}{chapter.4}% 42
+\BOOKMARK [2][-]{subsection.4.4.1}{L\355mites}{section.4.4}% 43
+\BOOKMARK [2][-]{subsection.4.4.2}{Derivadas}{section.4.4}% 44
+\BOOKMARK [2][-]{subsection.4.4.3}{Integrales}{section.4.4}% 45
+\BOOKMARK [1][-]{section.4.5}{Vectores}{chapter.4}% 46
+\BOOKMARK [1][-]{section.4.6}{Matrices}{chapter.4}% 47
+\BOOKMARK [1][-]{section.4.7}{Ejercicios}{chapter.4}% 48
+\BOOKMARK [0][-]{chapter.5}{Pandas: an\341lisis de datos}{}% 49
+\BOOKMARK [0][-]{chapter.6}{Programaci\363n orientada a objetos}{}% 50
+\BOOKMARK [0][-]{chapter.7}{Interfaces gr\341ficas en wxPython}{}% 51
+\BOOKMARK [0][-]{chapter.7}{Referencias}{}% 52
