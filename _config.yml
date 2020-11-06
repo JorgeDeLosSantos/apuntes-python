@@ -1,0 +1,9 @@
+# in _config.yml
+title: Introducción a Python
+author: Pedro Jorge De Los Santos
+logo: img/logo.png
+execute:
+  execute_notebooks: "off"
+latex:
+  latex_documents:
+     targetname: book.tex

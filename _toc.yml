@@ -1,0 +1,8 @@
+# In _toc.yml
+- file: intro
+- file: fundamentos-del-lenguaje
+- file: numpy
+- file: matplotlib
+- file: sympy
+- file: programación-orientada-a-objetos
+
