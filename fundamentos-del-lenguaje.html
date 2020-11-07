@@ -299,20 +299,32 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#las-funciones-print-e-input">
-   Las funciones
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     print
-    </span>
-   </code>
-   e
+  <a class="reference internal nav-link" href="#entrada-y-salida-por-consola-las-funciones-input-e-print">
+   Entrada y salida por consola: las funciones
    <code class="docutils literal notranslate">
     <span class="pre">
      input
     </span>
    </code>
+   e
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     print
+    </span>
+   </code>
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-funcion-print">
+     La función
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       print
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#control-de-flujo">
@@ -1157,7 +1169,7 @@ si quisieramos obtener la edad de la clave <code class="docutils literal notrans
 </div>
 </div>
 </div>
-<p>También podemos <em>encadenar</em> comparaciones con cadenas del tipo <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">&lt;</span> <span class="pre">c</span></code>, donde ese <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> puede ser cualquier operador relacional, por ejemplo:</p>
+<p>También podemos <em>encadenar</em> comparaciones con instrucciones del tipo <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">&lt;</span> <span class="pre">c</span></code>, donde ese <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> puede ser cualquier operador relacional, por ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">3</span>
@@ -1280,8 +1292,11 @@ si quisieramos obtener la edad de la clave <code class="docutils literal notrans
 </div>
 </div>
 </div>
-<div class="section" id="las-funciones-print-e-input">
-<h2>Las funciones <code class="docutils literal notranslate"><span class="pre">print</span></code> e <code class="docutils literal notranslate"><span class="pre">input</span></code><a class="headerlink" href="#las-funciones-print-e-input" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="entrada-y-salida-por-consola-las-funciones-input-e-print">
+<h2>Entrada y salida por consola: las funciones <code class="docutils literal notranslate"><span class="pre">input</span></code> e <code class="docutils literal notranslate"><span class="pre">print</span></code><a class="headerlink" href="#entrada-y-salida-por-consola-las-funciones-input-e-print" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="la-funcion-print">
+<h3>La función <code class="docutils literal notranslate"><span class="pre">print</span></code><a class="headerlink" href="#la-funcion-print" title="Permalink to this headline">¶</a></h3>
+<p>La función <code class="docutils literal notranslate"><span class="pre">print</span></code> se utiliza para mostrar en pantalla el <em>valor</em> (o la representación) de los objetos Python. A <code class="docutils literal notranslate"><span class="pre">print</span></code> le podemos pasar un sólo argumento, por ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola mundo&quot;</span><span class="p">)</span>
@@ -1294,18 +1309,21 @@ si quisieramos obtener la edad de la clave <code class="docutils literal notrans
 </div>
 </div>
 </div>
+<p>O una lista de argumentos que se imprimirán:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hola&quot;</span><span class="p">,</span> <span class="s2">&quot;mundo&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hola&quot;</span><span class="p">,</span> <span class="s2">&quot;mundo&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hola mundo 1 2 3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hola mundo 5 8 [1, 2, 3]
 </pre></div>
 </div>
 </div>
 </div>
+<p>Como se puede observar en la línea anterior, realmente, le podemos pasar cualquier objeto de Python y <code class="docutils literal notranslate"><span class="pre">print</span></code> nos devolverá la representación de dicho objeto.</p>
+<p>Adicionalmente, también podemos indicar de manera explícita, mediante el <em>keyword argument</em> <code class="docutils literal notranslate"><span class="pre">sep</span></code>, el separador que queremos utilizar, por default el separador es un espacio.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
@@ -1320,7 +1338,60 @@ si quisieramos obtener la edad de la clave <code class="docutils literal notrans
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola&quot;</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; -- &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola -- 90 -- 80
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como separador podemos utilizar cualquier símbolo soportado por Python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola&quot;</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; </span><span class="se">\u21e8</span><span class="s2"> &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola ⇨ 90 ⇨ 80
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola&quot;</span><span class="p">,</span> <span class="s2">&quot;mundo&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; </span><span class="se">\U0001F600</span><span class="s2"> &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola 😀 mundo
+</pre></div>
+</div>
+</div>
+</div>
+<p>Se puede indicar, también, mediante el <em>keyword argument</em> <code class="docutils literal notranslate"><span class="pre">end</span></code>, el caracter que se quiere utilizar cuando se <em>imprime</em> el último elemento, por default es un salto de línea.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="s2">&quot;python&quot;</span><span class="p">)</span> <span class="c1"># sin cambiar el argumento end </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hola&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20 30 python
+hola
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cambiando el argumento <code class="docutils literal notranslate"><span class="pre">end</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n\n\t</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># utilizando un doble salto de línea + tab</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hola&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1328,7 +1399,7 @@ si quisieramos obtener la edad de la clave <code class="docutils literal notrans
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20 30 python
 
-hola
+	hola
 </pre></div>
 </div>
 </div>
@@ -1398,6 +1469,7 @@ Hola Jorge bienvenido
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ingrese un número: 10
 2 * 10.0 = 20.0
 </pre></div>
+</div>
 </div>
 </div>
 </div>
