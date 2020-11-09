@@ -1,0 +1,456 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interfaces gráficas con wxPython &#8212; Introducción a Python</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Programación orientada a objetos" href="programaci%C3%B3n-orientada-a-objetos.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Introducción a Python</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introducción
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="fundamentos-del-lenguaje.html">
+   Fundamentos del lenguaje
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy.html">
+   NumPy: estructuras matriciales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matplotlib.html">
+   Matplotlib: visualización gráfica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sympy.html">
+   Sympy: un sistema de álgebra computacional
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="programaci%C3%B3n-orientada-a-objetos.html">
+   Programación orientada a objetos
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Interfaces gráficas con wxPython
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/wxpython-guis.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#que-es-wxpython">
+   ¿Qué es wxPython?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lo-basico">
+   Lo básico
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#una-primera-aplicacion">
+     Una primera aplicación
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#con-clase">
+     Con clase
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#los-sizers-organizando-controles">
+   Los sizers: organizando controles
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#posicionamiento-absoluto">
+     Posicionamiento absoluto
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="interfaces-graficas-con-wxpython">
+<h1>Interfaces gráficas con wxPython<a class="headerlink" href="#interfaces-graficas-con-wxpython" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="que-es-wxpython">
+<h2>¿Qué es wxPython?<a class="headerlink" href="#que-es-wxpython" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="lo-basico">
+<h2>Lo básico<a class="headerlink" href="#lo-basico" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="una-primera-aplicacion">
+<h3>Una primera aplicación<a class="headerlink" href="#una-primera-aplicacion" title="Permalink to this headline">¶</a></h3>
+<p>Una aplicación muy básica en wxPython puede construirse con unas pocas líneas:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">wx</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">wx</span><span class="o">.</span><span class="n">App</span><span class="p">()</span>
+<span class="n">frame</span> <span class="o">=</span> <span class="n">wx</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">wx</span><span class="o">.</span><span class="n">ID_ANY</span><span class="p">,</span> <span class="sa">u</span><span class="s2">&quot;wxPython Demo&quot;</span><span class="p">)</span>
+<span class="n">frame</span><span class="o">.</span><span class="n">Show</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">MainLoop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="Imagen 01" src="images/conceptos-elementales/primera_aplicacion.png" /></p>
+<p>Primero, y como siempre, importamos la librería wxPython para poder utilizar
+las clases y funciones disponibles en esta.</p>
+<p>Posteriormente se debe instanciar un objeto de la clase <code class="docutils literal notranslate"><span class="pre">wx.App</span></code>, que representa
+a la aplicación por si misma. La clase <code class="docutils literal notranslate"><span class="pre">wx.App</span></code> se utiliza para inicializar
+el sistema de wxPython y todo el conjunto de interfaces gráficas, además de controlar
+el intercambio de información y el manejo de los eventos lanzados.
+Cada aplicación debe tener una instancia <code class="docutils literal notranslate"><span class="pre">wx.App</span></code>, y esta debe crearse antes de
+instanciar cualquier otro objeto gráfico de wxPython, para asegurar que el
+sistema de wxWidgets se ha inicializado correctamente <a class="footnote-reference brackets" href="#wxapp" id="id1">1</a>. Es más, si en el ejemplo
+anterior intenta inicializar el Frame antes de <code class="docutils literal notranslate"><span class="pre">wx.App</span></code>, entonces wxPython lanzará un
+error como el que se muestra enseguida (<em>el cual es bastante explícito</em>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;C:\Users\adminIS\Desktop\LABPro\_books_\PB1703 - AWE\AWE\manuscript\src\
+conceptos-elementales\primera_aplicacion.py&quot;, line 4, in &lt;module&gt;
+    frame = wx.Frame(None, wx.ID_ANY, u&quot;wxPython Demo&quot;)
+  File &quot;C:\Python27\lib\site-packages\wx-2.9.5-msw\wx\_windows.py&quot;, line 580, in
+ __init__
+    _windows_.Frame_swiginit(self,_windows_.new_Frame(*args, **kwargs))
+wx._core.PyNoAppError: The wx.App object must be created first!
+</pre></div>
+</div>
+<p>Con la clase <code class="docutils literal notranslate"><span class="pre">wx.Frame</span></code> creamos un objeto de tipo <strong>ventana</strong>, que es donde colocaremos
+todos los controles que componen una interfaz gráfica. Para instanciar un objeto de la clase
+<code class="docutils literal notranslate"><span class="pre">wx.Frame</span></code>, necesitamos pasar algunos argumentos, por ejemplo, si recurrimos a la ayuda
+proporcionada por wxPython, respecto al constructor de <code class="docutils literal notranslate"><span class="pre">wx.Frame</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="n">wx</span><span class="o">.</span><span class="n">Frame</span><span class="o">.</span><span class="fm">__init__</span><span class="p">)</span>
+<span class="go">Help on method __init__ in module wx._windows:</span>
+
+<span class="go">__init__(self, *args, **kwargs) unbound wx._windows.Frame method</span>
+<span class="go">  __init__(self, Window parent, int id=-1, String title=EmptyString, </span>
+<span class="go">      Point pos=DefaultPosition, Size size=DefaultSize, </span>
+<span class="go">      long style=DEFAULT_FRAME_STYLE, String name=FrameNameStr) -&gt; Frame</span>
+</pre></div>
+</div>
+<p>wxPython nos <em>dice</em> que necesitamos especificar al menos el argumento <code class="docutils literal notranslate"><span class="pre">parent</span></code>, que es
+el <em>objeto padre</em> del Frame. En el ejemplo utilizado hemos pasado <code class="docutils literal notranslate"><span class="pre">None</span></code> como argumento,
+para indicar que nuestro objeto frame no tiene un objeto padre. Note que además de
+<code class="docutils literal notranslate"><span class="pre">parent</span></code>se puede especificar un <code class="docutils literal notranslate"><span class="pre">id</span></code>, un título (<code class="docutils literal notranslate"><span class="pre">title</span></code>), la posición (<code class="docutils literal notranslate"><span class="pre">position</span></code>),
+el tamaño (<code class="docutils literal notranslate"><span class="pre">size</span></code>), el estilo (<code class="docutils literal notranslate"><span class="pre">style</span></code>) y un nombre (<code class="docutils literal notranslate"><span class="pre">name</span></code>). En nuestro caso
+hemos pasado, además de <code class="docutils literal notranslate"><span class="pre">parent</span></code>, un <code class="docutils literal notranslate"><span class="pre">id</span></code> y un título (string que se muestra en la parte
+superior de la ventana). Si quisiera especificar un tamaño inicial al Frame podría incluirse
+el argumento <code class="docutils literal notranslate"><span class="pre">size</span></code> como sigue:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">frame</span> <span class="o">=</span> <span class="n">wx</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">wx</span><span class="o">.</span><span class="n">ID_ANY</span><span class="p">,</span> <span class="sa">u</span><span class="s2">&quot;wxPython Demo&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">200</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>El método <code class="docutils literal notranslate"><span class="pre">Show</span></code> de la clase <code class="docutils literal notranslate"><span class="pre">wx.Frame</span></code> se utiliza para mostrar en pantalla la ventana que hemos
+creado y todos los elementos que pudiera contener, si no <em>llamamos</em> a <code class="docutils literal notranslate"><span class="pre">Show</span></code> la ventana no
+se dibujará en la pantalla. Luego, el método <code class="docutils literal notranslate"><span class="pre">MainLoop</span></code> de <code class="docutils literal notranslate"><span class="pre">wx.App</span></code> es el que <em>pone en funcionamiento</em>
+toda la maquinaria de wxPython, lista para recibir y manejar los eventos generados.</p>
+</div>
+<div class="section" id="con-clase">
+<h3>Con clase<a class="headerlink" href="#con-clase" title="Permalink to this headline">¶</a></h3>
+<p>En la sección anterior vimos como desarrollar una aplicación wxPython muy elemental, con unas
+cuantas líneas de código. Todo esto está muy bien, pero cuando querramos desarrollar una
+aplicación un poco más compleja vamos a tener muchos problemas con ese mismo enfoque.
+Además, cuando se requiera programar las respuestas a los eventos, se necesita mucho
+intercambio de información entre el objeto que lanza el evento y las funciones o rutinas
+que los manejan (handlers), y de esa manera, aun con la ayuda de las funciones es un tanto
+difícil mantener el código legible.</p>
+<p>Debido a lo comentado en el párrafo anterior, las aplicaciones en wxPyhon comúnmente
+se desarrollan utilizando un diseño orientado a objetos, donde, típicamente se escriben
+clases heredadas de los controles gráficos de wxPython.</p>
+<p>Lo más común, es crear una clase que herede de <code class="docutils literal notranslate"><span class="pre">wx.Frame</span></code>, y en esta ir agregando todos
+los controles gráficos que necesitemos para que la aplicación sea funcional.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">wx</span>
+
+<span class="k">class</span> <span class="nc">MiFrame</span><span class="p">(</span><span class="n">wx</span><span class="o">.</span><span class="n">Frame</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">parent</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">wx</span><span class="o">.</span><span class="n">Frame</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Show</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">wx</span><span class="o">.</span><span class="n">App</span><span class="p">()</span>
+    <span class="n">frame</span> <span class="o">=</span> <span class="n">MiFrame</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">u</span><span class="s2">&quot;wxFrame Demo&quot;</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">MainLoop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Primero, definimos una clase MiFrame heredada de wx.Frame, agregamos el método <code class="docutils literal notranslate"><span class="pre">__init__</span></code> que
+para efectos de este texto será nuestro constructor de la clase, y aquí en <code class="docutils literal notranslate"><span class="pre">__init__</span></code> es
+necesario llamar también al método <code class="docutils literal notranslate"><span class="pre">__init__</span></code> de la superclase, pasándole como argumentos
+aquellos que hemos recibido desde el constructor de nuestra clase MiFrame. Note que, debido
+a la sintaxis de Python, el parámetro self será siempre el primer argumento del método <code class="docutils literal notranslate"><span class="pre">__init__</span></code>
+de la clase y superclase. Dentro del método <code class="docutils literal notranslate"><span class="pre">__init__</span></code> habrán de agregarse todos los controles
+(que veremos en la siguiente entrega) y hacer las conexiones de eventos requeridas.
+El método <code class="docutils literal notranslate"><span class="pre">Show</span></code> sirve, claro está, para mostrar el Frame en la pantalla.</p>
+<p>Para llamar al método <code class="docutils literal notranslate"><span class="pre">__init__</span></code> de la superclase, también puede utilizar la otra
+notación que implica el uso de super, algo como:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">super</span><span class="p">(</span><span class="n">MiFrame</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Finalmente, lo único que hacemos es instanciar un objeto de la clase <code class="docutils literal notranslate"><span class="pre">MiFrame</span></code>, con los mismos
+argumentos que utilizaríamos para uno de <code class="docutils literal notranslate"><span class="pre">wx.Frame</span></code>. Y bueno, lo de la clase <code class="docutils literal notranslate"><span class="pre">wx.App</span></code> ya nos lo
+sabemos, puesto que lo hemos visto en la sección anterior.</p>
+</div>
+</div>
+<div class="section" id="los-sizers-organizando-controles">
+<h2>Los sizers: organizando controles<a class="headerlink" href="#los-sizers-organizando-controles" title="Permalink to this headline">¶</a></h2>
+<p>En este capítulo veremos cómo posicionar y organizar los controles mediante
+el uso de sizers, los cuales son mecanismos de distribución automática de
+controles gráficos mediante algoritmos de posicionamiento.</p>
+<div class="section" id="posicionamiento-absoluto">
+<h3>Posicionamiento absoluto<a class="headerlink" href="#posicionamiento-absoluto" title="Permalink to this headline">¶</a></h3>
+<p>El <em>posicionamiento absoluto</em> es la manera más sencilla para posicionar
+y organizar controles dentro de una interfaz gráfica de wxPython. Esto
+consiste en manejar de forma manual el tamaño y posición de los controles
+mediante las propiedades <code class="docutils literal notranslate"><span class="pre">size</span></code> y <code class="docutils literal notranslate"><span class="pre">pos</span></code>,  respectivamente. Revise el siguiente
+ejemplo.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">wx</span>
+
+<span class="k">class</span> <span class="nc">MiFrame</span><span class="p">(</span><span class="n">wx</span><span class="o">.</span><span class="n">Frame</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">parent</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">wx</span><span class="o">.</span><span class="n">Frame</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bt1</span> <span class="o">=</span> <span class="n">wx</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="sa">u</span><span class="s2">&quot;Botón 1&quot;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bt2</span> <span class="o">=</span> <span class="n">wx</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="sa">u</span><span class="s2">&quot;Botón 2&quot;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">120</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Show</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">wx</span><span class="o">.</span><span class="n">App</span><span class="p">()</span>
+    <span class="n">frame</span> <span class="o">=</span> <span class="n">MiFrame</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">u</span><span class="s2">&quot;Posicionamiento absoluto&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">200</span><span class="p">))</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">MainLoop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Puede notar que a los <em>keyword arguments</em> <code class="docutils literal notranslate"><span class="pre">pos</span></code> y <code class="docutils literal notranslate"><span class="pre">size</span></code> se les pasa una tupla de
+dos elementos, que indican las coordenadas <em>x</em> e <em>y</em> del extremo superior izquierdo
+del control gráfico en el caso de la posición, y el ancho y alto del mismo en el caso del tamaño,
+siendo en ambos casos pixeles las unidades de medida.</p>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="wxapp"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>https://wxpython.org/docs/api/wx.App-class.html</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="programaci%C3%B3n-orientada-a-objetos.html" title="previous page">Programación orientada a objetos</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Pedro Jorge De Los Santos<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
