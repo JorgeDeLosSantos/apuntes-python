@@ -129,11 +129,6 @@
    Interfaces gráficas con wxPython
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="wxpython-guis.html#los-sizers-organizando-controles">
-   Los sizers: organizando controles
-  </a>
- </li>
 </ul>
 
 </nav>
@@ -258,17 +253,17 @@
      Modificando el color, estilos y grosor de línea
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#titulo-de-grafica-etiquetas-de-ejes-y-nombres-de-curvas">
-     Título de gráfica, etiquetas de ejes y nombres de curvas
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#anotaciones">
-     Anotaciones
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#titulo-de-grafica-etiquetas-de-ejes-y-nombres-de-curvas">
+   Título de gráfica, etiquetas de ejes y nombres de curvas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#anotaciones">
+   Anotaciones
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#graficas-en-coordenadas-polares">
@@ -286,6 +281,17 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#la-funcion-subplot-multiples-axes">
+   La función
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     subplot
+    </span>
+   </code>
+   : múltiples axes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#graficas-de-curvas-parametricas-en-el-espacio">
    Gráficas de curvas paramétricas en el espacio
   </a>
@@ -293,6 +299,11 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#graficas-de-superficies">
    Gráficas de superficies
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios">
+   Ejercicios
   </a>
  </li>
 </ul>
@@ -337,7 +348,7 @@ comenzar a trazar gráficas, vea el siguiente código:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1560e99cf28&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e71272748&gt;]
 </pre></div>
 </div>
 <img alt="_images/matplotlib_6_1.png" src="_images/matplotlib_6_1.png" />
@@ -375,7 +386,7 @@ de argumentos que se pasen.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1560f221668&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e71461e80&gt;]
 </pre></div>
 </div>
 <img alt="_images/matplotlib_11_1.png" src="_images/matplotlib_11_1.png" />
@@ -392,7 +403,7 @@ por ejemplo:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1560f2837b8&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e714bbf98&gt;]
 </pre></div>
 </div>
 <img alt="_images/matplotlib_13_1.png" src="_images/matplotlib_13_1.png" />
@@ -427,7 +438,7 @@ a cada valor de <code class="docutils literal notranslate"><span class="pre">x</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1560f2dab00&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e7151e400&gt;]
 </pre></div>
 </div>
 <img alt="_images/matplotlib_17_1.png" src="_images/matplotlib_17_1.png" />
@@ -443,7 +454,7 @@ a cada valor de <code class="docutils literal notranslate"><span class="pre">x</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1560f2b7470&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e7154f2e8&gt;]
 </pre></div>
 </div>
 <img alt="_images/matplotlib_19_1.png" src="_images/matplotlib_19_1.png" />
@@ -465,7 +476,7 @@ de manera respectiva, notará la diferencia entre los casos, es evidente que en 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1560f1ce2e8&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e71562898&gt;]
 </pre></div>
 </div>
 <img alt="_images/matplotlib_21_1.png" src="_images/matplotlib_21_1.png" />
@@ -481,7 +492,7 @@ de manera respectiva, notará la diferencia entre los casos, es evidente que en 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1560f38b1d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e715c19b0&gt;]
 </pre></div>
 </div>
 <img alt="_images/matplotlib_22_1.png" src="_images/matplotlib_22_1.png" />
@@ -501,7 +512,7 @@ la línea que se grafica. Por ejemplo, se puede pasar un tercer argumento que co
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1560f3ec860&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e716320f0&gt;]
 </pre></div>
 </div>
 <img alt="_images/matplotlib_24_1.png" src="_images/matplotlib_24_1.png" />
@@ -518,7 +529,7 @@ la línea que se grafica. Por ejemplo, se puede pasar un tercer argumento que co
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1560f4594e0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e71692cc0&gt;]
 </pre></div>
 </div>
 <img alt="_images/matplotlib_26_1.png" src="_images/matplotlib_26_1.png" />
@@ -536,7 +547,7 @@ disponibles para utilizar en la función <code class="docutils literal notransla
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x15610499198&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e726d1978&gt;]
 </pre></div>
 </div>
 <img alt="_images/matplotlib_28_1.png" src="_images/matplotlib_28_1.png" />
@@ -557,7 +568,7 @@ este no puede ser invocado mediante un sólo caracter, hace falta escribir todo 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x156104fada0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e72740630&gt;]
 </pre></div>
 </div>
 <img alt="_images/matplotlib_30_1.png" src="_images/matplotlib_30_1.png" />
@@ -571,7 +582,7 @@ este no puede ser invocado mediante un sólo caracter, hace falta escribir todo 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1561056b5f8&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e727a3e48&gt;]
 </pre></div>
 </div>
 <img alt="_images/matplotlib_32_1.png" src="_images/matplotlib_32_1.png" />
@@ -581,8 +592,9 @@ este no puede ser invocado mediante un sólo caracter, hace falta escribir todo 
 <div><p>La función <code class="docutils literal notranslate"><span class="pre">plot</span></code> soporta algunos <em>keyword arguments</em> acortados. Por ejemplo, se puede utilizar <code class="docutils literal notranslate"><span class="pre">ls</span></code> en lugar de <code class="docutils literal notranslate"><span class="pre">linestyle</span></code>, <code class="docutils literal notranslate"><span class="pre">lw</span></code> en lugar de <code class="docutils literal notranslate"><span class="pre">linewidth</span></code>, <code class="docutils literal notranslate"><span class="pre">ms</span></code> en lugar de <code class="docutils literal notranslate"><span class="pre">markersize</span></code>, <code class="docutils literal notranslate"><span class="pre">mfc</span></code> en lugar de <code class="docutils literal notranslate"><span class="pre">markerfacecolor</span></code>, entre otros.</p>
 </div></blockquote>
 </div>
+</div>
 <div class="section" id="titulo-de-grafica-etiquetas-de-ejes-y-nombres-de-curvas">
-<h3>Título de gráfica, etiquetas de ejes y nombres de curvas<a class="headerlink" href="#titulo-de-grafica-etiquetas-de-ejes-y-nombres-de-curvas" title="Permalink to this headline">¶</a></h3>
+<h2>Título de gráfica, etiquetas de ejes y nombres de curvas<a class="headerlink" href="#titulo-de-grafica-etiquetas-de-ejes-y-nombres-de-curvas" title="Permalink to this headline">¶</a></h2>
 <p>Por su naturaleza las gráficas nos sirven para presentar y/o visualizar información de ciertos datos, para
 lo cual se hace necesario especificar información descriptiva de lo que se muestra. Es muy común
 que se agreguen etiquetas a los ejes horizontal y vertical, así como el nombre de gráfica. Además, si
@@ -603,7 +615,7 @@ se está graficando más de una curva, se hace necesario especificar a qué refi
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x156105d4470&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x20e7280dc88&gt;
 </pre></div>
 </div>
 <img alt="_images/matplotlib_35_1.png" src="_images/matplotlib_35_1.png" />
@@ -614,7 +626,7 @@ vertical. Con <code class="docutils literal notranslate"><span class="pre">title
 colocar el recuadro con el <em>nombre</em> asignado a cada curva mediante el <em>keyword argument</em> <code class="docutils literal notranslate"><span class="pre">label</span></code>.</p>
 </div>
 <div class="section" id="anotaciones">
-<h3>Anotaciones<a class="headerlink" href="#anotaciones" title="Permalink to this headline">¶</a></h3>
+<h2>Anotaciones<a class="headerlink" href="#anotaciones" title="Permalink to this headline">¶</a></h2>
 <p>Con anotaciones nos referimos a cualquier texto que se coloque dentro del <em>Axes</em> de Matplotlib. Usualmente
 utilizadas para indicar ciertas características partículares en una gráfica, o bien alguna nota informativa al respecto.
 La función base para realizar este tipo de tareas es <code class="docutils literal notranslate"><span class="pre">text</span></code>. La sintaxis más simple de <code class="docutils literal notranslate"><span class="pre">text</span></code> es:</p>
@@ -668,7 +680,6 @@ Por ejemplo:</p>
 </div>
 <p>Observe que lo único que se cambió fueron algunas propiedades del texto, tales como el tamaño de la fuente con <code class="docutils literal notranslate"><span class="pre">fontsize</span></code>, el color de fuente con <code class="docutils literal notranslate"><span class="pre">color</span></code> y el tipo de fuente con <code class="docutils literal notranslate"><span class="pre">name</span></code>, con este último se debe tener cuidado, dado que el nombre de la fuente indicada debe estar instalada en la PC que se ejecuta.</p>
 </div>
-</div>
 <div class="section" id="graficas-en-coordenadas-polares">
 <h2>Gráficas en coordenadas polares<a class="headerlink" href="#graficas-en-coordenadas-polares" title="Permalink to this headline">¶</a></h2>
 <p>Las coordenadas polares o sistema de coordenadas polares son un sistema de coordenadas bidimensional en el que cada punto del plano se determina por una distancia y un ángulo <a class="reference external" href="https://es.wikipedia.org/wiki/Coordenadas_polares">*</a> . Habitualmente
@@ -689,7 +700,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1560f148320&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e6e895cc0&gt;]
 </pre></div>
 </div>
 <img alt="_images/matplotlib_44_1.png" src="_images/matplotlib_44_1.png" />
@@ -806,6 +817,107 @@ rosa polar, cuya ecuación general está dada por:</p>
 </div>
 </div>
 </div>
+<div class="section" id="la-funcion-subplot-multiples-axes">
+<h2>La función <code class="docutils literal notranslate"><span class="pre">subplot</span></code>: múltiples axes<a class="headerlink" href="#la-funcion-subplot-multiples-axes" title="Permalink to this headline">¶</a></h2>
+<p>La función <code class="docutils literal notranslate"><span class="pre">subplot</span></code> sirve para insertar <em>axes</em> en un <em>figure</em> organizados de una manera predefinida, usualmente una cuadrícula de m filas y n columnas. En cada uno de esos <em>axes</em> se pueden colocar información por separado.</p>
+<p>En el siguiente ejemplo se muestra el uso de la función <code class="docutils literal notranslate"><span class="pre">subplot</span></code> para crear dos <em>axes</em> apilados de forma vertical:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">x</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">211</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">212</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="s2">&quot;m&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x24ad5f03438&gt;]
+</pre></div>
+</div>
+<img alt="_images/matplotlib_60_1.png" src="_images/matplotlib_60_1.png" />
+</div>
+</div>
+<p>La sintaxis básica de <code class="docutils literal notranslate"><span class="pre">subplot</span></code> es:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">mnk</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Donde <code class="docutils literal notranslate"><span class="pre">m</span></code> corresponde al número de filas y <code class="docutils literal notranslate"><span class="pre">n</span></code> al número de columnas del arreglo de <em>axes</em> que se mostrarán. Observe que en el ejemplo anterior <code class="docutils literal notranslate"><span class="pre">m=2</span></code> y <code class="docutils literal notranslate"><span class="pre">n=1</span></code>. El valor de <code class="docutils literal notranslate"><span class="pre">k</span></code> hace referencia a la posición (en el arreglo) del <em>axes</em> correspondiente. En ese entendido, la línea <code class="docutils literal notranslate"><span class="pre">plt.subplot(211)</span></code> refiere al <em>axes</em> en la primera posición del arreglo de dos filas y una columna, cualquier instrucción de graficado que se coloque posteriormente a esa línea, se entenderá que deberán mostrarse en ese <em>axes</em>, tal y como lo puede constatar en el ejemplo anterior.</p>
+<p>Se pueden colocar etiquetas por separado a cada uno de los <em>axes</em> insertado mediante <code class="docutils literal notranslate"><span class="pre">subplot</span></code>, por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">t</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">211</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Tiempo&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Posición&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">212</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="s2">&quot;m&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Tiempo&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Velocidad&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Velocidad&#39;)
+</pre></div>
+</div>
+<img alt="_images/matplotlib_62_1.png" src="_images/matplotlib_62_1.png" />
+</div>
+</div>
+<p>Se puede observar que, la etiqueta horizontal para el primer <em>axes</em> no es visible, esto se puede <em>arreglar</em> utilizando la función <code class="docutils literal notranslate"><span class="pre">tight_layout</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">t</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">211</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Tiempo&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Posición&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">212</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="s2">&quot;m&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Tiempo&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Velocidad&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/matplotlib_64_0.png" src="_images/matplotlib_64_0.png" />
+</div>
+</div>
+<p>Enseguida se muestra un conjunto de 16 <em>axes</em> creados con la función <code class="docutils literal notranslate"><span class="pre">subplot</span></code>, con la intención de que pueda indentificar el orden en el cual Matplotlib los coloca en la rejilla; se puede inferir rapidamente que los numera en orden creciente hacia la derecha y hacia abajo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">17</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/matplotlib_66_0.png" src="_images/matplotlib_66_0.png" />
+</div>
+</div>
+<p>Del código anterior se identifica que la función <code class="docutils literal notranslate"><span class="pre">subplot</span></code> también puede recibir los argumentos por separado, es decir, en la forma:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="graficas-de-curvas-parametricas-en-el-espacio">
 <h2>Gráficas de curvas paramétricas en el espacio<a class="headerlink" href="#graficas-de-curvas-parametricas-en-el-espacio" title="Permalink to this headline">¶</a></h2>
 <p>Una función vectorial de la forma:</p>
@@ -839,10 +951,10 @@ trabajar con este tipo de expresiones en el análisis cinemático de partículas
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;mpl_toolkits.mplot3d.art3d.Line3D at 0x1561089e4a8&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;mpl_toolkits.mplot3d.art3d.Line3D at 0x20e72b32cc0&gt;]
 </pre></div>
 </div>
-<img alt="_images/matplotlib_60_1.png" src="_images/matplotlib_60_1.png" />
+<img alt="_images/matplotlib_70_1.png" src="_images/matplotlib_70_1.png" />
 </div>
 </div>
 <p>Ahora explicamos lo referente al código anterior. Observe que en la primera línea importamos la clase <code class="docutils literal notranslate"><span class="pre">Axes3D</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">mpl_toolkits.maplot3d</span></code>, esto nos sirve para poder trabajar con gráficas tridimensionales. Luego, definimos un objeto de la
@@ -879,7 +991,7 @@ ejemplo el siguiente código:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Z&#39;)
 </pre></div>
 </div>
-<img alt="_images/matplotlib_62_1.png" src="_images/matplotlib_62_1.png" />
+<img alt="_images/matplotlib_72_1.png" src="_images/matplotlib_72_1.png" />
 </div>
 </div>
 </div>
@@ -913,11 +1025,11 @@ ejemplo el siguiente código:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x156171a5518&gt;,
- &lt;matplotlib.lines.Line2D at 0x156171a54a8&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e72c5ec18&gt;,
+ &lt;matplotlib.lines.Line2D at 0x20e72c5eba8&gt;]
 </pre></div>
 </div>
-<img alt="_images/matplotlib_67_1.png" src="_images/matplotlib_67_1.png" />
+<img alt="_images/matplotlib_77_1.png" src="_images/matplotlib_77_1.png" />
 </div>
 </div>
 <p>Observe que los puntos a evaluar en este caso serán <span class="math notranslate nohighlight">\((0,10), (0,20), (1,10), (1,20)\)</span>. La densidad de la rejilla (o el número de puntos a evaluar) depende de la cantidad de valores que contengan los vectores que se le pasen como argumentos a la función <code class="docutils literal notranslate"><span class="pre">meshgrid</span></code>, por ejemplo:</p>
@@ -931,7 +1043,7 @@ ejemplo el siguiente código:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/matplotlib_69_0.png" src="_images/matplotlib_69_0.png" />
+<img alt="_images/matplotlib_79_0.png" src="_images/matplotlib_79_0.png" />
 </div>
 </div>
 <p>En general, si se requiere evaluar la funcion <span class="math notranslate nohighlight">\( z = f(x,y) \)</span> en la región <span class="math notranslate nohighlight">\( R = \{(x,y)\,|\,a \leq x \leq b, c \leq y \leq d \} \)</span>, entonces se tendrá:</p>
@@ -959,10 +1071,42 @@ ejemplo el siguiente código:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/matplotlib_72_0.png" src="_images/matplotlib_72_0.png" />
+<img alt="_images/matplotlib_82_0.png" src="_images/matplotlib_82_0.png" />
 </div>
 </div>
-<p><em>Desmenuzando</em> un poco el código anterior, las primeras tres líneas, como se había descrito con anterioridad, sirven para poder crear un <em>Axes</em> que nos permita trabajar con gráficas tridimensionales. Con la función <code class="docutils literal notranslate"><span class="pre">linspace</span></code> se crean los intervalos de evaluación para cada variable independiente, luego, <code class="docutils literal notranslate"><span class="pre">meshgrid</span></code> permite formar la rejilla o puntos sobre los cuales se evaluará la función <span class="math notranslate nohighlight">\( z = f(x,y) \)</span>. La expresión <code class="docutils literal notranslate"><span class="pre">Z</span> <span class="pre">=</span> <span class="pre">X**2</span> <span class="pre">+</span> <span class="pre">Y**2</span></code> es propiamente la evaluación de la función de dos variables. La función <code class="docutils literal notranslate"><span class="pre">plot_surface</span></code> recibe como argumentos las tres matrices <code class="docutils literal notranslate"><span class="pre">X</span></code>,<code class="docutils literal notranslate"><span class="pre">Y</span></code>,<code class="docutils literal notranslate"><span class="pre">Z</span></code> que corresponden</p>
+<p><em>Desmenuzando</em> un poco el código anterior, las primeras tres líneas, como se había descrito con anterioridad, sirven para poder crear un <em>Axes</em> que nos permita trabajar con gráficas tridimensionales. Con la función <code class="docutils literal notranslate"><span class="pre">linspace</span></code> se crean los intervalos de evaluación para cada variable independiente, luego, <code class="docutils literal notranslate"><span class="pre">meshgrid</span></code> permite formar la rejilla o puntos sobre los cuales se evaluará la función <span class="math notranslate nohighlight">\( z = f(x,y) \)</span>. La expresión <code class="docutils literal notranslate"><span class="pre">Z</span> <span class="pre">=</span> <span class="pre">X**2</span> <span class="pre">+</span> <span class="pre">Y**2</span></code> es propiamente la evaluación de la función de dos variables. La función <code class="docutils literal notranslate"><span class="pre">plot_surface</span></code> recibe como argumentos las tres matrices <code class="docutils literal notranslate"><span class="pre">X</span></code>,<code class="docutils literal notranslate"><span class="pre">Y</span></code>,<code class="docutils literal notranslate"><span class="pre">Z</span></code> que corresponden a las variables independientes y función, respectivamente. El argumento <code class="docutils literal notranslate"><span class="pre">cmap</span></code> se utiliza para indicar el mapa de color que se utilizará.</p>
+<p>Enseguida se muestra otro ejemplo, en este caso se grafica la función <span class="math notranslate nohighlight">\( z = \cos(x) + \text{sen}(y) \)</span>, evaluada en la región <span class="math notranslate nohighlight">\(R = \{(x,y)\,|\, 0 \leq x \leq 3\pi, 0 \leq y \leq 3\pi \}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s2">&quot;3d&quot;</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span><span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;inferno&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/matplotlib_84_0.png" src="_images/matplotlib_84_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Gráfique la función <span class="math notranslate nohighlight">\( y = 10 \cos x \)</span> en el intervalo <span class="math notranslate nohighlight">\( 0 \leq x \leq 2\pi\)</span></p></li>
+<li><p>Gráfique la función <span class="math notranslate nohighlight">\( z = t^2 + \frac{1}{3}t \)</span> en el intervalo <span class="math notranslate nohighlight">\( -10 \leq t \leq 20\)</span>. Etiquete el eje horizontal como <code class="docutils literal notranslate"><span class="pre">Tiempo</span></code> y el eje vertical como <code class="docutils literal notranslate"><span class="pre">Aceleración</span></code>.</p></li>
+<li><p>Gráfique la curva parámetrica:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split} x(t) = \cos t \\ y(t) = \text{sen } t \end{split}\]</div>
+<p>Para <span class="math notranslate nohighlight">\( 0 \leq t \leq 2\pi \)</span></p>
 </div>
 </div>
 
