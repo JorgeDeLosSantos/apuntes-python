@@ -129,11 +129,6 @@
    Interfaces gráficas con wxPython
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="wxpython-guis.html#los-sizers-organizando-controles">
-   Los sizers: organizando controles
-  </a>
- </li>
 </ul>
 
 </nav>
@@ -330,6 +325,16 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        print
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-funcion-input">
+     La función
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       input
       </span>
      </code>
     </a>
@@ -1414,46 +1419,19 @@ hola
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">30</span><span class="o">*</span><span class="s2">&quot;-&quot;</span><span class="p">)</span>
+<div class="tip admonition">
+<p class="admonition-title">print y los strings formateados</p>
+<p>Si te interesa obtener información acerca de <code class="docutils literal notranslate"><span class="pre">print</span></code> y su uso conjunto con strings formateados, revisa el capítulo dedicado a los strings.</p>
+</div>
+</div>
+<div class="section" id="la-funcion-input">
+<h3>La función <code class="docutils literal notranslate"><span class="pre">input</span></code><a class="headerlink" href="#la-funcion-input" title="Permalink to this headline">¶</a></h3>
+<p>En Python, la función <code class="docutils literal notranslate"><span class="pre">input</span></code> permite obtener entrada por teclado, con la finalidad de <em>tomar</em> información proporcionada por el usuario. La sintaxis de <code class="docutils literal notranslate"><span class="pre">input</span></code> es:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>------------------------------
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">30</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a + b = </span><span class="si">{a}</span><span class="s2"> + </span><span class="si">{b}</span><span class="s2"> = </span><span class="si">{c}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a + b = 10 + 30 = 40
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">32479</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">54988</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a + b = </span><span class="si">{a:0.3e}</span><span class="s2"> + </span><span class="si">{b:0.2f}</span><span class="s2"> = </span><span class="si">{c}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a + b = 3.248e+04 + 54988.00 = 87467
-</pre></div>
-</div>
-</div>
-</div>
+<p>Donde <code class="docutils literal notranslate"><span class="pre">prompt</span></code> es el mensaje que se muestra al usuario al momento que se le solicita la información, <code class="docutils literal notranslate"><span class="pre">var</span></code> es la variable en la cual se almacena lo que el usuario ingresa hasta que presiona la tecla <strong>Enter</strong>.</p>
+<p>Veamos un ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese su nombre: &quot;</span><span class="p">)</span>
@@ -1468,16 +1446,60 @@ Hola Jorge bienvenido
 </div>
 </div>
 </div>
+<p>Como puedes observar, el programa anterior solicita al usuario un valor de entrada utilizando el prompt <code class="docutils literal notranslate"><span class="pre">Ingrese</span> <span class="pre">su</span> <span class="pre">nombre:</span> </code>; en este caso el usuario ingresó la cadena <code class="docutils literal notranslate"><span class="pre">Jorge</span></code>. Con la segunda línea únicamente se toma el valor guardado en la variable nombre y se muestra junto con  las cadenas <code class="docutils literal notranslate"><span class="pre">&quot;Hola&quot;</span></code> y <code class="docutils literal notranslate"><span class="pre">&quot;bienvenido&quot;</span></code>.</p>
+<p>Es importante tener en cuenta que la función <code class="docutils literal notranslate"><span class="pre">input</span></code> devuelve siempre un valor de tipo string. Así, si quisiéramos solicitar un valor de tipo numérico y realizar operaciones con él, entonces, se debe tener el cuidado de convertir el string a un tipo numérico de manera explícita, de lo contrario podríamos tener un programa que nos <em>lance</em> un error, o en el peor de los casos, que funcione de manera incorrecta.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese un número: &quot;</span><span class="p">)</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2 *&quot;</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># No podemos comparar un string con un entero</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese un número: &quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n es mayor 10&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ingrese un número: 10
-2 * 10.0 = 20.0
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">5</span><span class="n">ab401de4360</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># No podemos comparar un string con un entero</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">n</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese un número: &quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n es mayor 10&quot;</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: &#39;&gt;&#39; not supported between instances of &#39;str&#39; and &#39;int&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Aquí n+n+n corresponde a concatenar la cadena &quot;12&quot;, en lugar de sumar los valores numéricos.</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese un número: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="n">n</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ingrese un número: 12
+121212
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ahora n+n+n si corresponde a sumar dichos valores numéricamente</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese un número: &quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="n">n</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ingrese un número: 12
+36.0
 </pre></div>
 </div>
 </div>
@@ -1488,8 +1510,7 @@ Hola Jorge bienvenido
 <h2>Control de flujo<a class="headerlink" href="#control-de-flujo" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="condicional-if-elif-else">
 <h3>Condicional <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code><a class="headerlink" href="#condicional-if-elif-else" title="Permalink to this headline">¶</a></h3>
-<p>El condicional <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> es una estructura de control que sirve para tomar decisiones
-en el flujo del programa. La sintaxis para <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> es:</p>
+<p>El condicional <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> es una estructura de control que sirve para <em>tomar decisiones</em> en el flujo del programa. La sintaxis para <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> es:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">cond1</span><span class="p">:</span>
     <span class="c1"># hacer algo </span>
 <span class="k">elif</span> <span class="n">cond2</span><span class="p">:</span>
@@ -1506,6 +1527,28 @@ en el flujo del programa. La sintaxis para <code class="docutils literal notrans
 <p>Donde <code class="docutils literal notranslate"><span class="pre">cond1,</span> <span class="pre">cond2,</span> <span class="pre">...</span> <span class="pre">condn</span></code> son valores lógicos que resultan de una comparación. Esta estructura se evalúa
 secuencialmente hasta encontrar una condición que se cumpla, si ninguna lo hace, entonces se ejecuta la instrucción
 colocada en el caso por default <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p>
+<p>En el siguiente fragmento de código se muestra un programa que verifica si el valor de <code class="docutils literal notranslate"><span class="pre">a</span></code> es mayor, menor o igual al valor de <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a es mayor que b&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a es menor que b&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a es igual a b&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a es menor que b
+</pre></div>
+</div>
+</div>
+</div>
+<p>Es muy común que en algunos, por cuestiones inherentes a lo que se está programando, únicamente se decida entre dos posibilidades que son excluyentes, en esos casos basta con una estructura <code class="docutils literal notranslate"><span class="pre">if-else</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">1111</span>
@@ -1519,29 +1562,6 @@ colocada en el caso por default <code class="docutils literal notranslate"><span
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El número es impar
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nota</span> <span class="o">=</span> <span class="mi">7</span>
-
-<span class="k">if</span> <span class="mf">9.5</span> <span class="o">&lt;=</span> <span class="n">nota</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Excelente&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="mf">8.5</span> <span class="o">&lt;=</span> <span class="n">nota</span> <span class="o">&lt;</span> <span class="mf">9.5</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Muy bien&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="mf">7.5</span> <span class="o">&lt;=</span> <span class="n">nota</span> <span class="o">&lt;</span> <span class="mf">8.5</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bien&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="mf">7.0</span> <span class="o">&lt;=</span> <span class="n">nota</span> <span class="o">&lt;</span> <span class="mf">7.5</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Regular&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No aprobado&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Regular
 </pre></div>
 </div>
 </div>
