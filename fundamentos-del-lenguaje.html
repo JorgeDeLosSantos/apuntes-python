@@ -266,8 +266,14 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#booleanos">
-     Booleanos
+    <a class="reference internal nav-link" href="#booleanos-bool">
+     Booleanos (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       bool
+      </span>
+     </code>
+     )
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -282,18 +288,36 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#listas">
-     Listas
+    <a class="reference internal nav-link" href="#listas-list">
+     Listas (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       list
+      </span>
+     </code>
+     )
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tuplas">
-     Tuplas
+    <a class="reference internal nav-link" href="#tuplas-tuple">
+     Tuplas (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       tuple
+      </span>
+     </code>
+     )
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#diccionarios">
-     Diccionarios
+    <a class="reference internal nav-link" href="#diccionarios-dict">
+     Diccionarios (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dict
+      </span>
+     </code>
+     )
     </a>
    </li>
   </ul>
@@ -443,7 +467,7 @@ algoritmos o el mundo propio de la programación de computadoras.</p>
 <div class="section" id="instalando-python">
 <h2>Instalando Python<a class="headerlink" href="#instalando-python" title="Permalink to this headline">¶</a></h2>
 <p>En estos apuntes se utilizará la distribución Anaconda de Python, la cual contiene el intérprete y las librerías del
-<em>core</em>, pero además incluye la mayoría de librerías utilizadas para el desarrollo de aplicaciones de corte
+<em>core</em>, pero que además incluye la mayoría de librerías utilizadas para el desarrollo de aplicaciones de corte
 técnico-científico.</p>
 <p>La descarga de Anaconda puede realizarla desde el sitio https://www.anaconda.com/download/, selecciona el
 paquete de descarga conforme al sistema operativo (Windows, macOS o Linux) así como la arquitectura de su PC.
@@ -570,13 +594,12 @@ con el operador *:</p>
 </div>
 </div>
 </div>
-<p>Puede ampliar la capacidad de las funcionalidades <em>built-in</em> de Python si importa alguna librería, como
-<code class="docutils literal notranslate"><span class="pre">math</span></code>, pero claro, eso será un tema a tratar con posterioridad.</p>
+<p>Puede ampliar la capacidad de las funcionalidades <em>built-in</em> de Python si importa alguna librería, como <code class="docutils literal notranslate"><span class="pre">math</span></code>, pero claro, esto será un tema a tratar con posterioridad.</p>
 </div>
 <div class="section" id="variables-y-tipos-de-datos">
 <h2>Variables y tipos de datos<a class="headerlink" href="#variables-y-tipos-de-datos" title="Permalink to this headline">¶</a></h2>
 <p>Al ser un lenguaje de alto nivel, Python dispone de los tipos de datos elementales en cualquier lenguaje de programación,
-pero además incluye estructuras de datos muy <em>avanzadas</em> y con altas prestaciones que facilitan en muchos
+pero además incluye estructuras de datos más complejas y con altas prestaciones que facilitan en muchos
 aspectos la tarea del programador.</p>
 <p>Python es un lenguaje de tipado dinámico en el que no hace falta declarar el tipo de dato que asignará a una variable,
 de igual manera una variable puede cambiar de tipo conforme la ejecución del programa, por ello se debe tener cuidado
@@ -702,8 +725,8 @@ puede verificar cuáles son estas palabras tecleando lo siguiente:</p>
 </div>
 </div>
 </div>
-<div class="section" id="booleanos">
-<h3>Booleanos<a class="headerlink" href="#booleanos" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="booleanos-bool">
+<h3>Booleanos (<code class="docutils literal notranslate"><span class="pre">bool</span></code>)<a class="headerlink" href="#booleanos-bool" title="Permalink to this headline">¶</a></h3>
 <p>Las variables booleanas sólo pueden adoptar dos valores: verdadero (<code class="docutils literal notranslate"><span class="pre">True</span></code>) o falso (<code class="docutils literal notranslate"><span class="pre">False</span></code>). Un valor booleano se puede definir directamente a partir de las constantes <code class="docutils literal notranslate"><span class="pre">True</span></code> y <code class="docutils literal notranslate"><span class="pre">False</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -878,8 +901,8 @@ se desea acceder, siendo 0 para la primera letra, 1 para la segunda y así de ma
 </div>
 </div>
 </div>
-<div class="section" id="listas">
-<h3>Listas<a class="headerlink" href="#listas" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="listas-list">
+<h3>Listas (<code class="docutils literal notranslate"><span class="pre">list</span></code>)<a class="headerlink" href="#listas-list" title="Permalink to this headline">¶</a></h3>
 <p>Las listas son estructuras de datos que pueden almacenar cualquier otro tipo de dato, inclusive una lista
 puede contener otra lista, además, la cantidad de elementos de una lista se puede modificar removiendo o
 añadiendo elementos. Para definir una lista se utilizan los corchetes, dentro de estos se colocan todos
@@ -966,8 +989,8 @@ los elementos separados por comas:</p>
 </div>
 </div>
 </div>
-<div class="section" id="tuplas">
-<h3>Tuplas<a class="headerlink" href="#tuplas" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="tuplas-tuple">
+<h3>Tuplas (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>)<a class="headerlink" href="#tuplas-tuple" title="Permalink to this headline">¶</a></h3>
 <p>Las tuplas son secuencias de elementos similares a las listas, la diferencia principal es que
 las tuplas no pueden ser modificadas directamente, es decir, una tupla no dispone de los métodos
 como <code class="docutils literal notranslate"><span class="pre">append</span></code> o <code class="docutils literal notranslate"><span class="pre">insert</span></code> que modifican los elementos de una lista.</p>
@@ -1035,8 +1058,8 @@ como <code class="docutils literal notranslate"><span class="pre">append</span><
 </div>
 </div>
 </div>
-<div class="section" id="diccionarios">
-<h3>Diccionarios<a class="headerlink" href="#diccionarios" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="diccionarios-dict">
+<h3>Diccionarios (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)<a class="headerlink" href="#diccionarios-dict" title="Permalink to this headline">¶</a></h3>
 <p>Los diccionarios son estructuras que contienen una colección de elementos de la
 forma <code class="docutils literal notranslate"><span class="pre">clave:</span> <span class="pre">valor</span></code> separados por comas y encerrados entre llaves.
 Las claves deben ser objetos inmutables y los valores pueden ser de cualquier tipo.
@@ -1159,7 +1182,7 @@ si quisieramos obtener la edad de la clave <code class="docutils literal notrans
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-113-7a3a9a917f79&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">7</span><span class="n">a3a9a917f79</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="s2">&quot;a&quot;</span> <span class="o">&gt;</span> <span class="mi">10</span>
 
 <span class="ne">TypeError</span>: &#39;&gt;&#39; not supported between instances of &#39;str&#39; and &#39;int&#39;
@@ -1170,16 +1193,6 @@ si quisieramos obtener la edad de la clave <code class="docutils literal notrans
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-114-4dd688af572f&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: &#39;&lt;&#39; not supported between instances of &#39;list&#39; and &#39;tuple&#39;
 </pre></div>
 </div>
 </div>
@@ -1834,14 +1847,13 @@ pasarle dos argumentos: un número real y la cantidad de lugares decimales a con
 </div>
 <div class="section" id="funciones-definidas-por-el-usuario">
 <h3>Funciones definidas por el usuario<a class="headerlink" href="#funciones-definidas-por-el-usuario" title="Permalink to this headline">¶</a></h3>
-<p>Además de las funciones nativas de Python, es posible definir nuestras propias funciones.
-En Python, de manera general, una función se define siguiendo la estructura mostrada a continuación:</p>
+<p>Además de las funciones nativas de Python, es posible definir nuestras propias funciones. En Python, de manera general, una función se define siguiendo la estructura mostrada a continuación:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nombre_fun</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">argN</span><span class="p">):</span>
-	<span class="c1"># Cuerpo de la función</span>
-	<span class="c1"># .</span>
-	<span class="c1"># .</span>
-	<span class="c1"># .</span>
-	<span class="k">return</span> <span class="n">val1</span><span class="p">,</span> <span class="n">val2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">valN</span>
+    <span class="c1"># Cuerpo de la función</span>
+    <span class="c1"># .</span>
+    <span class="c1"># .</span>
+    <span class="c1"># .</span>
+    <span class="k">return</span> <span class="n">val1</span><span class="p">,</span> <span class="n">val2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">valN</span>
 </pre></div>
 </div>
 <p>Donde <code class="docutils literal notranslate"><span class="pre">def</span></code> es una palabra que debe anteceder siempre a la definición de una función,
