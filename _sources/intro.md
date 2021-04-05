@@ -1,4 +1,4 @@
-# Introducción
+# Prefacio
 
 ```{admonition} Apuntes en desarrollo
 :class: warning
