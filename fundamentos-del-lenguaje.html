@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fundamentos del lenguaje &#8212; Introducción a Python</title>
+    <title>Fundamentos del lenguaje &#8212; Python para Ingenieros</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -57,8 +57,6 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="NumPy: estructuras matriciales" href="numpy.html" />
-    <link rel="prev" title="Introducción" href="intro.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -80,7 +78,7 @@
   <img src="_static/logo.png" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">Introducción a Python</h1>
+  <h1 class="site-logo" id="site-title">Python para Ingenieros</h1>
   
 </a>
 </div>
@@ -98,24 +96,49 @@
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Fundamentos del lenguaje
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Introducci%C3%B3n.html">
+   Introducción
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="numpy.html">
+  <a class="reference internal" href="Variables%2C%20operadores%20y%20expresiones.html">
+   Variables, operadores y expresiones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Cadenas%20de%20caracteres.html">
+   Cadenas de caracteres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Listas%2C%20tuplas%20y%20diccionarios.html">
+   Listas, tuplas y diccionarios
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Estructuras%20de%20control.html">
+   Estructuras de control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Funciones.html">
+   Funciones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="NumPy.html">
    NumPy: estructuras matriciales
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="matplotlib.html">
+  <a class="reference internal" href="Matplotlib.html">
    Matplotlib: visualización gráfica
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="sympy.html">
+  <a class="reference internal" href="SymPy.html">
    Sympy: un sistema de álgebra computacional
   </a>
  </li>
@@ -1463,26 +1486,24 @@ Hola Jorge bienvenido
 <p>Es importante tener en cuenta que la función <code class="docutils literal notranslate"><span class="pre">input</span></code> devuelve siempre un valor de tipo string. Así, si quisiéramos solicitar un valor de tipo numérico y realizar operaciones con él, entonces, se debe tener el cuidado de convertir el string a un tipo numérico de manera explícita, de lo contrario podríamos tener un programa que nos <em>lance</em> un error, o en el peor de los casos, que funcione de manera incorrecta.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># No podemos comparar un string con un entero</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># No podemos sumar un string con un entero</span>
 <span class="n">n</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese un número: &quot;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n es mayor 10&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ingrese un número: 10
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ingrese un número: 20
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">5</span><span class="n">ab401de4360</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># No podemos comparar un string con un entero</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">20</span><span class="o">-</span><span class="n">a150c9d34f22</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># No podemos sumar un string con un entero</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">n</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese un número: &quot;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n es mayor 10&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">10</span><span class="p">)</span>
 
-<span class="ne">TypeError</span>: &#39;&gt;&#39; not supported between instances of &#39;str&#39; and &#39;int&#39;
+<span class="ne">TypeError</span>: must be str, not int
 </pre></div>
 </div>
 </div>
@@ -2171,8 +2192,6 @@ podrían ser tanto mayúsculas como minúsculas.</p></li>
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">Introducción</a>
-    <a class='right-next' id="next-link" href="numpy.html" title="next page">NumPy: estructuras matriciales</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

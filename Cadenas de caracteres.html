@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Programación orientada a objetos &#8212; Python para Ingenieros</title>
+    <title>Cadenas de caracteres &#8212; Python para Ingenieros</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -57,8 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Interfaces gráficas con wxPython" href="wxpython-guis.html" />
-    <link rel="prev" title="Sympy: un sistema de álgebra computacional" href="SymPy.html" />
+    <link rel="next" title="Listas, tuplas y diccionarios" href="Listas%2C%20tuplas%20y%20diccionarios.html" />
+    <link rel="prev" title="Variables, operadores y expresiones" href="Variables%2C%20operadores%20y%20expresiones.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -109,8 +109,8 @@
    Variables, operadores y expresiones
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Cadenas%20de%20caracteres.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Cadenas de caracteres
   </a>
  </li>
@@ -144,8 +144,8 @@
    Sympy: un sistema de álgebra computacional
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="programaci%C3%B3n-orientada-a-objetos.html">
    Programación orientada a objetos
   </a>
  </li>
@@ -196,7 +196,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/programación-orientada-a-objetos.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/Cadenas de caracteres.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -221,7 +221,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/programación-orientada-a-objetos.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Cadenas de caracteres.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -245,8 +245,113 @@
         
               <div>
                 
-  <div class="section" id="programacion-orientada-a-objetos">
-<h1>Programación orientada a objetos<a class="headerlink" href="#programacion-orientada-a-objetos" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="cadenas-de-caracteres">
+<h1>Cadenas de caracteres<a class="headerlink" href="#cadenas-de-caracteres" title="Permalink to this headline">¶</a></h1>
+<p>Las cadenas de caracteres (denominadas habitualmente y de manera indistinta como <em>strings</em> es un tipo de dato
+que contiene una secuencia de símbolos, mismos que pueden ser alfanúmericos hasta cualquier otro símbolo propio de
+un sistema de escritura. En Python los strings se definen entre comillas dobles o simples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;esta es una cadena de caracteres&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;esta es una cadena de caracteres&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;esta también&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;esta también&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Puede concatenar dos strings utilizando el operador <code class="docutils literal notranslate"><span class="pre">+</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Hola&quot;</span> <span class="o">+</span> <span class="s2">&quot;mundo&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Holamundo&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notará que Python por sí mismo no sabe que estamos uniendo dos palabras y que entre ellas debería haber un espacio
+para su correcta lectura, evidentemente este tipo de cuestiones son las que el programador debe tomar en cuenta al
+escribir un código.</p>
+<p>Una cadena de caracteres es lo que en Python se conoce como <em>iterable</em>, es decir, una secuencia de
+elementos agrupados a los cuales se puede acceder de manera individual mediante indexación. Por ejemplo,
+sea <code class="docutils literal notranslate"><span class="pre">nombre</span></code> una cadena de caracteres dada por:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span><span class="o">=</span><span class="s2">&quot;Catalina&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Puede acceder a cada una de las letras que componen dicha cadena mediante la notación <code class="docutils literal notranslate"><span class="pre">iter[pos]</span></code>, donde
+<code class="docutils literal notranslate"><span class="pre">iter</span></code> es el nombre del iterable y <code class="docutils literal notranslate"><span class="pre">pos</span></code> la posición en que se encuentra el caracter al cual
+se desea acceder, siendo 0 para la primera letra, 1 para la segunda y así de manera consecutiva. Por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;C&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;l&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;t&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Al último elemento, sin importar la longitud de la cadena, se accede con el índice -1:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;a&#39;
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -277,8 +382,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="SymPy.html" title="previous page">Sympy: un sistema de álgebra computacional</a>
-    <a class='right-next' id="next-link" href="wxpython-guis.html" title="next page">Interfaces gráficas con wxPython</a>
+    <a class='left-prev' id="prev-link" href="Variables%2C%20operadores%20y%20expresiones.html" title="previous page">Variables, operadores y expresiones</a>
+    <a class='right-next' id="next-link" href="Listas%2C%20tuplas%20y%20diccionarios.html" title="next page">Listas, tuplas y diccionarios</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

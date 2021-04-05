@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Matplotlib: visualización gráfica &#8212; Introducción a Python</title>
+    <title>Matplotlib: visualización gráfica &#8212; Python para Ingenieros</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -57,8 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Sympy: un sistema de álgebra computacional" href="sympy.html" />
-    <link rel="prev" title="NumPy: estructuras matriciales" href="numpy.html" />
+    <link rel="next" title="Sympy: un sistema de álgebra computacional" href="SymPy.html" />
+    <link rel="prev" title="NumPy: estructuras matriciales" href="NumPy.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -80,7 +80,7 @@
   <img src="_static/logo.png" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">Introducción a Python</h1>
+  <h1 class="site-logo" id="site-title">Python para Ingenieros</h1>
   
 </a>
 </div>
@@ -100,12 +100,37 @@
 </ul>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="fundamentos-del-lenguaje.html">
-   Fundamentos del lenguaje
+  <a class="reference internal" href="Introducci%C3%B3n.html">
+   Introducción
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="numpy.html">
+  <a class="reference internal" href="Variables%2C%20operadores%20y%20expresiones.html">
+   Variables, operadores y expresiones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Cadenas%20de%20caracteres.html">
+   Cadenas de caracteres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Listas%2C%20tuplas%20y%20diccionarios.html">
+   Listas, tuplas y diccionarios
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Estructuras%20de%20control.html">
+   Estructuras de control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Funciones.html">
+   Funciones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="NumPy.html">
    NumPy: estructuras matriciales
   </a>
  </li>
@@ -115,7 +140,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="sympy.html">
+  <a class="reference internal" href="SymPy.html">
    Sympy: un sistema de álgebra computacional
   </a>
  </li>
@@ -171,7 +196,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/matplotlib.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/Matplotlib.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -196,7 +221,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/matplotlib.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Matplotlib.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -351,7 +376,7 @@ comenzar a trazar gráficas, vea el siguiente código:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e71272748&gt;]
 </pre></div>
 </div>
-<img alt="_images/matplotlib_6_1.png" src="_images/matplotlib_6_1.png" />
+<img alt="_images/Matplotlib_6_1.png" src="_images/Matplotlib_6_1.png" />
 </div>
 </div>
 <p>La linea anterior produce la gráfica mostrada en la figura, a la función <code class="docutils literal notranslate"><span class="pre">plot</span></code> únicamente se le pasó como argumento una lista de valores numéricos. Un resultado un poco más <em>trabajado</em> se obtiene con el siguiente código:</p>
@@ -368,7 +393,7 @@ comenzar a trazar gráficas, vea el siguiente código:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/matplotlib_8_0.png" src="_images/matplotlib_8_0.png" />
+<img alt="_images/Matplotlib_8_0.png" src="_images/Matplotlib_8_0.png" />
 </div>
 </div>
 <p>Se puede observar que aquí se adicionan elementos descriptivos: etiquetas, leyendas y anotaciones, que usualmente sirven para describir completamente una información que se proporciona a través de las gráficas.</p>
@@ -389,7 +414,7 @@ de argumentos que se pasen.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e71461e80&gt;]
 </pre></div>
 </div>
-<img alt="_images/matplotlib_11_1.png" src="_images/matplotlib_11_1.png" />
+<img alt="_images/Matplotlib_11_1.png" src="_images/Matplotlib_11_1.png" />
 </div>
 </div>
 <p>Al pasarle un sólo argumento, este se toma como los valores de la coordenada vertical, y se asume que la horizontal varía de 0 a <code class="docutils literal notranslate"><span class="pre">N-1</span></code>, donde <code class="docutils literal notranslate"><span class="pre">N</span></code> es el número de elementos contenidos en la lista de valores que se introducen.</p>
@@ -406,7 +431,7 @@ por ejemplo:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e714bbf98&gt;]
 </pre></div>
 </div>
-<img alt="_images/matplotlib_13_1.png" src="_images/matplotlib_13_1.png" />
+<img alt="_images/Matplotlib_13_1.png" src="_images/Matplotlib_13_1.png" />
 </div>
 </div>
 <div class="section" id="graficando-funciones-matematicas">
@@ -441,7 +466,7 @@ a cada valor de <code class="docutils literal notranslate"><span class="pre">x</
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e7151e400&gt;]
 </pre></div>
 </div>
-<img alt="_images/matplotlib_17_1.png" src="_images/matplotlib_17_1.png" />
+<img alt="_images/Matplotlib_17_1.png" src="_images/Matplotlib_17_1.png" />
 </div>
 </div>
 <p>De manera similar a lo anterior se procederá a definir y graficar la función <span class="math notranslate nohighlight">\(y = e^{-0.1x} \cos x \)</span> en el intervalo <span class="math notranslate nohighlight">\( 0 \leq x \leq 30 \)</span>:</p>
@@ -457,7 +482,7 @@ a cada valor de <code class="docutils literal notranslate"><span class="pre">x</
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e7154f2e8&gt;]
 </pre></div>
 </div>
-<img alt="_images/matplotlib_19_1.png" src="_images/matplotlib_19_1.png" />
+<img alt="_images/Matplotlib_19_1.png" src="_images/Matplotlib_19_1.png" />
 </div>
 </div>
 <p>La cantidad de puntos a evaluar es una cuestión muy importante, ya que de esto depende la correcta visualización del
@@ -479,7 +504,7 @@ de manera respectiva, notará la diferencia entre los casos, es evidente que en 
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e71562898&gt;]
 </pre></div>
 </div>
-<img alt="_images/matplotlib_21_1.png" src="_images/matplotlib_21_1.png" />
+<img alt="_images/Matplotlib_21_1.png" src="_images/Matplotlib_21_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -495,7 +520,7 @@ de manera respectiva, notará la diferencia entre los casos, es evidente que en 
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e715c19b0&gt;]
 </pre></div>
 </div>
-<img alt="_images/matplotlib_22_1.png" src="_images/matplotlib_22_1.png" />
+<img alt="_images/Matplotlib_22_1.png" src="_images/Matplotlib_22_1.png" />
 </div>
 </div>
 </div>
@@ -515,7 +540,7 @@ la línea que se grafica. Por ejemplo, se puede pasar un tercer argumento que co
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e716320f0&gt;]
 </pre></div>
 </div>
-<img alt="_images/matplotlib_24_1.png" src="_images/matplotlib_24_1.png" />
+<img alt="_images/Matplotlib_24_1.png" src="_images/Matplotlib_24_1.png" />
 </div>
 </div>
 <p>El código anterior genera una gráfica con una línea en color rojo (<code class="docutils literal notranslate"><span class="pre">r</span></code>) y un estilo de línea discontinua (<code class="docutils literal notranslate"><span class="pre">--</span></code>).</p>
@@ -532,7 +557,7 @@ la línea que se grafica. Por ejemplo, se puede pasar un tercer argumento que co
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e71692cc0&gt;]
 </pre></div>
 </div>
-<img alt="_images/matplotlib_26_1.png" src="_images/matplotlib_26_1.png" />
+<img alt="_images/Matplotlib_26_1.png" src="_images/Matplotlib_26_1.png" />
 </div>
 </div>
 <p>En https://matplotlib.org/api/markers_api.html se muestra una tabla con los símbolos (markers)
@@ -550,7 +575,7 @@ disponibles para utilizar en la función <code class="docutils literal notransla
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e726d1978&gt;]
 </pre></div>
 </div>
-<img alt="_images/matplotlib_28_1.png" src="_images/matplotlib_28_1.png" />
+<img alt="_images/Matplotlib_28_1.png" src="_images/Matplotlib_28_1.png" />
 </div>
 </div>
 <p>En ambos casos se especifica un cierto estilo de línea y color, con la diferencia
@@ -571,7 +596,7 @@ este no puede ser invocado mediante un sólo caracter, hace falta escribir todo 
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e72740630&gt;]
 </pre></div>
 </div>
-<img alt="_images/matplotlib_30_1.png" src="_images/matplotlib_30_1.png" />
+<img alt="_images/Matplotlib_30_1.png" src="_images/Matplotlib_30_1.png" />
 </div>
 </div>
 <p>El grosor de línea se puede controlar mediante el <em>keyword argument</em> <code class="docutils literal notranslate"><span class="pre">linewidth</span></code>, por ejemplo;</p>
@@ -585,7 +610,7 @@ este no puede ser invocado mediante un sólo caracter, hace falta escribir todo 
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e727a3e48&gt;]
 </pre></div>
 </div>
-<img alt="_images/matplotlib_32_1.png" src="_images/matplotlib_32_1.png" />
+<img alt="_images/Matplotlib_32_1.png" src="_images/Matplotlib_32_1.png" />
 </div>
 </div>
 <blockquote>
@@ -618,7 +643,7 @@ se está graficando más de una curva, se hace necesario especificar a qué refi
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x20e7280dc88&gt;
 </pre></div>
 </div>
-<img alt="_images/matplotlib_35_1.png" src="_images/matplotlib_35_1.png" />
+<img alt="_images/Matplotlib_35_1.png" src="_images/Matplotlib_35_1.png" />
 </div>
 </div>
 <p>La instrucción <code class="docutils literal notranslate"><span class="pre">xlabel</span></code> coloca una etiqueta al eje horizontal, de manera similar <code class="docutils literal notranslate"><span class="pre">ylabel</span></code> lo hace para el eje
@@ -651,7 +676,7 @@ Veamos un ejemplo:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(10, 0.5, &#39;Algo informativo&#39;)
 </pre></div>
 </div>
-<img alt="_images/matplotlib_38_1.png" src="_images/matplotlib_38_1.png" />
+<img alt="_images/Matplotlib_38_1.png" src="_images/Matplotlib_38_1.png" />
 </div>
 </div>
 <p>Note que únicamente colocamos el texto <em>Algo informativo</em>  dentro del gráfico, de manera más específica en las coordenadas (10,0.5).</p>
@@ -675,7 +700,7 @@ Por ejemplo:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(10, 0.5, &#39;Algo informativo&#39;)
 </pre></div>
 </div>
-<img alt="_images/matplotlib_40_1.png" src="_images/matplotlib_40_1.png" />
+<img alt="_images/Matplotlib_40_1.png" src="_images/Matplotlib_40_1.png" />
 </div>
 </div>
 <p>Observe que lo único que se cambió fueron algunas propiedades del texto, tales como el tamaño de la fuente con <code class="docutils literal notranslate"><span class="pre">fontsize</span></code>, el color de fuente con <code class="docutils literal notranslate"><span class="pre">color</span></code> y el tipo de fuente con <code class="docutils literal notranslate"><span class="pre">name</span></code>, con este último se debe tener cuidado, dado que el nombre de la fuente indicada debe estar instalada en la PC que se ejecuta.</p>
@@ -703,7 +728,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e6e895cc0&gt;]
 </pre></div>
 </div>
-<img alt="_images/matplotlib_44_1.png" src="_images/matplotlib_44_1.png" />
+<img alt="_images/Matplotlib_44_1.png" src="_images/Matplotlib_44_1.png" />
 </div>
 </div>
 <p>Observe que la función <code class="docutils literal notranslate"><span class="pre">polar</span></code> funciona de manera bastante similar a <code class="docutils literal notranslate"><span class="pre">plot</span></code>, de hecho se le pueden pasar los mismos
@@ -747,7 +772,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/matplotlib_48_0.png" src="_images/matplotlib_48_0.png" />
+<img alt="_images/Matplotlib_48_0.png" src="_images/Matplotlib_48_0.png" />
 </div>
 </div>
 <p>Observe que lo primero que hacemos es importar la librería matplotlib, enseguida, en utilizando listas definimos los nombres y el número de manzanas correspondientes. Luego, la función <code class="docutils literal notranslate"><span class="pre">pie</span></code> acepta un primer argumento que contiene los valores absolutos de cada ítem, además, de un <em>keyword argument</em> <code class="docutils literal notranslate"><span class="pre">labels</span></code> que contiene las etiquetas correspondientes.</p>
@@ -761,7 +786,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/matplotlib_51_0.png" src="_images/matplotlib_51_0.png" />
+<img alt="_images/Matplotlib_51_0.png" src="_images/Matplotlib_51_0.png" />
 </div>
 </div>
 <p>Los combinación de colores se puede especificar de manera manual, pasando una lista de color en formato hexadecimal o RGB.</p>
@@ -775,7 +800,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/matplotlib_53_0.png" src="_images/matplotlib_53_0.png" />
+<img alt="_images/Matplotlib_53_0.png" src="_images/Matplotlib_53_0.png" />
 </div>
 </div>
 <p>Los colores también se pueden determinar y autocalcular utilizando un mapa de color específico. Enseguida se muestra un ejemplo donde la variación es sobre colores en tonos azules.</p>
@@ -797,7 +822,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/matplotlib_55_0.png" src="_images/matplotlib_55_0.png" />
+<img alt="_images/Matplotlib_55_0.png" src="_images/Matplotlib_55_0.png" />
 </div>
 </div>
 <p>Es posible también segmentar o separar del bloque una o más de las <em>rebanadas</em> de la gráfica de pastel. Para ello se debe pasar una lista o tupla con valores entre <code class="docutils literal notranslate"><span class="pre">0</span></code> y <code class="docutils literal notranslate"><span class="pre">n</span></code> que indican el desfase respecto al centro, <code class="docutils literal notranslate"><span class="pre">0</span></code> indica ningún desfase y <code class="docutils literal notranslate"><span class="pre">n</span></code> un desfase equivalente a <code class="docutils literal notranslate"><span class="pre">n*r</span></code>, donde <code class="docutils literal notranslate"><span class="pre">r</span></code> es el radio de la gráfica de pastel.</p>
@@ -813,7 +838,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/matplotlib_57_0.png" src="_images/matplotlib_57_0.png" />
+<img alt="_images/Matplotlib_57_0.png" src="_images/Matplotlib_57_0.png" />
 </div>
 </div>
 </div>
@@ -839,7 +864,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x24ad5f03438&gt;]
 </pre></div>
 </div>
-<img alt="_images/matplotlib_60_1.png" src="_images/matplotlib_60_1.png" />
+<img alt="_images/Matplotlib_60_1.png" src="_images/Matplotlib_60_1.png" />
 </div>
 </div>
 <p>La sintaxis básica de <code class="docutils literal notranslate"><span class="pre">subplot</span></code> es:</p>
@@ -870,7 +895,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Velocidad&#39;)
 </pre></div>
 </div>
-<img alt="_images/matplotlib_62_1.png" src="_images/matplotlib_62_1.png" />
+<img alt="_images/Matplotlib_62_1.png" src="_images/Matplotlib_62_1.png" />
 </div>
 </div>
 <p>Se puede observar que, la etiqueta horizontal para el primer <em>axes</em> no es visible, esto se puede <em>arreglar</em> utilizando la función <code class="docutils literal notranslate"><span class="pre">tight_layout</span></code>:</p>
@@ -895,7 +920,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/matplotlib_64_0.png" src="_images/matplotlib_64_0.png" />
+<img alt="_images/Matplotlib_64_0.png" src="_images/Matplotlib_64_0.png" />
 </div>
 </div>
 <p>Enseguida se muestra un conjunto de 16 <em>axes</em> creados con la función <code class="docutils literal notranslate"><span class="pre">subplot</span></code>, con la intención de que pueda indentificar el orden en el cual Matplotlib los coloca en la rejilla; se puede inferir rapidamente que los numera en orden creciente hacia la derecha y hacia abajo.</p>
@@ -910,7 +935,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/matplotlib_66_0.png" src="_images/matplotlib_66_0.png" />
+<img alt="_images/Matplotlib_66_0.png" src="_images/Matplotlib_66_0.png" />
 </div>
 </div>
 <p>Del código anterior se identifica que la función <code class="docutils literal notranslate"><span class="pre">subplot</span></code> también puede recibir los argumentos por separado, es decir, en la forma:</p>
@@ -954,7 +979,7 @@ trabajar con este tipo de expresiones en el análisis cinemático de partículas
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;mpl_toolkits.mplot3d.art3d.Line3D at 0x20e72b32cc0&gt;]
 </pre></div>
 </div>
-<img alt="_images/matplotlib_70_1.png" src="_images/matplotlib_70_1.png" />
+<img alt="_images/Matplotlib_70_1.png" src="_images/Matplotlib_70_1.png" />
 </div>
 </div>
 <p>Ahora explicamos lo referente al código anterior. Observe que en la primera línea importamos la clase <code class="docutils literal notranslate"><span class="pre">Axes3D</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">mpl_toolkits.maplot3d</span></code>, esto nos sirve para poder trabajar con gráficas tridimensionales. Luego, definimos un objeto de la
@@ -991,7 +1016,7 @@ ejemplo el siguiente código:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Z&#39;)
 </pre></div>
 </div>
-<img alt="_images/matplotlib_72_1.png" src="_images/matplotlib_72_1.png" />
+<img alt="_images/Matplotlib_72_1.png" src="_images/Matplotlib_72_1.png" />
 </div>
 </div>
 </div>
@@ -1029,7 +1054,7 @@ ejemplo el siguiente código:</p>
  &lt;matplotlib.lines.Line2D at 0x20e72c5eba8&gt;]
 </pre></div>
 </div>
-<img alt="_images/matplotlib_77_1.png" src="_images/matplotlib_77_1.png" />
+<img alt="_images/Matplotlib_77_1.png" src="_images/Matplotlib_77_1.png" />
 </div>
 </div>
 <p>Observe que los puntos a evaluar en este caso serán <span class="math notranslate nohighlight">\((0,10), (0,20), (1,10), (1,20)\)</span>. La densidad de la rejilla (o el número de puntos a evaluar) depende de la cantidad de valores que contengan los vectores que se le pasen como argumentos a la función <code class="docutils literal notranslate"><span class="pre">meshgrid</span></code>, por ejemplo:</p>
@@ -1043,7 +1068,7 @@ ejemplo el siguiente código:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/matplotlib_79_0.png" src="_images/matplotlib_79_0.png" />
+<img alt="_images/Matplotlib_79_0.png" src="_images/Matplotlib_79_0.png" />
 </div>
 </div>
 <p>En general, si se requiere evaluar la funcion <span class="math notranslate nohighlight">\( z = f(x,y) \)</span> en la región <span class="math notranslate nohighlight">\( R = \{(x,y)\,|\,a \leq x \leq b, c \leq y \leq d \} \)</span>, entonces se tendrá:</p>
@@ -1071,7 +1096,7 @@ ejemplo el siguiente código:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/matplotlib_82_0.png" src="_images/matplotlib_82_0.png" />
+<img alt="_images/Matplotlib_82_0.png" src="_images/Matplotlib_82_0.png" />
 </div>
 </div>
 <p><em>Desmenuzando</em> un poco el código anterior, las primeras tres líneas, como se había descrito con anterioridad, sirven para poder crear un <em>Axes</em> que nos permita trabajar con gráficas tridimensionales. Con la función <code class="docutils literal notranslate"><span class="pre">linspace</span></code> se crean los intervalos de evaluación para cada variable independiente, luego, <code class="docutils literal notranslate"><span class="pre">meshgrid</span></code> permite formar la rejilla o puntos sobre los cuales se evaluará la función <span class="math notranslate nohighlight">\( z = f(x,y) \)</span>. La expresión <code class="docutils literal notranslate"><span class="pre">Z</span> <span class="pre">=</span> <span class="pre">X**2</span> <span class="pre">+</span> <span class="pre">Y**2</span></code> es propiamente la evaluación de la función de dos variables. La función <code class="docutils literal notranslate"><span class="pre">plot_surface</span></code> recibe como argumentos las tres matrices <code class="docutils literal notranslate"><span class="pre">X</span></code>,<code class="docutils literal notranslate"><span class="pre">Y</span></code>,<code class="docutils literal notranslate"><span class="pre">Z</span></code> que corresponden a las variables independientes y función, respectivamente. El argumento <code class="docutils literal notranslate"><span class="pre">cmap</span></code> se utiliza para indicar el mapa de color que se utilizará.</p>
@@ -1093,7 +1118,7 @@ ejemplo el siguiente código:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/matplotlib_84_0.png" src="_images/matplotlib_84_0.png" />
+<img alt="_images/Matplotlib_84_0.png" src="_images/Matplotlib_84_0.png" />
 </div>
 </div>
 </div>
@@ -1138,8 +1163,8 @@ ejemplo el siguiente código:</p>
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="numpy.html" title="previous page">NumPy: estructuras matriciales</a>
-    <a class='right-next' id="next-link" href="sympy.html" title="next page">Sympy: un sistema de álgebra computacional</a>
+    <a class='left-prev' id="prev-link" href="NumPy.html" title="previous page">NumPy: estructuras matriciales</a>
+    <a class='right-next' id="next-link" href="SymPy.html" title="next page">Sympy: un sistema de álgebra computacional</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

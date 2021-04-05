@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cinemática de manipuladores seriales &#8212; Python para Ingenieros</title>
+    <title>Introducción &#8212; Python para Ingenieros</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -57,6 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Variables, operadores y expresiones" href="Variables%2C%20operadores%20y%20expresiones.html" />
+    <link rel="prev" title="Introducción" href="intro.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -96,9 +98,9 @@
   </a>
  </li>
 </ul>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="Introducci%C3%B3n.html">
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Introducción
   </a>
  </li>
@@ -194,7 +196,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/Cinemática de manipuladores seriales.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/Introducción.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -219,7 +221,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Cinemática de manipuladores seriales.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Introducción.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -236,6 +238,30 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#que-es-python">
+   ¿Qué es Python?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instalando-python">
+   Instalando Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#el-notebook-de-jupyter-como-una-calculadora-basica">
+   El notebook de Jupyter como una calculadora básica
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -243,8 +269,151 @@
         
               <div>
                 
-  <div class="section" id="cinematica-de-manipuladores-seriales">
-<h1>Cinemática de manipuladores seriales<a class="headerlink" href="#cinematica-de-manipuladores-seriales" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="introduccion">
+<h1>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="que-es-python">
+<h2>¿Qué es Python?<a class="headerlink" href="#que-es-python" title="Permalink to this headline">¶</a></h2>
+<p>Python es un lenguaje de programación, interpretado, de alto nivel y propósito general, además de ser un proyecto libre y de código abierto, con una comunidad enorme implicada en el desarrollo y mantenimiento de librerías que hacen posible el <em>multidominio</em> actual de Python.</p>
+<p>Dada su concepción como lenguaje de propósito general, Python es utilizado en una diversidad de aplicaciones,
+desde desarrollo web, encriptación, análisis de datos, procesamiento de imágenes, aprendizaje automático,
+computación simbólica, etc.</p>
+<p>Las características de este lenguaje le hacen propicio para el prototipado de aplicaciones, dado que es muy
+sencillo y rápido revisar y modificar el código desarrollado. Otra característica muy notable de Python
+es su sintaxis simple y fácil de aprender, lo cual ayuda al momento de introducirse en el desarrollo de
+algoritmos o el mundo propio de la programación de computadoras.</p>
+</div>
+<div class="section" id="instalando-python">
+<h2>Instalando Python<a class="headerlink" href="#instalando-python" title="Permalink to this headline">¶</a></h2>
+<p>En estos apuntes se utilizará la distribución Anaconda de Python, la cual contiene el intérprete y las librerías del
+<em>core</em>, pero que además incluye la mayoría de librerías utilizadas para el desarrollo de aplicaciones de corte
+técnico-científico.</p>
+<p>La descarga de Anaconda puede realizarla desde el sitio https://www.anaconda.com/download/, selecciona el
+paquete de descarga conforme al sistema operativo (Windows, macOS o Linux) así como la arquitectura de su PC.
+La instalación suele ser muy sencilla, puede seguir las instrucciones dadas en el <em>How to install ANACONDA</em> de
+la misma página.</p>
+</div>
+<div class="section" id="el-notebook-de-jupyter-como-una-calculadora-basica">
+<h2>El notebook de Jupyter como una calculadora básica<a class="headerlink" href="#el-notebook-de-jupyter-como-una-calculadora-basica" title="Permalink to this headline">¶</a></h2>
+<p>Una vez instalado Anaconda puede testear la correcta instalación abriendo el Jupyter Notebook, la cual es una aplicación web en la cual puede escribir código, texto, ecuaciones, etc., y que básicamente es donde se desarrollaron estos apuntes. Puede
+buscar esta aplicación en la carpeta de instalación correspondiente.</p>
+<p>A partir de este momento puede ingresar código Python en las celdas y teclear <strong>Shift + Enter</strong> para ejecutar la instrucción y la celda le devolverá lo que resulte de esto. Por ejemplo, si escribe un número cualesquiera y presiona la combinación indicada, la consola le devolverá justamente el mismo número:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1000</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000
+</pre></div>
+</div>
+</div>
+</div>
+<p>Puede ejecutar una simple suma aritmética:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">100</span> <span class="o">+</span> <span class="mi">200</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>300
+</pre></div>
+</div>
+</div>
+</div>
+<p>O una resta:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">550</span> <span class="o">-</span> <span class="mi">650</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-100
+</pre></div>
+</div>
+</div>
+</div>
+<p>Naturalmente Python maneja sin complicaciones las cantidades negativas. Una multiplicación la realiza
+con el operador *:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">50</span><span class="o">*</span><span class="mi">25</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1250
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para las divisiones utiliza el operador /:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Puede elevar a una potencia utilizando como operador el doble asterisco:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">13</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>169
+</pre></div>
+</div>
+</div>
+</div>
+<p>Inclusive existe la posilidad de definir números complejos y realizar operaciones con ellos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">+</span> <span class="mi">2</span><span class="n">j</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5+2j)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">2</span><span class="n">j</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">10</span> <span class="o">+</span> <span class="mi">7</span><span class="n">j</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-5-5j)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">2</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">10</span> <span class="o">+</span> <span class="mi">7</span><span class="n">j</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(36+55j)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Puede ampliar la capacidad de las funcionalidades <em>built-in</em> de Python si importa alguna librería, como <code class="docutils literal notranslate"><span class="pre">math</span></code>, pero claro, esto será un tema a tratar con posterioridad.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -275,6 +444,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">Introducción</a>
+    <a class='right-next' id="next-link" href="Variables%2C%20operadores%20y%20expresiones.html" title="next page">Variables, operadores y expresiones</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

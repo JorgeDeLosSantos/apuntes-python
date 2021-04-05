@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sympy: un sistema de álgebra computacional &#8212; Introducción a Python</title>
+    <title>Sympy: un sistema de álgebra computacional &#8212; Python para Ingenieros</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -58,7 +58,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Programación orientada a objetos" href="programaci%C3%B3n-orientada-a-objetos.html" />
-    <link rel="prev" title="Matplotlib: visualización gráfica" href="matplotlib.html" />
+    <link rel="prev" title="Matplotlib: visualización gráfica" href="Matplotlib.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -80,7 +80,7 @@
   <img src="_static/logo.png" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">Introducción a Python</h1>
+  <h1 class="site-logo" id="site-title">Python para Ingenieros</h1>
   
 </a>
 </div>
@@ -100,17 +100,42 @@
 </ul>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="fundamentos-del-lenguaje.html">
-   Fundamentos del lenguaje
+  <a class="reference internal" href="Introducci%C3%B3n.html">
+   Introducción
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="numpy.html">
+  <a class="reference internal" href="Variables%2C%20operadores%20y%20expresiones.html">
+   Variables, operadores y expresiones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Cadenas%20de%20caracteres.html">
+   Cadenas de caracteres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Listas%2C%20tuplas%20y%20diccionarios.html">
+   Listas, tuplas y diccionarios
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Estructuras%20de%20control.html">
+   Estructuras de control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Funciones.html">
+   Funciones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="NumPy.html">
    NumPy: estructuras matriciales
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="matplotlib.html">
+  <a class="reference internal" href="Matplotlib.html">
    Matplotlib: visualización gráfica
   </a>
  </li>
@@ -127,11 +152,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="wxpython-guis.html">
    Interfaces gráficas con wxPython
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="wxpython-guis.html#los-sizers-organizando-controles">
-   Los sizers: organizando controles
   </a>
  </li>
 </ul>
@@ -176,7 +196,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/sympy.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/SymPy.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -201,7 +221,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/sympy.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/SymPy.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -347,7 +367,7 @@ a formar expresiones algebraicas y manipular matemáticamente.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_7_0.png" src="_images/sympy_7_0.png" />
+<img alt="_images/SymPy_7_0.png" src="_images/SymPy_7_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -357,7 +377,7 @@ a formar expresiones algebraicas y manipular matemáticamente.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_8_0.png" src="_images/sympy_8_0.png" />
+<img alt="_images/SymPy_8_0.png" src="_images/SymPy_8_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -367,7 +387,7 @@ a formar expresiones algebraicas y manipular matemáticamente.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_9_0.png" src="_images/sympy_9_0.png" />
+<img alt="_images/SymPy_9_0.png" src="_images/SymPy_9_0.png" />
 </div>
 </div>
 <p>Puede definir múltiples variables separando por comas cada representación simbólica:</p>
@@ -379,7 +399,7 @@ a formar expresiones algebraicas y manipular matemáticamente.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_11_0.png" src="_images/sympy_11_0.png" />
+<img alt="_images/SymPy_11_0.png" src="_images/SymPy_11_0.png" />
 </div>
 </div>
 <p>Además de la forma anterior, también es posible tener variables simbólicas disponibles si se importan
@@ -398,7 +418,7 @@ del módulo <code class="docutils literal notranslate"><span class="pre">abc</sp
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_14_0.png" src="_images/sympy_14_0.png" />
+<img alt="_images/SymPy_14_0.png" src="_images/SymPy_14_0.png" />
 </div>
 </div>
 </div>
@@ -424,7 +444,7 @@ Vea los siguientes casos:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_18_0.png" src="_images/sympy_18_0.png" />
+<img alt="_images/SymPy_18_0.png" src="_images/SymPy_18_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -434,7 +454,7 @@ Vea los siguientes casos:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_19_0.png" src="_images/sympy_19_0.png" />
+<img alt="_images/SymPy_19_0.png" src="_images/SymPy_19_0.png" />
 </div>
 </div>
 <p>Naturalmente para simplificaciones y operaciones un poco menos obvias, habrá que especificarle lo que se requiere.</p>
@@ -449,7 +469,7 @@ factorizar como <span class="math notranslate nohighlight">\(a(b+c)\)</span>, Sy
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_21_0.png" src="_images/sympy_21_0.png" />
+<img alt="_images/SymPy_21_0.png" src="_images/SymPy_21_0.png" />
 </div>
 </div>
 <p>De igual forma se sabe que una expresión de la forma <span class="math notranslate nohighlight">\( ac + ad + bc + bd \)</span> se puede factorizar como
@@ -461,7 +481,7 @@ factorizar como <span class="math notranslate nohighlight">\(a(b+c)\)</span>, Sy
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_23_0.png" src="_images/sympy_23_0.png" />
+<img alt="_images/SymPy_23_0.png" src="_images/SymPy_23_0.png" />
 </div>
 </div>
 <p>Así, para un binomio al cuadrado se sabe que, <span class="math notranslate nohighlight">\( (a+b)(a+b) \)</span> es la factorización de una expresión del tipo
@@ -473,7 +493,7 @@ factorizar como <span class="math notranslate nohighlight">\(a(b+c)\)</span>, Sy
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_25_0.png" src="_images/sympy_25_0.png" />
+<img alt="_images/SymPy_25_0.png" src="_images/SymPy_25_0.png" />
 </div>
 </div>
 <p>¿Se puede hacer el proceso <em>inverso</em>, es decir, dados dos factores obtener su expresión <em>expandida</em>?
@@ -485,7 +505,7 @@ Por supuesto, para ello se hace uso de la función <code class="docutils literal
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_27_0.png" src="_images/sympy_27_0.png" />
+<img alt="_images/SymPy_27_0.png" src="_images/SymPy_27_0.png" />
 </div>
 </div>
 <p>SymPy puede manejar cualquier cantidad de factores y devolver la expresión que resulta de realizar la multiplicación
@@ -497,7 +517,7 @@ algebraica, sin estar limitada siquiera por la cantidad de variables simbólicas
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_29_0.png" src="_images/sympy_29_0.png" />
+<img alt="_images/SymPy_29_0.png" src="_images/SymPy_29_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -507,7 +527,7 @@ algebraica, sin estar limitada siquiera por la cantidad de variables simbólicas
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_30_0.png" src="_images/sympy_30_0.png" />
+<img alt="_images/SymPy_30_0.png" src="_images/SymPy_30_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -517,7 +537,7 @@ algebraica, sin estar limitada siquiera por la cantidad de variables simbólicas
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_31_0.png" src="_images/sympy_31_0.png" />
+<img alt="_images/SymPy_31_0.png" src="_images/SymPy_31_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -527,7 +547,7 @@ algebraica, sin estar limitada siquiera por la cantidad de variables simbólicas
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_32_0.png" src="_images/sympy_32_0.png" />
+<img alt="_images/SymPy_32_0.png" src="_images/SymPy_32_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -537,7 +557,7 @@ algebraica, sin estar limitada siquiera por la cantidad de variables simbólicas
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_33_0.png" src="_images/sympy_33_0.png" />
+<img alt="_images/SymPy_33_0.png" src="_images/SymPy_33_0.png" />
 </div>
 </div>
 <p>De manera general, si requiere simplificar una expresión algebraica SymPy dispone de una función más o menos universal que funcionará en la mayoría de los casos: <code class="docutils literal notranslate"><span class="pre">simplify</span></code>. Por ejemplo, suponiendo que
@@ -555,7 +575,7 @@ se tiene la siguiente expresión algebraica racional y se requiere reducir lo m�
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_35_0.png" src="_images/sympy_35_0.png" />
+<img alt="_images/SymPy_35_0.png" src="_images/SymPy_35_0.png" />
 </div>
 </div>
 <p>Lo mismo para una expresión que involucre funciones trigonométricas, por ejemplo, cualquiera que haya cursado matemáticas
@@ -567,7 +587,7 @@ del nivel secundario, al menos, sabe que <span class="math notranslate nohighlig
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_37_0.png" src="_images/sympy_37_0.png" />
+<img alt="_images/SymPy_37_0.png" src="_images/SymPy_37_0.png" />
 </div>
 </div>
 <p>Pero también <em>sabe</em> que <span class="math notranslate nohighlight">\( \cos x \cos y - \sin x \sin y = \cos(x+y) \)</span>.</p>
@@ -578,7 +598,7 @@ del nivel secundario, al menos, sabe que <span class="math notranslate nohighlig
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_39_0.png" src="_images/sympy_39_0.png" />
+<img alt="_images/SymPy_39_0.png" src="_images/SymPy_39_0.png" />
 </div>
 </div>
 <p>O bien:</p>
@@ -589,7 +609,7 @@ del nivel secundario, al menos, sabe que <span class="math notranslate nohighlig
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_41_0.png" src="_images/sympy_41_0.png" />
+<img alt="_images/SymPy_41_0.png" src="_images/SymPy_41_0.png" />
 </div>
 </div>
 <p>Habitualmente para la manipulación de expresiones que contienen funciones trigonométricas se suele utilizar
@@ -604,7 +624,7 @@ pero aquí no funciona como puede verificar.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_43_0.png" src="_images/sympy_43_0.png" />
+<img alt="_images/SymPy_43_0.png" src="_images/SymPy_43_0.png" />
 </div>
 </div>
 <p>En este caso puede utilizar la función <code class="docutils literal notranslate"><span class="pre">expand_trig</span></code>, la cual maneja de mejor manera las manipulaciones trigonométricas:</p>
@@ -615,7 +635,7 @@ pero aquí no funciona como puede verificar.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_45_0.png" src="_images/sympy_45_0.png" />
+<img alt="_images/SymPy_45_0.png" src="_images/SymPy_45_0.png" />
 </div>
 </div>
 </div>
@@ -645,7 +665,7 @@ y se considera que esta estará igualada a cero. Por ejemplo para resolver la ec
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_50_0.png" src="_images/sympy_50_0.png" />
+<img alt="_images/SymPy_50_0.png" src="_images/SymPy_50_0.png" />
 </div>
 </div>
 <p>Para una ecuación cuadrática <span class="math notranslate nohighlight">\( x^2 + 2x + 2 = 0 \)</span>:</p>
@@ -656,7 +676,7 @@ y se considera que esta estará igualada a cero. Por ejemplo para resolver la ec
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_52_0.png" src="_images/sympy_52_0.png" />
+<img alt="_images/SymPy_52_0.png" src="_images/SymPy_52_0.png" />
 </div>
 </div>
 <p>En este caso la ecuación tiene soluciones complejas, la unidad imaginaria en SymPy se especifica mediante
@@ -669,7 +689,7 @@ el símbolo <code class="docutils literal notranslate"><span class="pre">I</span
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_54_0.png" src="_images/sympy_54_0.png" />
+<img alt="_images/SymPy_54_0.png" src="_images/SymPy_54_0.png" />
 </div>
 </div>
 <p>Note que el problema está en que al haber más de una variable simbólica, SymPy no sabe con respecto a qué variable debe
@@ -682,7 +702,7 @@ se puede indicar mediante un segundo argumento:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_56_0.png" src="_images/sympy_56_0.png" />
+<img alt="_images/SymPy_56_0.png" src="_images/SymPy_56_0.png" />
 </div>
 </div>
 <p>Puede verificar que devuelve, en efecto, la tan conocida fórmula general.</p>
@@ -708,7 +728,7 @@ el siguiente límite:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_60_0.png" src="_images/sympy_60_0.png" />
+<img alt="_images/SymPy_60_0.png" src="_images/SymPy_60_0.png" />
 </div>
 </div>
 <p>Para calcular limites laterales debe pasarse un cuarto argumento, por ejemplo:</p>
@@ -719,7 +739,7 @@ el siguiente límite:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_62_0.png" src="_images/sympy_62_0.png" />
+<img alt="_images/SymPy_62_0.png" src="_images/SymPy_62_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -729,7 +749,7 @@ el siguiente límite:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_63_0.png" src="_images/sympy_63_0.png" />
+<img alt="_images/SymPy_63_0.png" src="_images/SymPy_63_0.png" />
 </div>
 </div>
 <p>El símbolo <code class="docutils literal notranslate"><span class="pre">+</span></code> denota el cálculo de un límite lateral por la derecha y el símbolo <code class="docutils literal notranslate"><span class="pre">-</span></code> un límite lateral por la izquierda.</p>
@@ -745,7 +765,7 @@ al menos dos argumentos: una expresión algebraica y una variable respecto a la 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_66_0.png" src="_images/sympy_66_0.png" />
+<img alt="_images/SymPy_66_0.png" src="_images/SymPy_66_0.png" />
 </div>
 </div>
 <p>Es posible también especificar una derivada de orden superior mediante un tercer argumento:</p>
@@ -756,7 +776,7 @@ al menos dos argumentos: una expresión algebraica y una variable respecto a la 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_68_0.png" src="_images/sympy_68_0.png" />
+<img alt="_images/SymPy_68_0.png" src="_images/SymPy_68_0.png" />
 </div>
 </div>
 <p>La instrucción anterior calcula la segunda derivada de la función <span class="math notranslate nohighlight">\( f(x) = 5x^2 + 3x - 10 \)</span>.</p>
@@ -772,7 +792,7 @@ argumentos: la función a integrar y la expresión respecto a la cual se integra
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_71_0.png" src="_images/sympy_71_0.png" />
+<img alt="_images/SymPy_71_0.png" src="_images/SymPy_71_0.png" />
 </div>
 </div>
 <p>Esa instrucción calcula la integral:</p>
@@ -794,7 +814,7 @@ evaluar en la integral:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_73_0.png" src="_images/sympy_73_0.png" />
+<img alt="_images/SymPy_73_0.png" src="_images/SymPy_73_0.png" />
 </div>
 </div>
 <p>O para:</p>
@@ -807,7 +827,7 @@ evaluar en la integral:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_75_0.png" src="_images/sympy_75_0.png" />
+<img alt="_images/SymPy_75_0.png" src="_images/SymPy_75_0.png" />
 </div>
 </div>
 </div>
@@ -846,7 +866,7 @@ aritméticos ya conocidos.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_82_0.png" src="_images/sympy_82_0.png" />
+<img alt="_images/SymPy_82_0.png" src="_images/SymPy_82_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -856,7 +876,7 @@ aritméticos ya conocidos.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_83_0.png" src="_images/sympy_83_0.png" />
+<img alt="_images/SymPy_83_0.png" src="_images/SymPy_83_0.png" />
 </div>
 </div>
 <p>La magnitud de un vector se puede calcular utilizando el método <code class="docutils literal notranslate"><span class="pre">norm</span></code>.</p>
@@ -867,7 +887,7 @@ aritméticos ya conocidos.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_85_0.png" src="_images/sympy_85_0.png" />
+<img alt="_images/SymPy_85_0.png" src="_images/SymPy_85_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -877,7 +897,7 @@ aritméticos ya conocidos.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_86_0.png" src="_images/sympy_86_0.png" />
+<img alt="_images/SymPy_86_0.png" src="_images/SymPy_86_0.png" />
 </div>
 </div>
 <p>Recuerde que si requiere ver las expresiones resultantes como fracciones decimales debe usar <code class="docutils literal notranslate"><span class="pre">evalf</span></code>.</p>
@@ -890,7 +910,7 @@ ejemplo <span class="math notranslate nohighlight">\( \vec{u} \cdot \vec{v} \)</
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_88_0.png" src="_images/sympy_88_0.png" />
+<img alt="_images/SymPy_88_0.png" src="_images/SymPy_88_0.png" />
 </div>
 </div>
 <p>Para calcular el producto vectorial utilice el método <code class="docutils literal notranslate"><span class="pre">cross</span></code>, por ejemplo
@@ -902,7 +922,7 @@ ejemplo <span class="math notranslate nohighlight">\( \vec{u} \cdot \vec{v} \)</
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_90_0.png" src="_images/sympy_90_0.png" />
+<img alt="_images/SymPy_90_0.png" src="_images/SymPy_90_0.png" />
 </div>
 </div>
 <p>Recuerde que el producto vectorial no es conmutativo, por tanto, <span class="math notranslate nohighlight">\(\vec{v} \times \vec{u} \)</span> resultará en un vector
@@ -914,7 +934,7 @@ diferente al obtenido anteriormente, como puede verificar enseguida:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_92_0.png" src="_images/sympy_92_0.png" />
+<img alt="_images/SymPy_92_0.png" src="_images/SymPy_92_0.png" />
 </div>
 </div>
 </div>
@@ -970,7 +990,7 @@ ejemplo, una suma:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_98_0.png" src="_images/sympy_98_0.png" />
+<img alt="_images/SymPy_98_0.png" src="_images/SymPy_98_0.png" />
 </div>
 </div>
 <p>Naturalmente, y como es esperable, SymPy <em>conoce</em> y aplica las reglas de álgebra de matrices, observe:</p>
@@ -1014,7 +1034,7 @@ De igual forma que es válido realizar el producto <span class="math notranslate
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_102_0.png" src="_images/sympy_102_0.png" />
+<img alt="_images/SymPy_102_0.png" src="_images/SymPy_102_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1056,7 +1076,7 @@ De igual forma que es válido realizar el producto <span class="math notranslate
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_105_0.png" src="_images/sympy_105_0.png" />
+<img alt="_images/SymPy_105_0.png" src="_images/SymPy_105_0.png" />
 </div>
 </div>
 <p>O bien, mediante el propio método <code class="docutils literal notranslate"><span class="pre">det</span></code>:</p>
@@ -1067,7 +1087,7 @@ De igual forma que es válido realizar el producto <span class="math notranslate
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_107_0.png" src="_images/sympy_107_0.png" />
+<img alt="_images/SymPy_107_0.png" src="_images/SymPy_107_0.png" />
 </div>
 </div>
 <p>La <strong>matriz inversa</strong> podemos calcularla utilizando el método <code class="docutils literal notranslate"><span class="pre">inv</span></code>:</p>
@@ -1078,7 +1098,7 @@ De igual forma que es válido realizar el producto <span class="math notranslate
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_109_0.png" src="_images/sympy_109_0.png" />
+<img alt="_images/SymPy_109_0.png" src="_images/SymPy_109_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1088,7 +1108,7 @@ De igual forma que es válido realizar el producto <span class="math notranslate
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_110_0.png" src="_images/sympy_110_0.png" />
+<img alt="_images/SymPy_110_0.png" src="_images/SymPy_110_0.png" />
 </div>
 </div>
 <p>La <strong>transpuesta</strong> de una matriz se puede obtener accediendo al atributo <code class="docutils literal notranslate"><span class="pre">T</span></code></p>
@@ -1099,7 +1119,7 @@ De igual forma que es válido realizar el producto <span class="math notranslate
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/sympy_112_0.png" src="_images/sympy_112_0.png" />
+<img alt="_images/SymPy_112_0.png" src="_images/SymPy_112_0.png" />
 </div>
 </div>
 </div>
@@ -1166,7 +1186,7 @@ a un cierto punto. Se deberá devolver el momento total producido por las fuerza
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="matplotlib.html" title="previous page">Matplotlib: visualización gráfica</a>
+    <a class='left-prev' id="prev-link" href="Matplotlib.html" title="previous page">Matplotlib: visualización gráfica</a>
     <a class='right-next' id="next-link" href="programaci%C3%B3n-orientada-a-objetos.html" title="next page">Programación orientada a objetos</a>
 
     </div>
