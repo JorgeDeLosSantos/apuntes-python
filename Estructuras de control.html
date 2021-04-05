@@ -254,8 +254,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bucle-for">
-   Bucle
+  <a class="reference internal nav-link" href="#ciclo-for">
+   Ciclo
    <code class="docutils literal notranslate">
     <span class="pre">
      for
@@ -264,13 +264,18 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bucle-while">
-   Bucle
+  <a class="reference internal nav-link" href="#ciclo-while">
+   Ciclo
    <code class="docutils literal notranslate">
     <span class="pre">
      while
     </span>
    </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios">
+   Ejercicios
   </a>
  </li>
 </ul>
@@ -286,17 +291,21 @@
                 
   <div class="section" id="estructuras-de-control">
 <h1>Estructuras de control<a class="headerlink" href="#estructuras-de-control" title="Permalink to this headline">¶</a></h1>
-<p>En un lenguaje de programación, las estructuras de control permiten modificar el flujo de la ejecución de un conjunto de instrucciones.</p>
-<img src="img/estructuras-de-control/estructuras-de-control.svg"><div class="section" id="condicional-if-elif-else">
+<p>En un lenguaje de programación, las estructuras de control permiten modificar el flujo de la ejecución de un conjunto de instrucciones. Se pueden distinguir tres tipos básicos de control de flujo, a saber:</p>
+<ul class="simple">
+<li><p>Control secuencial</p></li>
+<li><p>Control de selección</p></li>
+<li><p>Control de repetición</p></li>
+</ul>
+<img src="img/estructuras-de-control/estructuras-de-control.svg"><p>En el control secuencial las instrucciones se ejecutan de manera secuencial desde el inicio hasta el fin del programa. En el control de selección se tiene una condición que puede ser falsa o verdadera, dependiendo de esto se ejecutará uno u otro bloque de instrucciones. En el control de repetición, un bloque de instrucciones se ejecuta de manera repetitiva mientras una condición sea verdadera, en caso contrario el flujo de ejecución se pasará a otro conjunto de instrucciones.</p>
+<div class="section" id="condicional-if-elif-else">
 <h2>Condicional <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code><a class="headerlink" href="#condicional-if-elif-else" title="Permalink to this headline">¶</a></h2>
-<p>El condicional <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> es una estructura de control que sirve para <em>tomar decisiones</em> en el flujo del programa. La sintaxis para <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> es:</p>
+<p>El condicional <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> es una estructura de control de selección que sirve para <em>tomar decisiones</em>, basándose en la evaluación de condiciones y/o comparaciones, en el flujo del programa. La sintaxis más general para <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> es:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">cond1</span><span class="p">:</span>
     <span class="c1"># hacer algo </span>
 <span class="k">elif</span> <span class="n">cond2</span><span class="p">:</span>
     <span class="c1"># hacer otra cosa</span>
-    <span class="o">.</span>
-    <span class="o">.</span>
-    <span class="o">.</span>
+<span class="o">...</span>
 <span class="k">elif</span> <span class="n">condn</span><span class="p">:</span>
     <span class="c1"># hacer algo más</span>
 <span class="k">else</span><span class="p">:</span>
@@ -306,6 +315,7 @@
 <p>Donde <code class="docutils literal notranslate"><span class="pre">cond1,</span> <span class="pre">cond2,</span> <span class="pre">...</span> <span class="pre">condn</span></code> son valores lógicos que resultan de una comparación. Esta estructura se evalúa
 secuencialmente hasta encontrar una condición que se cumpla, si ninguna lo hace, entonces se ejecuta la instrucción
 colocada en el caso por default <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p>
+<p>Hay que tener especial cuidado con las indentaciones de los bloques de código, en Python las indentaciones no son opcionales, tienen un significado sintáctico. La mayoría de los editores de código de Python indentarán de manera automática la siguiente línea, cada vez que coloques los dos puntos al final de una línea.</p>
 <p>En el siguiente fragmento de código se muestra un programa que verifica si el valor de <code class="docutils literal notranslate"><span class="pre">a</span></code> es mayor, menor o igual al valor de <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -327,10 +337,11 @@ colocada en el caso por default <code class="docutils literal notranslate"><span
 </div>
 </div>
 </div>
-<p>Es muy común que en algunos, por cuestiones inherentes a lo que se está programando, únicamente se decida entre dos posibilidades que son excluyentes, en esos casos basta con una estructura <code class="docutils literal notranslate"><span class="pre">if-else</span></code>.</p>
+<p>Es muy común que en algunos casos, por cuestiones inherentes a lo que se está programando, únicamente se decida entre dos posibilidades que son excluyentes, en esos casos basta con una estructura <em>reducida</em> <code class="docutils literal notranslate"><span class="pre">if-else</span></code>.</p>
+<p>Por ejemplo, el siguiente código determina si un número es par o impar (un número entero cualquiera o es par o es impar, no hay otra posibilidad).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">1111</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">1001</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El número es par&quot;</span><span class="p">)</span>
@@ -345,10 +356,53 @@ colocada en el caso por default <code class="docutils literal notranslate"><span
 </div>
 </div>
 </div>
+<p>La verificación que realiza el código anterior se basa en el hecho de que las potencias pares de -1 siempre serán 1, y las impares -1, es decir:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+(-1)^n = \left\{\begin{matrix}
+1 \text{       ; si n es par} \\
+-1 \text{      ; si n es impar} 
+\end{matrix}\right.
+\end{split}\]</div>
+<p>Supongamos ahora otro caso en donde las posibilidades son mutuamente excluyentes: en un curso la calificación mínima aprobatoria es de 70, la escala de calificación es de 0 a 100, ¿cómo podríamos implementar un código que decida si un alumno aprobó o reprobó la asignatura? Observa lo siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calificacion</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="k">if</span> <span class="n">calificacion</span> <span class="o">&gt;=</span> <span class="mi">70</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Aprobado&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No aprobado&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="section" id="bucle-for">
-<h2>Bucle <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#bucle-for" title="Permalink to this headline">¶</a></h2>
-<p>El <strong>bucle for</strong> es una estructura de control de naturaleza repetitiva, en la cual se conocen
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Aprobado
+</pre></div>
+</div>
+</div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Un poco de cuidado</p>
+<p>Usualmente un programa de computadora recibe datos de forma externa, es decir, alguien los proporciona de forma manual o se leen desde algún archivo de datos o desde algún sensor. Esto implica la posibilidad de que se reciban datos que no corresponderían con lo esperado, por ejemplo, en el caso del programa anterior, imagina ¿qué pasaría si un usuario inserta una calificación de 150? El programa seguiría funcionando y te imprimiría un mensaje de aprobado. Una manera de solventar esta situación sería adicionar una  verificación de que el valor pasado esté en el rango de valores esperado, por ejemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">calificacion</span> <span class="o">=</span> <span class="mi">150</span>
+
+<span class="k">if</span> <span class="n">calificacion</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">calificacion</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La calificación debe estar en la escala de 0 a 100&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">calificacion</span> <span class="o">&gt;=</span> <span class="mi">70</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Aprobado&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No aprobado&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ciclo-for">
+<h2>Ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#ciclo-for" title="Permalink to this headline">¶</a></h2>
+<p>El <strong>bucle for</strong> es una estructura de control de repetición, en la cual se conocen
 <em>a priori</em> el número de iteraciones a realizar. En lenguajes como C++ o Java, el ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code>
 necesita de una variable de ciclo de tipo entero que irá incrementándose en cada iteración. En Python, la cuestión es un poco diferente, el ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code> <em>recorre</em> una secuencia y en la k-ésima iteración la variable de ciclo <em>adopta</em> el
 valor del elemento en la k-ésima posición del iterable.</p>
@@ -357,7 +411,7 @@ valor del elemento en la k-ésima posición del iterable.</p>
     <span class="c1"># Hacer algo ...</span>
 </pre></div>
 </div>
-<p>Donde <code class="docutils literal notranslate"><span class="pre">var</span></code> es la <strong>variable de ciclo</strong> y <code class="docutils literal notranslate"><span class="pre">secuencia</span></code> la secuencia de valores que deberá iterarse. Es necesario remarcar la importancia de los dos puntos al final de esta primera línea y en indentar el bloque de
+<p>Donde <code class="docutils literal notranslate"><span class="pre">var</span></code> es la <strong>variable de ciclo</strong> o <strong>variable de control</strong> y <code class="docutils literal notranslate"><span class="pre">secuencia</span></code> la secuencia de valores que deberá iterarse. Es necesario remarcar la importancia de los dos puntos al final de esta primera línea y en indentar el bloque de
 código subsecuente que definirá el cuerpo del ciclo for.</p>
 <p>Como primer ejemplo vamos a recorrer una lista de números y mostrarlos por consola:</p>
 <div class="cell docutils container">
@@ -446,15 +500,35 @@ x=0 y=1
 </div>
 </div>
 </div>
+<p>Una forma equivalente de <em>desempaquetar</em> el conjunto de tuplas anteriores sería como sigue:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">puntos</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">punto</span> <span class="ow">in</span> <span class="n">puntos</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;x=</span><span class="si">{</span><span class="n">punto</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> y=</span><span class="si">{</span><span class="n">punto</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="section" id="bucle-while">
-<h2>Bucle <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#bucle-while" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x=0 y=0
+x=1 y=0
+x=1 y=1
+x=0 y=1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observa la diferencia, la primera forma es un quizá un poco menos <em>intuitiva</em> pero más práctica y natural. En la primera se accede directamente con las variables de ciclo <code class="docutils literal notranslate"><span class="pre">(x,y)</span></code> a cada elemento de las tuplas que conforman la lista <code class="docutils literal notranslate"><span class="pre">puntos</span></code>, con la segunda se tiene que acceder mediante indexación a cada elemento.</p>
+</div>
+<div class="section" id="ciclo-while">
+<h2>Ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#ciclo-while" title="Permalink to this headline">¶</a></h2>
 <p>El bucle <code class="docutils literal notranslate"><span class="pre">while</span></code> ejecuta un bloque de instrucciones mientras haya una condición que se cumpla. La sintaxis de <code class="docutils literal notranslate"><span class="pre">while</span></code> es:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">cond</span><span class="p">:</span>
     <span class="c1"># hacer algo </span>
 </pre></div>
 </div>
-<p>Donde <code class="docutils literal notranslate"><span class="pre">cond</span></code>, usualmente, es una cantidad que resulta de una operación de comparación; en general, <code class="docutils literal notranslate"><span class="pre">cond</span></code> debe ser un valor de tipo booleano.</p>
+<p>Donde <code class="docutils literal notranslate"><span class="pre">cond</span></code> es un valor de tipo booleano que usualmente resulta de realizar una comparación.</p>
 <p>Veamos un ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -475,12 +549,13 @@ x=0 y=1
 </div>
 </div>
 <p>En el código anterior, inicialmente <code class="docutils literal notranslate"><span class="pre">x</span></code> tiene un valor de 1, el flujo del programa <em>entra</em> en el ciclo while, puesto que la condición se cumple (dado que en ese momento <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;</span> <span class="pre">5</span></code>), posteriormente se ejecutan de manera repetitiva las instrucciones que están dentro del ciclo while, hasta que <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">5</span></code>. La instrucción <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+=</span> <span class="pre">1</span></code> suma 1 al valor de <code class="docutils literal notranslate"><span class="pre">x</span></code> en cada iteración.</p>
+<p>Ahora veamos otro ejemplo, en donde se combina el uso de <code class="docutils literal notranslate"><span class="pre">while</span></code> con el condicional <code class="docutils literal notranslate"><span class="pre">if-else</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¡Bienvenido a Adivina el Número!&quot;</span><span class="p">)</span>
-<span class="n">n</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># Un entero aleatorio en el intervalo [1,10]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># Genera un entero aleatorio en el intervalo [1,10]</span>
 <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># número de intentos</span>
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
@@ -510,6 +585,66 @@ Ingrese un entero entre 1 y 10: 1
 
 Ingrese un entero entre 1 y 10: 10
 Has adivinado después de 5 intentos
+</pre></div>
+</div>
+</div>
+</div>
+<p>El código anterior es un juego muy simple de adivinar un número entero entre 1 y 10 que la computadora genera de manera aleatoria mediante la función <code class="docutils literal notranslate"><span class="pre">randint</span></code>. Observa que el ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code>, en principio, se ejecutará de forma indefinida, dado que la condición es la constante booleana <code class="docutils literal notranslate"><span class="pre">True</span></code>; en este caso para <em>romper</em> la ejecución iterativa se hace uso de la instrucción <code class="docutils literal notranslate"><span class="pre">break</span></code>, en conjunto con la sentencia de selección <code class="docutils literal notranslate"><span class="pre">if-else</span></code>, observa que si la condición del <code class="docutils literal notranslate"><span class="pre">if</span></code> se cumple (<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">n</span></code>) entonces el programa rompe el ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code> con la instrucción <code class="docutils literal notranslate"><span class="pre">break</span></code>, en caso contrario simplemente se sigue ejecutando el juego.</p>
+</div>
+<div class="section" id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<p>Desarrolle un programa que calcule la suma de los enteros del 1 al 100, es decir: 1 + 2 + 3 + … + 99 + 100</p>
+<hr class="docutils" />
+<p>Escriba un programa que reciba un entero positivo. Sí el número ingresado es múltiplo de 5 deberá imprimir en pantalla <code class="docutils literal notranslate"><span class="pre">El</span> <span class="pre">número</span> <span class="pre">es</span> <span class="pre">múltiplo</span> <span class="pre">de</span> <span class="pre">5</span></code>, en cualquier otro caso deberá imprimir <code class="docutils literal notranslate"><span class="pre">El</span> <span class="pre">número</span> <span class="pre">no</span> <span class="pre">es</span> <span class="pre">múltiplo</span> <span class="pre">de</span> <span class="pre">5</span></code>.</p>
+<hr class="docutils" />
+<p>Escriba un programa que reciba como entrada una frase (un string) y determine cuántas veces aparece cada una de las vocales en esa frase. El valor de salida a mostrar debe ser un diccionario, se muestra enseguida un ejemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># entrada</span>
+<span class="n">frase</span> <span class="o">=</span> <span class="s2">&quot;hola mundo&quot;</span>
+
+<span class="c1"># salida</span>
+<span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>Desarrolle un programa que reciba una lista de números enteros y calcule cuántos el porcentaje de números pares que contiene, redondee el porcentaje calculado.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejemplos</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">66</span><span class="p">,</span><span class="mi">53</span><span class="p">,</span><span class="mi">55</span><span class="p">]</span> <span class="c1"># porcentaje -&gt; 57</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">300</span><span class="p">]</span> <span class="c1"># porcentaje -&gt; 100</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">33</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">189</span><span class="p">]</span> <span class="c1"># porcentaje -&gt; 29</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>¿Cuál es el error en el siguiente código? Descríbalo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="n">numeros</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p>Modifique el siguiente código para que se muestre en pantalla lo siguiente:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
+<span class="n">xx</span>
+<span class="n">xxx</span>
+<span class="n">xxxx</span>
+<span class="n">xxxxx</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="s2">&quot;o&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>o
+oo
 </pre></div>
 </div>
 </div>
