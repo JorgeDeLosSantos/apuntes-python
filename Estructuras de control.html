@@ -383,7 +383,7 @@ colocada en el caso por default <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="warning admonition">
-<p class="admonition-title">Un poco de cuidado</p>
+<p class="admonition-title">Sobre datos y validaciones</p>
 <p>Usualmente un programa de computadora recibe datos de forma externa, es decir, alguien los proporciona de forma manual o se leen desde algún archivo de datos o desde algún sensor. Esto implica la posibilidad de que se reciban datos que no corresponderían con lo esperado, por ejemplo, en el caso del programa anterior, imagina ¿qué pasaría si un usuario inserta una calificación de 150? El programa seguiría funcionando y te imprimiría un mensaje de aprobado. Una manera de solventar esta situación sería adicionar una  verificación de que el valor pasado esté en el rango de valores esperado, por ejemplo:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">calificacion</span> <span class="o">=</span> <span class="mi">150</span>
 
@@ -523,12 +523,12 @@ x=0 y=1
 </div>
 <div class="section" id="ciclo-while">
 <h2>Ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#ciclo-while" title="Permalink to this headline">¶</a></h2>
-<p>El bucle <code class="docutils literal notranslate"><span class="pre">while</span></code> ejecuta un bloque de instrucciones mientras haya una condición que se cumpla. La sintaxis de <code class="docutils literal notranslate"><span class="pre">while</span></code> es:</p>
+<p>El ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code> ejecuta un bloque de instrucciones mientras haya una condición que se cumpla. La sintaxis de <code class="docutils literal notranslate"><span class="pre">while</span></code> es:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">cond</span><span class="p">:</span>
     <span class="c1"># hacer algo </span>
 </pre></div>
 </div>
-<p>Donde <code class="docutils literal notranslate"><span class="pre">cond</span></code> es un valor de tipo booleano que usualmente resulta de realizar una comparación.</p>
+<p>Donde <code class="docutils literal notranslate"><span class="pre">cond</span></code> es un valor de tipo booleano que usualmente resulta de realizar una comparación; mientras <code class="docutils literal notranslate"><span class="pre">cond</span></code> sea un valor booleano <code class="docutils literal notranslate"><span class="pre">True</span></code> entonces el bloque de instrucciones contenidas en <code class="docutils literal notranslate"><span class="pre">while</span></code> se ejecutarán.</p>
 <p>Veamos un ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -549,6 +549,64 @@ x=0 y=1
 </div>
 </div>
 <p>En el código anterior, inicialmente <code class="docutils literal notranslate"><span class="pre">x</span></code> tiene un valor de 1, el flujo del programa <em>entra</em> en el ciclo while, puesto que la condición se cumple (dado que en ese momento <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;</span> <span class="pre">5</span></code>), posteriormente se ejecutan de manera repetitiva las instrucciones que están dentro del ciclo while, hasta que <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">5</span></code>. La instrucción <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+=</span> <span class="pre">1</span></code> suma 1 al valor de <code class="docutils literal notranslate"><span class="pre">x</span></code> en cada iteración.</p>
+<p>Aunque es menos común y poco práctico, con <code class="docutils literal notranslate"><span class="pre">while</span></code> podríamos iterar, como con <code class="docutils literal notranslate"><span class="pre">for</span></code>, sobre una secuencia:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span> <span class="o">=</span> <span class="s2">&quot;Pablo&quot;</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nombre</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+    <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>P
+a
+b
+l
+o
+</pre></div>
+</div>
+</div>
+</div>
+<p>El ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code> suele ser muy utilizado en métodos numéricos, donde el número de iteraciones requeridas puede establecerse por el usuario de manera directa o bien mediante la indicación de una tolerancia.</p>
+<p>Por ejemplo, el <a class="reference external" href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Newton">método de Newton</a> es un algoritmo que se utiliza para aproximar  raíces de una función real. Este método se puede establecer como sigue:</p>
+<blockquote>
+<div><p>Sea <span class="math notranslate nohighlight">\(f\)</span> una función real derivable, y sea r un cero real de <span class="math notranslate nohighlight">\(f\)</span>. Si <span class="math notranslate nohighlight">\(x_n\)</span> es una aproximación a <span class="math notranslate nohighlight">\(r\)</span>,
+entonces la siguiente aproximación <span class="math notranslate nohighlight">\(x_{n+1}\)</span> está dada por:</p>
+<div class="math notranslate nohighlight">
+\[ x_{n+1} = x_n - \frac{ f(x_n) }{ f'(x_n) } \]</div>
+<p>Donde <span class="math notranslate nohighlight">\( f' \)</span> denota la derivada de <span class="math notranslate nohighlight">\( f \)</span>. <a class="footnote-reference brackets" href="#newton" id="id1">1</a></p>
+</div></blockquote>
+<p>Vamos a aproximar una de las raíces de la función <span class="math notranslate nohighlight">\( f(x) =  x^3 - 5x^2 + 3\)</span>, para ello necesitamos conocer también la derivada de esta función, derivando se tiene que <span class="math notranslate nohighlight">\(f'(x) = 3x^2 - 10x\)</span>. Observe el siguiente código implementado:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="c1"># función f</span>
+<span class="n">fp</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">10</span><span class="o">*</span><span class="n">x</span> <span class="c1"># derivada de la función f&#39;</span>
+<span class="n">nit</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># número de iteraciones</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># contador de iteraciones</span>
+<span class="n">xn</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># valor inicial</span>
+
+<span class="k">while</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">nit</span><span class="p">:</span>
+    <span class="n">xnm1</span> <span class="o">=</span> <span class="n">xn</span> <span class="o">-</span> <span class="p">(</span> <span class="n">f</span><span class="p">(</span><span class="n">xn</span><span class="p">)</span> <span class="o">/</span> <span class="n">fp</span><span class="p">(</span><span class="n">xn</span><span class="p">)</span> <span class="p">)</span>
+    <span class="n">xn</span> <span class="o">=</span> <span class="n">xnm1</span>
+    <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;N = </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> | xn = </span><span class="si">{</span><span class="n">xn</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N = 1 | xn = 0.9411764705882353
+N = 2 | xn = 0.853031581485053
+N = 3 | xn = 0.8502595519219142
+N = 4 | xn = 0.850256587246385
+N = 5 | xn = 0.8502565872429864
+</pre></div>
+</div>
+</div>
+</div>
+<p>En <code class="docutils literal notranslate"><span class="pre">f</span></code> y <code class="docutils literal notranslate"><span class="pre">fp</span></code> se definen como funciones lambda las expresiones correspondientes a la función y su derivada, de manera respectiva. En la variable <code class="docutils literal notranslate"><span class="pre">nit</span></code> establecemos el número de iteraciones a realizar, la variable <code class="docutils literal notranslate"><span class="pre">k</span></code> funciona como un contador de iteraciones y en <code class="docutils literal notranslate"><span class="pre">xn</span></code> se guarda primeramente el valor inicial, y posteriormente, cada una de las aproximaciones realizadas.</p>
 <p>Ahora veamos otro ejemplo, en donde se combina el uso de <code class="docutils literal notranslate"><span class="pre">while</span></code> con el condicional <code class="docutils literal notranslate"><span class="pre">if-else</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -594,11 +652,17 @@ Has adivinado después de 5 intentos
 <div class="section" id="ejercicios">
 <h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
 <hr class="docutils" />
-<p>Desarrolle un programa que calcule la suma de los enteros del 1 al 100, es decir: 1 + 2 + 3 + … + 99 + 100</p>
+<ol class="simple">
+<li><p>Desarrolle un programa que calcule la suma de los enteros del 1 al 100, es decir: 1 + 2 + 3 + … + 99 + 100</p></li>
+</ol>
 <hr class="docutils" />
-<p>Escriba un programa que reciba un entero positivo. Sí el número ingresado es múltiplo de 5 deberá imprimir en pantalla <code class="docutils literal notranslate"><span class="pre">El</span> <span class="pre">número</span> <span class="pre">es</span> <span class="pre">múltiplo</span> <span class="pre">de</span> <span class="pre">5</span></code>, en cualquier otro caso deberá imprimir <code class="docutils literal notranslate"><span class="pre">El</span> <span class="pre">número</span> <span class="pre">no</span> <span class="pre">es</span> <span class="pre">múltiplo</span> <span class="pre">de</span> <span class="pre">5</span></code>.</p>
+<ol class="simple">
+<li><p>Escriba un programa que reciba un entero positivo. Sí el número ingresado es múltiplo de 5 deberá imprimir en pantalla <code class="docutils literal notranslate"><span class="pre">El</span> <span class="pre">número</span> <span class="pre">es</span> <span class="pre">múltiplo</span> <span class="pre">de</span> <span class="pre">5</span></code>, en cualquier otro caso deberá imprimir <code class="docutils literal notranslate"><span class="pre">El</span> <span class="pre">número</span> <span class="pre">no</span> <span class="pre">es</span> <span class="pre">múltiplo</span> <span class="pre">de</span> <span class="pre">5</span></code>.</p></li>
+</ol>
 <hr class="docutils" />
-<p>Escriba un programa que reciba como entrada una frase (un string) y determine cuántas veces aparece cada una de las vocales en esa frase. El valor de salida a mostrar debe ser un diccionario, se muestra enseguida un ejemplo:</p>
+<ol class="simple">
+<li><p>Escriba un programa que reciba como entrada una frase (un string) y determine cuántas veces aparece cada una de las vocales en esa frase. El valor de salida a mostrar debe ser un diccionario, se muestra enseguida un ejemplo:</p></li>
+</ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># entrada</span>
 <span class="n">frase</span> <span class="o">=</span> <span class="s2">&quot;hola mundo&quot;</span>
 
@@ -607,7 +671,9 @@ Has adivinado después de 5 intentos
 </pre></div>
 </div>
 <hr class="docutils" />
-<p>Desarrolle un programa que reciba una lista de números enteros y calcule cuántos el porcentaje de números pares que contiene, redondee el porcentaje calculado.</p>
+<ol class="simple">
+<li><p>Desarrolle un programa que reciba una lista de números enteros y calcule cuántos el porcentaje de números pares que contiene, redondee el porcentaje calculado.</p></li>
+</ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejemplos</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">66</span><span class="p">,</span><span class="mi">53</span><span class="p">,</span><span class="mi">55</span><span class="p">]</span> <span class="c1"># porcentaje -&gt; 57</span>
@@ -616,7 +682,9 @@ Has adivinado después de 5 intentos
 </pre></div>
 </div>
 <hr class="docutils" />
-<p>¿Cuál es el error en el siguiente código? Descríbalo.</p>
+<ol class="simple">
+<li><p>¿Cuál es el error en el siguiente código? Descríbalo.</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">]</span>
@@ -627,7 +695,9 @@ Has adivinado después de 5 intentos
 </div>
 </div>
 <hr class="docutils" />
-<p>Modifique el siguiente código para que se muestre en pantalla lo siguiente:</p>
+<ol class="simple">
+<li><p>Modifique el siguiente código para que se muestre en pantalla lo siguiente:</p></li>
+</ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
 <span class="n">xx</span>
 <span class="n">xxx</span>
@@ -649,6 +719,12 @@ oo
 </div>
 </div>
 </div>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="newton"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>https://www.calculo.jcbmat.com/id454.htm</p>
+</dd>
+</dl>
 </div>
 </div>
 
