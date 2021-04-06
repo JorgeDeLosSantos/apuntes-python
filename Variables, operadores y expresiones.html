@@ -289,8 +289,90 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#operadores-relacionales-y-logicos">
-   Operadores relacionales y lógicos
+  <a class="reference internal nav-link" href="#operadores-aritmeticos">
+   Operadores aritméticos
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operador-suma">
+     Operador suma (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       +
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operador-resta">
+     Operador resta (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       -
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operador-multiplicacion">
+     Operador multiplicación (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       *
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operador-division">
+     Operador división (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       /
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operador-de-potenciacion">
+     Operador de potenciación (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       **
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operador-modulo">
+     Operador módulo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operador-division-entera">
+     Operador división entera
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operadores-relacionales">
+   Operadores relacionales
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operadores-logicos">
+   Operadores lógicos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios">
+   Ejercicios
   </a>
  </li>
 </ul>
@@ -508,6 +590,7 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 </div>
+<p>En el código anterior la función <code class="docutils literal notranslate"><span class="pre">type</span></code> nos sirve para identificar la clase/tipo de un objeto.</p>
 <p>De manera explícita se puede definir un valor entero utilizando la función <code class="docutils literal notranslate"><span class="pre">int</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -523,11 +606,11 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 </div>
-<p>Observe que cuando colocamos un punto decimal, automáticamente la cantidad deja de ser un entero y pasa a ser un flotante.</p>
+<p>Observa que cuando colocamos un punto decimal, automáticamente la cantidad deja de ser un entero y pasa a ser un flotante.</p>
 </div>
 <div class="section" id="de-coma-flotante-float">
 <h3>De coma flotante (<code class="docutils literal notranslate"><span class="pre">float</span></code>)<a class="headerlink" href="#de-coma-flotante-float" title="Permalink to this headline">¶</a></h3>
-<p>Los valores de coma flotante son cantidades numéricas que incluyen a todos los reales. Para que Python reconozca un valor numérico como de tipo <code class="docutils literal notranslate"><span class="pre">float</span></code> se debe adicionar el punto decimal o bien utilizar la función <code class="docutils literal notranslate"><span class="pre">float</span></code> para hacer la indicación de manera explícita, por ejemplo:</p>
+<p>Los valores de coma flotante son cantidades numéricas que incluyen a <em>todos los reales</em>. Para que Python reconozca un valor numérico como de tipo <code class="docutils literal notranslate"><span class="pre">float</span></code> se debe adicionar el punto decimal o bien utilizar la función <code class="docutils literal notranslate"><span class="pre">float</span></code> para hacer la indicación de manera explícita, por ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="mf">5.3</span>
@@ -612,15 +695,123 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 <p>En general, la función <code class="docutils literal notranslate"><span class="pre">bool</span></code> devolverá un <code class="docutils literal notranslate"><span class="pre">False</span></code> cuando se tienen objetos nulos o vacíos, en cualquier otro caso devolverá el valor <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>Usualmente los valores booleanos siempre van a provenir de una comparación entre objetos, para efectuar esas comparaciones se utilizan los operadores relacionales.</p>
 </div>
 </div>
-<div class="section" id="operadores-relacionales-y-logicos">
-<h2>Operadores relacionales y lógicos<a class="headerlink" href="#operadores-relacionales-y-logicos" title="Permalink to this headline">¶</a></h2>
-<p>Los operadores relacionales (o de comparación) nos permite efectuar comparaciones entre objetos de Python. El resultado de una comparación es un valor booleano <code class="docutils literal notranslate"><span class="pre">True</span></code> o <code class="docutils literal notranslate"><span class="pre">False</span></code>, dependiendo la naturaleza de la comparación.</p>
-<p>A continuación se ejemplifican los operadores relacionales que podemos utilizar en Python:</p>
+<div class="section" id="operadores-aritmeticos">
+<h2>Operadores aritméticos<a class="headerlink" href="#operadores-aritmeticos" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="operador-suma">
+<h3>Operador suma (<code class="docutils literal notranslate"><span class="pre">+</span></code>)<a class="headerlink" href="#operador-suma" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &quot;igual a&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1000</span> <span class="o">+</span> <span class="mi">2000</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3000
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="operador-resta">
+<h3>Operador resta (<code class="docutils literal notranslate"><span class="pre">-</span></code>)<a class="headerlink" href="#operador-resta" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">500</span> <span class="o">-</span> <span class="mi">350</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>150
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="operador-multiplicacion">
+<h3>Operador multiplicación (<code class="docutils literal notranslate"><span class="pre">*</span></code>)<a class="headerlink" href="#operador-multiplicacion" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">352</span> <span class="o">*</span> <span class="mi">34</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11968
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="operador-division">
+<h3>Operador división (<code class="docutils literal notranslate"><span class="pre">/</span></code>)<a class="headerlink" href="#operador-division" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="o">/</span><span class="mi">8</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.375
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="operador-de-potenciacion">
+<h3>Operador de potenciación (<code class="docutils literal notranslate"><span class="pre">**</span></code>)<a class="headerlink" href="#operador-de-potenciacion" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="operador-modulo">
+<h3>Operador módulo<a class="headerlink" href="#operador-modulo" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">250</span> <span class="o">%</span> <span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="operador-division-entera">
+<h3>Operador división entera<a class="headerlink" href="#operador-division-entera" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">50</span> <span class="o">//</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="operadores-relacionales">
+<h2>Operadores relacionales<a class="headerlink" href="#operadores-relacionales" title="Permalink to this headline">¶</a></h2>
+<p>Los operadores relacionales (o de comparación) nos permite efectuar comparaciones entre objetos de Python. El resultado de una comparación es un valor booleano <code class="docutils literal notranslate"><span class="pre">True</span></code> o <code class="docutils literal notranslate"><span class="pre">False</span></code>. A continuación se ejemplifican los operadores relacionales que podemos utilizar en Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &quot;igual que&quot;</span>
 <span class="mi">1</span> <span class="o">==</span> <span class="mi">1</span>
 </pre></div>
 </div>
@@ -706,7 +897,7 @@ con la sintaxis para definir cada tipo de dato.</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">7</span><span class="n">a3a9a917f79</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">45</span><span class="o">-</span><span class="mi">7</span><span class="n">a3a9a917f79</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="s2">&quot;a&quot;</span> <span class="o">&gt;</span> <span class="mi">10</span>
 
 <span class="ne">TypeError</span>: &#39;&gt;&#39; not supported between instances of &#39;str&#39; and &#39;int&#39;
@@ -717,6 +908,16 @@ con la sintaxis para definir cada tipo de dato.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">46</span><span class="o">-</span><span class="mi">4</span><span class="n">dd688af572f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: &#39;&lt;&#39; not supported between instances of &#39;list&#39; and &#39;tuple&#39;
 </pre></div>
 </div>
 </div>
@@ -758,6 +959,9 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="operadores-logicos">
+<h2>Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Permalink to this headline">¶</a></h2>
 <p>Los <strong>operadores lógicos</strong> nos sirven para realizar operaciones de lógica booleana entre valores de tipo <code class="docutils literal notranslate"><span class="pre">bool</span></code>. En Python podemos utilizar los operadores lógicos <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> y <code class="docutils literal notranslate"><span class="pre">not</span></code>, observe los siguientes ejemplos:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -843,6 +1047,9 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
