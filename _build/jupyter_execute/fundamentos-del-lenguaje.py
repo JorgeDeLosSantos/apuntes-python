@@ -21,14 +21,14 @@
 # ## Instalando Python
 # 
 # En estos apuntes se utilizará la distribución Anaconda de Python, la cual contiene el intérprete y las librerías del 
-# *core*, pero además incluye la mayoría de librerías utilizadas para el desarrollo de aplicaciones de corte 
+# *core*, pero que además incluye la mayoría de librerías utilizadas para el desarrollo de aplicaciones de corte 
 # técnico-científico.
 # 
 # La descarga de Anaconda puede realizarla desde el sitio https://www.anaconda.com/download/, selecciona el 
 # paquete de descarga conforme al sistema operativo (Windows, macOS o Linux) así como la arquitectura de su PC.
 # La instalación suele ser muy sencilla, puede seguir las instrucciones dadas en el *How to install ANACONDA* de 
 # la misma página.
-# 
+
 # ## El notebook de Jupyter como una calculadora básica
 # 
 # Una vez instalado Anaconda puede testear la correcta instalación abriendo el Jupyter Notebook, la cual es una aplicación web en la cual puede escribir código, texto, ecuaciones, etc., y que básicamente es donde se desarrollaron estos apuntes. Puede 
@@ -103,13 +103,12 @@
 (5 + 2j)*(10 + 7j)
 
 
-# Puede ampliar la capacidad de las funcionalidades *built-in* de Python si importa alguna librería, como 
-# `math`, pero claro, eso será un tema a tratar con posterioridad.
+# Puede ampliar la capacidad de las funcionalidades *built-in* de Python si importa alguna librería, como `math`, pero claro, esto será un tema a tratar con posterioridad.
 
 # ## Variables y tipos de datos
 # 
 # Al ser un lenguaje de alto nivel, Python dispone de los tipos de datos elementales en cualquier lenguaje de programación, 
-# pero además incluye estructuras de datos muy *avanzadas* y con altas prestaciones que facilitan en muchos 
+# pero además incluye estructuras de datos más complejas y con altas prestaciones que facilitan en muchos 
 # aspectos la tarea del programador.
 # 
 # Python es un lenguaje de tipado dinámico en el que no hace falta declarar el tipo de dato que asignará a una variable, 
@@ -198,7 +197,7 @@ z = float(8)
 type(w), type(x), type(y), type(z)
 
 
-# ### Booleanos
+# ### Booleanos (`bool`)
 # 
 # Las variables booleanas sólo pueden adoptar dos valores: verdadero (`True`) o falso (`False`). Un valor booleano se puede definir directamente a partir de las constantes `True` y `False`:
 
@@ -308,7 +307,7 @@ nombre[2]
 nombre[-1]
 
 
-# ### Listas
+# ### Listas (`list`)
 # 
 # Las listas son estructuras de datos que pueden almacenar cualquier otro tipo de dato, inclusive una lista 
 # puede contener otra lista, además, la cantidad de elementos de una lista se puede modificar removiendo o 
@@ -364,7 +363,7 @@ print(nombres)
 nombres.remove("Jorge")
 
 
-# ### Tuplas
+# ### Tuplas (`tuple`)
 # 
 # Las tuplas son secuencias de elementos similares a las listas, la diferencia principal es que 
 # las tuplas no pueden ser modificadas directamente, es decir, una tupla no dispone de los métodos 
@@ -372,7 +371,7 @@ nombres.remove("Jorge")
 # 
 # Para definir una tupla, los elementos se separan con comas y se encierran entre paréntesis.
 
-# In[92]:
+# In[2]:
 
 
 colores=("Azul","Verde","Rojo","Amarillo","Blanco","Negro","Gris")
@@ -406,7 +405,7 @@ colores[3]
 colores[0] = "Café"
 
 
-# ### Diccionarios
+# ### Diccionarios (`dict`)
 
 # Los diccionarios son estructuras que contienen una colección de elementos de la 
 # forma `clave: valor` separados por comas y encerrados entre llaves. 
@@ -417,7 +416,7 @@ colores[0] = "Café"
 # Vamos a definir un diccionario llamado `edades` en el cual 
 # cada clave será un nombre y el valor una edad:
 
-# In[97]:
+# In[3]:
 
 
 edades = {"Ana": 25, "David": 18, "Lucas": 35, "Ximena": 30, "Ale": 20}
@@ -426,7 +425,7 @@ edades = {"Ana": 25, "David": 18, "Lucas": 35, "Ximena": 30, "Ale": 20}
 # Puede acceder a cada valor de un diccionario mediante su clave, por ejemplo, 
 # si quisieramos obtener la edad de la clave `Lucas` se tendría que escribir:
 
-# In[104]:
+# In[4]:
 
 
 edades["Lucas"]
@@ -438,42 +437,42 @@ edades["Lucas"]
 # 
 # A continuación se ejemplifican los operadores relacionales que podemos utilizar en Python:
 
-# In[105]:
+# In[5]:
 
 
 # "igual a"
 1 == 1
 
 
-# In[106]:
+# In[6]:
 
 
 # "diferente a"
 "a" != "a"
 
 
-# In[107]:
+# In[7]:
 
 
 # mayor que
 10 > 5
 
 
-# In[108]:
+# In[8]:
 
 
 # menor que
 5 < 1
 
 
-# In[109]:
+# In[9]:
 
 
 # mayor o igual que
 30 >= 30
 
 
-# In[110]:
+# In[10]:
 
 
 # menor o igual que
@@ -482,33 +481,33 @@ edades["Lucas"]
 
 # Hay que tener cuidado y verificar que al hacer comparaciones los objetos implicados sean compatibles. Cuando los objetos no son comparables Python devolverá un `TypeError`, por ejemplo:
 
-# In[113]:
+# In[11]:
 
 
 "a" > 10
 
 
-# In[114]:
+# In[ ]:
 
 
 [0,4] < (1,2)
 
 
-# También podemos *encadenar* comparaciones con cadenas del tipo `a < b < c`, donde ese `<` puede ser cualquier operador relacional, por ejemplo:
+# También podemos *encadenar* comparaciones con instrucciones del tipo `a < b < c`, donde ese `<` puede ser cualquier operador relacional, por ejemplo:
 
-# In[115]:
+# In[12]:
 
 
 1 < 2 < 3
 
 
-# In[116]:
+# In[13]:
 
 
 10 > 10 > 3
 
 
-# In[117]:
+# In[14]:
 
 
 3 == 3 >= 2
@@ -516,19 +515,19 @@ edades["Lucas"]
 
 # Los **operadores lógicos** nos sirven para realizar operaciones de lógica booleana entre valores de tipo `bool`. En Python podemos utilizar los operadores lógicos `and`, `or` y `not`, observe los siguientes ejemplos:
 
-# In[118]:
+# In[15]:
 
 
 True and True
 
 
-# In[119]:
+# In[16]:
 
 
 True and False
 
 
-# In[120]:
+# In[17]:
 
 
 True or False
@@ -558,75 +557,131 @@ not True
 not( (2 > 3) and (5==5) )
 
 
-# ## Las funciones `print` e `input`
+# ## Entrada y salida por consola: las funciones `input` e `print`
 
-# In[130]:
+# ### La función `print`
+# 
+# La función `print` se utiliza para mostrar en pantalla el *valor* (o la representación) de los objetos Python. A `print` le podemos pasar un sólo argumento, por ejemplo:
+
+# In[1]:
 
 
 print("Hola mundo")
 
 
-# In[131]:
+# O una lista de argumentos que se imprimirán:
+
+# In[2]:
 
 
-print("hola", "mundo", 1, 2, 3)
+print("hola", "mundo", 5, 8, [1,2,3])
 
 
-# In[132]:
+# Como se puede observar en la línea anterior, realmente, le podemos pasar cualquier objeto de Python y `print` nos devolverá la representación de dicho objeto. 
+# 
+# Adicionalmente, también podemos indicar de manera explícita, mediante el *keyword argument* `sep`, el separador que queremos utilizar, por default el separador es un espacio.
+
+# In[3]:
 
 
 print(20,30,"python", sep=",")
 
 
-# In[133]:
+# In[4]:
 
 
-print(20,30,"python", end="\n\n")
+print("Hola", 90, 80, sep=" -- ")
+
+
+# Como separador podemos utilizar cualquier símbolo soportado por Python.
+
+# In[5]:
+
+
+print("Hola", 90, 80, sep=" \u21e8 ")
+
+
+# In[6]:
+
+
+print("Hola", "mundo", sep=" \U0001F600 ")
+
+
+# Se puede indicar, también, mediante el *keyword argument* `end`, el caracter que se quiere utilizar cuando se *imprime* el último elemento, por default es un salto de línea.
+
+# In[7]:
+
+
+print(20,30,"python") # sin cambiar el argumento end 
 print("hola")
 
 
-# In[134]:
+# Cambiando el argumento `end`:
+
+# In[8]:
 
 
-print(30*"-")
+print(20,30,"python", end="\n\n\t") # utilizando un doble salto de línea + tab
+print("hola")
 
 
-# In[135]:
+# ```{admonition} print y los strings formateados
+# :class: tip
+# Si te interesa obtener información acerca de `print` y su uso conjunto con strings formateados, revisa el capítulo dedicado a los strings.
+# ```
 
+# ### La función `input`
 
-a = 10
-b = 30
-print("a + b = {a} + {b} = {c}".format(a=a,b=b,c=a+b))
+# En Python, la función `input` permite obtener entrada por teclado, con la finalidad de *tomar* información proporcionada por el usuario. La sintaxis de `input` es:
+# 
+# ```python
+# var = input(prompt)
+# ```
+# 
+# Donde `prompt` es el mensaje que se muestra al usuario al momento que se le solicita la información, `var` es la variable en la cual se almacena lo que el usuario ingresa hasta que presiona la tecla **Enter**.
+# 
+# Veamos un ejemplo:
 
-
-# In[136]:
-
-
-a = 32479
-b = 54988
-print("a + b = {a:0.3e} + {b:0.2f} = {c}".format(a=a,b=b,c=a+b))
-
-
-# In[139]:
+# In[1]:
 
 
 nombre = input("Ingrese su nombre: ")
 print("Hola", nombre, "bienvenido")
 
 
-# In[141]:
+# Como puedes observar, el programa anterior solicita al usuario un valor de entrada utilizando el prompt `Ingrese su nombre: `; en este caso el usuario ingresó la cadena `Jorge`. Con la segunda línea únicamente se toma el valor guardado en la variable nombre y se muestra junto con  las cadenas `"Hola"` y `"bienvenido"`.
+
+# Es importante tener en cuenta que la función `input` devuelve siempre un valor de tipo string. Así, si quisiéramos solicitar un valor de tipo numérico y realizar operaciones con él, entonces, se debe tener el cuidado de convertir el string a un tipo numérico de manera explícita, de lo contrario podríamos tener un programa que nos *lance* un error, o en el peor de los casos, que funcione de manera incorrecta.
+
+# In[20]:
 
 
+# No podemos sumar un string con un entero
+n = input("Ingrese un número: ")
+print(n + 10)
+
+
+# In[19]:
+
+
+# Aquí n+n+n corresponde a concatenar la cadena "12", en lugar de sumar los valores numéricos.
+n = input("Ingrese un número: ")
+print(n + n + n)
+
+
+# In[13]:
+
+
+# Ahora n+n+n si corresponde a sumar dichos valores numéricamente
 n = float( input("Ingrese un número: ") )
-print("2 *",n,"=", 2*n)
+print(n + n + n)
 
 
 # ## Control de flujo
 # 
 # ### Condicional `if-elif-else`
 # 
-# El condicional `if-elif-else` es una estructura de control que sirve para tomar decisiones 
-# en el flujo del programa. La sintaxis para `if-elif-else` es:
+# El condicional `if-elif-else` es una estructura de control que sirve para *tomar decisiones* en el flujo del programa. La sintaxis para `if-elif-else` es:
 # 
 # ```python
 # if cond1:
@@ -645,8 +700,26 @@ print("2 *",n,"=", 2*n)
 # Donde `cond1, cond2, ... condn` son valores lógicos que resultan de una comparación. Esta estructura se evalúa 
 # secuencialmente hasta encontrar una condición que se cumpla, si ninguna lo hace, entonces se ejecuta la instrucción 
 # colocada en el caso por default `else`.
+# 
+# En el siguiente fragmento de código se muestra un programa que verifica si el valor de `a` es mayor, menor o igual al valor de `b`.
 
-# In[144]:
+# In[7]:
+
+
+a = 10
+b = 30
+
+if a > b:
+    print("a es mayor que b")
+elif a < b:
+    print("a es menor que b")
+else:
+    print("a es igual a b")
+
+
+# Es muy común que en algunos, por cuestiones inherentes a lo que se está programando, únicamente se decida entre dos posibilidades que son excluyentes, en esos casos basta con una estructura `if-else`.
+
+# In[8]:
 
 
 n = 1111
@@ -657,39 +730,21 @@ else:
     print("El número es impar")
 
 
-# In[145]:
-
-
-nota = 7
-
-if 9.5 <= nota <= 10:
-    print("Excelente")
-elif 8.5 <= nota < 9.5:
-    print("Muy bien")
-elif 7.5 <= nota < 8.5:
-    print("Bien")
-elif 7.0 <= nota < 7.5:
-    print("Regular")
-else:
-    print("No aprobado")
-
-
 # ### Bucle `for`
 # 
 # El **bucle for** es una estructura de control de naturaleza repetitiva, en la cual se conocen 
 # *a priori* el número de iteraciones a realizar. En lenguajes como C++ o Java, el ciclo `for` 
-# necesita de una variable de ciclo de tipo entero que irá incrementándose en cada iteración. En Python, la cuestión es un poco diferente, el ciclo `for` *recorre* un *iterable* y en la k-ésima iteración la variable de ciclo *adopta* el 
+# necesita de una variable de ciclo de tipo entero que irá incrementándose en cada iteración. En Python, la cuestión es un poco diferente, el ciclo `for` *recorre* una secuencia y en la k-ésima iteración la variable de ciclo *adopta* el 
 # valor del elemento en la k-ésima posición del iterable.
 # 
 # De manera general, la sintaxis de `for` es:
 # 
 # ```python
-# for var in iterable:
+# for var in secuencia:
 #     # Hacer algo ...
 # ```
 # 
-# Donde `var` es la **variable de ciclo** e `iterable` la secuencia de valores que deberá iterarse. 
-# Es necesario remarcar la importancia de los dos puntos al final de esta primera línea y en indentar el bloque de 
+# Donde `var` es la **variable de ciclo** y `secuencia` la secuencia de valores que deberá iterarse. Es necesario remarcar la importancia de los dos puntos al final de esta primera línea y en indentar el bloque de 
 # código subsecuente que definirá el cuerpo del ciclo for.
 # 
 # Como primer ejemplo vamos a recorrer una lista de números y mostrarlos por consola:
@@ -716,11 +771,7 @@ for letra in palabra:
     print(letra)
 
 
-# Dentro de un ciclo for podemos colocar cualesquiera otra instrucción de control de flujo. Un caso 
-# muy común es el de incluir otro ciclo for, algo que habitualmente se denota como **ciclos anidados**. 
-# Por ejemplo, supongamos que se requieren mostrar por consola todos los elementos de algunas listas contenidas 
-# dentro de otra lista principal, en ese caso se hace necesario primero iterar sobre la lista principal y 
-# enseguida hacerlo sobre las listas contenidas, por ejemplo:
+# Dentro de un ciclo for podemos colocar cualquier otra instrucción de control de flujo. Un caso muy común es el de incluir otro ciclo for, algo que habitualmente se denota como **ciclos anidados**. Por ejemplo, supongamos que se requieren mostrar por consola todos los elementos de algunas listas contenidas dentro de otra lista principal, en ese caso se hace necesario primero iterar sobre la lista principal y enseguida hacerlo sobre las listas contenidas, por ejemplo:
 
 # In[150]:
 
@@ -731,7 +782,65 @@ for fila in matriz:
         print(elemento)
 
 
+# Con un ciclo for también podemos *desempaquetar* múltiples valores:
+
+# In[12]:
+
+
+puntos = [(0,0), (1,0), (1,1), (0,1)]
+
+for x,y in puntos:
+    print(f"x={x} y={y}")
+
+
 # ### Bucle `while`
+
+# El bucle `while` ejecuta un bloque de instrucciones mientras haya una condición que se cumpla. La sintaxis de `while` es: 
+# 
+# ```python
+# while cond:
+#     # hacer algo 
+# ```
+# 
+# Donde `cond`, usualmente, es una cantidad que resulta de una operación de comparación; en general, `cond` debe ser un valor de tipo booleano.
+# 
+# Veamos un ejemplo:
+
+# In[14]:
+
+
+x = 1
+while x < 5:
+    print(x)
+    x += 1
+
+
+# En el código anterior, inicialmente `x` tiene un valor de 1, el flujo del programa *entra* en el ciclo while, puesto que la condición se cumple (dado que en ese momento `1 < 5`), posteriormente se ejecutan de manera repetitiva las instrucciones que están dentro del ciclo while, hasta que `x = 5`. La instrucción `x += 1` suma 1 al valor de `x` en cada iteración. 
+
+# In[25]:
+
+
+from random import randint
+
+print("¡Bienvenido a Adivina el Número!")
+n = randint(1,10) # Un entero aleatorio en el intervalo [1,10]
+k = 1 # número de intentos
+
+while True:
+    x = int( input("Ingrese un entero entre 1 y 10: ") )
+    if x == n:
+        print(f"Has adivinado después de {k} intentos")
+        break
+    else:
+        print(f"{x} no es el número, intenta nuevamente\n")
+    k += 1
+
+
+# In[ ]:
+
+
+
+
 
 # ## Funciones
 # 
@@ -801,16 +910,15 @@ round(3.141592653589793, 2)
 
 # ### Funciones definidas por el usuario
 
-# Además de las funciones nativas de Python, es posible definir nuestras propias funciones. 
-# En Python, de manera general, una función se define siguiendo la estructura mostrada a continuación:
+# Además de las funciones nativas de Python, es posible definir nuestras propias funciones. En Python, de manera general, una función se define siguiendo la estructura mostrada a continuación:
 # 
 # ```python
 # def nombre_fun(arg1, arg2, ..., argN):
-# 	# Cuerpo de la función
-# 	# .
-# 	# .
-# 	# .
-# 	return val1, val2, ..., valN
+#     # Cuerpo de la función
+#     # .
+#     # .
+#     # .
+#     return val1, val2, ..., valN
 # ```
 # 
 # Donde `def` es una palabra que debe anteceder siempre a la definición de una función, 
@@ -1044,3 +1152,9 @@ muestra_puntos(Ana=6, Carlos=9, Victor=4, Daniela=8)
 # 1. Escriba un programa que aproxime, mediante la suma de Riemann, el área bajo la curva de la función 
 # $ f(x) = x^2 + 3x $ en el intervalo $ 0 \leq x \leq 10 $. 
 # 
+
+# In[ ]:
+
+
+
+

@@ -11,7 +11,7 @@
 # 
 # En todo este capítulo se asumirá que las siguientes líneas de código han sido ejecutadas, previamente, para cada porción de código:
 
-# In[1]:
+# In[3]:
 
 
 import matplotlib.pyplot as plt
@@ -26,7 +26,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 # Una de las características de Matplotlib es la facilidad con la que se puede 
 # comenzar a trazar gráficas, vea el siguiente código:
 
-# In[2]:
+# In[3]:
 
 
 plt.plot([5,10,6,-10,15,1])
@@ -34,7 +34,7 @@ plt.plot([5,10,6,-10,15,1])
 
 # La linea anterior produce la gráfica mostrada en la figura, a la función `plot` únicamente se le pasó como argumento una lista de valores numéricos. Un resultado un poco más *trabajado* se obtiene con el siguiente código:
 
-# In[3]:
+# In[4]:
 
 
 plt.plot([0,1,2,3,4,5], [5,10,6,-10,15,1], 'r--o', label="Partícula 1")
@@ -56,7 +56,7 @@ plt.grid(ls="--", color="#dadada")
 # 
 # La forma más básica de la función `plot` es pasarle un sólo argumento, por ejemplo:
 
-# In[4]:
+# In[5]:
 
 
 plt.plot([1,2,1,0,-1,1])
@@ -68,7 +68,7 @@ plt.plot([1,2,1,0,-1,1])
 # de la coordenada horizontal, y el segundo una lista `Y` correspondiente a los valores de la coordenada vertical, 
 # por ejemplo:
 
-# In[5]:
+# In[6]:
 
 
 plt.plot([10,25,30,60,70,100], [100,200,-100,300,0,-250])
@@ -87,7 +87,7 @@ plt.plot([10,25,30,60,70,100], [100,200,-100,300,0,-250])
 # a la función $ y = \cos x $ en el intervalo $ 0 \leq x \leq 5 $, en Python se tendría que definir 
 # como:
 
-# In[6]:
+# In[7]:
 
 
 x = np.linspace(0,5)
@@ -98,7 +98,7 @@ y = np.cos(x)
 # 0 y 5, la variable `y` es también un arreglo de NumPy que resulta de aplicar la función coseno 
 # a cada valor de `x`. Si se quiere graficar lo anterior, entonces, utilizando `plot`:
 
-# In[7]:
+# In[8]:
 
 
 plt.plot(x, y)
@@ -106,7 +106,7 @@ plt.plot(x, y)
 
 # De manera similar a lo anterior se procederá a definir y graficar la función $y = e^{-0.1x} \cos x $ en el intervalo $ 0 \leq x \leq 30 $:
 
-# In[8]:
+# In[9]:
 
 
 x = np.linspace(0, 30)
@@ -121,7 +121,7 @@ plt.plot(x,y)
 # de manera respectiva, notará la diferencia entre los casos, es evidente que en el caso de los 
 # 5 puntos *se pierde* muchísima información.
 
-# In[9]:
+# In[10]:
 
 
 # Con 1000 puntos evaluados
@@ -130,7 +130,7 @@ y = np.exp(-0.1*x)*np.cos(x)
 plt.plot(x,y)
 
 
-# In[10]:
+# In[11]:
 
 
 # Con 5 puntos evaluados
@@ -144,7 +144,7 @@ plt.plot(x,y)
 # La función `plot` acepta argumentos adicionales que sirven para modificar y controlar las características de 
 # la línea que se grafica. Por ejemplo, se puede pasar un tercer argumento que contenga una combinación de color y estilo de línea:
 
-# In[11]:
+# In[12]:
 
 
 x = np.linspace(0, 30)
@@ -156,7 +156,7 @@ plt.plot(x, y, "r--")
 # 
 # Si en lugar del string `--` se coloca `go`, se obtiene una gráfica como la mostrada enseguida, podrá inferir que `g` refiere al color verde (green) y `o` justamente al uso de este caracter como símbolo para representar cada punto.
 
-# In[12]:
+# In[13]:
 
 
 x = np.linspace(0, 30)
@@ -169,7 +169,7 @@ plt.plot(x, y, "go")
 # 
 # Además de la forma anterior, también es posible especificar el color y estilo de línea utilizando *keyword arguments*, por ejemplo:
 
-# In[13]:
+# In[14]:
 
 
 x = np.linspace(0, 30)
@@ -185,7 +185,7 @@ plt.plot(x, y, linestyle="--", color="r")
 # un sólo caracter, por ejemplo, Matplotlib dispone de un color llamado `coral` y 
 # este no puede ser invocado mediante un sólo caracter, hace falta escribir todo el nombre. 
 
-# In[14]:
+# In[15]:
 
 
 x = np.linspace(0, 30, 80)
@@ -195,7 +195,7 @@ plt.plot(x, y, linestyle="-", color="coral", marker="*")
 
 # El grosor de línea se puede controlar mediante el *keyword argument* `linewidth`, por ejemplo;
 
-# In[15]:
+# In[16]:
 
 
 plt.plot(x, y, linestyle="-", color="coral", marker="*", linewidth=3)
@@ -203,7 +203,7 @@ plt.plot(x, y, linestyle="-", color="coral", marker="*", linewidth=3)
 
 # > La función `plot` soporta algunos *keyword arguments* acortados. Por ejemplo, se puede utilizar `ls` en lugar de `linestyle`, `lw` en lugar de `linewidth`, `ms` en lugar de `markersize`, `mfc` en lugar de `markerfacecolor`, entre otros.
 
-# ### Título de gráfica, etiquetas de ejes y nombres de curvas
+# ## Título de gráfica, etiquetas de ejes y nombres de curvas
 # 
 # Por su naturaleza las gráficas nos sirven para presentar y/o visualizar información de ciertos datos, para 
 # lo cual se hace necesario especificar información descriptiva de lo que se muestra. Es muy común 
@@ -212,7 +212,7 @@ plt.plot(x, y, linestyle="-", color="coral", marker="*", linewidth=3)
 # 
 # Por ejemplo, observe el siguiente código y la gráfica producida:
 
-# In[16]:
+# In[17]:
 
 
 x = np.linspace(0, 30, 500)
@@ -230,7 +230,7 @@ plt.legend()
 # vertical. Con `title` adicionamos un título a la gráfica. La instrucción `legend` sirve para 
 # colocar el recuadro con el *nombre* asignado a cada curva mediante el *keyword argument* `label`.
 
-# ### Anotaciones
+# ## Anotaciones
 # 
 # Con anotaciones nos referimos a cualquier texto que se coloque dentro del *Axes* de Matplotlib. Usualmente 
 # utilizadas para indicar ciertas características partículares en una gráfica, o bien alguna nota informativa al respecto.
@@ -243,7 +243,7 @@ plt.legend()
 # Donde `px` y `py` denotan las coordenadas en donde se colocará la anotación indicada en `texto`. 
 # Veamos un ejemplo:
 
-# In[17]:
+# In[18]:
 
 
 x = np.linspace(0, 30, 100)
@@ -261,7 +261,7 @@ plt.text(10, 0.5, "Algo informativo")
 # `text` se le pueden incluir los *keyword arguments* descritos en https://matplotlib.org/users/text_props.html. 
 # Por ejemplo:
 
-# In[18]:
+# In[19]:
 
 
 x = np.linspace(0, 30, 200)
@@ -290,7 +290,7 @@ plt.text(10, 0.5, "Algo informativo", fontsize=16, color="r",
 # 
 # Implementando esto en Python, se tiene:
 
-# In[19]:
+# In[20]:
 
 
 theta = np.linspace(0, 2*np.pi, 1000)
@@ -319,7 +319,7 @@ plt.polar(theta, r, "r")
 # 
 # Para representar el porcentaje del total del cual dispone cada uno, podemos trazar una gráfica de pastel. Para ello realizamos lo siguiente:
 
-# In[20]:
+# In[21]:
 
 
 manzanas = [20,10,25,30]
@@ -331,7 +331,7 @@ plt.pie(manzanas, labels=nombres);
 
 # El porcentaje correspondiente a cada ítem se puede indicar mediante el argumento `autopct`:
 
-# In[21]:
+# In[22]:
 
 
 manzanas = [20,10,25,30]
@@ -341,7 +341,7 @@ plt.pie(manzanas, labels=nombres, autopct="%0.1f %%");
 
 # Los combinación de colores se puede especificar de manera manual, pasando una lista de color en formato hexadecimal o RGB.
 
-# In[22]:
+# In[23]:
 
 
 manzanas = [20,10,25,30]
@@ -352,7 +352,7 @@ plt.pie(manzanas, labels=nombres, autopct="%0.1f %%", colors=colores);
 
 # Los colores también se pueden determinar y autocalcular utilizando un mapa de color específico. Enseguida se muestra un ejemplo donde la variación es sobre colores en tonos azules.
 
-# In[23]:
+# In[24]:
 
 
 from matplotlib import cm
@@ -371,7 +371,7 @@ plt.axis("equal");
 
 # Es posible también segmentar o separar del bloque una o más de las *rebanadas* de la gráfica de pastel. Para ello se debe pasar una lista o tupla con valores entre `0` y `n` que indican el desfase respecto al centro, `0` indica ningún desfase y `n` un desfase equivalente a `n*r`, donde `r` es el radio de la gráfica de pastel.
 
-# In[24]:
+# In[25]:
 
 
 manzanas = [20,10,25,30]
@@ -381,6 +381,94 @@ desfase = (0, 0, 0, 0.1)
 plt.pie(manzanas, labels=nombres, autopct="%0.1f %%", colors=colores, explode=desfase)
 plt.axis("equal");
 
+
+# ## La función `subplot`: múltiples axes
+
+# La función `subplot` sirve para insertar *axes* en un *figure* organizados de una manera predefinida, usualmente una cuadrícula de m filas y n columnas. En cada uno de esos *axes* se pueden colocar información por separado.
+# 
+# En el siguiente ejemplo se muestra el uso de la función `subplot` para crear dos *axes* apilados de forma vertical:
+
+# In[9]:
+
+
+x = np.linspace(0,10)
+y1 = x
+y2 = np.sin(x)
+
+plt.subplot(211)
+plt.plot(x, y1, "r")
+
+plt.subplot(212)
+plt.plot(x, y2, "m")
+
+
+# La sintaxis básica de `subplot` es:
+# 
+# ```python
+# plt.subplot(mnk)
+# ```
+# 
+# Donde `m` corresponde al número de filas y `n` al número de columnas del arreglo de *axes* que se mostrarán. Observe que en el ejemplo anterior `m=2` y `n=1`. El valor de `k` hace referencia a la posición (en el arreglo) del *axes* correspondiente. En ese entendido, la línea `plt.subplot(211)` refiere al *axes* en la primera posición del arreglo de dos filas y una columna, cualquier instrucción de graficado que se coloque posteriormente a esa línea, se entenderá que deberán mostrarse en ese *axes*, tal y como lo puede constatar en el ejemplo anterior.
+# 
+# Se pueden colocar etiquetas por separado a cada uno de los *axes* insertado mediante `subplot`, por ejemplo:
+
+# In[18]:
+
+
+t = np.linspace(0,10)
+s1 = t**2 + 1
+s2 = 2*t
+
+plt.subplot(211)
+plt.plot(t, s1, "r")
+plt.xlabel("Tiempo")
+plt.ylabel("Posición")
+
+plt.subplot(212)
+plt.plot(t, s2, "m")
+plt.xlabel("Tiempo")
+plt.ylabel("Velocidad")
+
+
+# Se puede observar que, la etiqueta horizontal para el primer *axes* no es visible, esto se puede *arreglar* utilizando la función `tight_layout`:
+
+# In[27]:
+
+
+t = np.linspace(0,10)
+s1 = t**2 + 1
+s2 = 2*t
+
+plt.subplot(211)
+plt.plot(t, s1, "r")
+plt.xlabel("Tiempo")
+plt.ylabel("Posición")
+
+plt.subplot(212)
+plt.plot(t, s2, "m")
+plt.xlabel("Tiempo")
+plt.ylabel("Velocidad")
+
+plt.tight_layout()
+
+
+# Enseguida se muestra un conjunto de 16 *axes* creados con la función `subplot`, con la intención de que pueda indentificar el orden en el cual Matplotlib los coloca en la rejilla; se puede inferir rapidamente que los numera en orden creciente hacia la derecha y hacia abajo.
+
+# In[36]:
+
+
+for k in range(1,17):
+    plt.subplot(4,4,k)
+    plt.text(0.5, 0.5, str(k), color="blue", fontsize=20)
+
+plt.tight_layout()
+
+
+# Del código anterior se identifica que la función `subplot` también puede recibir los argumentos por separado, es decir, en la forma:
+# 
+# ```python
+# plt.subplot(m,n,k)
+# ```
 
 # ## Gráficas de curvas paramétricas en el espacio
 
@@ -402,7 +490,7 @@ plt.axis("equal");
 # 
 # En el intervalo $ 0 \leq t \leq 4\pi $. Para ello en Python haríamos lo siguiente:
 
-# In[25]:
+# In[26]:
 
 
 from mpl_toolkits.mplot3d import Axes3D
@@ -429,7 +517,7 @@ ax.plot(x, y, z)
 # Al igual que en las otros tipos de gráficos, podemos también manipular las características. Vea por 
 # ejemplo el siguiente código:
 
-# In[26]:
+# In[27]:
 
 
 fig = plt.figure()
@@ -454,7 +542,7 @@ ax.set_zlabel("Z")
 
 # Las gráficas de superficies se utilizan para representar de manera gráfica una función bivariable en el espacio. El procedimiento de graficado para una función de dos variables $ z = f(x,y) $, implica que se tendría que evaluar dicha función en una región delimitada por ciertos valores para las dos variables independientes. Para poder realizar esto de forma muy conveniente, la librería NumPy proporciona una función llamada `meshgrid`, la cual puede crear una *rejilla* bidimensional a partir de una lista de valores para cada variable independiente, por ejemplo:
 
-# In[86]:
+# In[28]:
 
 
 x = [0,1]
@@ -465,7 +553,7 @@ print(X,Y, sep="\n\n")
 
 # Las variables `X` y `Y` contienen arreglos bidimensionales que definen las coordenadas correspondientes de cada punto en la región a evaluar. Cada par ordenado $(x,y)$ se forma a partir de las posiciones correspondientes en las matrices `X` y `Y`. Se puede visualizar de forma muy sencilla los puntos en los cuales se evaluará la función $ f(x,y) $ utilizando la función `plot`:
 
-# In[88]:
+# In[29]:
 
 
 plt.plot(X, Y, "o")
@@ -473,7 +561,7 @@ plt.plot(X, Y, "o")
 
 # Observe que los puntos a evaluar en este caso serán $(0,10), (0,20), (1,10), (1,20)$. La densidad de la rejilla (o el número de puntos a evaluar) depende de la cantidad de valores que contengan los vectores que se le pasen como argumentos a la función `meshgrid`, por ejemplo:
 
-# In[90]:
+# In[30]:
 
 
 x = [0,0.5,1]
@@ -494,7 +582,7 @@ plt.plot(X, Y, "o");
 
 # Enseguida se muestra el código para graficar la superficie de la función $ z = x^2 + y^2 $, evaluada en la región $R = \{(x,y)\,|\, -5 \leq x \leq 5, -5 \leq y \leq 5 \}$.
 
-# In[105]:
+# In[31]:
 
 
 from mpl_toolkits.mplot3d import Axes3D
@@ -510,7 +598,39 @@ Z = X**2 + Y**2
 ax.plot_surface(X, Y, Z, cmap="viridis");
 
 
-# *Desmenuzando* un poco el código anterior, las primeras tres líneas, como se había descrito con anterioridad, sirven para poder crear un *Axes* que nos permita trabajar con gráficas tridimensionales. Con la función `linspace` se crean los intervalos de evaluación para cada variable independiente, luego, `meshgrid` permite formar la rejilla o puntos sobre los cuales se evaluará la función $ z = f(x,y) $. La expresión `Z = X**2 + Y**2` es propiamente la evaluación de la función de dos variables. La función `plot_surface` recibe como argumentos las tres matrices `X`,`Y`,`Z` que corresponden 
+# *Desmenuzando* un poco el código anterior, las primeras tres líneas, como se había descrito con anterioridad, sirven para poder crear un *Axes* que nos permita trabajar con gráficas tridimensionales. Con la función `linspace` se crean los intervalos de evaluación para cada variable independiente, luego, `meshgrid` permite formar la rejilla o puntos sobre los cuales se evaluará la función $ z = f(x,y) $. La expresión `Z = X**2 + Y**2` es propiamente la evaluación de la función de dos variables. La función `plot_surface` recibe como argumentos las tres matrices `X`,`Y`,`Z` que corresponden a las variables independientes y función, respectivamente. El argumento `cmap` se utiliza para indicar el mapa de color que se utilizará.
+# 
+# Enseguida se muestra otro ejemplo, en este caso se grafica la función $ z = \cos(x) + \text{sen}(y) $, evaluada en la región $R = \{(x,y)\,|\, 0 \leq x \leq 3\pi, 0 \leq y \leq 3\pi \}$.
+
+# In[37]:
+
+
+from mpl_toolkits.mplot3d import Axes3D
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection="3d")
+
+x = np.linspace(0, 3*np.pi)
+y = np.linspace(0, 3*np.pi)
+X,Y = np.meshgrid(x,y)
+Z = np.cos(X) + np.sin(Y)
+
+ax.plot_surface(X, Y, Z, cmap="inferno");
+
+
+# ## Ejercicios
+
+# 1. Gráfique la función $ y = 10 \cos x $ en el intervalo $ 0 \leq x \leq 2\pi$
+# 
+# 
+# 2. Gráfique la función $ z = t^2 + \frac{1}{3}t $ en el intervalo $ -10 \leq t \leq 20$. Etiquete el eje horizontal como `Tiempo` y el eje vertical como `Aceleración`.
+# 
+# 
+# 3. Gráfique la curva parámetrica:
+# 
+# $$ x(t) = \cos t \\ y(t) = \text{sen } t $$
+# 
+# Para $ 0 \leq t \leq 2\pi $
 
 # In[ ]:
 

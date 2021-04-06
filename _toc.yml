@@ -1,8 +1,14 @@
 # In _toc.yml
 - file: intro
-- file: fundamentos-del-lenguaje
-- file: numpy
-- file: matplotlib
-- file: sympy
+- file: Introducción
+- file: Variables, operadores y expresiones
+- file: Cadenas de caracteres
+- file: Listas, tuplas y diccionarios
+- file: Estructuras de control
+- file: Funciones
+- file: NumPy
+- file: Matplotlib
+- file: SymPy
 - file: programación-orientada-a-objetos
+- file: wxpython-guis
 
