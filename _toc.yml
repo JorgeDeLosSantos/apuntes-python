@@ -8,7 +8,8 @@
 - file: Funciones
 - file: NumPy
 - file: Matplotlib
+- file: Pandas
 - file: SymPy
-- file: programación-orientada-a-objetos
+- file: Programación orientada a objetos
 - file: wxpython-guis
 

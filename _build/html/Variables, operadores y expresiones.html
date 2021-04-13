@@ -289,8 +289,90 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#operadores-relacionales-y-logicos">
-   Operadores relacionales y lógicos
+  <a class="reference internal nav-link" href="#operadores-aritmeticos">
+   Operadores aritméticos
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operador-suma">
+     Operador suma (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       +
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operador-resta">
+     Operador resta (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       -
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operador-multiplicacion">
+     Operador multiplicación (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       *
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operador-division">
+     Operador división (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       /
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operador-de-potenciacion">
+     Operador de potenciación (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       **
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operador-modulo">
+     Operador módulo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operador-division-entera">
+     Operador división entera
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operadores-relacionales">
+   Operadores relacionales
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operadores-logicos">
+   Operadores lógicos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios">
+   Ejercicios
   </a>
  </li>
 </ul>
@@ -325,7 +407,8 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 <p>Piensa el proceso de asignación como la acción de etiquetar las direcciones de memorias en donde se almacenan los objetos de Python, tal como se esquematiza en la figura.</p>
-<img src="../img/variables/variables_1.svg"><p>Veamos ahora otro ejemplo de definición de variables:</p>
+<p><img alt="" src="_images/variables_1.svg" /></p>
+<p>Veamos ahora otro ejemplo de definición de variables:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="mi">7</span>
@@ -335,7 +418,8 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 <p>En este caso primero definimos la variable <code class="docutils literal notranslate"><span class="pre">m</span></code> que será una <em>etiqueta</em> del objeto <code class="docutils literal notranslate"><span class="pre">7</span></code>, cuando se hace la asignación <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">m</span></code> se <em>coloca otra etiqueta</em> al objeto <code class="docutils literal notranslate"><span class="pre">7</span></code>.</p>
-<img src="../img/variables/variables_2.svg"><p>Se puede verificar que ambas variables refieren al mismo objeto:</p>
+<p><img alt="" src="_images/variables_2.svg" /></p>
+<p>Se puede verificar que ambas variables refieren al mismo objeto:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="nb">id</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="p">)</span>
@@ -351,43 +435,92 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 <p>La función <code class="docutils literal notranslate"><span class="pre">id</span></code> devuelve el identificador del objeto, cada identificador es único durante el ciclo de vida de cada objeto.</p>
-<p>El nombre de una variable puede constar de una combinación de caracteres alfanúmericos y el guión bajo,
-siempre y cuando el primer caracter no sea un dígito. Además, en Python los nombres de variables son
-<em>case sensitive</em>, es decir, se distingue entre mayúsculas y minúsculas.</p>
+<p>Para nombrar las variables se deben tener en cuenta las consideraciones que a continuación se describen.</p>
+<ul class="simple">
+<li><p>Los nombres de variables sólo deben contener letras, números y guiones bajos.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D</span> <span class="o">=</span> <span class="mf">177.8</span>
-<span class="n">d</span> <span class="o">=</span> <span class="mi">95</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">esfuerzo_axial</span> <span class="o">=</span> <span class="mf">150e6</span>
+<span class="n">diametro_01</span> <span class="o">=</span> <span class="mf">30e-3</span>
+<span class="n">nombre</span> <span class="o">=</span> <span class="s2">&quot;Ximena&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>El nombre de una variable puede comenzar con una letra o un guión bajo, pero no con un número</p></li>
+</ul>
+<p>Los siguientes nombres de variables son válidos:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperatura</span> <span class="o">=</span> <span class="mi">35</span>
+<span class="n">_deformacion_unitaria</span> <span class="o">=</span> <span class="mf">300e-6</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pero este no, puesto que comienza con un número:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">30</span><span class="n">_presion</span> <span class="o">=</span> <span class="mf">30e3</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>177.8
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-22-75b70e022a72&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<span class="g g-Whitespace">    </span><span class="mi">30</span><span class="n">_presion</span> <span class="o">=</span> <span class="mf">30e3</span>
+      <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid token
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Los espacios no están permitidos en los nombres de variables. Sí necesitas nombrar una variable con dos o más palabras, puedes utilizar el guión bajo para separar las palabras.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modulo</span> <span class="n">de</span> <span class="n">elasticidad</span> <span class="o">=</span> <span class="mf">70e9</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-23-67a55b9eeb54&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+    <span class="n">modulo</span> <span class="n">de</span> <span class="n">elasticidad</span> <span class="o">=</span> <span class="mf">70e9</span>
+            <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modulo_de_elasticidad</span> <span class="o">=</span> <span class="mf">70e9</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Evita utilizar palabras claves/reservadas y nombres de funciones y/o cualquier otra palabra que Python utilice.</p></li>
+</ul>
+<p>Por ejemplo, observa que pasa si intentamos utilizar como nombre de variable la palabra reservada <code class="docutils literal notranslate"><span class="pre">lambda</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="o">=</span> <span class="mi">1500</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>95
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-25-44b09368e0cc&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+    <span class="k">lambda</span> <span class="o">=</span> <span class="mi">1500</span>
+           <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
 </pre></div>
 </div>
 </div>
 </div>
-<p>Existen algunas palabras reservadas del lenguaje que no puede utilizar como nombre de variable,
-puede verificar cuáles son estas palabras tecleando lo siguiente:</p>
+<p>Python nos manda un <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>. La lista de palabras reservadas del lenguaje que no puedes utilizar como nombre de variable la puedes listar con las siguientes instrucciones:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">keyword</span> 
@@ -401,6 +534,43 @@ puede verificar cuáles son estas palabras tecleando lo siguiente:</p>
 </div>
 </div>
 </div>
+<p>Ademas de las palabras reservadas del lenguaje, evita utilizar los nombres de funciones o clases <em>built-in</em> de Python, esos nombres los puedes ver tecleando las siguientes instrucciones:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">builtins</span>
+<span class="nb">print</span><span class="p">(</span> <span class="nb">dir</span><span class="p">(</span><span class="n">builtins</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ArithmeticError&#39;, &#39;AssertionError&#39;, &#39;AttributeError&#39;, &#39;BaseException&#39;, &#39;BlockingIOError&#39;, &#39;BrokenPipeError&#39;, &#39;BufferError&#39;, &#39;BytesWarning&#39;, &#39;ChildProcessError&#39;, &#39;ConnectionAbortedError&#39;, &#39;ConnectionError&#39;, &#39;ConnectionRefusedError&#39;, &#39;ConnectionResetError&#39;, &#39;DeprecationWarning&#39;, &#39;EOFError&#39;, &#39;Ellipsis&#39;, &#39;EnvironmentError&#39;, &#39;Exception&#39;, &#39;False&#39;, &#39;FileExistsError&#39;, &#39;FileNotFoundError&#39;, &#39;FloatingPointError&#39;, &#39;FutureWarning&#39;, &#39;GeneratorExit&#39;, &#39;IOError&#39;, &#39;ImportError&#39;, &#39;ImportWarning&#39;, &#39;IndentationError&#39;, &#39;IndexError&#39;, &#39;InterruptedError&#39;, &#39;IsADirectoryError&#39;, &#39;KeyError&#39;, &#39;KeyboardInterrupt&#39;, &#39;LookupError&#39;, &#39;MemoryError&#39;, &#39;ModuleNotFoundError&#39;, &#39;NameError&#39;, &#39;None&#39;, &#39;NotADirectoryError&#39;, &#39;NotImplemented&#39;, &#39;NotImplementedError&#39;, &#39;OSError&#39;, &#39;OverflowError&#39;, &#39;PendingDeprecationWarning&#39;, &#39;PermissionError&#39;, &#39;ProcessLookupError&#39;, &#39;RecursionError&#39;, &#39;ReferenceError&#39;, &#39;ResourceWarning&#39;, &#39;RuntimeError&#39;, &#39;RuntimeWarning&#39;, &#39;StopAsyncIteration&#39;, &#39;StopIteration&#39;, &#39;SyntaxError&#39;, &#39;SyntaxWarning&#39;, &#39;SystemError&#39;, &#39;SystemExit&#39;, &#39;TabError&#39;, &#39;TimeoutError&#39;, &#39;True&#39;, &#39;TypeError&#39;, &#39;UnboundLocalError&#39;, &#39;UnicodeDecodeError&#39;, &#39;UnicodeEncodeError&#39;, &#39;UnicodeError&#39;, &#39;UnicodeTranslateError&#39;, &#39;UnicodeWarning&#39;, &#39;UserWarning&#39;, &#39;ValueError&#39;, &#39;Warning&#39;, &#39;WindowsError&#39;, &#39;ZeroDivisionError&#39;, &#39;__IPYTHON__&#39;, &#39;__build_class__&#39;, &#39;__debug__&#39;, &#39;__doc__&#39;, &#39;__import__&#39;, &#39;__loader__&#39;, &#39;__name__&#39;, &#39;__package__&#39;, &#39;__spec__&#39;, &#39;abs&#39;, &#39;all&#39;, &#39;any&#39;, &#39;ascii&#39;, &#39;bin&#39;, &#39;bool&#39;, &#39;bytearray&#39;, &#39;bytes&#39;, &#39;callable&#39;, &#39;chr&#39;, &#39;classmethod&#39;, &#39;compile&#39;, &#39;complex&#39;, &#39;copyright&#39;, &#39;credits&#39;, &#39;delattr&#39;, &#39;dict&#39;, &#39;dir&#39;, &#39;display&#39;, &#39;divmod&#39;, &#39;enumerate&#39;, &#39;eval&#39;, &#39;exec&#39;, &#39;filter&#39;, &#39;float&#39;, &#39;format&#39;, &#39;frozenset&#39;, &#39;get_ipython&#39;, &#39;getattr&#39;, &#39;globals&#39;, &#39;hasattr&#39;, &#39;hash&#39;, &#39;help&#39;, &#39;hex&#39;, &#39;id&#39;, &#39;input&#39;, &#39;int&#39;, &#39;isinstance&#39;, &#39;issubclass&#39;, &#39;iter&#39;, &#39;len&#39;, &#39;license&#39;, &#39;list&#39;, &#39;locals&#39;, &#39;map&#39;, &#39;max&#39;, &#39;memoryview&#39;, &#39;min&#39;, &#39;next&#39;, &#39;object&#39;, &#39;oct&#39;, &#39;open&#39;, &#39;ord&#39;, &#39;pow&#39;, &#39;print&#39;, &#39;property&#39;, &#39;range&#39;, &#39;repr&#39;, &#39;reversed&#39;, &#39;round&#39;, &#39;set&#39;, &#39;setattr&#39;, &#39;slice&#39;, &#39;sorted&#39;, &#39;staticmethod&#39;, &#39;str&#39;, &#39;sum&#39;, &#39;super&#39;, &#39;tuple&#39;, &#39;type&#39;, &#39;vars&#39;, &#39;zip&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Los nombres de variables son <em>case sensitive</em>, es decir, se distingue entre mayúsculas y minúsculas.</p></li>
+</ul>
+<p>No es lo mismo definir una variable <code class="docutils literal notranslate"><span class="pre">nombre</span></code> que otra llamada <code class="docutils literal notranslate"><span class="pre">NOMBRE</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">NOMBRE</span> <span class="o">=</span> <span class="s2">&quot;Ana&quot;</span>
+<span class="n">nombre</span> <span class="o">=</span> <span class="s2">&quot;Paola&quot;</span>
+<span class="n">nombre</span> <span class="o">==</span> <span class="n">NOMBRE</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Los nombres de variables deberían ser cortos pero descriptivos.</p></li>
+</ul>
+<p>Por ejemplo, si estamos <em>almacenando</em> un valor que corresponde a un diámetro, suele ser más conveniente y recomendable utilizar <code class="docutils literal notranslate"><span class="pre">diametro</span></code> en lugar de <code class="docutils literal notranslate"><span class="pre">d</span></code> como nombre de variable.</p>
+<p>Puedes encontrar más recomendaciones sobre cómo nombrar variables en la <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP 8 – Style Guide for Python Code</a></p>
 </div>
 <div class="section" id="tipos-de-datos-basicos">
 <h2>Tipos de datos básicos<a class="headerlink" href="#tipos-de-datos-basicos" title="Permalink to this headline">¶</a></h2>
@@ -420,6 +590,7 @@ puede verificar cuáles son estas palabras tecleando lo siguiente:</p>
 </div>
 </div>
 </div>
+<p>En el código anterior la función <code class="docutils literal notranslate"><span class="pre">type</span></code> nos sirve para identificar la clase/tipo de un objeto.</p>
 <p>De manera explícita se puede definir un valor entero utilizando la función <code class="docutils literal notranslate"><span class="pre">int</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -435,11 +606,11 @@ puede verificar cuáles son estas palabras tecleando lo siguiente:</p>
 </div>
 </div>
 </div>
-<p>Observe que cuando colocamos un punto decimal, automáticamente la cantidad deja de ser un entero y pasa a ser un flotante.</p>
+<p>Observa que cuando colocamos un punto decimal, automáticamente la cantidad deja de ser un entero y pasa a ser un flotante.</p>
 </div>
 <div class="section" id="de-coma-flotante-float">
 <h3>De coma flotante (<code class="docutils literal notranslate"><span class="pre">float</span></code>)<a class="headerlink" href="#de-coma-flotante-float" title="Permalink to this headline">¶</a></h3>
-<p>Los valores de coma flotante son cantidades numéricas que incluyen a todos los reales. Para que Python reconozca un valor numérico como de tipo <code class="docutils literal notranslate"><span class="pre">float</span></code> se debe adicionar el punto decimal o bien utilizar la función <code class="docutils literal notranslate"><span class="pre">float</span></code> para hacer la indicación de manera explícita, por ejemplo:</p>
+<p>Los valores de coma flotante son cantidades numéricas que incluyen a <em>todos los reales</em>. Para que Python reconozca un valor numérico como de tipo <code class="docutils literal notranslate"><span class="pre">float</span></code> se debe adicionar el punto decimal o bien utilizar la función <code class="docutils literal notranslate"><span class="pre">float</span></code> para hacer la indicación de manera explícita, por ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="mf">5.3</span>
@@ -524,15 +695,123 @@ puede verificar cuáles son estas palabras tecleando lo siguiente:</p>
 </div>
 </div>
 <p>En general, la función <code class="docutils literal notranslate"><span class="pre">bool</span></code> devolverá un <code class="docutils literal notranslate"><span class="pre">False</span></code> cuando se tienen objetos nulos o vacíos, en cualquier otro caso devolverá el valor <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>Usualmente los valores booleanos siempre van a provenir de una comparación entre objetos, para efectuar esas comparaciones se utilizan los operadores relacionales.</p>
 </div>
 </div>
-<div class="section" id="operadores-relacionales-y-logicos">
-<h2>Operadores relacionales y lógicos<a class="headerlink" href="#operadores-relacionales-y-logicos" title="Permalink to this headline">¶</a></h2>
-<p>Los operadores relacionales (o de comparación) nos permite efectuar comparaciones entre objetos de Python. El resultado de una comparación es un valor booleano <code class="docutils literal notranslate"><span class="pre">True</span></code> o <code class="docutils literal notranslate"><span class="pre">False</span></code>, dependiendo la naturaleza de la comparación.</p>
-<p>A continuación se ejemplifican los operadores relacionales que podemos utilizar en Python:</p>
+<div class="section" id="operadores-aritmeticos">
+<h2>Operadores aritméticos<a class="headerlink" href="#operadores-aritmeticos" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="operador-suma">
+<h3>Operador suma (<code class="docutils literal notranslate"><span class="pre">+</span></code>)<a class="headerlink" href="#operador-suma" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &quot;igual a&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1000</span> <span class="o">+</span> <span class="mi">2000</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3000
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="operador-resta">
+<h3>Operador resta (<code class="docutils literal notranslate"><span class="pre">-</span></code>)<a class="headerlink" href="#operador-resta" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">500</span> <span class="o">-</span> <span class="mi">350</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>150
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="operador-multiplicacion">
+<h3>Operador multiplicación (<code class="docutils literal notranslate"><span class="pre">*</span></code>)<a class="headerlink" href="#operador-multiplicacion" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">352</span> <span class="o">*</span> <span class="mi">34</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11968
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="operador-division">
+<h3>Operador división (<code class="docutils literal notranslate"><span class="pre">/</span></code>)<a class="headerlink" href="#operador-division" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="o">/</span><span class="mi">8</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.375
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="operador-de-potenciacion">
+<h3>Operador de potenciación (<code class="docutils literal notranslate"><span class="pre">**</span></code>)<a class="headerlink" href="#operador-de-potenciacion" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="operador-modulo">
+<h3>Operador módulo<a class="headerlink" href="#operador-modulo" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">250</span> <span class="o">%</span> <span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="operador-division-entera">
+<h3>Operador división entera<a class="headerlink" href="#operador-division-entera" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">50</span> <span class="o">//</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="operadores-relacionales">
+<h2>Operadores relacionales<a class="headerlink" href="#operadores-relacionales" title="Permalink to this headline">¶</a></h2>
+<p>Los operadores relacionales (o de comparación) nos permite efectuar comparaciones entre objetos de Python. El resultado de una comparación es un valor booleano <code class="docutils literal notranslate"><span class="pre">True</span></code> o <code class="docutils literal notranslate"><span class="pre">False</span></code>. A continuación se ejemplifican los operadores relacionales que podemos utilizar en Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &quot;igual que&quot;</span>
 <span class="mi">1</span> <span class="o">==</span> <span class="mi">1</span>
 </pre></div>
 </div>
@@ -618,7 +897,7 @@ puede verificar cuáles son estas palabras tecleando lo siguiente:</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">7</span><span class="n">a3a9a917f79</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">45</span><span class="o">-</span><span class="mi">7</span><span class="n">a3a9a917f79</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="s2">&quot;a&quot;</span> <span class="o">&gt;</span> <span class="mi">10</span>
 
 <span class="ne">TypeError</span>: &#39;&gt;&#39; not supported between instances of &#39;str&#39; and &#39;int&#39;
@@ -629,6 +908,16 @@ puede verificar cuáles son estas palabras tecleando lo siguiente:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">46</span><span class="o">-</span><span class="mi">4</span><span class="n">dd688af572f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: &#39;&lt;&#39; not supported between instances of &#39;list&#39; and &#39;tuple&#39;
 </pre></div>
 </div>
 </div>
@@ -670,6 +959,9 @@ puede verificar cuáles son estas palabras tecleando lo siguiente:</p>
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="operadores-logicos">
+<h2>Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Permalink to this headline">¶</a></h2>
 <p>Los <strong>operadores lógicos</strong> nos sirven para realizar operaciones de lógica booleana entre valores de tipo <code class="docutils literal notranslate"><span class="pre">bool</span></code>. En Python podemos utilizar los operadores lógicos <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> y <code class="docutils literal notranslate"><span class="pre">not</span></code>, observe los siguientes ejemplos:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -755,6 +1047,9 @@ puede verificar cuáles son estas palabras tecleando lo siguiente:</p>
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 

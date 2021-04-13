@@ -9,7 +9,7 @@
 # * Control de selección
 # * Control de repetición
 
-# <img src="img/estructuras-de-control/estructuras-de-control.svg">
+# ![](img/estructuras-de-control/estructuras-de-control.svg)
 
 # En el control secuencial las instrucciones se ejecutan de manera secuencial desde el inicio hasta el fin del programa. En el control de selección se tiene una condición que puede ser falsa o verdadera, dependiendo de esto se ejecutará uno u otro bloque de instrucciones. En el control de repetición, un bloque de instrucciones se ejecuta de manera repetitiva mientras una condición sea verdadera, en caso contrario el flujo de ejecución se pasará a otro conjunto de instrucciones.
 
