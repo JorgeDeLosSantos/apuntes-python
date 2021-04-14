@@ -5,13 +5,13 @@
 
 # ## ¿Qué es Matplotlib?
 # 
-# Matplotlib es una librería Python que permite trazar gráficas estáticas, animadas e interactivas. 
+# Matplotlib es una librería Python que permite generar gráficas estáticas, animadas e interactivas. 
 
 # ## De Matplotlib, Jupyter y las gráficas mostradas
 # 
 # En todo este capítulo se asumirá que las siguientes líneas de código han sido ejecutadas, previamente, para cada porción de código:
 
-# In[3]:
+# In[1]:
 
 
 import matplotlib.pyplot as plt
@@ -304,6 +304,18 @@ plt.polar(theta, r, "r")
 
 # ## Gráficas de barras
 
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
 # ## Gráficas de pastel
 # 
 # Las gráficas de pastel (o de tarta, o gráficos circulares) nos sirven para representar porcentajes y proporciones. Matplotlib dispone de la función `pie`, cuya sintaxis depende del grado de personalización y control que se requiera sobre la gráfica de pastel a dibujar.
@@ -319,7 +331,7 @@ plt.polar(theta, r, "r")
 # 
 # Para representar el porcentaje del total del cual dispone cada uno, podemos trazar una gráfica de pastel. Para ello realizamos lo siguiente:
 
-# In[21]:
+# In[2]:
 
 
 manzanas = [20,10,25,30]
@@ -331,7 +343,7 @@ plt.pie(manzanas, labels=nombres);
 
 # El porcentaje correspondiente a cada ítem se puede indicar mediante el argumento `autopct`:
 
-# In[22]:
+# In[3]:
 
 
 manzanas = [20,10,25,30]
@@ -341,7 +353,7 @@ plt.pie(manzanas, labels=nombres, autopct="%0.1f %%");
 
 # Los combinación de colores se puede especificar de manera manual, pasando una lista de color en formato hexadecimal o RGB.
 
-# In[23]:
+# In[4]:
 
 
 manzanas = [20,10,25,30]
@@ -352,7 +364,7 @@ plt.pie(manzanas, labels=nombres, autopct="%0.1f %%", colors=colores);
 
 # Los colores también se pueden determinar y autocalcular utilizando un mapa de color específico. Enseguida se muestra un ejemplo donde la variación es sobre colores en tonos azules.
 
-# In[24]:
+# In[5]:
 
 
 from matplotlib import cm
@@ -371,7 +383,7 @@ plt.axis("equal");
 
 # Es posible también segmentar o separar del bloque una o más de las *rebanadas* de la gráfica de pastel. Para ello se debe pasar una lista o tupla con valores entre `0` y `n` que indican el desfase respecto al centro, `0` indica ningún desfase y `n` un desfase equivalente a `n*r`, donde `r` es el radio de la gráfica de pastel.
 
-# In[25]:
+# In[6]:
 
 
 manzanas = [20,10,25,30]

@@ -2,6 +2,7 @@
 title: Python para Ingenieros
 author: Pedro Jorge De Los Santos
 logo: img/logo.png
+copyright: "2021"
 execute:
   execute_notebooks: "off"
 latex:

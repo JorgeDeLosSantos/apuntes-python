@@ -3,22 +3,30 @@
 
 # # Análisis cinemático de mecanismos
 
-# w = symbols("\\omega")
-# r = symbols("r_{BA}")
-# thBA = symbols("\\theta_{BA}")
-# va = symbols("v_A")
-# vb = symbols("v_B")
-# tha = symbols("\\theta_{A}")
-# thb = symbols("\\theta_{B}")
+# In[2]:
 
-# VA = Matrix([va*cos(tha), va*sin(tha), 0])
-# VB = Matrix([vb*cos(thb), vb*sin(thb), 0])
-# W = Matrix([0,0,w])
-# RBA = Matrix([r*cos(thBA), r*sin(thBA), 0])
-# 
-# ecv = Eq(VB, VA + W.cross(RBA) )
-# 
-# solve(ecv, [vb, w])
+
+w = symbols("\\omega")
+r = symbols("r_{BA}")
+thBA = symbols("\\theta_{BA}")
+va = symbols("v_A")
+vb = symbols("v_B")
+tha = symbols("\\theta_{A}")
+thb = symbols("\\theta_{B}")
+
+
+# In[3]:
+
+
+VA = Matrix([va*cos(tha), va*sin(tha), 0])
+VB = Matrix([vb*cos(thb), vb*sin(thb), 0])
+W = Matrix([0,0,w])
+RBA = Matrix([r*cos(thBA), r*sin(thBA), 0])
+
+ecv = Eq(VB, VA + W.cross(RBA) )
+
+solve(ecv, [vb, w])
+
 
 # ## Utilizando la librería `cime`
 

@@ -4,7 +4,7 @@
 # # Análisis de elementos finitos
 # 
 # El análisis estructural es uno de los aspectos elementales para aquellos 
-# que nos dedicamos al diseño mecánico o cuestiones similares. En los cursos 
+# que nos dedicamos al diseño mecánico. En los cursos 
 # universitarios de resistencia de materiales se enseñan algunos métodos 
 # analíticos que permiten obtener soluciones rápidas para componentes mecánicos 
 # simples. No obstante, cuando las geometrías se complican se hace necesario 
@@ -150,7 +150,7 @@
 # \end{bmatrix} $$
 # 
 
-# In[2]:
+# In[6]:
 
 
 import numpy as np
@@ -191,7 +191,7 @@ NF = np.dot(K,USOL)
 
 # Presentando los resultados
 for nodo in range(4):
-    print("%g  UX = %-8.4f    FX = %-8.4f"%(nodo+1, USOL[nodo], NF[nodo]))
+    print(f"{nodo+1}  UX = {USOL[nodo]:0.4f}    FX = {NF[nodo]:0.2f}")
 
 
 # # Utilizando [NuSA](https://github.com/JorgeDeLosSantos/nusa): una librería para análisis estructural
@@ -242,7 +242,7 @@ e3 = Spring((n4,n2),3000)
 
 # Una vez se han definido los nodos y elementos se procede a agregar estos al modelo creado.
 
-# In[17]:
+# In[11]:
 
 
 m1.add_node(n1)
@@ -257,7 +257,7 @@ m1.add_element(e3)
 
 # Luego, establecemos las condiciones de frontera y la carga externa aplicada. Finalmente utilizamos el método `solve` e imprimimos los resultados obtenidos.
 
-# In[20]:
+# In[12]:
 
 
 m1.add_constraint(n1, ux=0)
