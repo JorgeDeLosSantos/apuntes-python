@@ -138,12 +138,17 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Pandas.html">
+   Pandas: una introducción al análisis de datos
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="SymPy.html">
    Sympy: un sistema de álgebra computacional
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="programaci%C3%B3n-orientada-a-objetos.html">
+  <a class="reference internal" href="Programaci%C3%B3n%20orientada%20a%20objetos.html">
    Programación orientada a objetos
   </a>
  </li>
@@ -272,7 +277,7 @@
   <div class="section" id="analisis-de-elementos-finitos">
 <h1>Análisis de elementos finitos<a class="headerlink" href="#analisis-de-elementos-finitos" title="Permalink to this headline">¶</a></h1>
 <p>El análisis estructural es uno de los aspectos elementales para aquellos
-que nos dedicamos al diseño mecánico o cuestiones similares. En los cursos
+que nos dedicamos al diseño mecánico. En los cursos
 universitarios de resistencia de materiales se enseñan algunos métodos
 analíticos que permiten obtener soluciones rápidas para componentes mecánicos
 simples. No obstante, cuando las geometrías se complican se hace necesario
@@ -434,15 +439,15 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 
 <span class="c1"># Presentando los resultados</span>
 <span class="k">for</span> <span class="n">nodo</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%g</span><span class="s2">  UX = </span><span class="si">%-8.4f</span><span class="s2">    FX = </span><span class="si">%-8.4f</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">nodo</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">USOL</span><span class="p">[</span><span class="n">nodo</span><span class="p">],</span> <span class="n">NF</span><span class="p">[</span><span class="n">nodo</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">nodo</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">  UX = </span><span class="si">{</span><span class="n">USOL</span><span class="p">[</span><span class="n">nodo</span><span class="p">]</span><span class="si">:</span><span class="s2">0.4f</span><span class="si">}</span><span class="s2">    FX = </span><span class="si">{</span><span class="n">NF</span><span class="p">[</span><span class="n">nodo</span><span class="p">]</span><span class="si">:</span><span class="s2">0.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1  UX = 0.0000      FX = -909.0909
-2  UX = 0.0000      FX = -4090.9091
-3  UX = 0.9091      FX = 0.0000  
-4  UX = 1.3636      FX = 5000.0000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1  UX = 0.0000    FX = -909.09
+2  UX = 0.0000    FX = -4090.91
+3  UX = 0.9091    FX = 0.00
+4  UX = 1.3636    FX = 5000.00
 </pre></div>
 </div>
 </div>
@@ -458,6 +463,16 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nusa.core</span> <span class="kn">import</span> <span class="n">Node</span>
 <span class="kn">from</span> <span class="nn">nusa.element</span> <span class="kn">import</span> <span class="n">Spring</span>
 <span class="kn">from</span> <span class="nn">nusa.model</span> <span class="kn">import</span> <span class="n">SpringModel</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">╭──────────────────────────────────────────╮</span>
+<span class=" -Color -Color-Yellow">│                                          │</span>
+<span class=" -Color -Color-Yellow">│</span>     Update available <span class=" -Color -Color-C241">2.1.0</span> → <span class=" -Color -Color-Green">4.3.12</span>      <span class=" -Color -Color-Yellow">│</span>
+<span class=" -Color -Color-Yellow">│</span>   Run <span class=" -Color -Color-Cyan">pip3 install -U meshio</span> to update   <span class=" -Color -Color-Yellow">│</span>
+<span class=" -Color -Color-Yellow">│                                          │</span>
+<span class=" -Color -Color-Yellow">╰──────────────────────────────────────────╯</span>
 </pre></div>
 </div>
 </div>

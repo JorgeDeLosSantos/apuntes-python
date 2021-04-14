@@ -57,7 +57,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Sympy: un sistema de álgebra computacional" href="SymPy.html" />
+    <link rel="next" title="Pandas: una introducción al análisis de datos" href="Pandas.html" />
     <link rel="prev" title="NumPy: estructuras matriciales" href="NumPy.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -140,12 +140,17 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Pandas.html">
+   Pandas: una introducción al análisis de datos
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="SymPy.html">
    Sympy: un sistema de álgebra computacional
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="programaci%C3%B3n-orientada-a-objetos.html">
+  <a class="reference internal" href="Programaci%C3%B3n%20orientada%20a%20objetos.html">
    Programación orientada a objetos
   </a>
  </li>
@@ -346,7 +351,7 @@
 <h1>Matplotlib: visualización gráfica<a class="headerlink" href="#matplotlib-visualizacion-grafica" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="que-es-matplotlib">
 <h2>¿Qué es Matplotlib?<a class="headerlink" href="#que-es-matplotlib" title="Permalink to this headline">¶</a></h2>
-<p>Matplotlib es una librería Python que permite trazar gráficas estáticas, animadas e interactivas.</p>
+<p>Matplotlib es una librería Python que permite generar gráficas estáticas, animadas e interactivas.</p>
 </div>
 <div class="section" id="de-matplotlib-jupyter-y-las-graficas-mostradas">
 <h2>De Matplotlib, Jupyter y las gráficas mostradas<a class="headerlink" href="#de-matplotlib-jupyter-y-las-graficas-mostradas" title="Permalink to this headline">¶</a></h2>
@@ -772,7 +777,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Matplotlib_48_0.png" src="_images/Matplotlib_48_0.png" />
+<img alt="_images/Matplotlib_50_0.png" src="_images/Matplotlib_50_0.png" />
 </div>
 </div>
 <p>Observe que lo primero que hacemos es importar la librería matplotlib, enseguida, en utilizando listas definimos los nombres y el número de manzanas correspondientes. Luego, la función <code class="docutils literal notranslate"><span class="pre">pie</span></code> acepta un primer argumento que contiene los valores absolutos de cada ítem, además, de un <em>keyword argument</em> <code class="docutils literal notranslate"><span class="pre">labels</span></code> que contiene las etiquetas correspondientes.</p>
@@ -786,7 +791,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Matplotlib_51_0.png" src="_images/Matplotlib_51_0.png" />
+<img alt="_images/Matplotlib_53_0.png" src="_images/Matplotlib_53_0.png" />
 </div>
 </div>
 <p>Los combinación de colores se puede especificar de manera manual, pasando una lista de color en formato hexadecimal o RGB.</p>
@@ -800,7 +805,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Matplotlib_53_0.png" src="_images/Matplotlib_53_0.png" />
+<img alt="_images/Matplotlib_55_0.png" src="_images/Matplotlib_55_0.png" />
 </div>
 </div>
 <p>Los colores también se pueden determinar y autocalcular utilizando un mapa de color específico. Enseguida se muestra un ejemplo donde la variación es sobre colores en tonos azules.</p>
@@ -822,7 +827,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Matplotlib_55_0.png" src="_images/Matplotlib_55_0.png" />
+<img alt="_images/Matplotlib_57_0.png" src="_images/Matplotlib_57_0.png" />
 </div>
 </div>
 <p>Es posible también segmentar o separar del bloque una o más de las <em>rebanadas</em> de la gráfica de pastel. Para ello se debe pasar una lista o tupla con valores entre <code class="docutils literal notranslate"><span class="pre">0</span></code> y <code class="docutils literal notranslate"><span class="pre">n</span></code> que indican el desfase respecto al centro, <code class="docutils literal notranslate"><span class="pre">0</span></code> indica ningún desfase y <code class="docutils literal notranslate"><span class="pre">n</span></code> un desfase equivalente a <code class="docutils literal notranslate"><span class="pre">n*r</span></code>, donde <code class="docutils literal notranslate"><span class="pre">r</span></code> es el radio de la gráfica de pastel.</p>
@@ -838,7 +843,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Matplotlib_57_0.png" src="_images/Matplotlib_57_0.png" />
+<img alt="_images/Matplotlib_59_0.png" src="_images/Matplotlib_59_0.png" />
 </div>
 </div>
 </div>
@@ -864,7 +869,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x24ad5f03438&gt;]
 </pre></div>
 </div>
-<img alt="_images/Matplotlib_60_1.png" src="_images/Matplotlib_60_1.png" />
+<img alt="_images/Matplotlib_62_1.png" src="_images/Matplotlib_62_1.png" />
 </div>
 </div>
 <p>La sintaxis básica de <code class="docutils literal notranslate"><span class="pre">subplot</span></code> es:</p>
@@ -895,7 +900,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Velocidad&#39;)
 </pre></div>
 </div>
-<img alt="_images/Matplotlib_62_1.png" src="_images/Matplotlib_62_1.png" />
+<img alt="_images/Matplotlib_64_1.png" src="_images/Matplotlib_64_1.png" />
 </div>
 </div>
 <p>Se puede observar que, la etiqueta horizontal para el primer <em>axes</em> no es visible, esto se puede <em>arreglar</em> utilizando la función <code class="docutils literal notranslate"><span class="pre">tight_layout</span></code>:</p>
@@ -920,7 +925,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Matplotlib_64_0.png" src="_images/Matplotlib_64_0.png" />
+<img alt="_images/Matplotlib_66_0.png" src="_images/Matplotlib_66_0.png" />
 </div>
 </div>
 <p>Enseguida se muestra un conjunto de 16 <em>axes</em> creados con la función <code class="docutils literal notranslate"><span class="pre">subplot</span></code>, con la intención de que pueda indentificar el orden en el cual Matplotlib los coloca en la rejilla; se puede inferir rapidamente que los numera en orden creciente hacia la derecha y hacia abajo.</p>
@@ -935,7 +940,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Matplotlib_66_0.png" src="_images/Matplotlib_66_0.png" />
+<img alt="_images/Matplotlib_68_0.png" src="_images/Matplotlib_68_0.png" />
 </div>
 </div>
 <p>Del código anterior se identifica que la función <code class="docutils literal notranslate"><span class="pre">subplot</span></code> también puede recibir los argumentos por separado, es decir, en la forma:</p>
@@ -979,7 +984,7 @@ trabajar con este tipo de expresiones en el análisis cinemático de partículas
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;mpl_toolkits.mplot3d.art3d.Line3D at 0x20e72b32cc0&gt;]
 </pre></div>
 </div>
-<img alt="_images/Matplotlib_70_1.png" src="_images/Matplotlib_70_1.png" />
+<img alt="_images/Matplotlib_72_1.png" src="_images/Matplotlib_72_1.png" />
 </div>
 </div>
 <p>Ahora explicamos lo referente al código anterior. Observe que en la primera línea importamos la clase <code class="docutils literal notranslate"><span class="pre">Axes3D</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">mpl_toolkits.maplot3d</span></code>, esto nos sirve para poder trabajar con gráficas tridimensionales. Luego, definimos un objeto de la
@@ -1016,7 +1021,7 @@ ejemplo el siguiente código:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Z&#39;)
 </pre></div>
 </div>
-<img alt="_images/Matplotlib_72_1.png" src="_images/Matplotlib_72_1.png" />
+<img alt="_images/Matplotlib_74_1.png" src="_images/Matplotlib_74_1.png" />
 </div>
 </div>
 </div>
@@ -1054,7 +1059,7 @@ ejemplo el siguiente código:</p>
  &lt;matplotlib.lines.Line2D at 0x20e72c5eba8&gt;]
 </pre></div>
 </div>
-<img alt="_images/Matplotlib_77_1.png" src="_images/Matplotlib_77_1.png" />
+<img alt="_images/Matplotlib_79_1.png" src="_images/Matplotlib_79_1.png" />
 </div>
 </div>
 <p>Observe que los puntos a evaluar en este caso serán <span class="math notranslate nohighlight">\((0,10), (0,20), (1,10), (1,20)\)</span>. La densidad de la rejilla (o el número de puntos a evaluar) depende de la cantidad de valores que contengan los vectores que se le pasen como argumentos a la función <code class="docutils literal notranslate"><span class="pre">meshgrid</span></code>, por ejemplo:</p>
@@ -1068,7 +1073,7 @@ ejemplo el siguiente código:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Matplotlib_79_0.png" src="_images/Matplotlib_79_0.png" />
+<img alt="_images/Matplotlib_81_0.png" src="_images/Matplotlib_81_0.png" />
 </div>
 </div>
 <p>En general, si se requiere evaluar la funcion <span class="math notranslate nohighlight">\( z = f(x,y) \)</span> en la región <span class="math notranslate nohighlight">\( R = \{(x,y)\,|\,a \leq x \leq b, c \leq y \leq d \} \)</span>, entonces se tendrá:</p>
@@ -1096,7 +1101,7 @@ ejemplo el siguiente código:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Matplotlib_82_0.png" src="_images/Matplotlib_82_0.png" />
+<img alt="_images/Matplotlib_84_0.png" src="_images/Matplotlib_84_0.png" />
 </div>
 </div>
 <p><em>Desmenuzando</em> un poco el código anterior, las primeras tres líneas, como se había descrito con anterioridad, sirven para poder crear un <em>Axes</em> que nos permita trabajar con gráficas tridimensionales. Con la función <code class="docutils literal notranslate"><span class="pre">linspace</span></code> se crean los intervalos de evaluación para cada variable independiente, luego, <code class="docutils literal notranslate"><span class="pre">meshgrid</span></code> permite formar la rejilla o puntos sobre los cuales se evaluará la función <span class="math notranslate nohighlight">\( z = f(x,y) \)</span>. La expresión <code class="docutils literal notranslate"><span class="pre">Z</span> <span class="pre">=</span> <span class="pre">X**2</span> <span class="pre">+</span> <span class="pre">Y**2</span></code> es propiamente la evaluación de la función de dos variables. La función <code class="docutils literal notranslate"><span class="pre">plot_surface</span></code> recibe como argumentos las tres matrices <code class="docutils literal notranslate"><span class="pre">X</span></code>,<code class="docutils literal notranslate"><span class="pre">Y</span></code>,<code class="docutils literal notranslate"><span class="pre">Z</span></code> que corresponden a las variables independientes y función, respectivamente. El argumento <code class="docutils literal notranslate"><span class="pre">cmap</span></code> se utiliza para indicar el mapa de color que se utilizará.</p>
@@ -1118,7 +1123,7 @@ ejemplo el siguiente código:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Matplotlib_84_0.png" src="_images/Matplotlib_84_0.png" />
+<img alt="_images/Matplotlib_86_0.png" src="_images/Matplotlib_86_0.png" />
 </div>
 </div>
 </div>
@@ -1164,7 +1169,7 @@ ejemplo el siguiente código:</p>
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="NumPy.html" title="previous page">NumPy: estructuras matriciales</a>
-    <a class='right-next' id="next-link" href="SymPy.html" title="next page">Sympy: un sistema de álgebra computacional</a>
+    <a class='right-next' id="next-link" href="Pandas.html" title="next page">Pandas: una introducción al análisis de datos</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
