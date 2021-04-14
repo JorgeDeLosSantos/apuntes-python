@@ -243,6 +243,28 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concatenacion-de-cadenas">
+   Concatenación de cadenas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexacion-y-slicing">
+   Indexación y
+   <em>
+    slicing
+   </em>
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -257,29 +279,50 @@ que contiene una secuencia de símbolos, mismos que pueden ser alfanúmericos ha
 un sistema de escritura. En Python los strings se definen entre comillas dobles o simples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;esta es una cadena de caracteres&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span> <span class="o">=</span> <span class="s2">&quot;Catalina&quot;</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;esta es una cadena de caracteres&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;esta también&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apellido</span> <span class="o">=</span> <span class="s1">&#39;Lara&#39;</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">apellido</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;esta también&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
 </pre></div>
 </div>
 </div>
 </div>
-<p>Puede concatenar dos strings utilizando el operador <code class="docutils literal notranslate"><span class="pre">+</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">en_paz</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Muy cerca de mi ocaso, yo te bendigo, vida,</span>
+<span class="s2">porque nunca me diste ni esperanza fallida,</span>
+<span class="s2">ni trabajos injustos, ni pena inmerecida;</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">en_paz</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="concatenacion-de-cadenas">
+<h2>Concatenación de cadenas<a class="headerlink" href="#concatenacion-de-cadenas" title="Permalink to this headline">¶</a></h2>
+<p>Para concatenar (unir) cadenas se puede utilizar el operador <code class="docutils literal notranslate"><span class="pre">+</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Hola&quot;</span> <span class="o">+</span> <span class="s2">&quot;mundo&quot;</span>
@@ -292,68 +335,138 @@ un sistema de escritura. En Python los strings se definen entre comillas dobles 
 </div>
 </div>
 </div>
-<p>Notará que Python por sí mismo no sabe que estamos uniendo dos palabras y que entre ellas debería haber un espacio
-para su correcta lectura, evidentemente este tipo de cuestiones son las que el programador debe tomar en cuenta al
-escribir un código.</p>
-<p>Una cadena de caracteres es lo que en Python se conoce como <em>iterable</em>, es decir, una secuencia de
-elementos agrupados a los cuales se puede acceder de manera individual mediante indexación. Por ejemplo,
-sea <code class="docutils literal notranslate"><span class="pre">nombre</span></code> una cadena de caracteres dada por:</p>
+<p>Notará que Python por sí mismo no sabe que estamos uniendo dos palabras y que entre ellas debería haber un espacio para su correcta lectura, evidentemente este tipo de cuestiones son las que el programador debe tomar en cuenta al escribir un código.</p>
+<p>Puede utilizarse también el método <code class="docutils literal notranslate"><span class="pre">join</span></code> para unir una lista de cadenas mediante un separador, por ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span><span class="o">=</span><span class="s2">&quot;Catalina&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Puede acceder a cada una de las letras que componen dicha cadena mediante la notación <code class="docutils literal notranslate"><span class="pre">iter[pos]</span></code>, donde
-<code class="docutils literal notranslate"><span class="pre">iter</span></code> es el nombre del iterable y <code class="docutils literal notranslate"><span class="pre">pos</span></code> la posición en que se encuentra el caracter al cual
-se desea acceder, siendo 0 para la primera letra, 1 para la segunda y así de manera consecutiva. Por ejemplo:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">primer_nombre</span> <span class="o">=</span> <span class="s2">&quot;Ana&quot;</span>
+<span class="n">segundo_nombre</span> <span class="o">=</span> <span class="s2">&quot;Isabel&quot;</span>
+<span class="n">separador</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span>
+<span class="n">separador</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="p">[</span><span class="n">primer_nombre</span><span class="p">,</span> <span class="n">segundo_nombre</span><span class="p">]</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;C&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Ana Isabel&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">separador</span> <span class="o">=</span> <span class="s2">&quot;---&quot;</span>
+<span class="n">separador</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="p">[</span><span class="n">primer_nombre</span><span class="p">,</span> <span class="n">segundo_nombre</span><span class="p">]</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;l&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Ana---Isabel&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="indexacion-y-slicing">
+<h2>Indexación y <em>slicing</em><a class="headerlink" href="#indexacion-y-slicing" title="Permalink to this headline">¶</a></h2>
+<p>Las cadenas de caracteres son secuencias, y por lo tanto puede acceder a cada una de las letras que componen dicha cadena mediante la notación <code class="docutils literal notranslate"><span class="pre">cadena[pos]</span></code>, donde  <code class="docutils literal notranslate"><span class="pre">cadena</span></code> es el nombre de la cadena y <code class="docutils literal notranslate"><span class="pre">pos</span></code> la posición en que se encuentra el caracter al cual se desea acceder, siendo 0 para la primera letra, 1 para la segunda y así de manera consecutiva. Por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span> <span class="o">=</span> <span class="s2">&quot;Ana Paola&quot;</span>
+<span class="n">nombre</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;A&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Con <code class="docutils literal notranslate"><span class="pre">nombre[0]</span></code> se accede al elemento en la primera posición en la cadena <code class="docutils literal notranslate"><span class="pre">nombre</span></code>, es decir la letra <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39; &#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Con <code class="docutils literal notranslate"><span class="pre">nombre[3]</span></code> se accede al elemento en la cuarta posición en la cadena <code class="docutils literal notranslate"><span class="pre">nombre</span></code>, en este caso el caracter correspondiente al espacio.</p>
+<p>Con la sintaxis <code class="docutils literal notranslate"><span class="pre">cadena[a:b]</span></code> podemos acceder al conjunto de caracteres comprendidos entre los índices <code class="docutils literal notranslate"><span class="pre">a</span></code> y <code class="docutils literal notranslate"><span class="pre">b-1</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># 0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;A&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="c1"># 1,2,3,4</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;t&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;na P&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<p>Al último elemento, sin importar la longitud de la cadena, se accede con el índice -1:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span> <span class="c1"># desde el elemento con índice 4 hasta el final</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;a&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Paola&#39;
 </pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># desde el elemento con índice 0 hasta el elemento con índice 3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Ana&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># invirtiendo el string</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;aloaP anA&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># tomando elementos de 2 en 2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;AaPoa&#39;
+</pre></div>
+</div>
 </div>
 </div>
 </div>
