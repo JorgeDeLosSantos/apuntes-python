@@ -7,41 +7,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Análisis cinemático de mecanismos &#8212; Python para Ingenieros</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -50,9 +50,9 @@
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -69,89 +69,89 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="_static/logo.png" class="logo" alt="logo">
+      <img src="../_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Python para Ingenieros</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
+  <a class="reference internal" href="../intro.html">
    Prefacio
   </a>
  </li>
 </ul>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Introducci%C3%B3n.html">
-   Introducción
+  <a class="reference internal" href="../Introducci%C3%B3n.html">
+   1. Introducción
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Variables%2C%20operadores%20y%20expresiones.html">
-   Variables, operadores y expresiones
+  <a class="reference internal" href="../Variables%2C%20operadores%20y%20expresiones.html">
+   2. Variables, operadores y expresiones
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Cadenas%20de%20caracteres.html">
-   Cadenas de caracteres
+  <a class="reference internal" href="../Cadenas%20de%20caracteres.html">
+   3. Cadenas de caracteres
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Listas%2C%20tuplas%20y%20diccionarios.html">
-   Listas, tuplas y diccionarios
+  <a class="reference internal" href="../Listas%2C%20tuplas%20y%20diccionarios.html">
+   4. Listas, tuplas y diccionarios
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Estructuras%20de%20control.html">
-   Estructuras de control
+  <a class="reference internal" href="../Estructuras%20de%20control.html">
+   5. Estructuras de control
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Funciones.html">
-   Funciones
+  <a class="reference internal" href="../Funciones.html">
+   6. Funciones
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="NumPy.html">
-   NumPy: estructuras matriciales
+  <a class="reference internal" href="../NumPy.html">
+   7. NumPy: estructuras matriciales
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Matplotlib.html">
-   Matplotlib: visualización gráfica
+  <a class="reference internal" href="../Matplotlib.html">
+   8. Matplotlib: visualización gráfica
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Pandas.html">
-   Pandas: una introducción al análisis de datos
+  <a class="reference internal" href="../SciPy.html">
+   9. SciPy
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="SymPy.html">
-   Sympy: un sistema de álgebra computacional
+  <a class="reference internal" href="../Pandas.html">
+   10. Pandas: una introducción al análisis de datos
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Programaci%C3%B3n%20orientada%20a%20objetos.html">
-   Programación orientada a objetos
+  <a class="reference internal" href="../SymPy.html">
+   11. Sympy: un sistema de álgebra computacional
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="wxpython-guis.html">
-   Interfaces gráficas con wxPython
+  <a class="reference internal" href="../Programaci%C3%B3n%20orientada%20a%20objetos.html">
+   12. Programación orientada a objetos
   </a>
  </li>
 </ul>
@@ -195,7 +195,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/Análisis cinemático de mecanismos.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/_other_files/Análisis cinemático de mecanismos.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -220,10 +220,10 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Análisis cinemático de mecanismos.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/_other_files/Análisis cinemático de mecanismos.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
+                    src="../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
@@ -429,7 +429,7 @@ vexp(r, theta, j=False)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Análisis cinemático de mecanismos_11_0.png" src="_images/Análisis cinemático de mecanismos_11_0.png" />
+<img alt="../_images/Análisis cinemático de mecanismos_11_0.png" src="../_images/Análisis cinemático de mecanismos_11_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -439,7 +439,7 @@ vexp(r, theta, j=False)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Análisis cinemático de mecanismos_12_0.png" src="_images/Análisis cinemático de mecanismos_12_0.png" />
+<img alt="../_images/Análisis cinemático de mecanismos_12_0.png" src="../_images/Análisis cinemático de mecanismos_12_0.png" />
 </div>
 </div>
 <p>Naturalmente, no sólo funciona para valores simbólicos:</p>
@@ -450,7 +450,7 @@ vexp(r, theta, j=False)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Análisis cinemático de mecanismos_14_0.png" src="_images/Análisis cinemático de mecanismos_14_0.png" />
+<img alt="../_images/Análisis cinemático de mecanismos_14_0.png" src="../_images/Análisis cinemático de mecanismos_14_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -460,7 +460,7 @@ vexp(r, theta, j=False)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Análisis cinemático de mecanismos_15_0.png" src="_images/Análisis cinemático de mecanismos_15_0.png" />
+<img alt="../_images/Análisis cinemático de mecanismos_15_0.png" src="../_images/Análisis cinemático de mecanismos_15_0.png" />
 </div>
 </div>
 </div>
@@ -483,7 +483,7 @@ vexp(r, theta, j=False)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Análisis cinemático de mecanismos_19_0.png" src="_images/Análisis cinemático de mecanismos_19_0.png" />
+<img alt="../_images/Análisis cinemático de mecanismos_19_0.png" src="../_images/Análisis cinemático de mecanismos_19_0.png" />
 </div>
 </div>
 <p>Resolviendo para los valores desconocidos, se tiene:</p>
@@ -495,7 +495,7 @@ vexp(r, theta, j=False)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Análisis cinemático de mecanismos_21_0.png" src="_images/Análisis cinemático de mecanismos_21_0.png" />
+<img alt="../_images/Análisis cinemático de mecanismos_21_0.png" src="../_images/Análisis cinemático de mecanismos_21_0.png" />
 </div>
 </div>
 <p>Observe que Python nos devuelve dos soluciones, ¿cuál debemos tomar? ¡La que corresponda con la posición actual del mecanismo!</p>
@@ -507,7 +507,7 @@ vexp(r, theta, j=False)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Análisis cinemático de mecanismos_23_0.png" src="_images/Análisis cinemático de mecanismos_23_0.png" />
+<img alt="../_images/Análisis cinemático de mecanismos_23_0.png" src="../_images/Análisis cinemático de mecanismos_23_0.png" />
 </div>
 </div>
 <p>Se observa que los valores calculados no corresponden con lo esperable. Veamos ahora con la segunda solución:</p>
@@ -518,7 +518,7 @@ vexp(r, theta, j=False)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Análisis cinemático de mecanismos_25_0.png" src="_images/Análisis cinemático de mecanismos_25_0.png" />
+<img alt="../_images/Análisis cinemático de mecanismos_25_0.png" src="../_images/Análisis cinemático de mecanismos_25_0.png" />
 </div>
 </div>
 <p>Note que esta solución sí corresponde con lo que esperaríamos. Reescribimos la variable <code class="docutils literal notranslate"><span class="pre">xpos</span></code> para únicamente quedarnos con la segunda solución:</p>
@@ -579,7 +579,7 @@ vexp(r, theta, j=False)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Análisis cinemático de mecanismos_38_0.png" src="_images/Análisis cinemático de mecanismos_38_0.png" />
+<img alt="../_images/Análisis cinemático de mecanismos_38_0.png" src="../_images/Análisis cinemático de mecanismos_38_0.png" />
 </div>
 </div>
 <p>De manera similar se puede proceder para las velocidades de los puntos <span class="math notranslate nohighlight">\(M\)</span> y <span class="math notranslate nohighlight">\(P\)</span>.</p>
@@ -600,7 +600,7 @@ vexp(r, theta, j=False)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Análisis cinemático de mecanismos_40_0.png" src="_images/Análisis cinemático de mecanismos_40_0.png" />
+<img alt="../_images/Análisis cinemático de mecanismos_40_0.png" src="../_images/Análisis cinemático de mecanismos_40_0.png" />
 </div>
 </div>
 <p>Para las aceleraciones, dado que <span class="math notranslate nohighlight">\(\omega\)</span> es constante, entonces, <span class="math notranslate nohighlight">\(\alpha=0\)</span>.</p>
@@ -618,7 +618,7 @@ vexp(r, theta, j=False)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Análisis cinemático de mecanismos_42_0.png" src="_images/Análisis cinemático de mecanismos_42_0.png" />
+<img alt="../_images/Análisis cinemático de mecanismos_42_0.png" src="../_images/Análisis cinemático de mecanismos_42_0.png" />
 </div>
 </div>
 <p>De manera similar para las aceleraciones de <span class="math notranslate nohighlight">\(P\)</span> y <span class="math notranslate nohighlight">\(M\)</span>:</p>
@@ -632,7 +632,7 @@ vexp(r, theta, j=False)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Análisis cinemático de mecanismos_44_0.png" src="_images/Análisis cinemático de mecanismos_44_0.png" />
+<img alt="../_images/Análisis cinemático de mecanismos_44_0.png" src="../_images/Análisis cinemático de mecanismos_44_0.png" />
 </div>
 </div>
 <hr style="border-top: 3px solid #070707;">
@@ -661,7 +661,7 @@ vexp(r, theta, j=False)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Análisis cinemático de mecanismos_47_0.png" src="_images/Análisis cinemático de mecanismos_47_0.png" />
+<img alt="../_images/Análisis cinemático de mecanismos_47_0.png" src="../_images/Análisis cinemático de mecanismos_47_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -671,7 +671,7 @@ vexp(r, theta, j=False)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Análisis cinemático de mecanismos_48_0.png" src="_images/Análisis cinemático de mecanismos_48_0.png" />
+<img alt="../_images/Análisis cinemático de mecanismos_48_0.png" src="../_images/Análisis cinemático de mecanismos_48_0.png" />
 </div>
 </div>
 </div>
@@ -690,7 +690,7 @@ vexp(r, theta, j=False)
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./."
+            path: "./_other_files"
         },
         predefinedOutput: true
     }
@@ -727,7 +727,7 @@ vexp(r, theta, j=False)
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
   
   </body>

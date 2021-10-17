@@ -5,9 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NumPy: estructuras matriciales &#8212; Python para Ingenieros</title>
+    <title>7. NumPy: estructuras matriciales &#8212; Python para Ingenieros</title>
     
-  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -34,21 +31,18 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -57,16 +51,16 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Matplotlib: visualización gráfica" href="Matplotlib.html" />
-    <link rel="prev" title="Funciones" href="Funciones.html" />
-
+    <link rel="next" title="8. Matplotlib: visualización gráfica" href="Matplotlib.html" />
+    <link rel="prev" title="6. Funciones" href="Funciones.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -75,95 +69,95 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Python para Ingenieros</h1>
-  
-</a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python para Ingenieros</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
    Prefacio
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Introducci%C3%B3n.html">
-   Introducción
+   1. Introducción
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Variables%2C%20operadores%20y%20expresiones.html">
-   Variables, operadores y expresiones
+   2. Variables, operadores y expresiones
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Cadenas%20de%20caracteres.html">
-   Cadenas de caracteres
+   3. Cadenas de caracteres
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Listas%2C%20tuplas%20y%20diccionarios.html">
-   Listas, tuplas y diccionarios
+   4. Listas, tuplas y diccionarios
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Estructuras%20de%20control.html">
-   Estructuras de control
+   5. Estructuras de control
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Funciones.html">
-   Funciones
+   6. Funciones
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   NumPy: estructuras matriciales
+   7. NumPy: estructuras matriciales
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Matplotlib.html">
-   Matplotlib: visualización gráfica
+   8. Matplotlib: visualización gráfica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="SciPy.html">
+   9. SciPy
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Pandas.html">
-   Pandas: una introducción al análisis de datos
+   10. Pandas: una introducción al análisis de datos
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="SymPy.html">
-   Sympy: un sistema de álgebra computacional
+   11. Sympy: un sistema de álgebra computacional
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Programaci%C3%B3n%20orientada%20a%20objetos.html">
-   Programación orientada a objetos
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="wxpython-guis.html">
-   Interfaces gráficas con wxPython
+   12. Programación orientada a objetos
   </a>
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
+    </div>
+</nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
   Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
@@ -178,25 +172,25 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -208,18 +202,18 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
-        <!-- Source interaction buttons -->
 
+            <!-- Source interaction buttons -->
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
 
-        <!-- Launch buttons -->
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -238,19 +232,19 @@
     </div>
 </div>
 
-    </div>
-
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#el-array-de-numpy">
-   El
+   7.1. El
    <code class="docutils literal notranslate">
     <span class="pre">
      array
@@ -261,12 +255,12 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#vectores-arreglos-unidimensionales">
-   Vectores (arreglos unidimensionales)
+   7.2. Vectores (arreglos unidimensionales)
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#la-funcion-linspace">
-     La función
+     7.2.1. La función
      <code class="docutils literal notranslate">
       <span class="pre">
        linspace
@@ -276,7 +270,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#la-funcion-arange">
-     La función
+     7.2.2. La función
      <code class="docutils literal notranslate">
       <span class="pre">
        arange
@@ -288,25 +282,25 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#matrices">
-   Matrices
+   7.3. Matrices
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#operaciones-basicas">
-     Operaciones básicas
+     7.3.1. Operaciones básicas
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#inversa-y-determinante">
-     Inversa y determinante
+     7.3.2. Inversa y determinante
     </a>
    </li>
   </ul>
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -315,7 +309,7 @@
               <div>
                 
   <div class="section" id="numpy-estructuras-matriciales">
-<h1>NumPy: estructuras matriciales<a class="headerlink" href="#numpy-estructuras-matriciales" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">7. </span>NumPy: estructuras matriciales<a class="headerlink" href="#numpy-estructuras-matriciales" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://numpy.org/">NumPy</a> es una librería de Python que posibilita el trabajar con vectores, matrices y arreglos N-dimensionales de manera eficiente.</p>
 <p>Para el resto del capítulo se asumirá que previo a cualquier código se habrá importado la librería NumPy utilizando el <em>alias</em> <code class="docutils literal notranslate"><span class="pre">np</span></code>, como sigue:</p>
 <div class="cell docutils container">
@@ -326,10 +320,10 @@
 </div>
 </div>
 <div class="section" id="el-array-de-numpy">
-<h2>El <code class="docutils literal notranslate"><span class="pre">array</span></code> de NumPy<a class="headerlink" href="#el-array-de-numpy" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.1. </span>El <code class="docutils literal notranslate"><span class="pre">array</span></code> de NumPy<a class="headerlink" href="#el-array-de-numpy" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="vectores-arreglos-unidimensionales">
-<h2>Vectores (arreglos unidimensionales)<a class="headerlink" href="#vectores-arreglos-unidimensionales" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.2. </span>Vectores (arreglos unidimensionales)<a class="headerlink" href="#vectores-arreglos-unidimensionales" title="Permalink to this headline">¶</a></h2>
 <p>Para definir vectores y matrices NumPy dispone de la función <code class="docutils literal notranslate"><span class="pre">array</span></code>, la cual recibe como argumento de entrada una lista de valores y/o una lista que contenga listas anidadas.</p>
 <p>De manera específica, para definir un arreglo unidimensional (vector), debemos pasar una lista de valores, por ejemplo:</p>
 <div class="cell docutils container">
@@ -405,7 +399,7 @@
 </div>
 </div>
 <div class="section" id="la-funcion-linspace">
-<h3>La función <code class="docutils literal notranslate"><span class="pre">linspace</span></code><a class="headerlink" href="#la-funcion-linspace" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.2.1. </span>La función <code class="docutils literal notranslate"><span class="pre">linspace</span></code><a class="headerlink" href="#la-funcion-linspace" title="Permalink to this headline">¶</a></h3>
 <p>La función <code class="docutils literal notranslate"><span class="pre">linspace</span></code> se utiliza para definir un arreglo unidimensional de N-elementos linealmente equiespaciados entre dos valores límites especificados, por ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -446,13 +440,13 @@
 <p>El arreglo <code class="docutils literal notranslate"><span class="pre">z</span></code> que resulta contiene 11 elementos entre 0 y 10.</p>
 </div>
 <div class="section" id="la-funcion-arange">
-<h3>La función <code class="docutils literal notranslate"><span class="pre">arange</span></code><a class="headerlink" href="#la-funcion-arange" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.2.2. </span>La función <code class="docutils literal notranslate"><span class="pre">arange</span></code><a class="headerlink" href="#la-funcion-arange" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="matrices">
-<h2>Matrices<a class="headerlink" href="#matrices" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.3. </span>Matrices<a class="headerlink" href="#matrices" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="operaciones-basicas">
-<h3>Operaciones básicas<a class="headerlink" href="#operaciones-basicas" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.3.1. </span>Operaciones básicas<a class="headerlink" href="#operaciones-basicas" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
@@ -525,7 +519,7 @@
 </div>
 </div>
 <div class="section" id="inversa-y-determinante">
-<h3>Inversa y determinante<a class="headerlink" href="#inversa-y-determinante" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.3.2. </span>Inversa y determinante<a class="headerlink" href="#inversa-y-determinante" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">inv</span><span class="p">,</span> <span class="n">det</span>
@@ -630,17 +624,37 @@
 
               </div>
               
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="Funciones.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">6. </span>Funciones</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="Matplotlib.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">8. </span>Matplotlib: visualización gráfica</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
         </div>
     </div>
-    
-    
-    <div class='prev-next-bottom'>
-        
-    <a class='left-prev' id="prev-link" href="Funciones.html" title="previous page">Funciones</a>
-    <a class='right-next' id="next-link" href="Matplotlib.html" title="next page">Matplotlib: visualización gráfica</a>
-
-    </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
@@ -655,11 +669,9 @@
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
-
-
-    
+  
   </body>
 </html>

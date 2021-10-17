@@ -5,9 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Variables, operadores y expresiones &#8212; Python para Ingenieros</title>
+    <title>2. Variables, operadores y expresiones &#8212; Python para Ingenieros</title>
     
-  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -34,21 +31,18 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -57,16 +51,16 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Cadenas de caracteres" href="Cadenas%20de%20caracteres.html" />
-    <link rel="prev" title="Introducción" href="Introducci%C3%B3n.html" />
-
+    <link rel="next" title="3. Cadenas de caracteres" href="Cadenas%20de%20caracteres.html" />
+    <link rel="prev" title="1. Introducción" href="Introducci%C3%B3n.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -75,95 +69,95 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Python para Ingenieros</h1>
-  
-</a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python para Ingenieros</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
    Prefacio
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Introducci%C3%B3n.html">
-   Introducción
+   1. Introducción
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Variables, operadores y expresiones
+   2. Variables, operadores y expresiones
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Cadenas%20de%20caracteres.html">
-   Cadenas de caracteres
+   3. Cadenas de caracteres
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Listas%2C%20tuplas%20y%20diccionarios.html">
-   Listas, tuplas y diccionarios
+   4. Listas, tuplas y diccionarios
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Estructuras%20de%20control.html">
-   Estructuras de control
+   5. Estructuras de control
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Funciones.html">
-   Funciones
+   6. Funciones
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="NumPy.html">
-   NumPy: estructuras matriciales
+   7. NumPy: estructuras matriciales
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Matplotlib.html">
-   Matplotlib: visualización gráfica
+   8. Matplotlib: visualización gráfica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="SciPy.html">
+   9. SciPy
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Pandas.html">
-   Pandas: una introducción al análisis de datos
+   10. Pandas: una introducción al análisis de datos
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="SymPy.html">
-   Sympy: un sistema de álgebra computacional
+   11. Sympy: un sistema de álgebra computacional
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Programaci%C3%B3n%20orientada%20a%20objetos.html">
-   Programación orientada a objetos
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="wxpython-guis.html">
-   Interfaces gráficas con wxPython
+   12. Programación orientada a objetos
   </a>
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
+    </div>
+</nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
   Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
@@ -178,25 +172,25 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -208,18 +202,18 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
-        <!-- Source interaction buttons -->
 
+            <!-- Source interaction buttons -->
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
 
-        <!-- Launch buttons -->
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -238,29 +232,29 @@
     </div>
 </div>
 
-    </div>
-
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#variables">
-   Variables
+   2.1. Variables
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tipos-de-datos-basicos">
-   Tipos de datos básicos
+   2.2. Tipos de datos básicos
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#enteros-int">
-     Enteros (
+     2.2.1. Enteros (
      <code class="docutils literal notranslate">
       <span class="pre">
        int
@@ -271,7 +265,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#de-coma-flotante-float">
-     De coma flotante (
+     2.2.2. De coma flotante (
      <code class="docutils literal notranslate">
       <span class="pre">
        float
@@ -282,7 +276,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#booleanos-bool">
-     Booleanos (
+     2.2.3. Booleanos (
      <code class="docutils literal notranslate">
       <span class="pre">
        bool
@@ -295,12 +289,12 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#operadores-aritmeticos">
-   Operadores aritméticos
+   2.3. Operadores aritméticos
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#operador-suma">
-     Operador suma (
+     2.3.1. Operador suma (
      <code class="docutils literal notranslate">
       <span class="pre">
        +
@@ -311,7 +305,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#operador-resta">
-     Operador resta (
+     2.3.2. Operador resta (
      <code class="docutils literal notranslate">
       <span class="pre">
        -
@@ -322,7 +316,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#operador-multiplicacion">
-     Operador multiplicación (
+     2.3.3. Operador multiplicación (
      <code class="docutils literal notranslate">
       <span class="pre">
        *
@@ -333,7 +327,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#operador-division">
-     Operador división (
+     2.3.4. Operador división (
      <code class="docutils literal notranslate">
       <span class="pre">
        /
@@ -344,7 +338,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#operador-de-potenciacion">
-     Operador de potenciación (
+     2.3.5. Operador de potenciación (
      <code class="docutils literal notranslate">
       <span class="pre">
        **
@@ -355,35 +349,35 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#operador-modulo">
-     Operador módulo
+     2.3.6. Operador módulo
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#operador-division-entera">
-     Operador división entera
+     2.3.7. Operador división entera
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#operadores-relacionales">
-   Operadores relacionales
+   2.4. Operadores relacionales
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#operadores-logicos">
-   Operadores lógicos
+   2.5. Operadores lógicos
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicios">
-   Ejercicios
+   2.6. Ejercicios
   </a>
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -392,7 +386,7 @@
               <div>
                 
   <div class="section" id="variables-operadores-y-expresiones">
-<h1>Variables, operadores y expresiones<a class="headerlink" href="#variables-operadores-y-expresiones" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2. </span>Variables, operadores y expresiones<a class="headerlink" href="#variables-operadores-y-expresiones" title="Permalink to this headline">¶</a></h1>
 <p>Al ser un lenguaje de alto nivel, Python dispone de los tipos de datos elementales en cualquier lenguaje de programación,
 pero además incluye estructuras de datos más complejas y con altas prestaciones que facilitan en muchos
 aspectos la tarea del programador.</p>
@@ -400,7 +394,7 @@ aspectos la tarea del programador.</p>
 de igual manera una variable puede cambiar de tipo conforme la ejecución del programa, por ello se debe tener cuidado
 con la sintaxis para definir cada tipo de dato.</p>
 <div class="section" id="variables">
-<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1. </span>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
 <p>En Python todo lo que creamos son objetos y las variables son referencias a esos objetos, las variables se definen por asignación utilizando el signo <code class="docutils literal notranslate"><span class="pre">=</span></code>, por ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -578,9 +572,9 @@ con la sintaxis para definir cada tipo de dato.</p>
 <p>Puedes encontrar más recomendaciones sobre cómo nombrar variables en la <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP 8 – Style Guide for Python Code</a></p>
 </div>
 <div class="section" id="tipos-de-datos-basicos">
-<h2>Tipos de datos básicos<a class="headerlink" href="#tipos-de-datos-basicos" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2. </span>Tipos de datos básicos<a class="headerlink" href="#tipos-de-datos-basicos" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="enteros-int">
-<h3>Enteros (<code class="docutils literal notranslate"><span class="pre">int</span></code>)<a class="headerlink" href="#enteros-int" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.2.1. </span>Enteros (<code class="docutils literal notranslate"><span class="pre">int</span></code>)<a class="headerlink" href="#enteros-int" title="Permalink to this headline">¶</a></h3>
 <p>Los enteros son un tipo de dato básico en cualquier lenguaje de programación. En Python para definir un valor entero se debe colocar el número sin ningun punto decimal, por ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -614,7 +608,7 @@ con la sintaxis para definir cada tipo de dato.</p>
 <p>Observa que cuando colocamos un punto decimal, automáticamente la cantidad deja de ser un entero y pasa a ser un flotante.</p>
 </div>
 <div class="section" id="de-coma-flotante-float">
-<h3>De coma flotante (<code class="docutils literal notranslate"><span class="pre">float</span></code>)<a class="headerlink" href="#de-coma-flotante-float" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.2.2. </span>De coma flotante (<code class="docutils literal notranslate"><span class="pre">float</span></code>)<a class="headerlink" href="#de-coma-flotante-float" title="Permalink to this headline">¶</a></h3>
 <p>Los valores de coma flotante son cantidades numéricas que incluyen a <em>todos los reales</em>. Para que Python reconozca un valor numérico como de tipo <code class="docutils literal notranslate"><span class="pre">float</span></code> se debe adicionar el punto decimal o bien utilizar la función <code class="docutils literal notranslate"><span class="pre">float</span></code> para hacer la indicación de manera explícita, por ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -634,7 +628,7 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 <div class="section" id="booleanos-bool">
-<h3>Booleanos (<code class="docutils literal notranslate"><span class="pre">bool</span></code>)<a class="headerlink" href="#booleanos-bool" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.2.3. </span>Booleanos (<code class="docutils literal notranslate"><span class="pre">bool</span></code>)<a class="headerlink" href="#booleanos-bool" title="Permalink to this headline">¶</a></h3>
 <p>Las variables booleanas sólo pueden adoptar dos valores: verdadero (<code class="docutils literal notranslate"><span class="pre">True</span></code>) o falso (<code class="docutils literal notranslate"><span class="pre">False</span></code>). Un valor booleano se puede definir directamente a partir de las constantes <code class="docutils literal notranslate"><span class="pre">True</span></code> y <code class="docutils literal notranslate"><span class="pre">False</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -704,9 +698,9 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 <div class="section" id="operadores-aritmeticos">
-<h2>Operadores aritméticos<a class="headerlink" href="#operadores-aritmeticos" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.3. </span>Operadores aritméticos<a class="headerlink" href="#operadores-aritmeticos" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="operador-suma">
-<h3>Operador suma (<code class="docutils literal notranslate"><span class="pre">+</span></code>)<a class="headerlink" href="#operador-suma" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.1. </span>Operador suma (<code class="docutils literal notranslate"><span class="pre">+</span></code>)<a class="headerlink" href="#operador-suma" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1000</span> <span class="o">+</span> <span class="mi">2000</span>
@@ -721,7 +715,7 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 <div class="section" id="operador-resta">
-<h3>Operador resta (<code class="docutils literal notranslate"><span class="pre">-</span></code>)<a class="headerlink" href="#operador-resta" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.2. </span>Operador resta (<code class="docutils literal notranslate"><span class="pre">-</span></code>)<a class="headerlink" href="#operador-resta" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">500</span> <span class="o">-</span> <span class="mi">350</span>
@@ -736,7 +730,7 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 <div class="section" id="operador-multiplicacion">
-<h3>Operador multiplicación (<code class="docutils literal notranslate"><span class="pre">*</span></code>)<a class="headerlink" href="#operador-multiplicacion" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.3. </span>Operador multiplicación (<code class="docutils literal notranslate"><span class="pre">*</span></code>)<a class="headerlink" href="#operador-multiplicacion" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">352</span> <span class="o">*</span> <span class="mi">34</span>
@@ -751,7 +745,7 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 <div class="section" id="operador-division">
-<h3>Operador división (<code class="docutils literal notranslate"><span class="pre">/</span></code>)<a class="headerlink" href="#operador-division" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.4. </span>Operador división (<code class="docutils literal notranslate"><span class="pre">/</span></code>)<a class="headerlink" href="#operador-division" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="o">/</span><span class="mi">8</span>
@@ -766,7 +760,7 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 <div class="section" id="operador-de-potenciacion">
-<h3>Operador de potenciación (<code class="docutils literal notranslate"><span class="pre">**</span></code>)<a class="headerlink" href="#operador-de-potenciacion" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.5. </span>Operador de potenciación (<code class="docutils literal notranslate"><span class="pre">**</span></code>)<a class="headerlink" href="#operador-de-potenciacion" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span>
@@ -781,7 +775,7 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 <div class="section" id="operador-modulo">
-<h3>Operador módulo<a class="headerlink" href="#operador-modulo" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.6. </span>Operador módulo<a class="headerlink" href="#operador-modulo" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">250</span> <span class="o">%</span> <span class="mi">100</span>
@@ -796,7 +790,7 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 <div class="section" id="operador-division-entera">
-<h3>Operador división entera<a class="headerlink" href="#operador-division-entera" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.7. </span>Operador división entera<a class="headerlink" href="#operador-division-entera" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">50</span> <span class="o">//</span> <span class="mi">6</span>
@@ -812,7 +806,7 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 <div class="section" id="operadores-relacionales">
-<h2>Operadores relacionales<a class="headerlink" href="#operadores-relacionales" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4. </span>Operadores relacionales<a class="headerlink" href="#operadores-relacionales" title="Permalink to this headline">¶</a></h2>
 <p>Los operadores relacionales (o de comparación) nos permite efectuar comparaciones entre objetos de Python. El resultado de una comparación es un valor booleano <code class="docutils literal notranslate"><span class="pre">True</span></code> o <code class="docutils literal notranslate"><span class="pre">False</span></code>. A continuación se ejemplifican los operadores relacionales que podemos utilizar en Python:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -966,7 +960,7 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 <div class="section" id="operadores-logicos">
-<h2>Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.5. </span>Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Permalink to this headline">¶</a></h2>
 <p>Los <strong>operadores lógicos</strong> nos sirven para realizar operaciones de lógica booleana entre valores de tipo <code class="docutils literal notranslate"><span class="pre">bool</span></code>. En Python podemos utilizar los operadores lógicos <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> y <code class="docutils literal notranslate"><span class="pre">not</span></code>, observe los siguientes ejemplos:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1054,7 +1048,7 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 <div class="section" id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.6. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -1080,17 +1074,37 @@ con la sintaxis para definir cada tipo de dato.</p>
 
               </div>
               
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="Introducci%C3%B3n.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">1. </span>Introducción</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="Cadenas%20de%20caracteres.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">3. </span>Cadenas de caracteres</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
         </div>
     </div>
-    
-    
-    <div class='prev-next-bottom'>
-        
-    <a class='left-prev' id="prev-link" href="Introducci%C3%B3n.html" title="previous page">Introducción</a>
-    <a class='right-next' id="next-link" href="Cadenas%20de%20caracteres.html" title="next page">Cadenas de caracteres</a>
-
-    </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
@@ -1105,11 +1119,9 @@ con la sintaxis para definir cada tipo de dato.</p>
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
-
-
-    
+  
   </body>
 </html>
