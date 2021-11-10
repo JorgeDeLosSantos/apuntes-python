@@ -252,47 +252,49 @@
    </code>
    de NumPy
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vectores-arreglos-unidimensionales">
-   7.2. Vectores (arreglos unidimensionales)
-  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#la-funcion-linspace">
-     7.2.1. La función
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       linspace
-      </span>
-     </code>
+    <a class="reference internal nav-link" href="#arreglos-unidimensionales-vectores">
+     7.1.1. Arreglos unidimensionales (Vectores)
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#la-funcion-linspace">
+       7.1.1.1. La función
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         linspace
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#la-funcion-arange">
+       7.1.1.2. La función
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         arange
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#la-funcion-arange">
-     7.2.2. La función
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       arange
-      </span>
-     </code>
+    <a class="reference internal nav-link" href="#matrices">
+     7.1.2. Matrices
     </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#matrices">
-   7.3. Matrices
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#operaciones-basicas">
-     7.3.1. Operaciones básicas
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#operaciones-basicas">
+       7.1.2.1. Operaciones básicas
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#inversa-y-determinante">
-     7.3.2. Inversa y determinante
+     7.1.3. Inversa y determinante
     </a>
    </li>
   </ul>
@@ -321,11 +323,10 @@
 </div>
 <div class="section" id="el-array-de-numpy">
 <h2><span class="section-number">7.1. </span>El <code class="docutils literal notranslate"><span class="pre">array</span></code> de NumPy<a class="headerlink" href="#el-array-de-numpy" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="vectores-arreglos-unidimensionales">
-<h2><span class="section-number">7.2. </span>Vectores (arreglos unidimensionales)<a class="headerlink" href="#vectores-arreglos-unidimensionales" title="Permalink to this headline">¶</a></h2>
-<p>Para definir vectores y matrices NumPy dispone de la función <code class="docutils literal notranslate"><span class="pre">array</span></code>, la cual recibe como argumento de entrada una lista de valores y/o una lista que contenga listas anidadas.</p>
-<p>De manera específica, para definir un arreglo unidimensional (vector), debemos pasar una lista de valores, por ejemplo:</p>
+<p>Para definir vectores y matrices, NumPy dispone de la función <code class="docutils literal notranslate"><span class="pre">array</span></code>, la cual recibe como argumento de entrada una lista de valores y/o una lista que contenga listas anidadas. La función <code class="docutils literal notranslate"><span class="pre">array</span></code> crea un objeto de la clase <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>. Los objetos de la clase <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> son la estructura básica de NumPy.</p>
+<div class="section" id="arreglos-unidimensionales-vectores">
+<h3><span class="section-number">7.1.1. </span>Arreglos unidimensionales (Vectores)<a class="headerlink" href="#arreglos-unidimensionales-vectores" title="Permalink to this headline">¶</a></h3>
+<p>Para definir un arreglo unidimensional (vector), debemos pasar una lista de valores (usualmente numéricos), por ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
@@ -333,7 +334,19 @@
 </div>
 </div>
 </div>
-<p>Ese arreglo definido podemos usarlo en operaciones aritméticas y éstas se realizarán elemento a elemento, por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numpy.ndarray
+</pre></div>
+</div>
+</div>
+</div>
+<p>El arreglo definido anteriormente podemos usarlo en operaciones aritméticas, y éstas se realizarán elemento a elemento, por ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">*</span><span class="n">x</span>
@@ -371,7 +384,7 @@
 </div>
 </div>
 </div>
-<p>Incluso podemos aplicar algunas funciones matemáticas contenidas en NumPy, por ejemplo:</p>
+<p>Incluso podemos aplicar algunas funciones matemáticas que forman parte de NumPy, por ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -399,7 +412,7 @@
 </div>
 </div>
 <div class="section" id="la-funcion-linspace">
-<h3><span class="section-number">7.2.1. </span>La función <code class="docutils literal notranslate"><span class="pre">linspace</span></code><a class="headerlink" href="#la-funcion-linspace" title="Permalink to this headline">¶</a></h3>
+<h4><span class="section-number">7.1.1.1. </span>La función <code class="docutils literal notranslate"><span class="pre">linspace</span></code><a class="headerlink" href="#la-funcion-linspace" title="Permalink to this headline">¶</a></h4>
 <p>La función <code class="docutils literal notranslate"><span class="pre">linspace</span></code> se utiliza para definir un arreglo unidimensional de N-elementos linealmente equiespaciados entre dos valores límites especificados, por ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -440,13 +453,57 @@
 <p>El arreglo <code class="docutils literal notranslate"><span class="pre">z</span></code> que resulta contiene 11 elementos entre 0 y 10.</p>
 </div>
 <div class="section" id="la-funcion-arange">
-<h3><span class="section-number">7.2.2. </span>La función <code class="docutils literal notranslate"><span class="pre">arange</span></code><a class="headerlink" href="#la-funcion-arange" title="Permalink to this headline">¶</a></h3>
+<h4><span class="section-number">7.1.1.2. </span>La función <code class="docutils literal notranslate"><span class="pre">arange</span></code><a class="headerlink" href="#la-funcion-arange" title="Permalink to this headline">¶</a></h4>
+<p>La función <code class="docutils literal notranslate"><span class="pre">arange</span></code> crea un arreglo unidimensional entre dos valores límites, utilizando un paso (o incremento) especificado. La sintaxis más general de <code class="docutils literal notranslate"><span class="pre">arange</span></code> es como sigue:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Donde <code class="docutils literal notranslate"><span class="pre">start</span></code> es el valor límite inferior, <code class="docutils literal notranslate"><span class="pre">stop</span></code> el valor límite superior y <code class="docutils literal notranslate"><span class="pre">step</span></code> el paso. Observa el siguiente ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos notar que el arreglo resultante incluye el valor límite inferior (<code class="docutils literal notranslate"><span class="pre">start</span></code>), pero no incluye el valor límite superior (<code class="docutils literal notranslate"><span class="pre">stop</span></code>); se debe tener mucho cuidado con este aspecto. Por defecto, el paso de la función <code class="docutils literal notranslate"><span class="pre">arange</span></code> es de 1, es decir, la instrucción anterior también se pudo haber indicado como sigue:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+</pre></div>
+</div>
+</div>
+</div>
+<p>La función <code class="docutils literal notranslate"><span class="pre">arange</span></code> también se puede invocar utilizando un argumento:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 2, 3, 4])
+</pre></div>
+</div>
+</div>
+</div>
+<p>En este caso se asume que el valor pasado como argumento corresponde a <code class="docutils literal notranslate"><span class="pre">stop</span></code>, y por defecto se asume que <code class="docutils literal notranslate"><span class="pre">start=0</span></code> y <code class="docutils literal notranslate"><span class="pre">step=1</span></code>.</p>
 </div>
 </div>
 <div class="section" id="matrices">
-<h2><span class="section-number">7.3. </span>Matrices<a class="headerlink" href="#matrices" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">7.1.2. </span>Matrices<a class="headerlink" href="#matrices" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="operaciones-basicas">
-<h3><span class="section-number">7.3.1. </span>Operaciones básicas<a class="headerlink" href="#operaciones-basicas" title="Permalink to this headline">¶</a></h3>
+<h4><span class="section-number">7.1.2.1. </span>Operaciones básicas<a class="headerlink" href="#operaciones-basicas" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
@@ -518,8 +575,9 @@
 </div>
 </div>
 </div>
+</div>
 <div class="section" id="inversa-y-determinante">
-<h3><span class="section-number">7.3.2. </span>Inversa y determinante<a class="headerlink" href="#inversa-y-determinante" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.1.3. </span>Inversa y determinante<a class="headerlink" href="#inversa-y-determinante" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">inv</span><span class="p">,</span> <span class="n">det</span>
