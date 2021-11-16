@@ -293,8 +293,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inversa-y-determinante">
-     7.3.2. Inversa y determinante
+    <a class="reference internal nav-link" href="#matriz-transpuesta-determinante-y-matriz-inversa">
+     7.3.2. Matriz transpuesta, determinante y matriz inversa
     </a>
    </li>
   </ul>
@@ -742,15 +742,65 @@ D = \begin{bmatrix}
 </div>
 </div>
 </div>
-<div class="section" id="inversa-y-determinante">
-<h3><span class="section-number">7.3.2. </span>Inversa y determinante<a class="headerlink" href="#inversa-y-determinante" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="matriz-transpuesta-determinante-y-matriz-inversa">
+<h3><span class="section-number">7.3.2. </span>Matriz transpuesta, determinante y matriz inversa<a class="headerlink" href="#matriz-transpuesta-determinante-y-matriz-inversa" title="Permalink to this headline">¶</a></h3>
+<p>La matriz transpuesta se puede calcular utilizando el atributo <code class="docutils literal notranslate"><span class="pre">T</span></code> o el método <code class="docutils literal notranslate"><span class="pre">transpose</span></code> de los objetos de la clase <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>. Así que si quisiéramos calcular la transpuesta de la matriz <span class="math notranslate nohighlight">\(A\)</span> definida con anterioridad, podríamos hacerlo de las siguientes maneras:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">inv</span><span class="p">,</span> <span class="n">det</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">T</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 3],
+       [2, 4]])
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 3],
+       [2, 4]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>El determinante de una matriz podemos calcularlo utilizando la función <code class="docutils literal notranslate"><span class="pre">det</span></code>, la cual forma parte del submódulo <code class="docutils literal notranslate"><span class="pre">linalg</span></code> (linear algebra) de NumPy. Para importar dicha función podemos hacerlo de la siguiente manera:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">det</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>El determinante de la matriz <span class="math notranslate nohighlight">\(B\)</span> podríamos calcularlo como sigue:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">det</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14.999999999999993
+</pre></div>
+</div>
+</div>
+</div>
+<p>La matriz inversa de una matriz dada se puede calcular utilizando la función <code class="docutils literal notranslate"><span class="pre">inv</span></code>, la cual también forma parte del submódulo <code class="docutils literal notranslate"><span class="pre">linalg</span></code>. Para esto primero debemos importar dicha función mediante la siguiente instrucción:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">inv</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora podemos calcular, por ejemplo, la matriz inversa de <span class="math notranslate nohighlight">\(A\)</span> (definida en secciones anteriores):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
@@ -760,64 +810,6 @@ D = \begin{bmatrix}
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-2. ,  1. ],
        [ 1.5, -0.5]])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inv</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-4. ,  3. ],
-       [ 3.5, -2.5]])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">@</span> <span class="n">A</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.0000000e+00, 4.4408921e-16],
-       [0.0000000e+00, 1.0000000e+00]])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># np.set_printoptions(suppress=True)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">@</span> <span class="n">A</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.0000000e+00, 4.4408921e-16],
-       [0.0000000e+00, 1.0000000e+00]])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">det</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.999999999999999
 </pre></div>
 </div>
 </div>
