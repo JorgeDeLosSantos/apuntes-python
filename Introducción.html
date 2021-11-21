@@ -274,7 +274,7 @@
 <h2><span class="section-number">1.1. </span>¿Qué es Python?<a class="headerlink" href="#que-es-python" title="Permalink to this headline">¶</a></h2>
 <p>Python es un lenguaje de programación, interpretado, de alto nivel y propósito general, además de ser un proyecto libre y de código abierto, con una comunidad enorme implicada en el desarrollo y mantenimiento de librerías que hacen posible el <em>multidominio</em> actual de Python.</p>
 <p>Dada su concepción como lenguaje de propósito general, Python es utilizado en una diversidad de aplicaciones,
-desde desarrollo web, encriptación, análisis de datos, procesamiento de imágenes, aprendizaje automático,
+desde desarrollo web, análisis de datos, procesamiento de imágenes, aprendizaje automático,
 computación simbólica, etc.</p>
 <p>Las características de este lenguaje le hacen propicio para el prototipado de aplicaciones, dado que es muy
 sencillo y rápido revisar y modificar el código desarrollado. Otra característica muy notable de Python
@@ -283,15 +283,14 @@ algoritmos o el mundo propio de la programación de computadoras.</p>
 </div>
 <div class="section" id="instalando-python">
 <h2><span class="section-number">1.2. </span>Instalando Python<a class="headerlink" href="#instalando-python" title="Permalink to this headline">¶</a></h2>
-<p>En estos apuntes se utilizará la distribución Anaconda de Python, la cual contiene el intérprete y las librerías del
+<p>En este texto se utilizará la distribución Anaconda de Python, la cual contiene el intérprete y las librerías del
 <em>core</em>, pero que además incluye la mayoría de librerías utilizadas para el desarrollo de aplicaciones de corte
 técnico-científico.</p>
 <p>La descarga de Anaconda puede realizarla desde el sitio <a class="reference external" href="https://www.anaconda.com/products/individual">https://www.anaconda.com/products/individual</a>, selecciona el paquete de descarga conforme al sistema operativo (Windows, MacOS o Linux), así como la arquitectura de su PC. La instalación suele ser muy sencilla, puede seguir las instrucciones dadas en la documentación correspondiente: <a class="reference external" href="https://docs.anaconda.com/anaconda/install/">https://docs.anaconda.com/anaconda/install/</a>.</p>
 </div>
 <div class="section" id="el-notebook-de-jupyter-como-una-calculadora-basica">
 <h2><span class="section-number">1.3. </span>El notebook de Jupyter como una calculadora básica<a class="headerlink" href="#el-notebook-de-jupyter-como-una-calculadora-basica" title="Permalink to this headline">¶</a></h2>
-<p>Una vez instalado Anaconda puede testear la correcta instalación abriendo el Jupyter Notebook, la cual es una aplicación web en la cual puede escribir código, texto, ecuaciones, etc., y que básicamente es donde se desarrollaron estos apuntes. Puede
-buscar esta aplicación en la carpeta de instalación correspondiente.</p>
+<p>Una vez instalado Anaconda podemos <em>testear</em> la correcta instalación abriendo el Jupyter Notebook, la cual es una aplicación web en la cual podemos escribir código, texto, ecuaciones, etc. Puede buscar esta aplicación en la carpeta de instalación correspondiente de Anaconda.</p>
 <p>A partir de este momento puede ingresar código Python en las celdas y teclear <strong>Shift + Enter</strong> para ejecutar la instrucción y la celda le devolverá lo que resulte de esto. Por ejemplo, si escribe un número cualesquiera y presiona la combinación indicada, la consola le devolverá justamente el mismo número:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -331,8 +330,7 @@ buscar esta aplicación en la carpeta de instalación correspondiente.</p>
 </div>
 </div>
 </div>
-<p>Naturalmente Python maneja sin complicaciones las cantidades negativas. Una multiplicación la realiza
-con el operador *:</p>
+<p>Una multiplicación la realizamos con el operador <code class="docutils literal notranslate"><span class="pre">*</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">50</span><span class="o">*</span><span class="mi">25</span>
@@ -345,7 +343,7 @@ con el operador *:</p>
 </div>
 </div>
 </div>
-<p>Para las divisiones utiliza el operador /:</p>
+<p>Para las divisiones utiliza el operador <code class="docutils literal notranslate"><span class="pre">/</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
@@ -358,7 +356,7 @@ con el operador *:</p>
 </div>
 </div>
 </div>
-<p>Puede elevar a una potencia utilizando como operador el doble asterisco:</p>
+<p>Puede elevar a una potencia utilizando como operador el doble asterisco (<code class="docutils literal notranslate"><span class="pre">**</span></code>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">13</span><span class="o">**</span><span class="mi">2</span>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>7. NumPy: estructuras matriciales &#8212; Python para Ingenieros</title>
+    <title>8. NumPy: estructuras matriciales &#8212; Python para Ingenieros</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="8. Matplotlib: visualización gráfica" href="Matplotlib.html" />
-    <link rel="prev" title="6. Funciones" href="Funciones.html" />
+    <link rel="next" title="9. Matplotlib: visualización gráfica" href="Matplotlib.html" />
+    <link rel="prev" title="7. Archivos de texto" href="Archivos%20de%20texto.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -126,34 +126,44 @@
    6. Funciones
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Archivos%20de%20texto.html">
+   7. Archivos de texto
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   7. NumPy: estructuras matriciales
+   8. NumPy: estructuras matriciales
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Matplotlib.html">
-   8. Matplotlib: visualización gráfica
+   9. Matplotlib: visualización gráfica
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="SciPy.html">
-   9. SciPy
+   10. SciPy
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Pandas.html">
-   10. Pandas: una introducción al análisis de datos
+   11. Pandas: una introducción al análisis de datos
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="SymPy.html">
-   11. Sympy: un sistema de álgebra computacional
+   12. Sympy: un sistema de álgebra computacional
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Programaci%C3%B3n%20orientada%20a%20objetos.html">
-   12. Programación orientada a objetos
+   13. Programación orientada a objetos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Bases%20de%20datos.html">
+   14. Bases de datos
   </a>
  </li>
 </ul>
@@ -246,7 +256,7 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#una-introduccion-al-array-de-numpy">
-   7.1. Una introducción al
+   8.1. Una introducción al
    <code class="docutils literal notranslate">
     <span class="pre">
      array
@@ -257,12 +267,12 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#arreglos-unidimensionales-vectores">
-   7.2. Arreglos unidimensionales (Vectores)
+   8.2. Arreglos unidimensionales (Vectores)
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#la-funcion-linspace">
-     7.2.1. La función
+     8.2.1. La función
      <code class="docutils literal notranslate">
       <span class="pre">
        linspace
@@ -272,7 +282,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#la-funcion-arange">
-     7.2.2. La función
+     8.2.2. La función
      <code class="docutils literal notranslate">
       <span class="pre">
        arange
@@ -284,17 +294,17 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#matrices">
-   7.3. Matrices
+   8.3. Matrices
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#operaciones-basicas">
-     7.3.1. Operaciones básicas
+     8.3.1. Operaciones básicas
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#matriz-transpuesta-determinante-y-matriz-inversa">
-     7.3.2. Matriz transpuesta, determinante y matriz inversa
+     8.3.2. Matriz transpuesta, determinante y matriz inversa
     </a>
    </li>
   </ul>
@@ -311,7 +321,7 @@
               <div>
                 
   <div class="section" id="numpy-estructuras-matriciales">
-<h1><span class="section-number">7. </span>NumPy: estructuras matriciales<a class="headerlink" href="#numpy-estructuras-matriciales" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">8. </span>NumPy: estructuras matriciales<a class="headerlink" href="#numpy-estructuras-matriciales" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://numpy.org/">NumPy</a> es una librería de Python que posibilita el trabajar con vectores, matrices y arreglos N-dimensionales de manera eficiente.</p>
 <p>Para el resto del capítulo se asumirá que previo a cualquier código se habrá importado la librería NumPy utilizando el <em>alias</em> <code class="docutils literal notranslate"><span class="pre">np</span></code>, como sigue:</p>
 <div class="cell docutils container">
@@ -322,11 +332,11 @@
 </div>
 </div>
 <div class="section" id="una-introduccion-al-array-de-numpy">
-<h2><span class="section-number">7.1. </span>Una introducción al <code class="docutils literal notranslate"><span class="pre">array</span></code> de NumPy<a class="headerlink" href="#una-introduccion-al-array-de-numpy" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.1. </span>Una introducción al <code class="docutils literal notranslate"><span class="pre">array</span></code> de NumPy<a class="headerlink" href="#una-introduccion-al-array-de-numpy" title="Permalink to this headline">¶</a></h2>
 <p>Para definir vectores y matrices, NumPy dispone de la función <code class="docutils literal notranslate"><span class="pre">array</span></code>, la cual recibe como argumento de entrada una lista de valores y/o una lista que contenga listas anidadas. La función <code class="docutils literal notranslate"><span class="pre">array</span></code> crea un objeto de la clase <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>. Los objetos de la clase <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> son la estructura básica de NumPy.</p>
 </div>
 <div class="section" id="arreglos-unidimensionales-vectores">
-<h2><span class="section-number">7.2. </span>Arreglos unidimensionales (Vectores)<a class="headerlink" href="#arreglos-unidimensionales-vectores" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.2. </span>Arreglos unidimensionales (Vectores)<a class="headerlink" href="#arreglos-unidimensionales-vectores" title="Permalink to this headline">¶</a></h2>
 <p>Para definir un arreglo unidimensional (vector), debemos pasar una lista de valores (usualmente numéricos), por ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -413,7 +423,7 @@
 </div>
 </div>
 <div class="section" id="la-funcion-linspace">
-<h3><span class="section-number">7.2.1. </span>La función <code class="docutils literal notranslate"><span class="pre">linspace</span></code><a class="headerlink" href="#la-funcion-linspace" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.2.1. </span>La función <code class="docutils literal notranslate"><span class="pre">linspace</span></code><a class="headerlink" href="#la-funcion-linspace" title="Permalink to this headline">¶</a></h3>
 <p>La función <code class="docutils literal notranslate"><span class="pre">linspace</span></code> se utiliza para definir un arreglo unidimensional de N-elementos linealmente equiespaciados entre dos valores límites especificados, por ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -454,7 +464,7 @@
 <p>El arreglo <code class="docutils literal notranslate"><span class="pre">z</span></code> que resulta contiene 11 elementos entre 0 y 10.</p>
 </div>
 <div class="section" id="la-funcion-arange">
-<h3><span class="section-number">7.2.2. </span>La función <code class="docutils literal notranslate"><span class="pre">arange</span></code><a class="headerlink" href="#la-funcion-arange" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.2.2. </span>La función <code class="docutils literal notranslate"><span class="pre">arange</span></code><a class="headerlink" href="#la-funcion-arange" title="Permalink to this headline">¶</a></h3>
 <p>La función <code class="docutils literal notranslate"><span class="pre">arange</span></code> crea un arreglo unidimensional entre dos valores límites, utilizando un paso (o incremento) especificado. La sintaxis más general de <code class="docutils literal notranslate"><span class="pre">arange</span></code> es como sigue:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
 </pre></div>
@@ -502,7 +512,7 @@
 </div>
 </div>
 <div class="section" id="matrices">
-<h2><span class="section-number">7.3. </span>Matrices<a class="headerlink" href="#matrices" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.3. </span>Matrices<a class="headerlink" href="#matrices" title="Permalink to this headline">¶</a></h2>
 <p>En NumPy, con la función <code class="docutils literal notranslate"><span class="pre">array</span></code>, se pueden definir y manipular matrices. Para crear matrices se debe pasar como argumento una lista de listas, donde cada sublista es una fila de la matriz. Por ejemplo vamos a suponer que se requiere crear la siguiente matriz <span class="math notranslate nohighlight">\(A\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -530,7 +540,7 @@ A = \begin{bmatrix}
 </div>
 <p>Podemos observar que cada sublista corresponde, efectivamente, a cada fila de la matriz. Debe cuidarse que cada sublista contenga exactamente el mismo número de elementos, de lo contrario la definición ya no correspondería a una matriz numérica, sino a un simple arreglo de arreglos.</p>
 <div class="section" id="operaciones-basicas">
-<h3><span class="section-number">7.3.1. </span>Operaciones básicas<a class="headerlink" href="#operaciones-basicas" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.3.1. </span>Operaciones básicas<a class="headerlink" href="#operaciones-basicas" title="Permalink to this headline">¶</a></h3>
 <p>Para los propósitos de este texto, llamaremos operaciones básicas con matrices a la suma, resta y multiplicación de matrices. Supongamos cuatro matrices <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span> y <span class="math notranslate nohighlight">\(D\)</span>, definidas como sigue:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -743,7 +753,7 @@ D = \begin{bmatrix}
 </div>
 </div>
 <div class="section" id="matriz-transpuesta-determinante-y-matriz-inversa">
-<h3><span class="section-number">7.3.2. </span>Matriz transpuesta, determinante y matriz inversa<a class="headerlink" href="#matriz-transpuesta-determinante-y-matriz-inversa" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.3.2. </span>Matriz transpuesta, determinante y matriz inversa<a class="headerlink" href="#matriz-transpuesta-determinante-y-matriz-inversa" title="Permalink to this headline">¶</a></h3>
 <p>La matriz transpuesta se puede calcular utilizando el atributo <code class="docutils literal notranslate"><span class="pre">T</span></code> o el método <code class="docutils literal notranslate"><span class="pre">transpose</span></code> de los objetos de la clase <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>. Así que si quisiéramos calcular la transpuesta de la matriz <span class="math notranslate nohighlight">\(A\)</span> definida con anterioridad, podríamos hacerlo de las siguientes maneras:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -848,11 +858,11 @@ D = \begin{bmatrix}
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="Funciones.html" title="previous page">
+        <a class="left-prev" href="Archivos%20de%20texto.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">6. </span>Funciones</p>
+                <p class="prevnext-title"><span class="section-number">7. </span>Archivos de texto</p>
             </div>
         </a>
     </div>
@@ -860,7 +870,7 @@ D = \begin{bmatrix}
         <a class="right-next" href="Matplotlib.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">8. </span>Matplotlib: visualización gráfica</p>
+                <p class="prevnext-title"><span class="section-number">9. </span>Matplotlib: visualización gráfica</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

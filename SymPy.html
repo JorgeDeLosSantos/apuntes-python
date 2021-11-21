@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>11. Sympy: un sistema de álgebra computacional &#8212; Python para Ingenieros</title>
+    <title>12. Sympy: un sistema de álgebra computacional &#8212; Python para Ingenieros</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="12. Programación orientada a objetos" href="Programaci%C3%B3n%20orientada%20a%20objetos.html" />
-    <link rel="prev" title="10. Pandas: una introducción al análisis de datos" href="Pandas.html" />
+    <link rel="next" title="13. Programación orientada a objetos" href="Programaci%C3%B3n%20orientada%20a%20objetos.html" />
+    <link rel="prev" title="11. Pandas: una introducción al análisis de datos" href="Pandas.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -127,33 +127,43 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Archivos%20de%20texto.html">
+   7. Archivos de texto
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="NumPy.html">
-   7. NumPy: estructuras matriciales
+   8. NumPy: estructuras matriciales
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Matplotlib.html">
-   8. Matplotlib: visualización gráfica
+   9. Matplotlib: visualización gráfica
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="SciPy.html">
-   9. SciPy
+   10. SciPy
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Pandas.html">
-   10. Pandas: una introducción al análisis de datos
+   11. Pandas: una introducción al análisis de datos
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   11. Sympy: un sistema de álgebra computacional
+   12. Sympy: un sistema de álgebra computacional
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Programaci%C3%B3n%20orientada%20a%20objetos.html">
-   12. Programación orientada a objetos
+   13. Programación orientada a objetos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Bases%20de%20datos.html">
+   14. Bases de datos
   </a>
  </li>
 </ul>
@@ -246,66 +256,66 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#variables-simbolicas">
-   11.1. Variables simbólicas
+   12.1. Variables simbólicas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#manipulacion-algebraica">
-   11.2. Manipulación algebraica
+   12.2. Manipulación algebraica
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#resolviendo-ecuaciones-e-inecuaciones">
-   11.3. Resolviendo ecuaciones e inecuaciones
+   12.3. Resolviendo ecuaciones e inecuaciones
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ecuaciones-polinomicas">
-     11.3.1. Ecuaciones polinómicas
+     12.3.1. Ecuaciones polinómicas
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ecuaciones-trigonometricas">
-     11.3.2. Ecuaciones trigonométricas
+     12.3.2. Ecuaciones trigonométricas
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#calculo">
-   11.4. Cálculo
+   12.4. Cálculo
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#limites">
-     11.4.1. Límites
+     12.4.1. Límites
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#derivadas">
-     11.4.2. Derivadas
+     12.4.2. Derivadas
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#integrales">
-     11.4.3. Integrales
+     12.4.3. Integrales
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#vectores">
-   11.5. Vectores
+   12.5. Vectores
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#matrices">
-   11.6. Matrices
+   12.6. Matrices
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicios">
-   11.7. Ejercicios
+   12.7. Ejercicios
   </a>
  </li>
 </ul>
@@ -320,7 +330,7 @@
               <div>
                 
   <div class="section" id="sympy-un-sistema-de-algebra-computacional">
-<h1><span class="section-number">11. </span>Sympy: un sistema de álgebra computacional<a class="headerlink" href="#sympy-un-sistema-de-algebra-computacional" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">12. </span>Sympy: un sistema de álgebra computacional<a class="headerlink" href="#sympy-un-sistema-de-algebra-computacional" title="Permalink to this headline">¶</a></h1>
 <p>SymPy es un sistema de álgebra computacional (CAS) escrito en Python puro, está desarrollado con un enfoque
 en la extensibilidad y facilidad de uso, tanto a través de aplicaciones interactivas como programáticas. Estas
 características le han permitido a SymPy convertirse en una librería de cómputo simbólico muy popular en
@@ -342,7 +352,7 @@ el ecosistema científico de Python.</p>
 </div>
 </div>
 <div class="section" id="variables-simbolicas">
-<h2><span class="section-number">11.1. </span>Variables simbólicas<a class="headerlink" href="#variables-simbolicas" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.1. </span>Variables simbólicas<a class="headerlink" href="#variables-simbolicas" title="Permalink to this headline">¶</a></h2>
 <p>Las variables simbólicas son el <em>alma</em> de SymPy, todas las operaciones de álgebra simbólica se basan en estas.
 A una variable simbólica se le asigna un símbolo que la representa mediante la función <code class="docutils literal notranslate"><span class="pre">symbols</span></code>:</p>
 <div class="cell docutils container">
@@ -424,7 +434,7 @@ del módulo <code class="docutils literal notranslate"><span class="pre">abc</sp
 </div>
 </div>
 <div class="section" id="manipulacion-algebraica">
-<h2><span class="section-number">11.2. </span>Manipulación algebraica<a class="headerlink" href="#manipulacion-algebraica" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.2. </span>Manipulación algebraica<a class="headerlink" href="#manipulacion-algebraica" title="Permalink to this headline">¶</a></h2>
 <p>SymPy es una poderosa herramienta de manipulación y simplificación algebraica, en lo subsiguiente se revisarán
 algunos casos elementales y se describirá el uso de las herramientas (funciones) que proporciona.</p>
 <p>En primera instancia se definen algunas variables simbólicas a utilizar:</p>
@@ -641,7 +651,7 @@ pero aquí no funciona como puede verificar.</p>
 </div>
 </div>
 <div class="section" id="resolviendo-ecuaciones-e-inecuaciones">
-<h2><span class="section-number">11.3. </span>Resolviendo ecuaciones e inecuaciones<a class="headerlink" href="#resolviendo-ecuaciones-e-inecuaciones" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.3. </span>Resolviendo ecuaciones e inecuaciones<a class="headerlink" href="#resolviendo-ecuaciones-e-inecuaciones" title="Permalink to this headline">¶</a></h2>
 <p>SymPy dispone de la función <code class="docutils literal notranslate"><span class="pre">solve</span></code>, la cual resuelve desde ecuaciones polinomiales, sistemas de ecuaciones lineales,
 inecuaciones, hasta sistemas de ecuaciones no lineales. La sintaxis de <code class="docutils literal notranslate"><span class="pre">solve</span></code> es polimórfica y en general depende
 de lo que se requiera resolver, tendiendo siempre a que sea posible especificar el mínimo número de parámetros.</p>
@@ -656,7 +666,7 @@ se definieron las siguientes variables simbólicas:</p>
 </div>
 </div>
 <div class="section" id="ecuaciones-polinomicas">
-<h3><span class="section-number">11.3.1. </span>Ecuaciones polinómicas<a class="headerlink" href="#ecuaciones-polinomicas" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">12.3.1. </span>Ecuaciones polinómicas<a class="headerlink" href="#ecuaciones-polinomicas" title="Permalink to this headline">¶</a></h3>
 <p>La sintaxis más elemental de <code class="docutils literal notranslate"><span class="pre">solve</span></code> es pasando un sólo argumento, el cual se espera sea una expresión algebraica
 y se considera que esta estará igualada a cero. Por ejemplo para resolver la ecuación lineal <span class="math notranslate nohighlight">\( x - 3 = 0 \)</span>:</p>
 <div class="cell docutils container">
@@ -709,13 +719,13 @@ se puede indicar mediante un segundo argumento:</p>
 <p>Puede verificar que devuelve, en efecto, la tan conocida fórmula general.</p>
 </div>
 <div class="section" id="ecuaciones-trigonometricas">
-<h3><span class="section-number">11.3.2. </span>Ecuaciones trigonométricas<a class="headerlink" href="#ecuaciones-trigonometricas" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">12.3.2. </span>Ecuaciones trigonométricas<a class="headerlink" href="#ecuaciones-trigonometricas" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="calculo">
-<h2><span class="section-number">11.4. </span>Cálculo<a class="headerlink" href="#calculo" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.4. </span>Cálculo<a class="headerlink" href="#calculo" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="limites">
-<h3><span class="section-number">11.4.1. </span>Límites<a class="headerlink" href="#limites" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">12.4.1. </span>Límites<a class="headerlink" href="#limites" title="Permalink to this headline">¶</a></h3>
 <p>Para calcular límites matemáticos SymPy dispone de la función <code class="docutils literal notranslate"><span class="pre">limit</span></code>, la cual requiere al menos tres
 argumentos de entrada: la función, variable y valor al que tiende. Por ejemplo, si se quiere calcular
 el siguiente límite:</p>
@@ -756,7 +766,7 @@ el siguiente límite:</p>
 <p>El símbolo <code class="docutils literal notranslate"><span class="pre">+</span></code> denota el cálculo de un límite lateral por la derecha y el símbolo <code class="docutils literal notranslate"><span class="pre">-</span></code> un límite lateral por la izquierda.</p>
 </div>
 <div class="section" id="derivadas">
-<h3><span class="section-number">11.4.2. </span>Derivadas<a class="headerlink" href="#derivadas" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">12.4.2. </span>Derivadas<a class="headerlink" href="#derivadas" title="Permalink to this headline">¶</a></h3>
 <p>Las derivadas en Python se calculan utilizando la función <code class="docutils literal notranslate"><span class="pre">diff</span></code>, misma que en su forma más simple espera
 al menos dos argumentos: una expresión algebraica y una variable respecto a la cual derivar. Por ejemplo:</p>
 <div class="cell docutils container">
@@ -783,7 +793,7 @@ al menos dos argumentos: una expresión algebraica y una variable respecto a la 
 <p>La instrucción anterior calcula la segunda derivada de la función <span class="math notranslate nohighlight">\( f(x) = 5x^2 + 3x - 10 \)</span>.</p>
 </div>
 <div class="section" id="integrales">
-<h3><span class="section-number">11.4.3. </span>Integrales<a class="headerlink" href="#integrales" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">12.4.3. </span>Integrales<a class="headerlink" href="#integrales" title="Permalink to this headline">¶</a></h3>
 <p>Para calcular integrales vamos a utilizar la función <code class="docutils literal notranslate"><span class="pre">integrate</span></code>, la cual acepta al menos dos
 argumentos: la función a integrar y la expresión respecto a la cual se integra, por ejemplo:</p>
 <div class="cell docutils container">
@@ -834,7 +844,7 @@ evaluar en la integral:</p>
 </div>
 </div>
 <div class="section" id="vectores">
-<h2><span class="section-number">11.5. </span>Vectores<a class="headerlink" href="#vectores" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.5. </span>Vectores<a class="headerlink" href="#vectores" title="Permalink to this headline">¶</a></h2>
 <p>Un vector denota una cantidad física que tiene magnitud y orientación en un determinado sistema de referencia.
 En SymPy los vectores se pueden definir mediante la clase <code class="docutils literal notranslate"><span class="pre">Matrix</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">matrices</span></code>, de tal
 manera que en primera instancia haría falta importar dicho módulo, para esto hacemos:</p>
@@ -940,7 +950,7 @@ diferente al obtenido anteriormente, como puede verificar enseguida:</p>
 </div>
 </div>
 <div class="section" id="matrices">
-<h2><span class="section-number">11.6. </span>Matrices<a class="headerlink" href="#matrices" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.6. </span>Matrices<a class="headerlink" href="#matrices" title="Permalink to this headline">¶</a></h2>
 <p>Las matrices son arreglos rectangulares de números o cantidades simbólicas. En SymPy,
 se definen utilizando la clase <code class="docutils literal notranslate"><span class="pre">Matrix</span></code>, pasándole como argumentos una lista de
 listas, donde cada sublista corresponde a una fila de la matriz.</p>
@@ -1125,7 +1135,7 @@ De igual forma que es válido realizar el producto <span class="math notranslate
 </div>
 </div>
 <div class="section" id="ejercicios">
-<h2><span class="section-number">11.7. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.7. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
 <p>Utilice Python/SymPy para resolver los siguientes ejercicios:</p>
 <ol class="simple">
 <li><p>Resuelva las siguientes ecuaciones (para la variable <span class="math notranslate nohighlight">\(x\)</span>):</p></li>
@@ -1193,7 +1203,7 @@ a un cierto punto. Se deberá devolver el momento total producido por las fuerza
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">10. </span>Pandas: una introducción al análisis de datos</p>
+                <p class="prevnext-title"><span class="section-number">11. </span>Pandas: una introducción al análisis de datos</p>
             </div>
         </a>
     </div>
@@ -1201,7 +1211,7 @@ a un cierto punto. Se deberá devolver el momento total producido por las fuerza
         <a class="right-next" href="Programaci%C3%B3n%20orientada%20a%20objetos.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">12. </span>Programación orientada a objetos</p>
+                <p class="prevnext-title"><span class="section-number">13. </span>Programación orientada a objetos</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
