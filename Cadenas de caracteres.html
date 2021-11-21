@@ -267,6 +267,11 @@
    </em>
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mayusculas-y-minusculas">
+   3.3. Mayúsculas y minúsculas
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -666,91 +671,67 @@ un sistema de escritura. En Python los strings se definen utilizando comillas do
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="mayusculas-y-minusculas">
+<h2><span class="section-number">3.3. </span>Mayúsculas y minúsculas<a class="headerlink" href="#mayusculas-y-minusculas" title="Permalink to this headline">¶</a></h2>
+<p>Cuando se trabaja con texto en ocasiones puede ser necesario hacer modificaciones en lo que corresponde a la presencia de mayúsculas y minúsculas. Podríamos por ejemplo tener de <em>entrada</em> un texto completamente en mayúsculas y convertirlo en minúsculas, o el caso contrario. En Python las cadenas de caracteres disponen de los métodos <code class="docutils literal notranslate"><span class="pre">upper</span></code> y <code class="docutils literal notranslate"><span class="pre">lower</span></code> que nos permiten convertir en mayúsculas y minúsculas, de manera respectiva, todas las letras que conforman una cadena de texto.</p>
+<p>Vamos a definir una variable <code class="docutils literal notranslate"><span class="pre">frase</span></code> en la cual <em>guardaremos</em> la siguiente cadena:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frase</span> <span class="o">=</span> <span class="s2">&quot;Hola mundo&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si quisiéramos convertir toda la cadena en mayúsculas utilizamos el método <code class="docutils literal notranslate"><span class="pre">upper</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frase</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__add__&#39;,
- &#39;__class__&#39;,
- &#39;__contains__&#39;,
- &#39;__delattr__&#39;,
- &#39;__dir__&#39;,
- &#39;__doc__&#39;,
- &#39;__eq__&#39;,
- &#39;__format__&#39;,
- &#39;__ge__&#39;,
- &#39;__getattribute__&#39;,
- &#39;__getitem__&#39;,
- &#39;__getnewargs__&#39;,
- &#39;__gt__&#39;,
- &#39;__hash__&#39;,
- &#39;__init__&#39;,
- &#39;__init_subclass__&#39;,
- &#39;__iter__&#39;,
- &#39;__le__&#39;,
- &#39;__len__&#39;,
- &#39;__lt__&#39;,
- &#39;__mod__&#39;,
- &#39;__mul__&#39;,
- &#39;__ne__&#39;,
- &#39;__new__&#39;,
- &#39;__reduce__&#39;,
- &#39;__reduce_ex__&#39;,
- &#39;__repr__&#39;,
- &#39;__rmod__&#39;,
- &#39;__rmul__&#39;,
- &#39;__setattr__&#39;,
- &#39;__sizeof__&#39;,
- &#39;__str__&#39;,
- &#39;__subclasshook__&#39;,
- &#39;capitalize&#39;,
- &#39;casefold&#39;,
- &#39;center&#39;,
- &#39;count&#39;,
- &#39;encode&#39;,
- &#39;endswith&#39;,
- &#39;expandtabs&#39;,
- &#39;find&#39;,
- &#39;format&#39;,
- &#39;format_map&#39;,
- &#39;index&#39;,
- &#39;isalnum&#39;,
- &#39;isalpha&#39;,
- &#39;isascii&#39;,
- &#39;isdecimal&#39;,
- &#39;isdigit&#39;,
- &#39;isidentifier&#39;,
- &#39;islower&#39;,
- &#39;isnumeric&#39;,
- &#39;isprintable&#39;,
- &#39;isspace&#39;,
- &#39;istitle&#39;,
- &#39;isupper&#39;,
- &#39;join&#39;,
- &#39;ljust&#39;,
- &#39;lower&#39;,
- &#39;lstrip&#39;,
- &#39;maketrans&#39;,
- &#39;partition&#39;,
- &#39;replace&#39;,
- &#39;rfind&#39;,
- &#39;rindex&#39;,
- &#39;rjust&#39;,
- &#39;rpartition&#39;,
- &#39;rsplit&#39;,
- &#39;rstrip&#39;,
- &#39;split&#39;,
- &#39;splitlines&#39;,
- &#39;startswith&#39;,
- &#39;strip&#39;,
- &#39;swapcase&#39;,
- &#39;title&#39;,
- &#39;translate&#39;,
- &#39;upper&#39;,
- &#39;zfill&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;HOLA MUNDO&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si por el contrario quisiéramos que todas las letras fueran minúsculas utilizamos el método <code class="docutils literal notranslate"><span class="pre">lower</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frase</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;hola mundo&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Debes tener cuidado y considerar que al momento de utilizar los métodos <code class="docutils literal notranslate"><span class="pre">upper</span></code> y <code class="docutils literal notranslate"><span class="pre">lower</span></code>, estos no modifican a la cadena de caracteres almacenada en <code class="docutils literal notranslate"><span class="pre">frase</span></code>, sino que devuelven una nueva cadena con las modificaciones realizadas. Esto se debe a que las cadenas en Python son objetos <em>inmutables</em> y una vez creadas no pueden modificarse. Observa que si en este punto imprimimos la variable <code class="docutils literal notranslate"><span class="pre">frase</span></code> tendríamos exactamente la misma cadena (sin modificar) definida inicialmente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola mundo
+</pre></div>
+</div>
+</div>
+</div>
+<p>Otro método que puede resultarte de utilidad es <code class="docutils literal notranslate"><span class="pre">capitalize</span></code>, el cual te permite colocar la primera letra en mayúsculas y todas las demás en minúsculas, como habitualmente ocurre con una oración. Observa el ejemplo siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;mi perro es color bermejo&quot;</span>
+<span class="n">texto</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Mi perro es color bermejo&#39;
 </pre></div>
 </div>
 </div>
