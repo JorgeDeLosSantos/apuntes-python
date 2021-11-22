@@ -722,6 +722,21 @@ un sistema de escritura. En Python los strings se definen utilizando comillas do
 </div>
 </div>
 </div>
+<p>Si quisieras modificar la cadena almacenada en la variable <code class="docutils literal notranslate"><span class="pre">frase</span></code>, entonces tendrías que hacer una reasignación, como se muestra en el siguiente ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frase</span> <span class="o">=</span> <span class="n">frase</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HOLA MUNDO
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos observar que ahora la variable <code class="docutils literal notranslate"><span class="pre">frase</span></code> almacena la versión en mayúsculas de la cadena.</p>
 <p>Otro método que puede resultarte de utilidad es <code class="docutils literal notranslate"><span class="pre">capitalize</span></code>, el cual te permite colocar la primera letra en mayúsculas y todas las demás en minúsculas, como habitualmente ocurre con una oración. Observa el ejemplo siguiente:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

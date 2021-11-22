@@ -293,8 +293,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#matrices">
-   8.3. Matrices
+  <a class="reference internal nav-link" href="#arreglos-bidimensionales-matrices">
+   8.3. Arreglos bidimensionales (Matrices)
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -308,6 +308,11 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#algunas-otras-funciones-para-crear-arreglos">
+   8.4. Algunas otras funciones para crear arreglos
+  </a>
  </li>
 </ul>
 
@@ -511,8 +516,8 @@
 <p>En este caso se asume que el valor pasado como argumento corresponde a <code class="docutils literal notranslate"><span class="pre">stop</span></code>, y por defecto se asume que <code class="docutils literal notranslate"><span class="pre">start=0</span></code> y <code class="docutils literal notranslate"><span class="pre">step=1</span></code>.</p>
 </div>
 </div>
-<div class="section" id="matrices">
-<h2><span class="section-number">8.3. </span>Matrices<a class="headerlink" href="#matrices" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="arreglos-bidimensionales-matrices">
+<h2><span class="section-number">8.3. </span>Arreglos bidimensionales (Matrices)<a class="headerlink" href="#arreglos-bidimensionales-matrices" title="Permalink to this headline">¶</a></h2>
 <p>En NumPy, con la función <code class="docutils literal notranslate"><span class="pre">array</span></code>, se pueden definir y manipular matrices. Para crear matrices se debe pasar como argumento una lista de listas, donde cada sublista es una fila de la matriz. Por ejemplo vamos a suponer que se requiere crear la siguiente matriz <span class="math notranslate nohighlight">\(A\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -600,7 +605,7 @@ D = \begin{bmatrix}
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">48</span><span class="o">-</span><span class="n">c3cb66996588</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="n">c3cb66996588</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">A</span> <span class="o">+</span> <span class="n">C</span>
 
 <span class="ne">ValueError</span>: operands could not be broadcast together with shapes (2,2) (2,3) 
@@ -721,10 +726,7 @@ D = \begin{bmatrix}
 </div>
 </div>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
 <p>El operador <code class="docutils literal notranslate"><span class="pre">*</span></code> cuando se aplica a dos estructuras matriciales no devuelve el producto matricial, sino que calcula una multiplicación elemento a elemento.</p>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">*</span> <span class="n">B</span>
@@ -822,6 +824,129 @@ D = \begin{bmatrix}
        [ 1.5, -0.5]])
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="algunas-otras-funciones-para-crear-arreglos">
+<h2><span class="section-number">8.4. </span>Algunas otras funciones para crear arreglos<a class="headerlink" href="#algunas-otras-funciones-para-crear-arreglos" title="Permalink to this headline">¶</a></h2>
+<p>NumPy dispone de muchas funciones para crear arreglos de forma predefinida. Con anterioridad revisábamos las funciones <code class="docutils literal notranslate"><span class="pre">linspace</span></code> y <code class="docutils literal notranslate"><span class="pre">arange</span></code> que nos sirven para crear arreglos unidimensionales en un cierto intervalo de valores. En NumPy disponemos también de la función <code class="docutils literal notranslate"><span class="pre">ones</span></code> que nos permite crear un arreglo cuyos elementos son todos unos, para ello únicamente hace falta especificar el tamaño del arreglo mediante una tupla, tal como se muestra enseguida:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1., 1.],
+       [1., 1.],
+       [1., 1.]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observa que en el caso anterior se crea un arreglo de <span class="math notranslate nohighlight">\(3 \times 2\)</span>, donde todos sus elementos son <code class="docutils literal notranslate"><span class="pre">1</span></code>. Igual se puede pasar un sólo número como argumento y NumPy devolverá un arreglo unidimensional:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1., 1., 1., 1., 1., 1., 1., 1., 1., 1.])
+</pre></div>
+</div>
+</div>
+</div>
+<p>De forma análoga la función <code class="docutils literal notranslate"><span class="pre">zeros</span></code> permite crear arreglos donde todos sus elementos son ceros, la sintaxis es similar. Observa el siguiente ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 0., 0., 0.],
+       [0., 0., 0., 0.],
+       [0., 0., 0., 0.],
+       [0., 0., 0., 0.],
+       [0., 0., 0., 0.]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Las funciones <code class="docutils literal notranslate"><span class="pre">ones_like</span></code> y <code class="docutils literal notranslate"><span class="pre">zeros_like</span></code> permiten crear arreglos de unos y ceros, respectivamente, pero sin indicar de forma explícita el tamaño, sino en su lugar se pasa como argumento un arreglo como indicador del tamaño, tal como se muestra enseguida.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 1],
+       [1, 1]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 0],
+       [0, 0]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Básicamente es como si le indicaramos a NumPy: <em>créame un arreglo de puros ceros, cuyo tamaño sea el mismo que el del arreglo <code class="docutils literal notranslate"><span class="pre">x</span></code></em>.</p>
+<p>La función <code class="docutils literal notranslate"><span class="pre">diag</span></code> permite crear un arreglo (o matriz) diagonal a partir de una lista de elementos. En el siguiente ejemplo se crea un matriz cuya diagonal principal está conformada por los elementos pasados como argumentos, y el resto de elementos serán ceros.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 0, 0],
+       [0, 2, 0],
+       [0, 0, 3]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Toma en cuenta que la función <code class="docutils literal notranslate"><span class="pre">diag</span></code> no solamente permite crear matrices diagonales, sino que podemos extraer la diagonal de un arreglo bidimensional existente, tal como se muestra enseguida.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">200</span><span class="p">,</span><span class="mi">300</span><span class="p">],[</span><span class="mi">500</span><span class="p">,</span><span class="mi">100</span><span class="p">]])</span>
+<span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([200, 100])
+</pre></div>
+</div>
+</div>
+</div>
+<p>La función <code class="docutils literal notranslate"><span class="pre">eye</span></code> nos permite crear una matriz identidad de <span class="math notranslate nohighlight">\(N \times N\)</span>, para ello sólo hace falta indicar (en el argumento de entrada) la dimensión de dicha matriz.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1., 0., 0., 0., 0.],
+       [0., 1., 0., 0., 0.],
+       [0., 0., 1., 0., 0.],
+       [0., 0., 0., 1., 0.],
+       [0., 0., 0., 0., 1.]])
+</pre></div>
 </div>
 </div>
 </div>
