@@ -314,6 +314,11 @@
    8.4. Algunas otras funciones para crear arreglos
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#redimensionamiento-de-arreglos">
+   8.5. Redimensionamiento de arreglos
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -933,7 +938,7 @@ D = \begin{bmatrix}
 </div>
 </div>
 </div>
-<p>La función <code class="docutils literal notranslate"><span class="pre">eye</span></code> nos permite crear una matriz identidad de <span class="math notranslate nohighlight">\(N \times N\)</span>, para ello sólo hace falta indicar (en el argumento de entrada) la dimensión de dicha matriz.</p>
+<p>La función <code class="docutils literal notranslate"><span class="pre">eye</span></code> nos permite crear una matriz identidad de <span class="math notranslate nohighlight">\(n \times n\)</span>, para ello sólo hace falta indicar (en el argumento de entrada) la dimensión de dicha matriz.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
@@ -946,6 +951,41 @@ D = \begin{bmatrix}
        [0., 0., 1., 0., 0.],
        [0., 0., 0., 1., 0.],
        [0., 0., 0., 0., 1.]])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="redimensionamiento-de-arreglos">
+<h2><span class="section-number">8.5. </span>Redimensionamiento de arreglos<a class="headerlink" href="#redimensionamiento-de-arreglos" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">])</span>
+<span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 2, -3,  0],
+       [ 1,  6,  9]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+
+<span class="n">A</span><span class="p">,</span><span class="n">A</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([[1, 2, 0],
+        [3, 4, 0]]),
+ array([[1, 2],
+        [0, 3],
+        [4, 0]]))
 </pre></div>
 </div>
 </div>
