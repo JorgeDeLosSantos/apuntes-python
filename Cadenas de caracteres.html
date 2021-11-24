@@ -850,9 +850,63 @@ un sistema de escritura. En Python los strings se definen utilizando comillas do
 </div>
 </div>
 </div>
+<p>En el caso de que únicamente nos interese saber si una subcadena forma parte de un texto, podemos utilizar el operador <code class="docutils literal notranslate"><span class="pre">in</span></code>. De manera general, el operador <code class="docutils literal notranslate"><span class="pre">in</span></code> nos permite verificar si un determinado elemento está presente en una secuencia. Observa el siguiente ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Si</span> <span class="n">únicamente</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">La ley de la gravedad de Newton nos dice también que cuanto más separados estén</span>
+<span class="s2">los cuerpos menor será la fuerza gravitatoria entre ellos.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Newton&quot;</span> <span class="ow">in</span> <span class="n">texto</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Dirac&quot;</span> <span class="ow">in</span> <span class="n">texto</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos verificar que si la palabra (o secuencia de caracteres) que <em>buscamos</em> está contenida en la variable <code class="docutils literal notranslate"><span class="pre">texto</span></code>, entonces se devuelve un valor lógico <code class="docutils literal notranslate"><span class="pre">True</span></code>, de lo contrario devolverá un <code class="docutils literal notranslate"><span class="pre">False</span></code>, tal como se puede constatar al momento que buscamos la cadena <code class="docutils literal notranslate"><span class="pre">Gauss</span></code> dentro de <code class="docutils literal notranslate"><span class="pre">texto</span></code>.</p>
+<hr class="docutils" />
+<p><strong>Ejemplo. Contando vocales en una palabra</strong></p>
+<p>En este ejemplo vamos a desarrollar un programa que dada una palabra nos devuelva la cantidad vocales totales que hay.</p>
+<p>palabra = “Perro”</p>
+<p>ka = palabra.count(“a”) # cantidad de letras a
+ke = palabra.count(“e”) # cantidad de letras e
+ki = palabra.count(“i”) # cantidad de letras i
+ko = palabra.count(“o”) # cantidad de letras o
+ku = palabra.count(“u”) # cantidad de letras u</p>
+<p>numero_de_vocales = ka + ke + ki + ko + ku</p>
+<p>print(f”En la palabra ‘{palabra}’ hay {numero_de_vocales} vocales”)</p>
+<hr class="docutils" />
+<p>Estamos analizando X</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5000&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5000
 </pre></div>
 </div>
 </div>
