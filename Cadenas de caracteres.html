@@ -272,6 +272,15 @@
    3.3. Mayúsculas y minúsculas
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#buscando-en-una-cadena-de-caracteres">
+   3.4.
+   <em>
+    Buscando
+   </em>
+   en una cadena de caracteres
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -747,6 +756,96 @@ un sistema de escritura. En Python los strings se definen utilizando comillas do
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Mi perro es color bermejo&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="buscando-en-una-cadena-de-caracteres">
+<h2><span class="section-number">3.4. </span><em>Buscando</em> en una cadena de caracteres<a class="headerlink" href="#buscando-en-una-cadena-de-caracteres" title="Permalink to this headline">¶</a></h2>
+<p>En este apartado vamos a revisar cómo buscar una cierta secuencia de caracteres dentro de una cadena. Buscar coincidencias en un texto suele ser una tarea muy común para algunos sistemas automatizados. En Python, las cadenas de caracteres poseen métodos que permiten <em>buscar</em> en ellas coincidencias.</p>
+<p>Vamos a crear una variable <code class="docutils literal notranslate"><span class="pre">frase</span></code>, en la cual <em>almacenaremos</em> una cadena de caracteres:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frase</span> <span class="o">=</span> <span class="s2">&quot;La estrella más cercana es Próxima Centauri&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si quisiéramos saber cuántas veces aparece en esa frase una cierta letra, entonces podríamos utilizar el método <code class="docutils literal notranslate"><span class="pre">count</span></code>. Este método simplemente recibe como argumento la secuencia de caracteres que queremos buscar y nos devuelve la cantidad de veces que dicha secuencia de caracteres aparece, tal como se muestra enseguida:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frase</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observa que en la línea anterior estamos buscando cuántas veces aparece la letra <code class="docutils literal notranslate"><span class="pre">a</span></code> dentro de <code class="docutils literal notranslate"><span class="pre">frase</span></code>. Si contamos <em>manualmente</em>, podrás observar que el método <code class="docutils literal notranslate"><span class="pre">count</span></code> está ignorando la letra <code class="docutils literal notranslate"><span class="pre">á</span></code> con tilde. Naturalmente, Python no puede saber, al menos en principio, que <code class="docutils literal notranslate"><span class="pre">á</span></code> es también una letra <code class="docutils literal notranslate"><span class="pre">a</span></code>, pero con la particularidad escrita de la tilde. Una manera bastante simplista de considerar en la contabilización a la letra <code class="docutils literal notranslate"><span class="pre">á</span></code> tildada sería como sigue:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frase</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">frase</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;á&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
+</div>
+</div>
+<p>Con el método <code class="docutils literal notranslate"><span class="pre">count</span></code> no solamente podemos contabilizar el número de veces que aparece un caracter, sino también cualquier secuencia de caracteres. Observa el siguiente ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Los amorosos callan.</span>
+<span class="s2">El amor es el silencio más fino,</span>
+<span class="s2">el más tembloroso, el más insoportable.</span>
+<span class="s2">Los amorosos buscan,</span>
+<span class="s2">los amorosos son los que abandonan,</span>
+<span class="s2">son los que cambian, los que olvidan.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texto</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;silencio&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Con la línea anterior buscamos la cadena <code class="docutils literal notranslate"><span class="pre">silencio</span></code> dentro del texto creado. Hay que ser un poco precavidos cuando utilizamos el método <code class="docutils literal notranslate"><span class="pre">count</span></code>, veamos el siguiente caso:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texto</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;amor&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<p>De acuerdo con lo anterior la secuencia de caracteres <code class="docutils literal notranslate"><span class="pre">amor</span></code> aparece cuatro veces. Si observas el texto verás que la palabra amor aparece una sola vez, sin embargo la subcadena <code class="docutils literal notranslate"><span class="pre">amor</span></code> forma parte también de la palabra <code class="docutils literal notranslate"><span class="pre">amorosos</span></code>, la cual aparece tres veces. Si quisiéramos únicamente contabilizar la palabra <code class="docutils literal notranslate"><span class="pre">amor</span></code>, como tal, tendríamos que añadir los espacios en blancos al inicio y final de la palabra, es decir, algo como lo siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texto</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot; amor &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
