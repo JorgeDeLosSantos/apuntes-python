@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/customized.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -107,18 +108,18 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Cadenas%20de%20caracteres.html">
-   3. Cadenas de caracteres
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Listas%2C%20tuplas%20y%20diccionarios.html">
-   4. Listas, tuplas y diccionarios
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="Estructuras%20de%20control.html">
-   5. Estructuras de control
+   3. Estructuras de control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Cadenas%20de%20caracteres.html">
+   4. Cadenas de caracteres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Estructuras%20de%20datos.html">
+   5. Estructuras de datos
   </a>
  </li>
  <li class="toctree-l1">
@@ -315,8 +316,16 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexacion-y-slicing">
+   8.5. Indexación y
+   <em>
+    slicing
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#redimensionamiento-de-arreglos">
-   8.5. Redimensionamiento de arreglos
+   8.6. Redimensionamiento de arreglos
   </a>
  </li>
 </ul>
@@ -332,7 +341,7 @@
                 
   <div class="section" id="numpy-estructuras-matriciales">
 <h1><span class="section-number">8. </span>NumPy: estructuras matriciales<a class="headerlink" href="#numpy-estructuras-matriciales" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://numpy.org/">NumPy</a> es una librería de Python que posibilita el trabajar con vectores, matrices y arreglos N-dimensionales de manera eficiente.</p>
+<p><a class="reference external" href="https://numpy.org/">NumPy</a> es una librería de Python que posibilita el trabajar con vectores, matrices y arreglos n-dimensionales de manera eficiente.</p>
 <p>Para el resto del capítulo se asumirá que previo a cualquier código se habrá importado la librería NumPy utilizando el <em>alias</em> <code class="docutils literal notranslate"><span class="pre">np</span></code>, como sigue:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -610,7 +619,7 @@ D = \begin{bmatrix}
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="n">c3cb66996588</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_14480</span><span class="o">/</span><span class="mf">486311815.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">A</span> <span class="o">+</span> <span class="n">C</span>
 
 <span class="ne">ValueError</span>: operands could not be broadcast together with shapes (2,2) (2,3) 
@@ -626,22 +635,10 @@ D = \begin{bmatrix}
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-4,  2],
-       [11,  1]])
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="o">-</span> <span class="n">A</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[  4,  -2],
-       [-11,  -1]])
 </pre></div>
 </div>
 </div>
@@ -956,12 +953,178 @@ D = \begin{bmatrix}
 </div>
 </div>
 </div>
+<div class="section" id="indexacion-y-slicing">
+<h2><span class="section-number">8.5. </span>Indexación y <em>slicing</em><a class="headerlink" href="#indexacion-y-slicing" title="Permalink to this headline">¶</a></h2>
+<p>Para acceder a los elementos de un arreglo unidimensional NumPy proporciona una sintaxis similar a la de las secuencias nativas de Python, es decir, mediante la notación <code class="docutils literal notranslate"><span class="pre">arreglo[k]</span></code>, donde <code class="docutils literal notranslate"><span class="pre">k</span></code> es un entero que corresponde al índice del elemento. Vamos a crear un arreglo <code class="docutils literal notranslate"><span class="pre">x</span></code> conformado por diez elementos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si quisiéramos acceder al elemento <code class="docutils literal notranslate"><span class="pre">50</span></code>, tendríamos que hacerlo utilizando el índice <code class="docutils literal notranslate"><span class="pre">4</span></code>, es decir:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50
+</pre></div>
+</div>
+</div>
+</div>
+<p>Al igual que con las listas, los índices de los arreglos de NumPy comienzan en cero. Para obtener un subconjunto de elementos (<em>slicing</em>) podemos hacerlo mediante la notación <code class="docutils literal notranslate"><span class="pre">arreglo[a:b]</span></code>, esto nos devolverá un arreglo que contiene los elementos desde el índice <code class="docutils literal notranslate"><span class="pre">a</span></code> hasta el <code class="docutils literal notranslate"><span class="pre">b-1</span></code>. Observa el siguiente ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([40, 50, 60, 70])
+</pre></div>
+</div>
+</div>
+</div>
+<p>La instrucción anterior nos devuelve un arreglo con los elementos ubicados en los índices <span class="math notranslate nohighlight">\(3, 4, 5\)</span> y <span class="math notranslate nohighlight">\(6\)</span> del arreglo <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<p>En el caso de <strong>arreglos bidimensionales</strong> se puede acceder a sus elementos utilizando la siguiente notación:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">arreglo</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Donde <code class="docutils literal notranslate"><span class="pre">i</span></code> corresponde al índice de la fila y <code class="docutils literal notranslate"><span class="pre">j</span></code> al índice de la columna. Para ejemplificar, vamos a crear una matriz <span class="math notranslate nohighlight">\(A\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]])</span>
+<span class="n">A</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si quisiéramos acceder al elemento ubicado en la tercera fila y tercera columna (número <code class="docutils literal notranslate"><span class="pre">9</span></code>), entonces podríamos hacer lo siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para acceder al elemento en la tercera fila y primera columna:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
+</div>
+</div>
+<p>En la siguiente imagen puedes observar una representación gráfica de las instrucciones anteriores:</p>
+<p><img alt="" src="_images/indexing_matrix.svg" /></p>
+<p>Puedes notar, como ya habíamos comentado, que los índices tanto de las filas como de las columnas en una matriz comienzan en cero. Así, si quieres acceder a la primera columna utilizas el índice 0, para la segunda el índice 1, y así de manera respectiva: el índice asociado a una cierta fila o columna será siempre una unidad menor al número de columna o fila correspondiente.</p>
+<p>En el caso de que necesitemos acceder a toda una fila de la matriz podemos utilizar la siguiente notación:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">arreglo</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span>
+</pre></div>
+</div>
+<p>Donde <code class="docutils literal notranslate"><span class="pre">i</span></code> corresponde al índice de la fila a la cual queremos acceder. Los dos puntos le indican a NumPy que se tomarán todos los elementos contenidos en la i-ésima fila de la matriz. Una instrucción de este tipo nos devolverá un arreglo unidimensional que contiene los elementos implicados.</p>
+<p>Por ejemplo, si de la matriz <span class="math notranslate nohighlight">\(A\)</span> definida previamente queremos tomar la primera fila, entonces haríamos lo siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3])
+</pre></div>
+</div>
+</div>
+</div>
+<p>De manera análoga podemos tomar toda una columna de una matriz, la diferencia sería que ahora los dos puntos irían en el índice correspondiente al número de fila, es decir:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">arreglo</span><span class="p">[:,</span><span class="n">j</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Donde <code class="docutils literal notranslate"><span class="pre">j</span></code> corresponde a la columna que queremos tomar. Por ejemplo, si de la matriz <span class="math notranslate nohighlight">\(A\)</span> queremos acceder a la tercera columna, entonces:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3, 6, 9])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Es posible también acceder a un subconjunto de elementos de una matriz o arreglo bidimensional, para esto debemos utilizar la sintaxis de <em>slicing</em> para ambos índices, es decir:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">arreglo</span><span class="p">[</span><span class="n">a</span><span class="p">:</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span><span class="n">d</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Esto nos permitirá tomar todos los elementos ubicados en las filas cuyos índices son desde <code class="docutils literal notranslate"><span class="pre">a</span></code> hasta <code class="docutils literal notranslate"><span class="pre">b-1</span></code>, y en las columnas cuyos índices son desde <code class="docutils literal notranslate"><span class="pre">c</span></code> hasta <code class="docutils literal notranslate"><span class="pre">d-1</span></code>. Por ejemplo, la instrucción <code class="docutils literal notranslate"><span class="pre">A[0:2,</span> <span class="pre">1:3]</span></code> nos devolverá la submatriz correspondiente a los elementos ubicados en la primera y segunda fila, pero que a la vez estén en la segunda y tercera columna de la matriz <span class="math notranslate nohighlight">\(A\)</span>, tal como se muestra en la siguiente instrucción.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2, 3],
+       [5, 6]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>En la siguiente figura puedes observar una representación gráfica de esta operación.</p>
+<p><img alt="" src="_images/indexing.svg" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filas</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span>
+<span class="n">columnas</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span>
+
+<span class="n">A</span><span class="p">[</span><span class="n">filas</span><span class="p">,</span><span class="n">columnas</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.83782012, 0.08297351],
+       [0.60980359, 0.97260032]])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="redimensionamiento-de-arreglos">
-<h2><span class="section-number">8.5. </span>Redimensionamiento de arreglos<a class="headerlink" href="#redimensionamiento-de-arreglos" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.6. </span>Redimensionamiento de arreglos<a class="headerlink" href="#redimensionamiento-de-arreglos" title="Permalink to this headline">¶</a></h2>
+<p>NumPy permite redimensionar arreglos creados, para ello podemos utilizar el método <code class="docutils literal notranslate"><span class="pre">reshape</span></code>. Veamos el siguiente ejemplo, primero creamos un arreglo unidimensional <code class="docutils literal notranslate"><span class="pre">x</span></code> con seis elementos:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">])</span>
-<span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A partir de este arreglo podríamos crear un arreglo bidimensional de <span class="math notranslate nohighlight">\(3 \times 2\)</span>, por ejemplo, o de <span class="math notranslate nohighlight">\( 2 \times 3 \)</span>; la condición obvia que debe cumplirse es que la cantidad de elementos sea la misma. Como sabemos, tanto una matriz de <span class="math notranslate nohighlight">\( 2 \times 3 \)</span>, como una de <span class="math notranslate nohighlight">\( 3 \times 2 \)</span>, tienen seis elementos. Así, el vector <code class="docutils literal notranslate"><span class="pre">x</span></code> creado con anterioridad podríamos redimensionarlo como una matriz de <span class="math notranslate nohighlight">\( 2\times 3 \)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -972,20 +1135,66 @@ D = \begin{bmatrix}
 </div>
 </div>
 </div>
+<p>O una de <span class="math notranslate nohighlight">\( 3 \times 2 \)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
-
-<span class="n">A</span><span class="p">,</span><span class="n">A</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([[1, 2, 0],
-        [3, 4, 0]]),
- array([[1, 2],
-        [0, 3],
-        [4, 0]]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 2, -3],
+       [ 0,  1],
+       [ 6,  9]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">A</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.09170665, 0.59451334, 0.24498697, ..., 0.65329292, 0.9782369 ,
+        0.47911003],
+       [0.66165808, 0.02339377, 0.94212241, ..., 0.70262667, 0.97944656,
+        0.05030964],
+       [0.77303326, 0.21621051, 0.27192161, ..., 0.31191906, 0.2999055 ,
+        0.19491791],
+       ...,
+       [0.85318574, 0.41886355, 0.5784303 , ..., 0.72267358, 0.00993453,
+        0.03113168],
+       [0.82787003, 0.12330244, 0.53674444, ..., 0.87957997, 0.81816692,
+        0.94867884],
+       [0.16527444, 0.07380531, 0.03389322, ..., 0.70093572, 0.20509178,
+        0.81031204]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">@</span> <span class="n">A</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[11.99630467, 11.74031518, 11.04235772, ..., 12.39729593,
+        13.31424601, 11.71294837],
+       [12.38818369, 14.25120541, 12.36799321, ..., 12.38387286,
+        13.6239382 , 12.2118876 ],
+       [12.44571978, 14.97635162, 12.1288407 , ..., 13.76124779,
+        14.14751278, 12.69068118],
+       ...,
+       [11.13329166, 12.21357223, 10.36362039, ..., 10.68387364,
+        12.55739116, 10.01697295],
+       [14.00299629, 15.63599859, 13.2811753 , ..., 15.08188953,
+        14.6169952 , 12.94433522],
+       [11.14133712, 13.52074626, 12.06437147, ..., 12.07747942,
+        11.43355352, 10.08706866]])
 </pre></div>
 </div>
 </div>

@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/customized.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -53,7 +54,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. Cadenas de caracteres" href="Cadenas%20de%20caracteres.html" />
+    <link rel="next" title="3. Estructuras de control" href="Estructuras%20de%20control.html" />
     <link rel="prev" title="1. Introducción" href="Introducci%C3%B3n.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -107,18 +108,18 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Cadenas%20de%20caracteres.html">
-   3. Cadenas de caracteres
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Listas%2C%20tuplas%20y%20diccionarios.html">
-   4. Listas, tuplas y diccionarios
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="Estructuras%20de%20control.html">
-   5. Estructuras de control
+   3. Estructuras de control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Cadenas%20de%20caracteres.html">
+   4. Cadenas de caracteres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Estructuras%20de%20datos.html">
+   5. Estructuras de datos
   </a>
  </li>
  <li class="toctree-l1">
@@ -295,6 +296,11 @@
       </span>
      </code>
      )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cadenas-de-caracteres">
+     2.2.4. Cadenas de caracteres
     </a>
    </li>
   </ul>
@@ -645,6 +651,37 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 <p>En general, la función <code class="docutils literal notranslate"><span class="pre">bool</span></code> devolverá un <code class="docutils literal notranslate"><span class="pre">False</span></code> cuando se tienen objetos nulos o vacíos, en cualquier otro caso devolverá el valor <code class="docutils literal notranslate"><span class="pre">True</span></code>. Usualmente los valores booleanos siempre van a provenir de una comparación entre objetos, para efectuar esas comparaciones se utilizan los operadores relacionales.</p>
+</div>
+<div class="section" id="cadenas-de-caracteres">
+<h3><span class="section-number">2.2.4. </span>Cadenas de caracteres<a class="headerlink" href="#cadenas-de-caracteres" title="Permalink to this headline">¶</a></h3>
+<p>Las cadenas de caracteres son un tipo de dato que contiene una secuencia de símbolos, mismos que pueden ser alfanúmericos o cualquier otro símbolo propio de un sistema de escritura. En Python los strings se definen utilizando comillas dobles o simples. Observa los siguientes ejemplos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">saludo</span> <span class="o">=</span> <span class="s2">&quot;Hola&quot;</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">saludo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span> <span class="o">=</span> <span class="s1">&#39;Amelia&#39;</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<p>En el siguiente capítulo se abordan de forma profusa las cadenas de caracteres, sus métodos y operaciones que pueden realizarse.</p>
 </div>
 </div>
 <div class="section" id="operadores-aritmeticos">
@@ -1057,7 +1094,7 @@ con la sintaxis para definir cada tipo de dato.</p>
 <h2><span class="section-number">2.6. </span>Ejemplos<a class="headerlink" href="#ejemplos" title="Permalink to this headline">¶</a></h2>
 <hr>
 <p><strong>Calculando la raíz cuadrada de un número</strong></p>
-<p>El siguiente programa calcula y muestra la raíz cuadrada de un número <code class="docutils literal notranslate"><span class="pre">n</span></code> dado.</p>
+<p>A continuación vamos a realizar un programa que calcula y muestra la raíz cuadrada de un número <code class="docutils literal notranslate"><span class="pre">n</span></code> dado.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">81</span>
@@ -1072,12 +1109,34 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 </div>
+<p>Observa que lo que estamos haciendo es evaluar la expresión:</p>
+<div class="math notranslate nohighlight">
+\[ n^{1/2} \]</div>
+<p>En el entendido de que es equivalente a la raíz cuadrada de un número. Si quisiéramos hacer nuestro programa un poco más interactivo podríamos utilizar la función <code class="docutils literal notranslate"><span class="pre">input</span></code>, la cual recibe por consola un valor en forma de una cadena de caracteres, veamos el ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingresa un número: &quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">rc</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La raíz cuadrada de </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> es </span><span class="si">{</span><span class="n">rc</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ingresa un número: 144
+La raíz cuadrada de 144.0 es 12.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>En el código anterior la función <code class="docutils literal notranslate"><span class="pre">float</span></code> nos sirve para convertir la cadena de caracteres en un valor numérico, al cual se le pueda operar matemáticamente.</p>
 <hr>
 <p><strong>Aproximación de <span class="math notranslate nohighlight">\(\pi\)</span></strong></p>
+<p>La siguiente expresión nos permite aproximar el valor de <span class="math notranslate nohighlight">\(\pi\)</span> hasta las millonésimas.</p>
 <div class="math notranslate nohighlight">
 \[
 \pi \approx 3 + \frac{8}{60} + \frac{29}{60^2} + \frac{44}{60^3}
 \]</div>
+<p>En Python podemos escribir dicha expresión como:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="p">(</span><span class="mi">8</span><span class="o">/</span><span class="mi">60</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">29</span><span class="o">/</span><span class="mi">60</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">44</span><span class="o">/</span><span class="mi">60</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
@@ -1091,13 +1150,66 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 </div>
+<p>Es importante tener en cuenta que en este caso los paréntesis no son realmente necesarios, observa:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">8</span><span class="o">/</span><span class="mi">60</span> <span class="o">+</span> <span class="mi">29</span><span class="o">/</span><span class="mi">60</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">44</span><span class="o">/</span><span class="mi">60</span><span class="o">**</span><span class="mi">3</span>
+<span class="n">pi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.1415925925925925
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sin embargo el uso de estos suele aportar una mayor legibilidad a las expresiones matemáticas que estamos escribiendo. Hay que tener mucho cuidado con los paréntesis y las precedencias de los operadores, veamos el ejemplo siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="p">(</span><span class="mi">8</span><span class="o">/</span><span class="mi">60</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">29</span><span class="o">/</span><span class="mi">60</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="mi">44</span><span class="o">/</span><span class="mi">60</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
+<span class="n">pi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.7613148148148148
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observa que la expresión colocada ya no corresponde con la aproximación de <span class="math notranslate nohighlight">\(\pi\)</span> descrita con anterioridad, sino más bien correspondería a:</p>
+<div class="math notranslate nohighlight">
+\[ 3 + \frac{8}{60} + \left(\frac{29}{60}\right)^2 + \left(\frac{44}{60}\right)^3 \]</div>
 </div>
 <div class="section" id="ejercicios">
 <h2><span class="section-number">2.7. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
 <p>Crea un programa que dado un número <code class="docutils literal notranslate"><span class="pre">n</span></code> calcule y muestre la raíz cúbica de dicho número.</p>
+<hr class="docutils" />
+<p>Realiza un programa que evalúe la siguiente expresión:</p>
+<div class="math notranslate nohighlight">
+\[ 10^{0.375} - 30^{0.25} + \frac{2^2+10^2}{10^3}  \]</div>
+<hr class="docutils" />
 <p>Crea un programa que evalúe y muestre el valor de la siguiente expresión:</p>
 <div class="math notranslate nohighlight">
 \[ \sqrt{ 7 + \sqrt{6  +  \sqrt{5}} } \]</div>
+<hr class="docutils" />
+<p>Crea un programa que evalúe y muestre el valor de la siguiente expresión:</p>
+<div class="math notranslate nohighlight">
+\[ 5 + \frac{1}{1 - \frac{1}{5^{0.35}}} \]</div>
+<hr class="docutils" />
+<p>Observa el siguiente código:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="n">a</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">c</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>¿Qué valores tendrán <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code> y <code class="docutils literal notranslate"><span class="pre">c</span></code> al mostrarlos? Procura realizarlo primero de forma manual y enseguida comprueba tus resultados ejecutando el código anterior.</p>
 </div>
 </div>
 
@@ -1140,10 +1252,10 @@ con la sintaxis para definir cada tipo de dato.</p>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="Cadenas%20de%20caracteres.html" title="next page">
+        <a class="right-next" href="Estructuras%20de%20control.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">3. </span>Cadenas de caracteres</p>
+                <p class="prevnext-title"><span class="section-number">3. </span>Estructuras de control</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

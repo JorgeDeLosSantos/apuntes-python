@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3. Cadenas de caracteres &#8212; Python para Ingenieros</title>
+    <title>4. Cadenas de caracteres &#8212; Python para Ingenieros</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/customized.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -53,8 +54,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="4. Listas, tuplas y diccionarios" href="Listas%2C%20tuplas%20y%20diccionarios.html" />
-    <link rel="prev" title="2. Variables, operadores y expresiones" href="Variables%2C%20operadores%20y%20expresiones.html" />
+    <link rel="next" title="5. Estructuras de datos" href="Estructuras%20de%20datos.html" />
+    <link rel="prev" title="3. Estructuras de control" href="Estructuras%20de%20control.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -106,19 +107,19 @@
    2. Variables, operadores y expresiones
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   3. Cadenas de caracteres
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Listas%2C%20tuplas%20y%20diccionarios.html">
-   4. Listas, tuplas y diccionarios
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Estructuras%20de%20control.html">
-   5. Estructuras de control
+   3. Estructuras de control
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   4. Cadenas de caracteres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Estructuras%20de%20datos.html">
+   5. Estructuras de datos
   </a>
  </li>
  <li class="toctree-l1">
@@ -256,12 +257,12 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#concatenacion-de-cadenas">
-   3.1. Concatenación de cadenas
+   4.1. Concatenación de cadenas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#indexacion-y-slicing">
-   3.2. Indexación y
+   4.2. Indexación y
    <em>
     slicing
    </em>
@@ -269,16 +270,42 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mayusculas-y-minusculas">
-   3.3. Mayúsculas y minúsculas
+   4.3. Mayúsculas y minúsculas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#formateo-de-cadenas-de-caracteres">
+   4.4. Formateo de cadenas de caracteres
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#el-metodo-format">
+     4.4.1. El método
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       format
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#los-f-strings">
+     4.4.2. Los
+     <em>
+      f-strings
+     </em>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#buscando-en-una-cadena-de-caracteres">
-   3.4.
-   <em>
-    Buscando
-   </em>
-   en una cadena de caracteres
+   4.5. Buscando en una cadena de caracteres
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#una-breve-introduccion-a-las-expresiones-regulares">
+   4.6. Una breve introducción a las expresiones regulares
   </a>
  </li>
 </ul>
@@ -293,8 +320,8 @@
               <div>
                 
   <div class="section" id="cadenas-de-caracteres">
-<h1><span class="section-number">3. </span>Cadenas de caracteres<a class="headerlink" href="#cadenas-de-caracteres" title="Permalink to this headline">¶</a></h1>
-<p>Las cadenas de caracteres (denominadas habitualmente y de manera indistinta como <em>strings</em>) es un tipo de dato
+<h1><span class="section-number">4. </span>Cadenas de caracteres<a class="headerlink" href="#cadenas-de-caracteres" title="Permalink to this headline">¶</a></h1>
+<p>Las cadenas de caracteres (denominadas habitualmente y de manera indistinta como <em>strings</em>) son un tipo de dato
 que contiene una secuencia de símbolos, mismos que pueden ser alfanúmericos o cualquier otro símbolo propio de
 un sistema de escritura. En Python los strings se definen utilizando comillas dobles o simples. Observa los siguientes ejemplos:</p>
 <div class="cell docutils container">
@@ -356,7 +383,7 @@ un sistema de escritura. En Python los strings se definen utilizando comillas do
 </div>
 </div>
 <div class="section" id="concatenacion-de-cadenas">
-<h2><span class="section-number">3.1. </span>Concatenación de cadenas<a class="headerlink" href="#concatenacion-de-cadenas" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1. </span>Concatenación de cadenas<a class="headerlink" href="#concatenacion-de-cadenas" title="Permalink to this headline">¶</a></h2>
 <p>Para concatenar (unir) cadenas se puede utilizar el operador <code class="docutils literal notranslate"><span class="pre">+</span></code>. Observa el siguiente ejemplo en el cual se concatenan las cadenas <code class="docutils literal notranslate"><span class="pre">&quot;hola&quot;</span></code> y <code class="docutils literal notranslate"><span class="pre">&quot;mundo&quot;</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -452,7 +479,7 @@ un sistema de escritura. En Python los strings se definen utilizando comillas do
 </div>
 </div>
 <div class="section" id="indexacion-y-slicing">
-<h2><span class="section-number">3.2. </span>Indexación y <em>slicing</em><a class="headerlink" href="#indexacion-y-slicing" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2. </span>Indexación y <em>slicing</em><a class="headerlink" href="#indexacion-y-slicing" title="Permalink to this headline">¶</a></h2>
 <p>Las cadenas de caracteres son secuencias de elementos, donde cada elemento corresponde a un caracter específico. Cada elemento de la cadena tiene asociado un índice, el cual corresponde a la posición en que se encuentran, y por lo tanto serán enteros positivos. La numeración de los índices comienza en cero. En la figura se muestra una cadena de caracteres <em>guardada</em> en la variable <code class="docutils literal notranslate"><span class="pre">nombre</span></code>, podemos observar que a cada caracter le corresponde un índice. Por ejemplo, a la letra <code class="docutils literal notranslate"><span class="pre">C</span></code> le corresponde el índice 0, a la letra <code class="docutils literal notranslate"><span class="pre">t</span></code> el índice 2.</p>
 <p><img alt="" src="_images/strings_index.svg" /></p>
 <p>Se puede acceder a cada una de los símbolos que componen una cadena mediante la notación <code class="docutils literal notranslate"><span class="pre">cadena[idx]</span></code>, donde  <code class="docutils literal notranslate"><span class="pre">cadena</span></code> es el nombre de la cadena e <code class="docutils literal notranslate"><span class="pre">idx</span></code> el índice en que se encuentra el caracter al cual se desea acceder, siendo 0 para la primera letra, 1 para la segunda y así de manera consecutiva. Veamos el ejemplo descrito en la figura, primero creamos la cadena <code class="docutils literal notranslate"><span class="pre">nombre</span></code>:</p>
@@ -682,7 +709,7 @@ un sistema de escritura. En Python los strings se definen utilizando comillas do
 </div>
 </div>
 <div class="section" id="mayusculas-y-minusculas">
-<h2><span class="section-number">3.3. </span>Mayúsculas y minúsculas<a class="headerlink" href="#mayusculas-y-minusculas" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.3. </span>Mayúsculas y minúsculas<a class="headerlink" href="#mayusculas-y-minusculas" title="Permalink to this headline">¶</a></h2>
 <p>Cuando se trabaja con texto en ocasiones puede ser necesario hacer modificaciones en lo que corresponde a la presencia de mayúsculas y minúsculas. Podríamos por ejemplo tener de <em>entrada</em> un texto completamente en mayúsculas y convertirlo en minúsculas, o el caso contrario. En Python las cadenas de caracteres disponen de los métodos <code class="docutils literal notranslate"><span class="pre">upper</span></code> y <code class="docutils literal notranslate"><span class="pre">lower</span></code> que nos permiten convertir en mayúsculas y minúsculas, de manera respectiva, todas las letras que conforman una cadena de texto.</p>
 <p>Vamos a definir una variable <code class="docutils literal notranslate"><span class="pre">frase</span></code> en la cual <em>guardaremos</em> la siguiente cadena:</p>
 <div class="cell docutils container">
@@ -761,8 +788,263 @@ un sistema de escritura. En Python los strings se definen utilizando comillas do
 </div>
 </div>
 </div>
+<div class="section" id="formateo-de-cadenas-de-caracteres">
+<h2><span class="section-number">4.4. </span>Formateo de cadenas de caracteres<a class="headerlink" href="#formateo-de-cadenas-de-caracteres" title="Permalink to this headline">¶</a></h2>
+<p>En el contexto de este capítulo entenderemos el formateo de una cadena de caracteres como las operaciones o instrucciones que permiten obtener una cadena final a partir de la unión o sustitución de un conjunto de datos.</p>
+<p>Previamente hemos aprendido que podemos concatenar cadenas, así por ejemplo si tuviéramos un programa que pide el nombre y  apellidos del usuario, podríamos unir esa información mediante concatenación y generar, por ejemplo, un saludo personalizado, observemos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingresa tu nombre: &quot;</span><span class="p">)</span>
+<span class="n">apellidos</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingresa tus apellidos: &quot;</span><span class="p">)</span>
+<span class="n">saludo</span> <span class="o">=</span> <span class="s2">&quot;Hola &quot;</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">apellidos</span> <span class="o">+</span> <span class="s2">&quot;, bienvenid@.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">saludo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ingresa tu nombre: Jorge
+Ingresa tus apellidos: De Los Santos
+Hola Jorge De Los Santos, bienvenid@.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Una manera más conveniente de lograr lo anterior es haciendo formateo de cadenas, a diferencia de la concatenación suele ser una forma más limpia y mantenible de generar cadenas en donde hay valores que van a cambiarse de forma dinámica dependiendo los datos que se generen durante la ejecución del código.</p>
+<p>Por ejemplo lo anterior podría hacerse utilizando el método <code class="docutils literal notranslate"><span class="pre">format</span></code> de las cadenas de caracteres, de la siguiente manera:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingresa tu nombre: &quot;</span><span class="p">)</span>
+<span class="n">apellidos</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingresa tus apellidos: &quot;</span><span class="p">)</span>
+<span class="n">saludo</span> <span class="o">=</span> <span class="s2">&quot;Hola </span><span class="si">{0}</span><span class="s2"> </span><span class="si">{1}</span><span class="s2">, bienvenid@.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">apellidos</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">saludo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ingresa tu nombre: Jorge
+Ingresa tus apellidos: De Los Santos
+Hola Jorge De Los Santos, bienvenid@.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Los términos <code class="docutils literal notranslate"><span class="pre">{0}</span></code> y <code class="docutils literal notranslate"><span class="pre">{1}</span></code> son los marcadores de posición (<em>placeholders</em>) que indican que esa posición será ocupada por los argumentos pasados al método <code class="docutils literal notranslate"><span class="pre">format</span></code>, que en este caso son los valores almacenados en <code class="docutils literal notranslate"><span class="pre">nombre</span></code> y <code class="docutils literal notranslate"><span class="pre">apellidos</span></code>.</p>
+<p>Otra manera de realizar lo anterior es utilizando los <em>f-strings</em>, observemos el siguiente código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingresa tu nombre: &quot;</span><span class="p">)</span>
+<span class="n">apellidos</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingresa tus apellidos: &quot;</span><span class="p">)</span>
+<span class="n">saludo</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Hola </span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">apellidos</span><span class="si">}</span><span class="s2">, bienvenid@.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">saludo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ingresa tu nombre: Jorge
+Ingresa tus apellidos: De Los Santos
+Hola Jorge De Los Santos, bienvenid@.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Los <em>f-strings</em> son la manera más conveniente de formatear strings en Python, están disponibles desde la versión 3.6. Puedes observar que únicamente anteponemos una <code class="docutils literal notranslate"><span class="pre">f</span></code> a la definición de la cadena, esto nos permite utilizar marcadores de posición que hacen uso directamente del nombre de variables dentro del string, lo cual hace que se gane mucho en concisión y claridad. En lo subsiguiente vamos a describir las dos formas anteriores de formatear strings.</p>
+<div class="section" id="el-metodo-format">
+<h3><span class="section-number">4.4.1. </span>El método <code class="docutils literal notranslate"><span class="pre">format</span></code><a class="headerlink" href="#el-metodo-format" title="Permalink to this headline">¶</a></h3>
+<p>El método <code class="docutils literal notranslate"><span class="pre">format</span></code> permite dar formato a cadenas de caracteres, mediante la sintaxis:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">string</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Donde <code class="docutils literal notranslate"><span class="pre">string</span></code> es una cadena de caracteres que contiene marcadores de posición que serán sustituidos por los valores <code class="docutils literal notranslate"><span class="pre">arg1</span></code>, <code class="docutils literal notranslate"><span class="pre">arg2</span></code>, etc. Los marcadores de posición se definen utilizando llaves y dentro de ellas se puede colocar un número, un nombre o una expresión que permitirá formatear el valor pasado como argumento.</p>
+<p>Veamos el siguiente ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> + </span><span class="si">{}</span><span class="s2">&quot;</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">texto</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 + 2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observa que los dos pares de llaves se reemplazan por los valores numéricos pasados como argumentos, en ese mismo orden. Si quisiéramos <em>controlar</em> explícitamente el orden de aparición dentro de la cadena podríamos utilizar marcadores de posición con un consecutivo (índice), por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{1}</span><span class="s2"> + </span><span class="si">{0}</span><span class="s2">&quot;</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">texto</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2 + 1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lo anterior indica que <code class="docutils literal notranslate"><span class="pre">{0}</span></code> se sustituirá por el primer argumento pasado al método <code class="docutils literal notranslate"><span class="pre">format</span></code>, <code class="docutils literal notranslate"><span class="pre">{1}</span></code> por el segundo argumento y así de manera consecutiva en el caso de que hubiera más argumentos.</p>
+<p>Es posible también utilizar argumentos nombrados para el método <code class="docutils literal notranslate"><span class="pre">format</span></code> e indicarlos con dicho en el marcador de posición, observa lo siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{apellidos}</span><span class="s2">, </span><span class="si">{nombre}</span><span class="s2">&quot;</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">texto</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre</span><span class="o">=</span><span class="s2">&quot;Juan&quot;</span><span class="p">,</span> <span class="n">apellidos</span><span class="o">=</span><span class="s2">&quot;Pérez López&quot;</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pérez López, Juan
+</pre></div>
+</div>
+</div>
+</div>
+<p>En algunas situaciones cuando trabajamos con números es muy probable que necesitemos mostrar los resultados con cierta cantidad de decimales o cifras significativas y/o en una notación específica, con <code class="docutils literal notranslate"><span class="pre">format</span></code> tenemos algunas posibilidades. Por ejemplo, vamos a mostrar el valor de <span class="math notranslate nohighlight">\(pi\)</span> con algunos decimales:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{pi}</span><span class="s2">&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pi</span><span class="o">=</span><span class="mf">3.14159265359</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.14159265359
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si quisiéremos mostrar únicamente cuatro decimales podríamos hacerlo de la siguiente manera:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{pi:.4f}</span><span class="s2">&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pi</span><span class="o">=</span><span class="mf">3.14159265359</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.1416
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observa que colocamos dos puntos y enseguida un <em>especificador de formato</em> <code class="docutils literal notranslate"><span class="pre">.4f</span></code>, este especificador le indica al método <code class="docutils literal notranslate"><span class="pre">format</span></code> que únicamente queremos mostrar cuatro decimales. Si quisiéramos mostrar seis decimales utilzaríamos <code class="docutils literal notranslate"><span class="pre">.6f</span></code>, y así con cualquier otra cantidad. En lo anterior <code class="docutils literal notranslate"><span class="pre">f</span></code> es el indicativo de un formateo de punto fijo.</p>
+<p>Podemos también mostrar un número utilizando notación científica, para ello utilizamos el especificador de formato <code class="docutils literal notranslate"><span class="pre">E</span></code> o <code class="docutils literal notranslate"><span class="pre">e</span></code>. En las calculadores se suele utilizar el caracter <code class="docutils literal notranslate"><span class="pre">E</span></code> (o alguno similar) para indicar 10 elevado a una potencia, por ejemplo <code class="docutils literal notranslate"><span class="pre">3.5E5</span></code> sería el equivalente de <span class="math notranslate nohighlight">\(3.5 \times 10^5\)</span>. Veamos como funciona:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fuerza</span> <span class="o">=</span> <span class="mi">7500</span>
+<span class="n">area</span> <span class="o">=</span> <span class="mf">0.08</span> <span class="o">*</span> <span class="mf">0.03</span> 
+<span class="n">esfuerzo</span> <span class="o">=</span> <span class="n">fuerza</span> <span class="o">/</span> <span class="n">area</span>
+<span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;El esfuerzo normal es de </span><span class="si">{0:E}</span><span class="s2"> Pa&quot;</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">texto</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">esfuerzo</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El esfuerzo normal es de 3.125000E+06 Pa
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos controlar también el número de decimales a mostrar:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fuerza</span> <span class="o">=</span> <span class="mi">7500</span>
+<span class="n">area</span> <span class="o">=</span> <span class="mf">0.08</span> <span class="o">*</span> <span class="mf">0.03</span> 
+<span class="n">esfuerzo</span> <span class="o">=</span> <span class="n">fuerza</span> <span class="o">/</span> <span class="n">area</span>
+<span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;El esfuerzo normal es de </span><span class="si">{0:.2E}</span><span class="s2"> Pa&quot;</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">texto</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">esfuerzo</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El esfuerzo normal es de 3.13E+06 Pa
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="si">{0:.2%}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>75.00%
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="los-f-strings">
+<h3><span class="section-number">4.4.2. </span>Los <em>f-strings</em><a class="headerlink" href="#los-f-strings" title="Permalink to this headline">¶</a></h3>
+<p>A partir de la versión 3.6 de Python podemos hacer uso de los <em>f-strings</em> para formatear cadenas de caracteres de una forma mucho más conveniente. Con los <em>f-strings</em> podemos sustituir directamente en la cadena el valor de una variable o el resultado de un conjunto de operaciones, observa lo siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 + 20 = 30
+</pre></div>
+</div>
+</div>
+</div>
+<p>Primero, debemos notar que para que Python pueda interpretar que estamos creando un <em>f-string</em> debemos anteponerle una <code class="docutils literal notranslate"><span class="pre">f</span></code> a la definición de la cadena de caracteres. Observa que los nombres de las variables encerrados entre llaves <code class="docutils literal notranslate"><span class="pre">{a}</span></code> y <code class="docutils literal notranslate"><span class="pre">{b}</span></code> se sustituyen por el valor <em>guardado</em> en cada variable, la expresión <code class="docutils literal notranslate"><span class="pre">{a</span> <span class="pre">+</span> <span class="pre">b}</span></code> nos permite evaluar una operación de suma aritmética entre los dos valores numéricos almacenados en <code class="docutils literal notranslate"><span class="pre">a</span></code> y <code class="docutils literal notranslate"><span class="pre">b</span></code> y sustituir el resultado en la cadena.</p>
+<p>Las especificaciones de formato descritas para el método <code class="docutils literal notranslate"><span class="pre">format</span></code> siguen siendo válidas en los <code class="docutils literal notranslate"><span class="pre">f-strings</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fuerza</span> <span class="o">=</span> <span class="mi">7500</span>
+<span class="n">area</span> <span class="o">=</span> <span class="mf">0.08</span> <span class="o">*</span> <span class="mf">0.03</span> 
+<span class="n">esfuerzo</span> <span class="o">=</span> <span class="n">fuerza</span> <span class="o">/</span> <span class="n">area</span>
+<span class="n">texto</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;El esfuerzo normal es de </span><span class="si">{</span><span class="n">esfuerzo</span><span class="si">:</span><span class="s2">.2E</span><span class="si">}</span><span class="s2"> Pa&quot;</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">texto</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El esfuerzo normal es de 3.13E+06 Pa
+</pre></div>
+</div>
+</div>
+</div>
+<p>Naturalmente, es mucho más sencillo (tanto para la escritura, lectura como para el mantenimiento del código) sustituir directamente el nombre de una variable dentro de la cadena de caracteres.</p>
+<p>Como ya se mencionaba, en los <em>f-strings</em> podemos sustituir el resultado de una operación o de una instrucción. Observa el siguiente ejemplo en el cual se muestra la equivalencia en el sistema binario de un entero expresado en el sistema decimal:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Inserta un entero: &quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;El número </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> en binario es </span><span class="si">{</span><span class="nb">bin</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Inserta un entero: 12
+El número 12 en binario es 0b1100
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos observar que dentro del <em>f-string</em> se hace una invocación a la función <code class="docutils literal notranslate"><span class="pre">bin</span></code>, la cual es una función nativa de Python que recibe un entero y devuelve su representación en el sistema binario. Lo anterior también podríamos lograrlo sin necesidad de hacer uso de la función <code class="docutils literal notranslate"><span class="pre">bin</span></code>, sino en su lugar modificar los especificadores de formato, tal como se muestra enseguida:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Inserta un entero: &quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;El número </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> en binario es </span><span class="si">{</span><span class="n">n</span><span class="si">:</span><span class="s2">b</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Inserta un entero: 12
+El número 12 en binario es 1100
+</pre></div>
+</div>
+</div>
+</div>
+<p>El modificador de formato <code class="docutils literal notranslate"><span class="pre">:b</span></code> indica que el valor pasado en el <em>placeholder</em> se debe mostrar en formato binario.</p>
+</div>
+</div>
 <div class="section" id="buscando-en-una-cadena-de-caracteres">
-<h2><span class="section-number">3.4. </span><em>Buscando</em> en una cadena de caracteres<a class="headerlink" href="#buscando-en-una-cadena-de-caracteres" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.5. </span>Buscando en una cadena de caracteres<a class="headerlink" href="#buscando-en-una-cadena-de-caracteres" title="Permalink to this headline">¶</a></h2>
 <p>En este apartado vamos a revisar cómo buscar una cierta secuencia de caracteres dentro de una cadena. Buscar coincidencias en un texto suele ser una tarea muy común para algunos sistemas automatizados. En Python, las cadenas de caracteres poseen métodos que permiten <em>buscar</em> en ellas coincidencias.</p>
 <p>Vamos a crear una variable <code class="docutils literal notranslate"><span class="pre">frase</span></code>, en la cual <em>almacenaremos</em> una cadena de caracteres:</p>
 <div class="cell docutils container">
@@ -885,28 +1167,69 @@ un sistema de escritura. En Python los strings se definen utilizando comillas do
 </div>
 </div>
 </div>
-<p>Podemos verificar que si la palabra (o secuencia de caracteres) que <em>buscamos</em> está contenida en la variable <code class="docutils literal notranslate"><span class="pre">texto</span></code>, entonces se devuelve un valor lógico <code class="docutils literal notranslate"><span class="pre">True</span></code>, de lo contrario devolverá un <code class="docutils literal notranslate"><span class="pre">False</span></code>, tal como se puede constatar al momento que buscamos la cadena <code class="docutils literal notranslate"><span class="pre">Gauss</span></code> dentro de <code class="docutils literal notranslate"><span class="pre">texto</span></code>.</p>
+<p>Podemos verificar que si la palabra (o secuencia de caracteres) que <em>buscamos</em> está contenida en la variable <code class="docutils literal notranslate"><span class="pre">texto</span></code>, entonces se devuelve un valor lógico <code class="docutils literal notranslate"><span class="pre">True</span></code>, de lo contrario devolverá un <code class="docutils literal notranslate"><span class="pre">False</span></code>, tal como se puede constatar al momento que buscamos la cadena <code class="docutils literal notranslate"><span class="pre">Dirac</span></code> dentro de <code class="docutils literal notranslate"><span class="pre">texto</span></code>.</p>
 <hr class="docutils" />
 <p><strong>Ejemplo. Contando vocales en una palabra</strong></p>
-<p>En este ejemplo vamos a desarrollar un programa que dada una palabra nos devuelva la cantidad vocales totales que hay.</p>
-<p>palabra = “Perro”</p>
-<p>ka = palabra.count(“a”) # cantidad de letras a
-ke = palabra.count(“e”) # cantidad de letras e
-ki = palabra.count(“i”) # cantidad de letras i
-ko = palabra.count(“o”) # cantidad de letras o
-ku = palabra.count(“u”) # cantidad de letras u</p>
-<p>numero_de_vocales = ka + ke + ki + ko + ku</p>
-<p>print(f”En la palabra ‘{palabra}’ hay {numero_de_vocales} vocales”)</p>
-<hr class="docutils" />
-<p>Estamos analizando X</p>
+<p>En este ejemplo vamos a desarrollar un programa que dada una palabra nos devuelva la cantidad vocales totales que hay en esta.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5000&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">palabra</span> <span class="o">=</span> <span class="s2">&quot;Perro&quot;</span>
+
+<span class="n">ka</span> <span class="o">=</span> <span class="n">palabra</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="c1"># cantidad de letras a</span>
+<span class="n">ke</span> <span class="o">=</span> <span class="n">palabra</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">)</span> <span class="c1"># cantidad de letras e</span>
+<span class="n">ki</span> <span class="o">=</span> <span class="n">palabra</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;i&quot;</span><span class="p">)</span> <span class="c1"># cantidad de letras i</span>
+<span class="n">ko</span> <span class="o">=</span> <span class="n">palabra</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;o&quot;</span><span class="p">)</span> <span class="c1"># cantidad de letras o</span>
+<span class="n">ku</span> <span class="o">=</span> <span class="n">palabra</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;u&quot;</span><span class="p">)</span> <span class="c1"># cantidad de letras u</span>
+
+<span class="n">numero_de_vocales</span> <span class="o">=</span> <span class="n">ka</span> <span class="o">+</span> <span class="n">ke</span> <span class="o">+</span> <span class="n">ki</span> <span class="o">+</span> <span class="n">ko</span> <span class="o">+</span> <span class="n">ku</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;En la palabra &#39;</span><span class="si">{</span><span class="n">palabra</span><span class="si">}</span><span class="s2">&#39; hay </span><span class="si">{</span><span class="n">numero_de_vocales</span><span class="si">}</span><span class="s2"> vocales&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>En la palabra &#39;Perro&#39; hay 2 vocales
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="una-breve-introduccion-a-las-expresiones-regulares">
+<h2><span class="section-number">4.6. </span>Una breve introducción a las expresiones regulares<a class="headerlink" href="#una-breve-introduccion-a-las-expresiones-regulares" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Hoy es 12/11/2021 o bien 07/03/21 o 12-dic-2020&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&quot;(\d</span><span class="si">{2}</span><span class="s2">/\d</span><span class="si">{2}</span><span class="s2">/\d{2,4}|\d</span><span class="si">{2}</span><span class="s2">-\w</span><span class="si">{3}</span><span class="s2">-\d{2,4})&quot;</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;12/11/2021&#39;, &#39;07/03/21&#39;, &#39;12-dic-2020&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="s2">&quot;(\d</span><span class="si">{2}</span><span class="s2">/\d</span><span class="si">{2}</span><span class="s2">/\d{2,4}|\d</span><span class="si">{2}</span><span class="s2">-\w</span><span class="si">{3}</span><span class="s2">-\d{2,4})&quot;</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;callable_iterator at 0x2d8dc81ecd0&gt;
 </pre></div>
 </div>
 </div>
@@ -944,19 +1267,19 @@ ku = palabra.count(“u”) # cantidad de letras u</p>
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="Variables%2C%20operadores%20y%20expresiones.html" title="previous page">
+        <a class="left-prev" href="Estructuras%20de%20control.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">2. </span>Variables, operadores y expresiones</p>
+                <p class="prevnext-title"><span class="section-number">3. </span>Estructuras de control</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="Listas%2C%20tuplas%20y%20diccionarios.html" title="next page">
+        <a class="right-next" href="Estructuras%20de%20datos.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">4. </span>Listas, tuplas y diccionarios</p>
+                <p class="prevnext-title"><span class="section-number">5. </span>Estructuras de datos</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

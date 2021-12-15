@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5. Estructuras de control &#8212; Python para Ingenieros</title>
+    <title>3. Estructuras de control &#8212; Python para Ingenieros</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/customized.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -53,8 +54,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6. Funciones" href="Funciones.html" />
-    <link rel="prev" title="4. Listas, tuplas y diccionarios" href="Listas%2C%20tuplas%20y%20diccionarios.html" />
+    <link rel="next" title="4. Cadenas de caracteres" href="Cadenas%20de%20caracteres.html" />
+    <link rel="prev" title="2. Variables, operadores y expresiones" href="Variables%2C%20operadores%20y%20expresiones.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -106,19 +107,19 @@
    2. Variables, operadores y expresiones
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Cadenas%20de%20caracteres.html">
-   3. Cadenas de caracteres
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Listas%2C%20tuplas%20y%20diccionarios.html">
-   4. Listas, tuplas y diccionarios
-  </a>
- </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   5. Estructuras de control
+   3. Estructuras de control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Cadenas%20de%20caracteres.html">
+   4. Cadenas de caracteres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Estructuras%20de%20datos.html">
+   5. Estructuras de datos
   </a>
  </li>
  <li class="toctree-l1">
@@ -127,33 +128,43 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Archivos%20de%20texto.html">
+   7. Archivos de texto
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="NumPy.html">
-   7. NumPy: estructuras matriciales
+   8. NumPy: estructuras matriciales
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Matplotlib.html">
-   8. Matplotlib: visualización gráfica
+   9. Matplotlib: visualización gráfica
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="SciPy.html">
-   9. SciPy
+   10. SciPy
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Pandas.html">
-   10. Pandas: una introducción al análisis de datos
+   11. Pandas: una introducción al análisis de datos
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="SymPy.html">
-   11. Sympy: un sistema de álgebra computacional
+   12. Sympy: un sistema de álgebra computacional
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Programaci%C3%B3n%20orientada%20a%20objetos.html">
-   12. Programación orientada a objetos
+   13. Programación orientada a objetos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Bases%20de%20datos.html">
+   14. Bases de datos
   </a>
  </li>
 </ul>
@@ -246,7 +257,7 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#condicional-if-elif-else">
-   5.1. Condicional
+   3.1. Condicional
    <code class="docutils literal notranslate">
     <span class="pre">
      if-elif-else
@@ -256,7 +267,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ciclo-for">
-   5.2. Ciclo
+   3.2. Ciclo
    <code class="docutils literal notranslate">
     <span class="pre">
      for
@@ -266,7 +277,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ciclo-while">
-   5.3. Ciclo
+   3.3. Ciclo
    <code class="docutils literal notranslate">
     <span class="pre">
      while
@@ -276,7 +287,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicios">
-   5.4. Ejercicios
+   3.4. Ejercicios
   </a>
  </li>
 </ul>
@@ -291,7 +302,7 @@
               <div>
                 
   <div class="section" id="estructuras-de-control">
-<h1><span class="section-number">5. </span>Estructuras de control<a class="headerlink" href="#estructuras-de-control" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3. </span>Estructuras de control<a class="headerlink" href="#estructuras-de-control" title="Permalink to this headline">¶</a></h1>
 <p>En un lenguaje de programación, las estructuras de control permiten modificar el flujo de la ejecución de un conjunto de instrucciones. Se pueden distinguir tres tipos básicos de control de flujo, a saber:</p>
 <ul class="simple">
 <li><p>Control secuencial</p></li>
@@ -301,7 +312,7 @@
 <p><img alt="" src="_images/estructuras-de-control.svg" /></p>
 <p>En el control secuencial las instrucciones se ejecutan de manera secuencial desde el inicio hasta el fin del programa. En el control de selección se tiene una condición que puede ser falsa o verdadera, dependiendo de esto se ejecutará uno u otro bloque de instrucciones. En el control de repetición, un bloque de instrucciones se ejecuta de manera repetitiva mientras una condición sea verdadera, en caso contrario el flujo de ejecución se pasará a otro conjunto de instrucciones.</p>
 <div class="section" id="condicional-if-elif-else">
-<h2><span class="section-number">5.1. </span>Condicional <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code><a class="headerlink" href="#condicional-if-elif-else" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1. </span>Condicional <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code><a class="headerlink" href="#condicional-if-elif-else" title="Permalink to this headline">¶</a></h2>
 <p>El condicional <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> es una estructura de control de selección que sirve para <em>tomar decisiones</em>, basándose en la evaluación de condiciones y/o comparaciones, en el flujo del programa. La sintaxis más general para <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> es:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">cond1</span><span class="p">:</span>
     <span class="c1"># hacer algo </span>
@@ -403,7 +414,7 @@ colocada en el caso por default <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="section" id="ciclo-for">
-<h2><span class="section-number">5.2. </span>Ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#ciclo-for" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2. </span>Ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#ciclo-for" title="Permalink to this headline">¶</a></h2>
 <p>El <strong>bucle for</strong> es una estructura de control de repetición, en la cual se conocen
 <em>a priori</em> el número de iteraciones a realizar. En lenguajes como C++ o Java, el ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code>
 necesita de una variable de ciclo de tipo entero que irá incrementándose en cada iteración. En Python, la cuestión es un poco diferente, el ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code> <em>recorre</em> una secuencia y en la k-ésima iteración la variable de ciclo <em>adopta</em> el
@@ -524,7 +535,7 @@ x=0 y=1
 <p>Observa la diferencia, la primera forma es un quizá un poco menos <em>intuitiva</em> pero más práctica y natural. En la primera se accede directamente con las variables de ciclo <code class="docutils literal notranslate"><span class="pre">(x,y)</span></code> a cada elemento de las tuplas que conforman la lista <code class="docutils literal notranslate"><span class="pre">puntos</span></code>, con la segunda se tiene que acceder mediante indexación a cada elemento.</p>
 </div>
 <div class="section" id="ciclo-while">
-<h2><span class="section-number">5.3. </span>Ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#ciclo-while" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3. </span>Ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#ciclo-while" title="Permalink to this headline">¶</a></h2>
 <p>El ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code> ejecuta un bloque de instrucciones mientras haya una condición que se cumpla. La sintaxis de <code class="docutils literal notranslate"><span class="pre">while</span></code> es:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">cond</span><span class="p">:</span>
     <span class="c1"># hacer algo </span>
@@ -652,7 +663,7 @@ Has adivinado después de 5 intentos
 <p>El código anterior es un juego muy simple de adivinar un número entero entre 1 y 10 que la computadora genera de manera aleatoria mediante la función <code class="docutils literal notranslate"><span class="pre">randint</span></code>. Observa que el ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code>, en principio, se ejecutará de forma indefinida, dado que la condición es la constante booleana <code class="docutils literal notranslate"><span class="pre">True</span></code>; en este caso para <em>romper</em> la ejecución iterativa se hace uso de la instrucción <code class="docutils literal notranslate"><span class="pre">break</span></code>, en conjunto con la sentencia de selección <code class="docutils literal notranslate"><span class="pre">if-else</span></code>, observa que si la condición del <code class="docutils literal notranslate"><span class="pre">if</span></code> se cumple (<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">n</span></code>) entonces el programa rompe el ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code> con la instrucción <code class="docutils literal notranslate"><span class="pre">break</span></code>, en caso contrario simplemente se sigue ejecutando el juego.</p>
 </div>
 <div class="section" id="ejercicios">
-<h2><span class="section-number">5.4. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
 <hr class="docutils" />
 <ol class="simple">
 <li><p>Desarrolle un programa que calcule la suma de los enteros del 1 al 100, es decir: 1 + 2 + 3 + … + 99 + 100</p></li>
@@ -760,19 +771,19 @@ oo
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="Listas%2C%20tuplas%20y%20diccionarios.html" title="previous page">
+        <a class="left-prev" href="Variables%2C%20operadores%20y%20expresiones.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">4. </span>Listas, tuplas y diccionarios</p>
+                <p class="prevnext-title"><span class="section-number">2. </span>Variables, operadores y expresiones</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="Funciones.html" title="next page">
+        <a class="right-next" href="Cadenas%20de%20caracteres.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">6. </span>Funciones</p>
+                <p class="prevnext-title"><span class="section-number">4. </span>Cadenas de caracteres</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
