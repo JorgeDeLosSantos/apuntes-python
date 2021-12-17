@@ -16,10 +16,10 @@ Pedro Jorge De Los Santos
 
 
 <a href="https://github.com/JorgeDeLosSantos" target="_blank">
-    <i class="fa fa-github fa-3x" aria-hidden="true"></i>
+    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
 </a>
 <a href="https://twitter.com/numython" target="_blank">
-    <i class="fa fa-twitter fa-3x" aria-hidden="true"></i>
+    <i class="fab fa-twitter fa-2x" aria-hidden="true"></i>
 </a>
 
 ```python
