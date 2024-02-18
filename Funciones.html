@@ -4,11 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>6. Funciones &#8212; Python para Ingenieros</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -32,19 +33,19 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -55,7 +56,10 @@
     <link rel="next" title="7. Archivos de texto" href="Archivos%20de%20texto.html" />
     <link rel="prev" title="5. Estructuras de datos" href="Estructuras%20de%20datos.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -311,13 +315,13 @@
         
               <div>
                 
-  <div class="section" id="funciones">
+  <section class="tex2jax_ignore mathjax_ignore" id="funciones">
 <h1><span class="section-number">6. </span>Funciones<a class="headerlink" href="#funciones" title="Permalink to this headline">¶</a></h1>
 <p>Las funciones son <em>porciones de código</em> que nos sirven para modularizar
 nuestros programas y evitar en muchos casos la repetitividad de código.
 De manera general una función recibe algunos valores de entrada, los <em>procesa</em> y
 devuelve algunos valores de salida (o bien modifica algunas variables).</p>
-<div class="section" id="funciones-built-in">
+<section id="funciones-built-in">
 <h2><span class="section-number">6.1. </span>Funciones <em>built-in</em><a class="headerlink" href="#funciones-built-in" title="Permalink to this headline">¶</a></h2>
 <p>Python dispone de algunas funciones nativas que se <em>cargan</em> cuando se
 inicia el intérprete. Por ejemplo la función <code class="docutils literal notranslate"><span class="pre">max</span></code> devuelve el mayor valor numérico de
@@ -405,7 +409,7 @@ pasarle dos argumentos: un número real y la cantidad de lugares decimales a con
 </div>
 </div>
 </div>
-<div class="section" id="la-funcion-print">
+<section id="la-funcion-print">
 <h3><span class="section-number">6.1.1. </span>La función <code class="docutils literal notranslate"><span class="pre">print</span></code><a class="headerlink" href="#la-funcion-print" title="Permalink to this headline">¶</a></h3>
 <p>La función <code class="docutils literal notranslate"><span class="pre">print</span></code> se utiliza para mostrar en pantalla el <em>valor</em> (o la representación) de los objetos Python. A <code class="docutils literal notranslate"><span class="pre">print</span></code> le podemos pasar un sólo argumento, por ejemplo:</p>
 <div class="cell docutils container">
@@ -519,8 +523,8 @@ hola
 <p class="admonition-title">print y los strings formateados</p>
 <p>Si te interesa obtener información acerca de <code class="docutils literal notranslate"><span class="pre">print</span></code> y su uso conjunto con strings formateados, revisa el capítulo dedicado a los strings.</p>
 </div>
-</div>
-<div class="section" id="la-funcion-input">
+</section>
+<section id="la-funcion-input">
 <h3><span class="section-number">6.1.2. </span>La función <code class="docutils literal notranslate"><span class="pre">input</span></code><a class="headerlink" href="#la-funcion-input" title="Permalink to this headline">¶</a></h3>
 <p>En Python, la función <code class="docutils literal notranslate"><span class="pre">input</span></code> permite obtener entrada por teclado, con la finalidad de <em>tomar</em> información proporcionada por el usuario. La sintaxis de <code class="docutils literal notranslate"><span class="pre">input</span></code> es:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
@@ -598,9 +602,9 @@ Hola Jorge bienvenido
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="funciones-definidas-por-el-usuario">
+</section>
+</section>
+<section id="funciones-definidas-por-el-usuario">
 <h2><span class="section-number">6.2. </span>Funciones definidas por el usuario<a class="headerlink" href="#funciones-definidas-por-el-usuario" title="Permalink to this headline">¶</a></h2>
 <p>Además de las funciones nativas de Python, es posible definir nuestras propias funciones. En Python, de manera general, una función se define siguiendo la estructura mostrada a continuación:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nombre_fun</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">argN</span><span class="p">):</span>
@@ -742,7 +746,7 @@ Perímetro: 240
 </div>
 </div>
 </div>
-<div class="section" id="funciones-con-una-cantidad-de-parametros-indeterminada">
+<section id="funciones-con-una-cantidad-de-parametros-indeterminada">
 <h3><span class="section-number">6.2.1. </span>Funciones con una cantidad de parámetros indeterminada<a class="headerlink" href="#funciones-con-una-cantidad-de-parametros-indeterminada" title="Permalink to this headline">¶</a></h3>
 <p>En ocasiones el número de parámetros que deberá recibir una función no puede ser algo fijo.
 Las definiciones de función en Python tienen la flexibilidad de poder recibir una cantidad
@@ -783,8 +787,8 @@ a Python que la cantidad de argumentos de entrada es indeterminada, en principio
 de la información es algo que el programador debe tener en cuenta. Dentro del cuerpo de la función
 se debe considerar que el parámetro <code class="docutils literal notranslate"><span class="pre">numeros</span></code> será una tupla cuya cantidad de elementos dependerá
 de la cantidad de argumentos ingresados.</p>
-</div>
-<div class="section" id="funciones-y-los-argumentos-con-nombre">
+</section>
+<section id="funciones-y-los-argumentos-con-nombre">
 <h3><span class="section-number">6.2.2. </span>Funciones y los argumentos con nombre<a class="headerlink" href="#funciones-y-los-argumentos-con-nombre" title="Permalink to this headline">¶</a></h3>
 <p>Una función en Python se puede <em>mandar a llamar</em> pasándo los argumentos de manera posicional, es
 decir, en el orden que fueron definidos en la función, o bien, haciendo uso del nombre del parámetro correspondiente
@@ -857,9 +861,9 @@ asteriscos antes del nombre del parámetro, indican que no se tiene predetermina
 pasarán, pero además, indica que cada argumento a introducir deberá ser un argumento con nombre.
 Dentro del cuerpo de la función el parámetro <code class="docutils literal notranslate"><span class="pre">**personas</span></code> es un diccionario cuyas claves
 son los nombres de los argumentos y los valores corresponden a cada valor asignado al argumento.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -884,31 +888,22 @@ son los nombres de los argumentos y los valores corresponden a cada valor asigna
               </div>
               
         
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="Estructuras%20de%20datos.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">5. </span>Estructuras de datos</p>
-            </div>
-        </a>
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Estructuras%20de%20datos.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">5. </span>Estructuras de datos</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Archivos%20de%20texto.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Archivos de texto</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="Archivos%20de%20texto.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">7. </span>Archivos de texto</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
@@ -929,8 +924,7 @@ son los nombres de los argumentos y los valores corresponden a cada valor asigna
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

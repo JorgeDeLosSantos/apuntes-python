@@ -4,11 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Análisis cinemático de mecanismos &#8212; Python para Ingenieros</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -32,21 +33,21 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -55,7 +56,10 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -306,7 +310,7 @@
         
               <div>
                 
-  <div class="section" id="analisis-cinematico-de-mecanismos">
+  <section class="tex2jax_ignore mathjax_ignore" id="analisis-cinematico-de-mecanismos">
 <h1>Análisis cinemático de mecanismos<a class="headerlink" href="#analisis-cinematico-de-mecanismos" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -363,7 +367,7 @@
 </div>
 </div>
 </div>
-<div class="section" id="utilizando-la-libreria-cime">
+<section id="utilizando-la-libreria-cime">
 <h2>Utilizando la librería <code class="docutils literal notranslate"><span class="pre">cime</span></code><a class="headerlink" href="#utilizando-la-libreria-cime" title="Permalink to this headline">¶</a></h2>
 <p>La librería <code class="docutils literal notranslate"><span class="pre">cime</span></code> es un conjunto de funciones y clases cuyo objetivo es facilitar el análisis cinemático de mecanismos planos.</p>
 <p>Para instalar la librería debe ejecutar la siguiente instrucción en consola:</p>
@@ -371,7 +375,7 @@
 </pre></div>
 </div>
 <p>Asegúrese que al momento de ejecutar estas instrucciones cuente con una conexión a internet.</p>
-<div class="section" id="importando-la-libreria">
+<section id="importando-la-libreria">
 <h3>Importando la librería<a class="headerlink" href="#importando-la-libreria" title="Permalink to this headline">¶</a></h3>
 <p>Para importar las funciones y clases de esta librería basta con ejecutar la siguiente instrucción:</p>
 <div class="cell docutils container">
@@ -381,8 +385,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="la-funcion-vexp">
+</section>
+<section id="la-funcion-vexp">
 <h3>La función <code class="docutils literal notranslate"><span class="pre">vexp</span></code><a class="headerlink" href="#la-funcion-vexp" title="Permalink to this headline">¶</a></h3>
 <p>La función <code class="docutils literal notranslate"><span class="pre">vexp</span></code> de la librería <code class="docutils literal notranslate"><span class="pre">cime</span></code> tiene el objetivo de representar un vector en forma rectangular a partir de su forma compleja exponencial. Por ejemplo:</p>
 <div class="math notranslate nohighlight">
@@ -474,8 +478,8 @@ vexp(r, theta, j=False)
 <img alt="../_images/Análisis cinemático de mecanismos_15_0.png" src="../_images/Análisis cinemático de mecanismos_15_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="resolviendo-problemas-de-analisis-cinematico-utilizando-cime">
+</section>
+<section id="resolviendo-problemas-de-analisis-cinematico-utilizando-cime">
 <h3>Resolviendo problemas de análisis cinemático utilizando <code class="docutils literal notranslate"><span class="pre">cime</span></code><a class="headerlink" href="#resolviendo-problemas-de-analisis-cinematico-utilizando-cime" title="Permalink to this headline">¶</a></h3>
 <p>En la figura se muestra un mecanismo de manivela-biela corredera. Se sabe que el ángulo <span class="math notranslate nohighlight">\(\phi = 45°\)</span> y que la manivela <span class="math notranslate nohighlight">\(OA\)</span> está rotando a una velocidad angular <span class="math notranslate nohighlight">\(\omega_{OA} = 12\)</span> rad/s, con esa información debemos determinar la velocidad angular de la biela <span class="math notranslate nohighlight">\(AB\)</span> y la velocidad del bloque en <span class="math notranslate nohighlight">\(B\)</span>. Se conoce que <span class="math notranslate nohighlight">\(\overline{OA}=100\)</span> mm y <span class="math notranslate nohighlight">\(\overline{AB}=300\)</span> mm.</p>
 <img src="img/acm/slider_crank_01.svg"><p>Si planteamos el lazo vectorial como se muestra en la figura podemos establecer la siguiente ecuación de posición:</p>
@@ -541,9 +545,9 @@ vexp(r, theta, j=False)
 </div>
 </div>
 <p>Para el análisis de velocidad, derivando la ecuación de posición se tiene:</p>
-</div>
-</div>
-<div class="section" id="ejemplos-resueltos-metodo-del-movimiento-relativo">
+</section>
+</section>
+<section id="ejemplos-resueltos-metodo-del-movimiento-relativo">
 <h2>Ejemplos resueltos (método del movimiento relativo)<a class="headerlink" href="#ejemplos-resueltos-metodo-del-movimiento-relativo" title="Permalink to this headline">¶</a></h2>
 <p>Para todos los ejemplos resueltos, asumiremos que hemos importado, previamente, la librería SymPy, de la siguiente manera:</p>
 <div class="cell docutils container">
@@ -685,8 +689,8 @@ vexp(r, theta, j=False)
 <img alt="../_images/Análisis cinemático de mecanismos_48_0.png" src="../_images/Análisis cinemático de mecanismos_48_0.png" />
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -711,13 +715,8 @@ vexp(r, theta, j=False)
               </div>
               
         
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
 </div>
         
         </div>
@@ -738,8 +737,7 @@ vexp(r, theta, j=False)
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

@@ -4,11 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>9. Matplotlib: visualización gráfica &#8212; Python para Ingenieros</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -32,21 +33,21 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -57,7 +58,10 @@
     <link rel="next" title="10. SciPy" href="SciPy.html" />
     <link rel="prev" title="8. NumPy: estructuras matriciales" href="NumPy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -354,13 +358,13 @@
         
               <div>
                 
-  <div class="section" id="matplotlib-visualizacion-grafica">
+  <section class="tex2jax_ignore mathjax_ignore" id="matplotlib-visualizacion-grafica">
 <h1><span class="section-number">9. </span>Matplotlib: visualización gráfica<a class="headerlink" href="#matplotlib-visualizacion-grafica" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="que-es-matplotlib">
+<section id="que-es-matplotlib">
 <h2><span class="section-number">9.1. </span>¿Qué es Matplotlib?<a class="headerlink" href="#que-es-matplotlib" title="Permalink to this headline">¶</a></h2>
 <p>Matplotlib es una librería Python que permite generar gráficas estáticas, animadas e interactivas.</p>
-</div>
-<div class="section" id="de-matplotlib-jupyter-y-las-graficas-mostradas">
+</section>
+<section id="de-matplotlib-jupyter-y-las-graficas-mostradas">
 <h2><span class="section-number">9.2. </span>De Matplotlib, Jupyter y las gráficas mostradas<a class="headerlink" href="#de-matplotlib-jupyter-y-las-graficas-mostradas" title="Permalink to this headline">¶</a></h2>
 <p>En todo este capítulo se asumirá que las siguientes líneas de código han sido ejecutadas, previamente, para cada porción de código:</p>
 <div class="cell docutils container">
@@ -373,8 +377,8 @@
 </div>
 </div>
 <p>Sí usted ejecuta Python/Matplotlib dentro de un entorno diferente a Jupyter, deberá evitar colocar la instrucción <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code> y en su lugar colocar la instrucción <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> al final de cada código, para que se le muestren las gráficas correspondientes.</p>
-</div>
-<div class="section" id="una-primera-aproximacion">
+</section>
+<section id="una-primera-aproximacion">
 <h2><span class="section-number">9.3. </span>Una primera aproximación<a class="headerlink" href="#una-primera-aproximacion" title="Permalink to this headline">¶</a></h2>
 <p>Una de las características de Matplotlib es la facilidad con la que se puede
 comenzar a trazar gráficas, vea el siguiente código:</p>
@@ -409,8 +413,8 @@ comenzar a trazar gráficas, vea el siguiente código:</p>
 </div>
 </div>
 <p>Se puede observar que aquí se adicionan elementos descriptivos: etiquetas, leyendas y anotaciones, que usualmente sirven para describir completamente una información que se proporciona a través de las gráficas.</p>
-</div>
-<div class="section" id="la-funcion-plot">
+</section>
+<section id="la-funcion-plot">
 <h2><span class="section-number">9.4. </span>La función <code class="docutils literal notranslate"><span class="pre">plot</span></code><a class="headerlink" href="#la-funcion-plot" title="Permalink to this headline">¶</a></h2>
 <p>La función <code class="docutils literal notranslate"><span class="pre">plot</span></code> está contenida en el módulo <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> y básicamente con esta se produce cualquier gráfica
 bidimensional en coordenadas rectangulares. Esta función soporta varias maneras de ejecutarla dependiendo la cantidad
@@ -446,7 +450,7 @@ por ejemplo:</p>
 <img alt="_images/Matplotlib_13_1.png" src="_images/Matplotlib_13_1.png" />
 </div>
 </div>
-<div class="section" id="graficando-funciones-matematicas">
+<section id="graficando-funciones-matematicas">
 <h3><span class="section-number">9.4.1. </span>Graficando funciones matemáticas<a class="headerlink" href="#graficando-funciones-matematicas" title="Permalink to this headline">¶</a></h3>
 <p>En matemáticas, una función es una relación que asigna elementos de un conjunto de manera
 unívoca a otro conjunto. Usualmente una función matemática se puede representar
@@ -535,8 +539,8 @@ de manera respectiva, notará la diferencia entre los casos, es evidente que en 
 <img alt="_images/Matplotlib_22_1.png" src="_images/Matplotlib_22_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="modificando-el-color-estilos-y-grosor-de-linea">
+</section>
+<section id="modificando-el-color-estilos-y-grosor-de-linea">
 <h3><span class="section-number">9.4.2. </span>Modificando el color, estilos y grosor de línea<a class="headerlink" href="#modificando-el-color-estilos-y-grosor-de-linea" title="Permalink to this headline">¶</a></h3>
 <p>La función <code class="docutils literal notranslate"><span class="pre">plot</span></code> acepta argumentos adicionales que sirven para modificar y controlar las características de
 la línea que se grafica. Por ejemplo, se puede pasar un tercer argumento que contenga una combinación de color y estilo de línea:</p>
@@ -628,9 +632,9 @@ este no puede ser invocado mediante un sólo caracter, hace falta escribir todo 
 <blockquote>
 <div><p>La función <code class="docutils literal notranslate"><span class="pre">plot</span></code> soporta algunos <em>keyword arguments</em> acortados. Por ejemplo, se puede utilizar <code class="docutils literal notranslate"><span class="pre">ls</span></code> en lugar de <code class="docutils literal notranslate"><span class="pre">linestyle</span></code>, <code class="docutils literal notranslate"><span class="pre">lw</span></code> en lugar de <code class="docutils literal notranslate"><span class="pre">linewidth</span></code>, <code class="docutils literal notranslate"><span class="pre">ms</span></code> en lugar de <code class="docutils literal notranslate"><span class="pre">markersize</span></code>, <code class="docutils literal notranslate"><span class="pre">mfc</span></code> en lugar de <code class="docutils literal notranslate"><span class="pre">markerfacecolor</span></code>, entre otros.</p>
 </div></blockquote>
-</div>
-</div>
-<div class="section" id="titulo-de-grafica-etiquetas-de-ejes-y-nombres-de-curvas">
+</section>
+</section>
+<section id="titulo-de-grafica-etiquetas-de-ejes-y-nombres-de-curvas">
 <h2><span class="section-number">9.5. </span>Título de gráfica, etiquetas de ejes y nombres de curvas<a class="headerlink" href="#titulo-de-grafica-etiquetas-de-ejes-y-nombres-de-curvas" title="Permalink to this headline">¶</a></h2>
 <p>Por su naturaleza las gráficas nos sirven para presentar y/o visualizar información de ciertos datos, para
 lo cual se hace necesario especificar información descriptiva de lo que se muestra. Es muy común
@@ -661,8 +665,8 @@ se está graficando más de una curva, se hace necesario especificar a qué refi
 <p>La instrucción <code class="docutils literal notranslate"><span class="pre">xlabel</span></code> coloca una etiqueta al eje horizontal, de manera similar <code class="docutils literal notranslate"><span class="pre">ylabel</span></code> lo hace para el eje
 vertical. Con <code class="docutils literal notranslate"><span class="pre">title</span></code> adicionamos un título a la gráfica. La instrucción <code class="docutils literal notranslate"><span class="pre">legend</span></code> sirve para
 colocar el recuadro con el <em>nombre</em> asignado a cada curva mediante el <em>keyword argument</em> <code class="docutils literal notranslate"><span class="pre">label</span></code>.</p>
-</div>
-<div class="section" id="anotaciones">
+</section>
+<section id="anotaciones">
 <h2><span class="section-number">9.6. </span>Anotaciones<a class="headerlink" href="#anotaciones" title="Permalink to this headline">¶</a></h2>
 <p>Con anotaciones nos referimos a cualquier texto que se coloque dentro del <em>Axes</em> de Matplotlib. Usualmente
 utilizadas para indicar ciertas características partículares en una gráfica, o bien alguna nota informativa al respecto.
@@ -716,8 +720,8 @@ Por ejemplo:</p>
 </div>
 </div>
 <p>Observe que lo único que se cambió fueron algunas propiedades del texto, tales como el tamaño de la fuente con <code class="docutils literal notranslate"><span class="pre">fontsize</span></code>, el color de fuente con <code class="docutils literal notranslate"><span class="pre">color</span></code> y el tipo de fuente con <code class="docutils literal notranslate"><span class="pre">name</span></code>, con este último se debe tener cuidado, dado que el nombre de la fuente indicada debe estar instalada en la PC que se ejecuta.</p>
-</div>
-<div class="section" id="graficas-en-coordenadas-polares">
+</section>
+<section id="graficas-en-coordenadas-polares">
 <h2><span class="section-number">9.7. </span>Gráficas en coordenadas polares<a class="headerlink" href="#graficas-en-coordenadas-polares" title="Permalink to this headline">¶</a></h2>
 <p>Las coordenadas polares o sistema de coordenadas polares son un sistema de coordenadas bidimensional en el que cada punto del plano se determina por una distancia y un ángulo <a class="reference external" href="https://es.wikipedia.org/wiki/Coordenadas_polares">*</a> . Habitualmente
 las funciones en coordenadas polares tienen la forma <span class="math notranslate nohighlight">\( r = f(\theta)\)</span>.</p>
@@ -745,11 +749,11 @@ rosa polar, cuya ecuación general está dada por:</p>
 </div>
 <p>Observe que la función <code class="docutils literal notranslate"><span class="pre">polar</span></code> funciona de manera bastante similar a <code class="docutils literal notranslate"><span class="pre">plot</span></code>, de hecho se le pueden pasar los mismos
 <em>keyword arguments</em> para personalizar el gráfico resultante.</p>
-</div>
-<div class="section" id="graficas-de-barras">
+</section>
+<section id="graficas-de-barras">
 <h2><span class="section-number">9.8. </span>Gráficas de barras<a class="headerlink" href="#graficas-de-barras" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="graficas-de-pastel">
+</section>
+<section id="graficas-de-pastel">
 <h2><span class="section-number">9.9. </span>Gráficas de pastel<a class="headerlink" href="#graficas-de-pastel" title="Permalink to this headline">¶</a></h2>
 <p>Las gráficas de pastel (o de tarta, o gráficos circulares) nos sirven para representar porcentajes y proporciones. Matplotlib dispone de la función <code class="docutils literal notranslate"><span class="pre">pie</span></code>, cuya sintaxis depende del grado de personalización y control que se requiera sobre la gráfica de pastel a dibujar.</p>
 <p>Para ejemplificar el uso de esta función vamos a suponer que se tienen los siguientes datos sobre algunas personas que tienen cierta cantidad de manzanas en <em>su poder</em>:</p>
@@ -853,8 +857,8 @@ rosa polar, cuya ecuación general está dada por:</p>
 <img alt="_images/Matplotlib_59_0.png" src="_images/Matplotlib_59_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="la-funcion-subplot-multiples-axes">
+</section>
+<section id="la-funcion-subplot-multiples-axes">
 <h2><span class="section-number">9.10. </span>La función <code class="docutils literal notranslate"><span class="pre">subplot</span></code>: múltiples axes<a class="headerlink" href="#la-funcion-subplot-multiples-axes" title="Permalink to this headline">¶</a></h2>
 <p>La función <code class="docutils literal notranslate"><span class="pre">subplot</span></code> sirve para insertar <em>axes</em> en un <em>figure</em> organizados de una manera predefinida, usualmente una cuadrícula de m filas y n columnas. En cada uno de esos <em>axes</em> se pueden colocar información por separado.</p>
 <p>En el siguiente ejemplo se muestra el uso de la función <code class="docutils literal notranslate"><span class="pre">subplot</span></code> para crear dos <em>axes</em> apilados de forma vertical:</p>
@@ -954,8 +958,8 @@ rosa polar, cuya ecuación general está dada por:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="graficas-de-curvas-parametricas-en-el-espacio">
+</section>
+<section id="graficas-de-curvas-parametricas-en-el-espacio">
 <h2><span class="section-number">9.11. </span>Gráficas de curvas paramétricas en el espacio<a class="headerlink" href="#graficas-de-curvas-parametricas-en-el-espacio" title="Permalink to this headline">¶</a></h2>
 <p>Una función vectorial de la forma:</p>
 <div class="math notranslate nohighlight">
@@ -1031,8 +1035,8 @@ ejemplo el siguiente código:</p>
 <img alt="_images/Matplotlib_74_1.png" src="_images/Matplotlib_74_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="graficas-de-superficies">
+</section>
+<section id="graficas-de-superficies">
 <h2><span class="section-number">9.12. </span>Gráficas de superficies<a class="headerlink" href="#graficas-de-superficies" title="Permalink to this headline">¶</a></h2>
 <p>Las gráficas de superficies se utilizan para representar de manera gráfica una función bivariable en el espacio. El procedimiento de graficado para una función de dos variables <span class="math notranslate nohighlight">\( z = f(x,y) \)</span>, implica que se tendría que evaluar dicha función en una región delimitada por ciertos valores para las dos variables independientes. Para poder realizar esto de forma muy conveniente, la librería NumPy proporciona una función llamada <code class="docutils literal notranslate"><span class="pre">meshgrid</span></code>, la cual puede crear una <em>rejilla</em> bidimensional a partir de una lista de valores para cada variable independiente, por ejemplo:</p>
 <div class="cell docutils container">
@@ -1133,8 +1137,8 @@ ejemplo el siguiente código:</p>
 <img alt="_images/Matplotlib_86_0.png" src="_images/Matplotlib_86_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="ejercicios">
+</section>
+<section id="ejercicios">
 <h2><span class="section-number">9.13. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Gráfique la función <span class="math notranslate nohighlight">\( y = 10 \cos x \)</span> en el intervalo <span class="math notranslate nohighlight">\( 0 \leq x \leq 2\pi\)</span></p></li>
@@ -1144,8 +1148,8 @@ ejemplo el siguiente código:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} x(t) = \cos t \\ y(t) = \text{sen } t \end{split}\]</div>
 <p>Para <span class="math notranslate nohighlight">\( 0 \leq t \leq 2\pi \)</span></p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1170,31 +1174,22 @@ ejemplo el siguiente código:</p>
               </div>
               
         
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="NumPy.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">8. </span>NumPy: estructuras matriciales</p>
-            </div>
-        </a>
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="NumPy.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">8. </span>NumPy: estructuras matriciales</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="SciPy.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>SciPy</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="SciPy.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">10. </span>SciPy</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
@@ -1215,8 +1210,7 @@ ejemplo el siguiente código:</p>
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

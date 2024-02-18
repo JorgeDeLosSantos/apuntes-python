@@ -4,11 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>3. Estructuras de control &#8212; Python para Ingenieros</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -32,21 +33,21 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -57,7 +58,10 @@
     <link rel="next" title="4. Cadenas de caracteres" href="Cadenas%20de%20caracteres.html" />
     <link rel="prev" title="2. Variables, operadores y expresiones" href="Variables%2C%20operadores%20y%20expresiones.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -301,7 +305,7 @@
         
               <div>
                 
-  <div class="section" id="estructuras-de-control">
+  <section class="tex2jax_ignore mathjax_ignore" id="estructuras-de-control">
 <h1><span class="section-number">3. </span>Estructuras de control<a class="headerlink" href="#estructuras-de-control" title="Permalink to this headline">¶</a></h1>
 <p>En un lenguaje de programación, las estructuras de control permiten modificar el flujo de la ejecución de un conjunto de instrucciones. Se pueden distinguir tres tipos básicos de control de flujo, a saber:</p>
 <ul class="simple">
@@ -311,7 +315,7 @@
 </ul>
 <p><img alt="" src="_images/estructuras-de-control.svg" /></p>
 <p>En el control secuencial las instrucciones se ejecutan de manera secuencial desde el inicio hasta el fin del programa. En el control de selección se tiene una condición que puede ser falsa o verdadera, dependiendo de esto se ejecutará uno u otro bloque de instrucciones. En el control de repetición, un bloque de instrucciones se ejecuta de manera repetitiva mientras una condición sea verdadera, en caso contrario el flujo de ejecución se pasará a otro conjunto de instrucciones.</p>
-<div class="section" id="condicional-if-elif-else">
+<section id="condicional-if-elif-else">
 <h2><span class="section-number">3.1. </span>Condicional <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code><a class="headerlink" href="#condicional-if-elif-else" title="Permalink to this headline">¶</a></h2>
 <p>El condicional <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> es una estructura de control de selección que sirve para <em>tomar decisiones</em>, basándose en la evaluación de condiciones y/o comparaciones, en el flujo del programa. La sintaxis más general para <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> es:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">cond1</span><span class="p">:</span>
@@ -350,8 +354,8 @@ colocada en el caso por default <code class="docutils literal notranslate"><span
 </div>
 </div>
 </div>
-<p>Es muy común que en algunos casos, por cuestiones inherentes a lo que se está programando, únicamente se decida entre dos posibilidades que son excluyentes, en esos casos basta con una estructura <em>reducida</em> <code class="docutils literal notranslate"><span class="pre">if-else</span></code>.</p>
-<p>Por ejemplo, el siguiente código determina si un número es par o impar (un número entero cualquiera o es par o es impar, no hay otra posibilidad).</p>
+<p>Podemos observar que en este caso dado que el valor de <code class="docutils literal notranslate"><span class="pre">a</span></code> es menor <code class="docutils literal notranslate"><span class="pre">b</span></code>, entonces se ejecuta la instrucción contenida en el bloque del <code class="docutils literal notranslate"><span class="pre">elif</span></code>.</p>
+<p>Es muy común que en algunos casos, por cuestiones inherentes a lo que se está programando, únicamente se decida entre dos posibilidades que son mutuamente excluyentes, en esos casos basta con una estructura <code class="docutils literal notranslate"><span class="pre">if-else</span></code>. Por ejemplo, el siguiente código determina si un número es par o impar (un número entero cualquiera o es par o es impar, no hay otra posibilidad).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">1001</span>
@@ -373,8 +377,8 @@ colocada en el caso por default <code class="docutils literal notranslate"><span
 <div class="math notranslate nohighlight">
 \[\begin{split}
 (-1)^n = \left\{\begin{matrix}
-1 \text{       ; si n es par} \\
--1 \text{      ; si n es impar} 
+1 \text{       ;   si n es par} \\
+-1 \text{      ;   si n es impar} 
 \end{matrix}\right.
 \end{split}\]</div>
 <p>Supongamos ahora otro caso en donde las posibilidades son mutuamente excluyentes: en un curso la calificación mínima aprobatoria es de 70, la escala de calificación es de 0 a 100, ¿cómo podríamos implementar un código que decida si un alumno aprobó o reprobó la asignatura? Observa lo siguiente:</p>
@@ -397,7 +401,7 @@ colocada en el caso por default <code class="docutils literal notranslate"><span
 </div>
 <div class="warning admonition">
 <p class="admonition-title">Sobre datos y validaciones</p>
-<p>Usualmente un programa de computadora recibe datos de forma externa, es decir, alguien los proporciona de forma manual o se leen desde algún archivo de datos o desde algún sensor. Esto implica la posibilidad de que se reciban datos que no corresponderían con lo esperado, por ejemplo, en el caso del programa anterior, imagina ¿qué pasaría si un usuario inserta una calificación de 150? El programa seguiría funcionando y te imprimiría un mensaje de aprobado. Una manera de solventar esta situación sería adicionar una  verificación de que el valor pasado esté en el rango de valores esperado, por ejemplo:</p>
+<p>Usualmente un programa de computadora recibe datos de forma externa, es decir, alguien los proporciona de forma manual o se leen desde algún archivo de datos o provienen de algún dispositivo. Esto implica la posibilidad de que se reciban datos que no corresponderían con lo esperado, por ejemplo, en el caso del programa anterior, imagina ¿qué pasaría si un usuario inserta una calificación de 150? El programa seguiría funcionando y te imprimiría un mensaje de aprobado. Una manera de solventar esta situación sería adicionar una  verificación de que el valor pasado esté en el rango de valores esperado, por ejemplo:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">calificacion</span> <span class="o">=</span> <span class="mi">150</span>
 
 <span class="k">if</span> <span class="n">calificacion</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">calificacion</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
@@ -412,8 +416,8 @@ colocada en el caso por default <code class="docutils literal notranslate"><span
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="ciclo-for">
+</section>
+<section id="ciclo-for">
 <h2><span class="section-number">3.2. </span>Ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#ciclo-for" title="Permalink to this headline">¶</a></h2>
 <p>El <strong>bucle for</strong> es una estructura de control de repetición, en la cual se conocen
 <em>a priori</em> el número de iteraciones a realizar. En lenguajes como C++ o Java, el ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code>
@@ -533,8 +537,8 @@ x=0 y=1
 </div>
 </div>
 <p>Observa la diferencia, la primera forma es un quizá un poco menos <em>intuitiva</em> pero más práctica y natural. En la primera se accede directamente con las variables de ciclo <code class="docutils literal notranslate"><span class="pre">(x,y)</span></code> a cada elemento de las tuplas que conforman la lista <code class="docutils literal notranslate"><span class="pre">puntos</span></code>, con la segunda se tiene que acceder mediante indexación a cada elemento.</p>
-</div>
-<div class="section" id="ciclo-while">
+</section>
+<section id="ciclo-while">
 <h2><span class="section-number">3.3. </span>Ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#ciclo-while" title="Permalink to this headline">¶</a></h2>
 <p>El ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code> ejecuta un bloque de instrucciones mientras haya una condición que se cumpla. La sintaxis de <code class="docutils literal notranslate"><span class="pre">while</span></code> es:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">cond</span><span class="p">:</span>
@@ -661,21 +665,15 @@ Has adivinado después de 5 intentos
 </div>
 </div>
 <p>El código anterior es un juego muy simple de adivinar un número entero entre 1 y 10 que la computadora genera de manera aleatoria mediante la función <code class="docutils literal notranslate"><span class="pre">randint</span></code>. Observa que el ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code>, en principio, se ejecutará de forma indefinida, dado que la condición es la constante booleana <code class="docutils literal notranslate"><span class="pre">True</span></code>; en este caso para <em>romper</em> la ejecución iterativa se hace uso de la instrucción <code class="docutils literal notranslate"><span class="pre">break</span></code>, en conjunto con la sentencia de selección <code class="docutils literal notranslate"><span class="pre">if-else</span></code>, observa que si la condición del <code class="docutils literal notranslate"><span class="pre">if</span></code> se cumple (<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">n</span></code>) entonces el programa rompe el ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code> con la instrucción <code class="docutils literal notranslate"><span class="pre">break</span></code>, en caso contrario simplemente se sigue ejecutando el juego.</p>
-</div>
-<div class="section" id="ejercicios">
+</section>
+<section id="ejercicios">
 <h2><span class="section-number">3.4. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
 <hr class="docutils" />
-<ol class="simple">
-<li><p>Desarrolle un programa que calcule la suma de los enteros del 1 al 100, es decir: 1 + 2 + 3 + … + 99 + 100</p></li>
-</ol>
+<p>3.1 Desarrolle un programa que calcule la suma de los enteros del 1 al 100, es decir: 1 + 2 + 3 + … + 99 + 100</p>
 <hr class="docutils" />
-<ol class="simple">
-<li><p>Escriba un programa que reciba un entero positivo. Sí el número ingresado es múltiplo de 5 deberá imprimir en pantalla <code class="docutils literal notranslate"><span class="pre">El</span> <span class="pre">número</span> <span class="pre">es</span> <span class="pre">múltiplo</span> <span class="pre">de</span> <span class="pre">5</span></code>, en cualquier otro caso deberá imprimir <code class="docutils literal notranslate"><span class="pre">El</span> <span class="pre">número</span> <span class="pre">no</span> <span class="pre">es</span> <span class="pre">múltiplo</span> <span class="pre">de</span> <span class="pre">5</span></code>.</p></li>
-</ol>
+<p>3.2 Escriba un programa que reciba un entero positivo. Sí el número ingresado es múltiplo de 5 deberá imprimir en pantalla <code class="docutils literal notranslate"><span class="pre">El</span> <span class="pre">número</span> <span class="pre">es</span> <span class="pre">múltiplo</span> <span class="pre">de</span> <span class="pre">5</span></code>, en cualquier otro caso deberá imprimir <code class="docutils literal notranslate"><span class="pre">El</span> <span class="pre">número</span> <span class="pre">no</span> <span class="pre">es</span> <span class="pre">múltiplo</span> <span class="pre">de</span> <span class="pre">5</span></code>.</p>
 <hr class="docutils" />
-<ol class="simple">
-<li><p>Escriba un programa que reciba como entrada una frase (un string) y determine cuántas veces aparece cada una de las vocales en esa frase. El valor de salida a mostrar debe ser un diccionario, se muestra enseguida un ejemplo:</p></li>
-</ol>
+<p>3.3 Escriba un programa que reciba como entrada una frase (un string) y determine cuántas veces aparece cada una de las vocales en esa frase. El valor de salida a mostrar debe ser un diccionario, se muestra enseguida un ejemplo:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># entrada</span>
 <span class="n">frase</span> <span class="o">=</span> <span class="s2">&quot;hola mundo&quot;</span>
 
@@ -684,9 +682,7 @@ Has adivinado después de 5 intentos
 </pre></div>
 </div>
 <hr class="docutils" />
-<ol class="simple">
-<li><p>Desarrolle un programa que reciba una lista de números enteros y calcule cuántos el porcentaje de números pares que contiene, redondee el porcentaje calculado.</p></li>
-</ol>
+<p>3.4 Desarrolle un programa que reciba una lista de números enteros y calcule cuántos el porcentaje de números pares que contiene, redondee el porcentaje calculado.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejemplos</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">66</span><span class="p">,</span><span class="mi">53</span><span class="p">,</span><span class="mi">55</span><span class="p">]</span> <span class="c1"># porcentaje -&gt; 57</span>
@@ -695,9 +691,7 @@ Has adivinado después de 5 intentos
 </pre></div>
 </div>
 <hr class="docutils" />
-<ol class="simple">
-<li><p>¿Cuál es el error en el siguiente código? Descríbalo.</p></li>
-</ol>
+<p>3.5 ¿Cuál es el error en el siguiente código? Descríbalo.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">]</span>
@@ -708,9 +702,7 @@ Has adivinado después de 5 intentos
 </div>
 </div>
 <hr class="docutils" />
-<ol class="simple">
-<li><p>Modifique el siguiente código para que se muestre en pantalla lo siguiente:</p></li>
-</ol>
+<p>3.6 Modifique el siguiente código para que se muestre en pantalla lo siguiente:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
 <span class="n">xx</span>
 <span class="n">xxx</span>
@@ -738,8 +730,8 @@ oo
 <dd><p><a class="reference external" href="https://www.calculo.jcbmat.com/id454.htm">https://www.calculo.jcbmat.com/id454.htm</a></p>
 </dd>
 </dl>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -764,31 +756,22 @@ oo
               </div>
               
         
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="Variables%2C%20operadores%20y%20expresiones.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">2. </span>Variables, operadores y expresiones</p>
-            </div>
-        </a>
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Variables%2C%20operadores%20y%20expresiones.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>Variables, operadores y expresiones</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Cadenas%20de%20caracteres.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Cadenas de caracteres</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="Cadenas%20de%20caracteres.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">4. </span>Cadenas de caracteres</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
@@ -809,8 +792,7 @@ oo
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

@@ -4,11 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>2. Variables, operadores y expresiones &#8212; Python para Ingenieros</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -32,21 +33,21 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -57,7 +58,10 @@
     <link rel="next" title="3. Estructuras de control" href="Estructuras%20de%20control.html" />
     <link rel="prev" title="1. Introducción" href="Introducci%C3%B3n.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -341,7 +345,7 @@
         
               <div>
                 
-  <div class="section" id="variables-operadores-y-expresiones">
+  <section class="tex2jax_ignore mathjax_ignore" id="variables-operadores-y-expresiones">
 <h1><span class="section-number">2. </span>Variables, operadores y expresiones<a class="headerlink" href="#variables-operadores-y-expresiones" title="Permalink to this headline">¶</a></h1>
 <p>Al ser un lenguaje de alto nivel, Python dispone de los tipos de datos elementales en cualquier lenguaje de programación,
 pero además incluye estructuras de datos más complejas y con altas prestaciones que facilitan en muchos
@@ -349,7 +353,7 @@ aspectos la tarea del programador.</p>
 <p>Python es un lenguaje de tipado dinámico en el que no hace falta declarar el tipo de dato que asignará a una variable,
 de igual manera una variable puede cambiar de tipo conforme la ejecución del programa, por ello se debe tener cuidado
 con la sintaxis para definir cada tipo de dato.</p>
-<div class="section" id="variables">
+<section id="variables">
 <h2><span class="section-number">2.1. </span>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
 <p>En Python todo lo que creamos son objetos y las variables son referencias a esos objetos, las variables se definen por asignación utilizando el signo <code class="docutils literal notranslate"><span class="pre">=</span></code>, por ejemplo:</p>
 <div class="cell docutils container">
@@ -526,11 +530,11 @@ con la sintaxis para definir cada tipo de dato.</p>
 </ul>
 <p>Por ejemplo, si estamos <em>almacenando</em> un valor que corresponde a un diámetro, suele ser más conveniente y recomendable utilizar <code class="docutils literal notranslate"><span class="pre">diametro</span></code> en lugar de <code class="docutils literal notranslate"><span class="pre">d</span></code> como nombre de variable.</p>
 <p>Puedes encontrar más recomendaciones sobre cómo nombrar variables en el <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP 8 – Style Guide for Python Code</a></p>
-</div>
-<div class="section" id="tipos-de-datos-basicos">
+</section>
+<section id="tipos-de-datos-basicos">
 <h2><span class="section-number">2.2. </span>Tipos de datos básicos<a class="headerlink" href="#tipos-de-datos-basicos" title="Permalink to this headline">¶</a></h2>
 <p>Al ser un lenguaje de alto nivel, Python dispone de los tipos de datos elementales en cualquier lenguaje de programación, pero además incluye estructuras de datos más complejas y con altas prestaciones que facilitan en muchos aspectos la tarea del programador. A continuación, se describen los tipos de datos básicos en Python.</p>
-<div class="section" id="enteros-int">
+<section id="enteros-int">
 <h3><span class="section-number">2.2.1. </span>Enteros (<code class="docutils literal notranslate"><span class="pre">int</span></code>)<a class="headerlink" href="#enteros-int" title="Permalink to this headline">¶</a></h3>
 <p>Los enteros son un tipo de dato básico en cualquier lenguaje de programación. En Python para definir un valor entero se debe colocar el número sin ningun punto decimal, por ejemplo:</p>
 <div class="cell docutils container">
@@ -563,8 +567,8 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 <p>Observa que cuando colocamos un punto decimal, automáticamente la cantidad deja de ser un entero y pasa a ser un flotante.</p>
-</div>
-<div class="section" id="de-coma-flotante-float">
+</section>
+<section id="de-coma-flotante-float">
 <h3><span class="section-number">2.2.2. </span>De coma flotante (<code class="docutils literal notranslate"><span class="pre">float</span></code>)<a class="headerlink" href="#de-coma-flotante-float" title="Permalink to this headline">¶</a></h3>
 <p>Los valores de coma flotante son cantidades numéricas que incluyen a <em>todos los reales</em>. Para que Python reconozca un valor numérico como de tipo <code class="docutils literal notranslate"><span class="pre">float</span></code> se debe adicionar el punto decimal o bien utilizar la función <code class="docutils literal notranslate"><span class="pre">float</span></code> para hacer la indicación de manera explícita, por ejemplo:</p>
 <div class="cell docutils container">
@@ -583,8 +587,8 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="booleanos-bool">
+</section>
+<section id="booleanos-bool">
 <h3><span class="section-number">2.2.3. </span>Booleanos (<code class="docutils literal notranslate"><span class="pre">bool</span></code>)<a class="headerlink" href="#booleanos-bool" title="Permalink to this headline">¶</a></h3>
 <p>Las variables booleanas sólo pueden adoptar dos valores: verdadero (<code class="docutils literal notranslate"><span class="pre">True</span></code>) o falso (<code class="docutils literal notranslate"><span class="pre">False</span></code>). Un valor booleano se puede definir directamente a partir de las constantes <code class="docutils literal notranslate"><span class="pre">True</span></code> y <code class="docutils literal notranslate"><span class="pre">False</span></code>:</p>
 <div class="cell docutils container">
@@ -651,8 +655,8 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 <p>En general, la función <code class="docutils literal notranslate"><span class="pre">bool</span></code> devolverá un <code class="docutils literal notranslate"><span class="pre">False</span></code> cuando se tienen objetos nulos o vacíos, en cualquier otro caso devolverá el valor <code class="docutils literal notranslate"><span class="pre">True</span></code>. Usualmente los valores booleanos siempre van a provenir de una comparación entre objetos, para efectuar esas comparaciones se utilizan los operadores relacionales.</p>
-</div>
-<div class="section" id="cadenas-de-caracteres">
+</section>
+<section id="cadenas-de-caracteres">
 <h3><span class="section-number">2.2.4. </span>Cadenas de caracteres<a class="headerlink" href="#cadenas-de-caracteres" title="Permalink to this headline">¶</a></h3>
 <p>Las cadenas de caracteres son un tipo de dato que contiene una secuencia de símbolos, mismos que pueden ser alfanúmericos o cualquier otro símbolo propio de un sistema de escritura. En Python los strings se definen utilizando comillas dobles o simples. Observa los siguientes ejemplos:</p>
 <div class="cell docutils container">
@@ -682,9 +686,9 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 <p>En el siguiente capítulo se abordan de forma profusa las cadenas de caracteres, sus métodos y operaciones que pueden realizarse.</p>
-</div>
-</div>
-<div class="section" id="operadores-aritmeticos">
+</section>
+</section>
+<section id="operadores-aritmeticos">
 <h2><span class="section-number">2.3. </span>Operadores aritméticos<a class="headerlink" href="#operadores-aritmeticos" title="Permalink to this headline">¶</a></h2>
 <p>En cualquier lenguaje de programación los operadores aritméticos permiten realizar las operaciones aritméticas básicas con tipos numéricos, además de que permiten formar expresiones compuestas. En la <a class="reference internal" href="#op-ar"><span class="std std-numref">Table 2.1</span></a> se muestran los operadores aritméticos disponibles en Python y la operación que realizan.</p>
 <table class="table" id="op-ar">
@@ -807,8 +811,8 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="operadores-relacionales">
+</section>
+<section id="operadores-relacionales">
 <h2><span class="section-number">2.4. </span>Operadores relacionales<a class="headerlink" href="#operadores-relacionales" title="Permalink to this headline">¶</a></h2>
 <p>Los operadores relacionales (o de comparación) nos permite efectuar comparaciones entre objetos de Python. El resultado de una comparación es un valor booleano <code class="docutils literal notranslate"><span class="pre">True</span></code> o <code class="docutils literal notranslate"><span class="pre">False</span></code>. A continuación se ejemplifican los operadores relacionales que podemos utilizar en Python:</p>
 <div class="cell docutils container">
@@ -963,8 +967,8 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 <p>Este <em>encadenamiento</em> de operadores relacionales puede suplirse con el uso de operadores lógicos.</p>
-</div>
-<div class="section" id="operadores-logicos">
+</section>
+<section id="operadores-logicos">
 <h2><span class="section-number">2.5. </span>Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Permalink to this headline">¶</a></h2>
 <p>Los <strong>operadores lógicos</strong> nos sirven para realizar operaciones de lógica booleana entre valores de tipo <code class="docutils literal notranslate"><span class="pre">bool</span></code>. En Python podemos utilizar los operadores lógicos <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> y <code class="docutils literal notranslate"><span class="pre">not</span></code>. En la <a class="reference internal" href="#op-log"><span class="std std-numref">Table 2.2</span></a> se muestra la tabla de verdad para los valores lógicos.</p>
 <table class="table" id="op-log">
@@ -1089,8 +1093,8 @@ con la sintaxis para definir cada tipo de dato.</p>
 </div>
 </div>
 <p>El uso habitual de los operadores lógicos es el encadenamiento de comparaciones, para tomar decisiones en el flujo del programa. Por ejemplo, si piensa en el caso de una línea de código que únicamente deberá ejecutarse en el caso de que se cumplan, sin excepción, dos condiciones, usando comparaciones en conjunto con el operador <code class="docutils literal notranslate"><span class="pre">and</span></code> y una estructura de bifurcación (algo que se revisará en secciones posteriores) se puede crear este tipo de programa.</p>
-</div>
-<div class="section" id="ejemplos">
+</section>
+<section id="ejemplos">
 <h2><span class="section-number">2.6. </span>Ejemplos<a class="headerlink" href="#ejemplos" title="Permalink to this headline">¶</a></h2>
 <hr>
 <p><strong>Calculando la raíz cuadrada de un número</strong></p>
@@ -1181,8 +1185,8 @@ La raíz cuadrada de 144.0 es 12.0
 <p>Observa que la expresión colocada ya no corresponde con la aproximación de <span class="math notranslate nohighlight">\(\pi\)</span> descrita con anterioridad, sino más bien correspondería a:</p>
 <div class="math notranslate nohighlight">
 \[ 3 + \frac{8}{60} + \left(\frac{29}{60}\right)^2 + \left(\frac{44}{60}\right)^3 \]</div>
-</div>
-<div class="section" id="ejercicios">
+</section>
+<section id="ejercicios">
 <h2><span class="section-number">2.7. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
 <hr class="docutils" />
 <p>Crea un programa que dado un número <code class="docutils literal notranslate"><span class="pre">n</span></code> calcule y muestre la raíz cúbica de dicho número.</p>
@@ -1210,8 +1214,8 @@ La raíz cuadrada de 144.0 es 12.0
 </pre></div>
 </div>
 <p>¿Qué valores tendrán <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code> y <code class="docutils literal notranslate"><span class="pre">c</span></code> al mostrarlos? Procura realizarlo primero de forma manual y enseguida comprueba tus resultados ejecutando el código anterior.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1236,31 +1240,22 @@ La raíz cuadrada de 144.0 es 12.0
               </div>
               
         
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="Introducci%C3%B3n.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">1. </span>Introducción</p>
-            </div>
-        </a>
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Introducci%C3%B3n.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>Introducción</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Estructuras%20de%20control.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Estructuras de control</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="Estructuras%20de%20control.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">3. </span>Estructuras de control</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
@@ -1281,8 +1276,7 @@ La raíz cuadrada de 144.0 es 12.0
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>
