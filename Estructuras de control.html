@@ -290,8 +290,18 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sentencia-try-except">
+   3.4. Sentencia
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     try-except
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicios">
-   3.4. Ejercicios
+   3.5. Ejercicios
   </a>
  </li>
 </ul>
@@ -666,14 +676,63 @@ Has adivinado después de 5 intentos
 </div>
 <p>El código anterior es un juego muy simple de adivinar un número entero entre 1 y 10 que la computadora genera de manera aleatoria mediante la función <code class="docutils literal notranslate"><span class="pre">randint</span></code>. Observa que el ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code>, en principio, se ejecutará de forma indefinida, dado que la condición es la constante booleana <code class="docutils literal notranslate"><span class="pre">True</span></code>; en este caso para <em>romper</em> la ejecución iterativa se hace uso de la instrucción <code class="docutils literal notranslate"><span class="pre">break</span></code>, en conjunto con la sentencia de selección <code class="docutils literal notranslate"><span class="pre">if-else</span></code>, observa que si la condición del <code class="docutils literal notranslate"><span class="pre">if</span></code> se cumple (<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">n</span></code>) entonces el programa rompe el ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code> con la instrucción <code class="docutils literal notranslate"><span class="pre">break</span></code>, en caso contrario simplemente se sigue ejecutando el juego.</p>
 </section>
+<section id="sentencia-try-except">
+<h2><span class="section-number">3.4. </span>Sentencia <code class="docutils literal notranslate"><span class="pre">try-except</span></code><a class="headerlink" href="#sentencia-try-except" title="Permalink to this headline">¶</a></h2>
+<p>Cuando consideremos que puede ocurrir un error durante la ejecución de nuestro código, podemos utilizar un bloque <code class="docutils literal notranslate"><span class="pre">try-except</span></code> para manejar la excepción que podría surgir. Básicamente lo que hace es indicarle a Python que intente ejecutar algún código y le dice qué hacer en el caso de que el código genere un tipo particular de excepción.</p>
+<p>La sintaxis básica de <code class="docutils literal notranslate"><span class="pre">try-except</span></code> es:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Código que puede generar una excepción</span>
+    <span class="c1"># Si ocurre una excepción aquí, el control se transfiere al bloque except</span>
+<span class="k">except</span> <span class="n">ExcepciónX</span><span class="p">:</span>
+    <span class="c1"># Código que maneja la excepción de tipo ExcepciónX</span>
+
+</pre></div>
+</div>
+<p>Veamos el siguiente ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese un número entero: &quot;</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese otro número entero: &quot;</span><span class="p">))</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span> 
+<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Estás intentando dividir por cero&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ingrese un número entero: 50
+Ingrese otro número entero: 0
+Estás intentando dividir por cero
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aquí el código solicita dos números enteros (<code class="docutils literal notranslate"><span class="pre">a</span></code> y <code class="docutils literal notranslate"><span class="pre">b</span></code>) al usuario, y luego en la variable <code class="docutils literal notranslate"><span class="pre">c</span></code> se intenta guardar el resultado de dividir <code class="docutils literal notranslate"><span class="pre">a/b</span></code>. Naturalmente, en el caso de que <code class="docutils literal notranslate"><span class="pre">b=0</span></code>, entonces Python lanzará una excepción del tipo <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code>, así pues, en el bloque <code class="docutils literal notranslate"><span class="pre">except</span></code> deberemos colocar las instrucciones a ejecutar en el caso de que esto ocurra. Lógicamente esto podría ser desde mostrar un simple mensaje como en este caso, o bien, hacer las modificaciones pertinentes en las instrucciones.</p>
+<p>Algunos de los tipos de errores o excepciones más comunes se describen brevemente a continuación:</p>
+<ul class="simple">
+<li><p><strong>SyntaxError</strong>: Ocurre cuando hay un error en la sintaxis del código, como un paréntesis o una comilla que falta.</p></li>
+<li><p><strong>IndentationError</strong>: Se produce cuando la indentación del código no es correcta.</p></li>
+<li><p><strong>TypeError</strong>: Se genera cuando se realiza una operación con un tipo de dato incompatible.</p></li>
+<li><p><strong>ValueError</strong>: Se puede producir cuando el valor de un argumento no es válido.</p></li>
+<li><p><strong>NameError</strong>: Ocurre cuando se intenta usar una variable que no ha sido definida previamente en el programa.</p></li>
+<li><p><strong>IndexError</strong>: Se produce cuando se intenta acceder a un elemento de una secuencia con un índice fuera de rango.</p></li>
+<li><p><strong>KeyError</strong>: Ocurre cuando se intenta acceder a una clave inexistente en un diccionario.</p></li>
+<li><p><strong>FileNotFoundError</strong>: Ocurre cuando se intenta abrir un archivo que no existe.</p></li>
+<li><p><strong>ImportError</strong>: Se produce cuando no se encuentra el módulo que se intenta importar.</p></li>
+<li><p><strong>OSError</strong>: Se genera cuando hay un error al realizar una operación del sistema operativo, como abrir un archivo.</p></li>
+</ul>
+<p>Además de las excepciones incorporadas, siempre podemos definir nuestras propias excepciones para manejar situaciones específicas en los programas.</p>
+</section>
 <section id="ejercicios">
-<h2><span class="section-number">3.4. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.5. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
 <hr class="docutils" />
-<p>3.1 Desarrolle un programa que calcule la suma de los enteros del 1 al 100, es decir: 1 + 2 + 3 + … + 99 + 100</p>
+<p>Desarrolle un programa que calcule la suma de los enteros del 1 al 100, es decir: 1 + 2 + 3 + … + 99 + 100</p>
 <hr class="docutils" />
-<p>3.2 Escriba un programa que reciba un entero positivo. Sí el número ingresado es múltiplo de 5 deberá imprimir en pantalla <code class="docutils literal notranslate"><span class="pre">El</span> <span class="pre">número</span> <span class="pre">es</span> <span class="pre">múltiplo</span> <span class="pre">de</span> <span class="pre">5</span></code>, en cualquier otro caso deberá imprimir <code class="docutils literal notranslate"><span class="pre">El</span> <span class="pre">número</span> <span class="pre">no</span> <span class="pre">es</span> <span class="pre">múltiplo</span> <span class="pre">de</span> <span class="pre">5</span></code>.</p>
+<p>Escriba un programa que reciba un entero positivo. Sí el número ingresado es múltiplo de 5 deberá imprimir en pantalla <code class="docutils literal notranslate"><span class="pre">El</span> <span class="pre">número</span> <span class="pre">es</span> <span class="pre">múltiplo</span> <span class="pre">de</span> <span class="pre">5</span></code>, en cualquier otro caso deberá imprimir <code class="docutils literal notranslate"><span class="pre">El</span> <span class="pre">número</span> <span class="pre">no</span> <span class="pre">es</span> <span class="pre">múltiplo</span> <span class="pre">de</span> <span class="pre">5</span></code>.</p>
 <hr class="docutils" />
-<p>3.3 Escriba un programa que reciba como entrada una frase (un string) y determine cuántas veces aparece cada una de las vocales en esa frase. El valor de salida a mostrar debe ser un diccionario, se muestra enseguida un ejemplo:</p>
+<p>Escriba un programa que reciba como entrada una frase (un string) y determine cuántas veces aparece cada una de las vocales en esa frase. El valor de salida a mostrar debe ser un diccionario, se muestra enseguida un ejemplo:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># entrada</span>
 <span class="n">frase</span> <span class="o">=</span> <span class="s2">&quot;hola mundo&quot;</span>
 
@@ -682,7 +741,7 @@ Has adivinado después de 5 intentos
 </pre></div>
 </div>
 <hr class="docutils" />
-<p>3.4 Desarrolle un programa que reciba una lista de números enteros y calcule cuántos el porcentaje de números pares que contiene, redondee el porcentaje calculado.</p>
+<p>Desarrolle un programa que reciba una lista de números enteros y calcule cuántos el porcentaje de números pares que contiene, redondee el porcentaje calculado.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejemplos</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">66</span><span class="p">,</span><span class="mi">53</span><span class="p">,</span><span class="mi">55</span><span class="p">]</span> <span class="c1"># porcentaje -&gt; 57</span>
@@ -691,7 +750,7 @@ Has adivinado después de 5 intentos
 </pre></div>
 </div>
 <hr class="docutils" />
-<p>3.5 ¿Cuál es el error en el siguiente código? Descríbalo.</p>
+<p>¿Cuál es el error en el siguiente código? Descríbalo.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">]</span>
@@ -702,7 +761,7 @@ Has adivinado después de 5 intentos
 </div>
 </div>
 <hr class="docutils" />
-<p>3.6 Modifique el siguiente código para que se muestre en pantalla lo siguiente:</p>
+<p>Modifique el siguiente código para que se muestre en pantalla lo siguiente:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
 <span class="n">xx</span>
 <span class="n">xxx</span>
@@ -720,6 +779,51 @@ Has adivinado después de 5 intentos
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>o
 oo
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p>Escriba un programa que muestre todos los números primos entre 1 y <span class="math notranslate nohighlight">\(N\)</span>, donde <span class="math notranslate nohighlight">\(N\)</span> deberá ser un entero proporcionado por el usuario.</p>
+<hr class="docutils" />
+<p>Desarrolle un programa que solicite al usuario tres enteros (<code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code> y <code class="docutils literal notranslate"><span class="pre">N</span></code>). El programa deberá crear una lista de <code class="docutils literal notranslate"><span class="pre">N</span></code> números linealmente equiespaciados entre <code class="docutils literal notranslate"><span class="pre">a</span></code> y <code class="docutils literal notranslate"><span class="pre">b</span></code>. Se muestran enseguida ejemplos de valores para <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code> y <code class="docutils literal notranslate"><span class="pre">N</span></code> y la lista esperada.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">11</span>
+<span class="c1"># lista esperada -&gt; [0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="c1"># lista esperada -&gt; [5, 10.0, 15.0]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="c1"># lista esperada -&gt; [200, 300.0, 400.0, 500.0]</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">200</span> <span class="c1">#int(input(&quot;a: &quot;))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">500</span> <span class="c1">#int(input(&quot;b: &quot;))</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1">#int(input(&quot;N: &quot;))</span>
+<span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">X</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100.0
+[200, 300.0, 400.0, 500.0]
 </pre></div>
 </div>
 </div>
