@@ -805,29 +805,49 @@ oo
 <span class="c1"># lista esperada -&gt; [200, 300.0, 400.0, 500.0]</span>
 </pre></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">200</span> <span class="c1">#int(input(&quot;a: &quot;))</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">500</span> <span class="c1">#int(input(&quot;b: &quot;))</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1">#int(input(&quot;N: &quot;))</span>
-<span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
-<span class="n">X</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
-
-<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">X</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<hr class="docutils" />
+<p>En una plataforma de aprendizaje en línea, al finalizar cada semana se le envía un mensaje a los usuarios, dependiendo de la cantidad de puntos que hayan acumulado durante la semana:</p>
+<ul class="simple">
+<li><p>Más de 10 000 puntos — Mensaje: <em>Genial, lo has hecho fenomenal</em>.</p></li>
+<li><p>Entre 6 000 y 9 999 puntos — Mensaje: <em>Excelente, eres muy dedicado</em>.</p></li>
+<li><p>Entre 3 000 y 5 999 puntos — Mensaje: <em>Muy bien, sigue así de constante</em>.</p></li>
+<li><p>Entre 1 000 y 2 999 puntos — Mensaje: <em>Bien, sigue aprendiendo</em>.</p></li>
+<li><p>Menos de 1 000 puntos — Mensaje: <em>Es un buen comienzo, no pares</em>.</p></li>
+</ul>
+<p>Escriba un programa que, dada una cantidad de puntos acumulados por un usuario, muestre el mensaje correspondiente que se le debería enviar a dicho usuario.</p>
+<hr class="docutils" />
+<p>Desarrolle un programa que, dados los tres lados de un triángulo, calcule y muestre tanto su área como su
+perímetro. A continuación, podemos observar un ejemplo de lo que se espera que el programa muestre en el caso de que el usuario ingrese valores de 3, 4 y 5 para cada uno de los lados.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Ingresa</span> <span class="n">a</span><span class="p">:</span> <span class="mi">3</span>
+<span class="n">Ingresa</span> <span class="n">b</span><span class="p">:</span> <span class="mi">4</span>
+<span class="n">Ingresa</span> <span class="n">c</span><span class="p">:</span> <span class="mi">5</span>
+<span class="n">El</span> <span class="n">área</span> <span class="k">del</span> <span class="n">triángulo</span> <span class="n">es</span> <span class="mf">6.0</span>
+<span class="n">El</span> <span class="n">perímetro</span> <span class="k">del</span> <span class="n">triángulo</span> <span class="n">es</span> <span class="mf">12.0</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100.0
-[200, 300.0, 400.0, 500.0]
-</pre></div>
-</div>
-</div>
-</div>
+<hr class="docutils" />
+<p>Escriba un programa que clasifique triángulos de acuerdo con las medidas de sus lados. El programa deberá mostrar si se trata de un triángulo equilátero, isósceles o escaleno.</p>
+<hr class="docutils" />
+<p>Desarrolle un programa que calcule y muestre la suma de los primeros <span class="math notranslate nohighlight">\(n\)</span> términos de la serie:</p>
+<div class="math notranslate nohighlight">
+\[ 2^1 + 2^2 + 2^3 + \cdots + 2^n \]</div>
+<p>El valor de <span class="math notranslate nohighlight">\(n\)</span> deberá ingresarlo el usuario. Por ejemplo, si el usuario ingresa <span class="math notranslate nohighlight">\(n = 4\)</span>, se esperaría que el programa calcule la suma de los primeros 4 términos de la serie, es decir:</p>
+<div class="math notranslate nohighlight">
+\[  2^1 + 2^2 + 2^3 + 2^4 = 30 \]</div>
+<hr class="docutils" />
+<p>Desarrolle un programa que calcule y muestre la suma de los primeros <span class="math notranslate nohighlight">\(n\)</span> términos de la serie:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{1}{1} + \frac{1}{2} + \frac{1}{3} + \cdots + \frac{1}{n} \]</div>
+<p>El valor de <span class="math notranslate nohighlight">\(n\)</span> deberá ingresarlo el usuario. Por ejemplo, si el usuario ingresa <span class="math notranslate nohighlight">\(n = 5\)</span>, se esperaría que el programa calcule la suma de los primeros 5 términos de la serie, es decir:</p>
+<p>$<span class="math notranslate nohighlight">\( \frac{1}{1} + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} \approx 2.28333\cdots \)</span>$ \</p>
+<hr class="docutils" />
+<p>Desarrolle un programa que cuente y muestre cuántos números múltiplos de 3 y mayores que 15 hay en una lista de números.</p>
+<hr class="docutils" />
+<p>Escriba un programa que determine y muestre cuál es el mayor de tres números proporcionados por el usuario.</p>
+<hr class="docutils" />
+<p>Escriba un programa que, dada una lista o tupla de números, determine cuáles son los valores máximos y mínimos. Evite hacer uso de las funciones <code class="docutils literal notranslate"><span class="pre">min</span></code> o <code class="docutils literal notranslate"><span class="pre">max</span></code> nativas de Python.</p>
+<hr class="docutils" />
+<p>Desarrolle un programa que cuente y muestre cuántos números impares mayores que 10 hay en una lista de números.</p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="newton"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>

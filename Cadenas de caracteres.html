@@ -312,6 +312,11 @@
    4.6. Una breve introducción a las expresiones regulares
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios">
+   4.7. Ejercicios
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -1200,6 +1205,22 @@ El número 12 en binario es 1100
 </section>
 <section id="una-breve-introduccion-a-las-expresiones-regulares">
 <h2><span class="section-number">4.6. </span>Una breve introducción a las expresiones regulares<a class="headerlink" href="#una-breve-introduccion-a-las-expresiones-regulares" title="Permalink to this headline">¶</a></h2>
+<p>Las expresiones regulares son patrones que se utilizan para hacer coincidir combinaciones de caracteres en cadenas <a class="footnote-reference brackets" href="#regex" id="id1">1</a>. Son una herramienta poderosa para buscar, analizar y modificar texto. En general, las expresiones regulares permiten:</p>
+<ul class="simple">
+<li><p><strong>Búsqueda</strong>: encontrar coincidencias de un patrón en un texto.</p></li>
+<li><p><strong>Extracción</strong>: obtener partes específicas de un texto que coincidan con un patrón.</p></li>
+<li><p><strong>Reemplazo</strong>: cambiar partes de un texto por otras según un patrón.</p></li>
+<li><p><strong>Validación</strong>: verificar si un texto cumple con un formato específico.</p></li>
+</ul>
+<p>Las expresiones regulares se componen de una serie de caracteres especiales que tienen un significado específico. Estos caracteres se pueden combinar para crear patrones complejos. Algunos de los caracteres más comunes son:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.</span></code> (punto): coincide con cualquier carácter.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[]</span></code>: (corchetes): coincide con cualquier carácter dentro del rango especificado.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{}</span></code>: (llaves): indica la cantidad de veces que debe repetirse el caracter anterior.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">?</span></code> (signo de interrogación): indica que el caracter anterior es opcional.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code>: (asterisco): indica que el caracter anterior puede repetirse 0 o más veces.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code>: (signo más): indica que el caracter anterior puede repetirse 1 o más veces.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
@@ -1238,6 +1259,26 @@ El número 12 en binario es 1100
 </div>
 </div>
 </div>
+</section>
+<section id="ejercicios">
+<h2><span class="section-number">4.7. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<p>Escriba un programa que determine si una palabra es un palíndromo. Deberá mostrar <code class="docutils literal notranslate"><span class="pre">Es</span> <span class="pre">palíndromo</span></code> en el caso de que lo sea y <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">es</span> <span class="pre">palíndromo</span></code> en el otro caso.</p>
+<hr class="docutils" />
+<p>Desarolle un programa que dada una frase, reemplace todas las vocales que contiene por cada una de las vocales. Como en esa canción infantil de <a class="reference external" href="https://www.youtube.com/watch?v=BqXWH19G6NQ"><em>El sapo no se lava el pie</em></a>. Así por ejemplo, si la frase es <code class="docutils literal notranslate"><span class="pre">el</span> <span class="pre">sapo</span> <span class="pre">no</span> <span class="pre">se</span> <span class="pre">lava</span> <span class="pre">el</span> <span class="pre">pie</span></code>, entonces el programa deberá mostrar:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">al</span> <span class="n">sapa</span> <span class="n">na</span> <span class="n">sa</span> <span class="n">lava</span> <span class="n">al</span> <span class="n">paa</span>
+<span class="n">el</span> <span class="n">sepe</span> <span class="n">ne</span> <span class="n">se</span> <span class="n">leve</span> <span class="n">el</span> <span class="n">pee</span>
+<span class="n">il</span> <span class="n">sipi</span> <span class="n">ni</span> <span class="n">si</span> <span class="n">livi</span> <span class="n">il</span> <span class="n">pii</span>
+<span class="n">ol</span> <span class="n">sopo</span> <span class="n">no</span> <span class="n">so</span> <span class="n">lovo</span> <span class="n">ol</span> <span class="n">poo</span>
+<span class="n">ul</span> <span class="n">supu</span> <span class="n">nu</span> <span class="n">su</span> <span class="n">luvu</span> <span class="n">ul</span> <span class="n">puu</span>
+</pre></div>
+</div>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="regex"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><a class="reference external" href="https://www.calculo.jcbmat.com/id454.htm">https://www.calculo.jcbmat.com/id454.htm</a></p>
+</dd>
+</dl>
 </section>
 </section>
 
