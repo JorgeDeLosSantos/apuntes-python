@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Interfaces gráficas con wxPython &#8212; Python para Ingenieros</title>
     
@@ -310,7 +310,7 @@ el sistema de wxPython y todo el conjunto de interfaces gráficas, además de co
 el intercambio de información y el manejo de los eventos lanzados.
 Cada aplicación debe tener una instancia <code class="docutils literal notranslate"><span class="pre">wx.App</span></code>, y esta debe crearse antes de
 instanciar cualquier otro objeto gráfico de wxPython, para asegurar que el
-sistema de wxWidgets se ha inicializado correctamente <a class="footnote-reference brackets" href="#wxapp" id="id1">1</a>. Es más, si en el ejemplo
+sistema de wxWidgets se ha inicializado correctamente <a class="brackets" href="#wxapp" id="footnote-reference-1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. Es más, si en el ejemplo
 anterior intenta inicializar el Frame antes de <code class="docutils literal notranslate"><span class="pre">wx.App</span></code>, entonces wxPython lanzará un
 error como el que se muestra enseguida (<em>el cual es bastante explícito</em>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
@@ -429,11 +429,12 @@ dos elementos, que indican las coordenadas <em>x</em> e <em>y</em> del extremo s
 del control gráfico en el caso de la posición, y el ancho y alto del mismo en el caso del tamaño,
 siendo en ambos casos pixeles las unidades de medida.</p>
 <hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="wxapp"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p><a class="reference external" href="https://wxpython.org/docs/api/wx.App-class.html">https://wxpython.org/docs/api/wx.App-class.html</a></p>
-</dd>
-</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="wxapp" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#footnote-reference-1">1</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://wxpython.org/docs/api/wx.App-class.html">https://wxpython.org/docs/api/wx.App-class.html</a></p>
+</aside>
+</aside>
 </section>
 </section>
 </section>
