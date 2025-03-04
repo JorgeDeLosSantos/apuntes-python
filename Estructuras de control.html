@@ -1,322 +1,379 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="./" >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>3. Estructuras de control &#8212; Python para Ingenieros</title>
-    
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/customized.css?v=b341d7a2" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/customized.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
-
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Estructuras de control';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="4. Cadenas de caracteres" href="Cadenas%20de%20caracteres.html" />
     <link rel="prev" title="2. Variables, operadores y expresiones" href="Variables%2C%20operadores%20y%20expresiones.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Python para Ingenieros</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   Prefacio
-  </a>
- </li>
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Python para Ingenieros - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python para Ingenieros - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Prefacio
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Introducci%C3%B3n.html">1. Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Variables%2C%20operadores%20y%20expresiones.html">2. Variables, operadores y expresiones</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Estructuras de control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cadenas%20de%20caracteres.html">4. Cadenas de caracteres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Estructuras%20de%20datos.html">5. Estructuras de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Funciones.html">6. Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Archivos%20de%20texto.html">7. Archivos de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NumPy.html">8. NumPy: estructuras matriciales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Matplotlib.html">9. Matplotlib: visualización gráfica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SciPy.html">10. SciPy: algoritmos y métodos numéricos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pandas.html">11. Pandas: una introducción al análisis de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SymPy.html">12. Sympy: un sistema de álgebra computacional</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Programaci%C3%B3n%20orientada%20a%20objetos.html">13. Programación orientada a objetos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Bases%20de%20datos.html">14. Bases de datos</a></li>
 </ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Introducci%C3%B3n.html">
-   1. Introducción
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Variables%2C%20operadores%20y%20expresiones.html">
-   2. Variables, operadores y expresiones
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   3. Estructuras de control
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Cadenas%20de%20caracteres.html">
-   4. Cadenas de caracteres
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Estructuras%20de%20datos.html">
-   5. Estructuras de datos
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Funciones.html">
-   6. Funciones
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Archivos%20de%20texto.html">
-   7. Archivos de texto
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="NumPy.html">
-   8. NumPy: estructuras matriciales
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Matplotlib.html">
-   9. Matplotlib: visualización gráfica
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="SciPy.html">
-   10. SciPy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Pandas.html">
-   11. Pandas: una introducción al análisis de datos
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="SymPy.html">
-   12. Sympy: un sistema de álgebra computacional
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Programaci%C3%B3n%20orientada%20a%20objetos.html">
-   13. Programación orientada a objetos
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Bases%20de%20datos.html">
-   14. Bases de datos
-  </a>
- </li>
-</ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/Estructuras de control.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Estructuras de control.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
         
         
-        
-        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Estructuras de control.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
-        </div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Estructuras de control</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#condicional-if-elif-else">
-   3.1. Condicional
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     if-elif-else
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ciclo-for">
-   3.2. Ciclo
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     for
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ciclo-while">
-   3.3. Ciclo
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     while
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sentencia-try-except">
-   3.4. Sentencia
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     try-except
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejercicios">
-   3.5. Ejercicios
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#condicional-if-elif-else">3.1. Condicional <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ciclo-for">3.2. Ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ciclo-while">3.3. Ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sentencia-try-except">3.4. Sentencia <code class="docutils literal notranslate"><span class="pre">try-except</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algunos-tipos-de-errores-excepciones-comunes">3.4.1. Algunos tipos de errores (excepciones) comunes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#syntaxerror">3.4.1.1. SyntaxError</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indentationerror">3.4.1.2. IndentationError</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#typeerror">3.4.1.3. TypeError</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nameerror">3.4.1.4. NameError</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#valueerror">3.4.1.5. ValueError</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indexerror">3.4.1.6. IndexError</a></li>
 </ul>
-
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">3.5. Ejercicios</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="estructuras-de-control">
-<h1><span class="section-number">3. </span>Estructuras de control<a class="headerlink" href="#estructuras-de-control" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3. </span>Estructuras de control<a class="headerlink" href="#estructuras-de-control" title="Link to this heading">#</a></h1>
 <p>En un lenguaje de programación, las estructuras de control permiten modificar el flujo de la ejecución de un conjunto de instrucciones. Se pueden distinguir tres tipos básicos de control de flujo, a saber:</p>
 <ul class="simple">
 <li><p>Control secuencial</p></li>
@@ -326,7 +383,7 @@
 <p><img alt="" src="_images/estructuras-de-control.svg" /></p>
 <p>En el control secuencial las instrucciones se ejecutan de manera secuencial desde el inicio hasta el fin del programa. En el control de selección se tiene una condición que puede ser falsa o verdadera, dependiendo de esto se ejecutará uno u otro bloque de instrucciones. En el control de repetición, un bloque de instrucciones se ejecuta de manera repetitiva mientras una condición sea verdadera, en caso contrario el flujo de ejecución se pasará a otro conjunto de instrucciones.</p>
 <section id="condicional-if-elif-else">
-<h2><span class="section-number">3.1. </span>Condicional <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code><a class="headerlink" href="#condicional-if-elif-else" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1. </span>Condicional <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code><a class="headerlink" href="#condicional-if-elif-else" title="Link to this heading">#</a></h2>
 <p>El condicional <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> es una estructura de control de selección que sirve para <em>tomar decisiones</em>, basándose en la evaluación de condiciones y/o comparaciones, en el flujo del programa. La sintaxis más general para <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> es:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">cond1</span><span class="p">:</span>
     <span class="c1"># hacer algo </span>
@@ -391,7 +448,7 @@ colocada en el caso por default <code class="docutils literal notranslate"><span
 -1 \text{      ;   si n es impar} 
 \end{matrix}\right.
 \end{split}\]</div>
-<p>Supongamos ahora otro caso en donde las posibilidades son mutuamente excluyentes: en un curso la calificación mínima aprobatoria es de 70, la escala de calificación es de 0 a 100, ¿cómo podríamos implementar un código que decida si un alumno aprobó o reprobó la asignatura? Observa lo siguiente:</p>
+<p>Supongamos ahora otro caso en donde las posibilidades son mutuamente excluyentes: en un curso la calificación mínima aprobatoria es de 70, la escala de calificación es de 0 a 100, ¿cómo podríamos implementar un código que decida y muestre si un alumno aprobó o reprobó la asignatura? Observa lo siguiente:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calificacion</span> <span class="o">=</span> <span class="mi">100</span>
@@ -409,26 +466,89 @@ colocada en el caso por default <code class="docutils literal notranslate"><span
 </div>
 </div>
 </div>
-<div class="warning admonition">
+<p>Ahora, consideremos que en lugar de una clasificación binaria “Aprobado” y “No aprobado” quisiéramos utilizar una escala cualitativa como la siguiente:</p>
+<ul class="simple">
+<li><p>De 95 a 100 <span class="math notranslate nohighlight">\( \rightarrow \)</span> Excelente</p></li>
+<li><p>De 85 a 94 <span class="math notranslate nohighlight">\( \rightarrow \)</span> Muy bien</p></li>
+<li><p>De 75 a 84 <span class="math notranslate nohighlight">\( \rightarrow \)</span> Bien</p></li>
+<li><p>De 70 a 74 <span class="math notranslate nohighlight">\( \rightarrow \)</span> Regular</p></li>
+<li><p>Menos de 70 <span class="math notranslate nohighlight">\( \rightarrow \)</span> Insuficiente</p></li>
+</ul>
+<p>Para una situación como esta podemos utilizar la estructura <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calificacion</span> <span class="o">=</span> <span class="mi">71</span>
+
+<span class="k">if</span> <span class="n">calificacion</span> <span class="o">&gt;=</span> <span class="mi">95</span> <span class="ow">and</span> <span class="n">calificacion</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Excelente&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">calificacion</span> <span class="o">&gt;=</span> <span class="mi">85</span> <span class="ow">and</span> <span class="n">calificacion</span> <span class="o">&lt;=</span> <span class="mi">94</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Muy bien&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">calificacion</span> <span class="o">&gt;=</span> <span class="mi">75</span> <span class="ow">and</span> <span class="n">calificacion</span> <span class="o">&lt;=</span> <span class="mi">84</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bien&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">calificacion</span> <span class="o">&gt;=</span> <span class="mi">70</span> <span class="ow">and</span> <span class="n">calificacion</span> <span class="o">&lt;=</span> <span class="mi">74</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Regular&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Insuficiente&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Regular
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-sobre-datos-y-validaciones admonition">
 <p class="admonition-title">Sobre datos y validaciones</p>
 <p>Usualmente un programa de computadora recibe datos de forma externa, es decir, alguien los proporciona de forma manual o se leen desde algún archivo de datos o provienen de algún dispositivo. Esto implica la posibilidad de que se reciban datos que no corresponderían con lo esperado, por ejemplo, en el caso del programa anterior, imagina ¿qué pasaría si un usuario inserta una calificación de 150? El programa seguiría funcionando y te imprimiría un mensaje de aprobado. Una manera de solventar esta situación sería adicionar una  verificación de que el valor pasado esté en el rango de valores esperado, por ejemplo:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">calificacion</span> <span class="o">=</span> <span class="mi">150</span>
 
 <span class="k">if</span> <span class="n">calificacion</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">calificacion</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La calificación debe estar en la escala de 0 a 100&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">calificacion</span> <span class="o">&gt;=</span> <span class="mi">70</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Aprobado&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">calificacion</span> <span class="o">&gt;=</span> <span class="mi">95</span> <span class="ow">and</span> <span class="n">calificacion</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Excelente&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">calificacion</span> <span class="o">&gt;=</span> <span class="mi">85</span> <span class="ow">and</span> <span class="n">calificacion</span> <span class="o">&lt;=</span> <span class="mi">94</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Muy bien&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">calificacion</span> <span class="o">&gt;=</span> <span class="mi">75</span> <span class="ow">and</span> <span class="n">calificacion</span> <span class="o">&lt;=</span> <span class="mi">84</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bien&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">calificacion</span> <span class="o">&gt;=</span> <span class="mi">70</span> <span class="ow">and</span> <span class="n">calificacion</span> <span class="o">&lt;=</span> <span class="mi">74</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Regular&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No aprobado&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Insuficiente&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</aside>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="dropdown tip admonition">
+<p class="admonition-title">Ejemplo <a href="#" target="_blank"><i class="fab fa-youtube fa-2x" aria-hidden="true"></i></a></p>
+<p><em>Desarrolle un programa que calcule la edad equivalente, en años humanos, de un perro. Considere lo siguiente:</em></p>
+<ul class="simple">
+<li><p><em>Cada uno de los primeros dos años del perro equivalen a 12 años humanos.</em></p></li>
+<li><p><em>A partir del tercer año, cada año del perro equivale a 4 años humanos.</em></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">edad_perro</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingresa la edad del perro en años: &quot;</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="k">if</span> <span class="n">edad_perro</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">edad_perro</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="n">edad_equivalente_anios_humanos</span> <span class="o">=</span> <span class="n">edad_perro</span> <span class="o">*</span> <span class="mi">12</span>
+<span class="k">elif</span> <span class="n">edad_perro</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="n">edad_equivalente_anios_humanos</span> <span class="o">=</span> <span class="mi">24</span> <span class="o">+</span> <span class="p">(</span><span class="n">edad_perro</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">edad_equivalente_anios_humanos</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La edad del perro debe ser una cantidad positiva&quot;</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La edad del perro en años humano es: </span><span class="si">{</span><span class="n">edad_equivalente_anios_humanos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </section>
 <section id="ciclo-for">
-<h2><span class="section-number">3.2. </span>Ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#ciclo-for" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2. </span>Ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#ciclo-for" title="Link to this heading">#</a></h2>
 <p>El <strong>bucle for</strong> es una estructura de control de repetición, en la cual se conocen
 <em>a priori</em> el número de iteraciones a realizar. En lenguajes como C++ o Java, el ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code>
 necesita de una variable de ciclo de tipo entero que irá incrementándose en cada iteración. En Python, la cuestión es un poco diferente, el ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code> <em>recorre</em> una secuencia y en la k-ésima iteración la variable de ciclo <em>adopta</em> el
@@ -484,7 +604,7 @@ n
 </div>
 </div>
 </div>
-<p>Dentro de un ciclo for podemos colocar cualquier otra instrucción de control de flujo. Un caso muy común es el de incluir otro ciclo for, algo que habitualmente se denota como <strong>ciclos anidados</strong>. Por ejemplo, supongamos que se requieren mostrar por consola todos los elementos de algunas listas contenidas dentro de otra lista principal, en ese caso se hace necesario primero iterar sobre la lista principal y enseguida hacerlo sobre las listas contenidas, por ejemplo:</p>
+<p>Dentro de un ciclo for podemos colocar cualquier otra instrucción de control de flujo. Un caso muy común es el de incluir otro ciclo for, algo que habitualmente se denomina como <strong>ciclos anidados</strong>. Por ejemplo, supongamos que se requieren mostrar por consola todos los elementos de algunas listas contenidas dentro de otra lista principal, en este caso es necesario primero iterar sobre la lista principal y enseguida hacerlo sobre las listas contenidas, por ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matriz</span> <span class="o">=</span> <span class="p">[[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">15</span><span class="p">]]</span>
@@ -547,9 +667,24 @@ x=0 y=1
 </div>
 </div>
 <p>Observa la diferencia, la primera forma es un quizá un poco menos <em>intuitiva</em> pero más práctica y natural. En la primera se accede directamente con las variables de ciclo <code class="docutils literal notranslate"><span class="pre">(x,y)</span></code> a cada elemento de las tuplas que conforman la lista <code class="docutils literal notranslate"><span class="pre">puntos</span></code>, con la segunda se tiene que acceder mediante indexación a cada elemento.</p>
-</section>
+<hr>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Ejemplo <a href="#" target="_blank"><i class="fab fa-youtube fa-2x" aria-hidden="true"></i></a></p>
+<p><em>Escriba un programa que determine y muestre qué números entre 1 y 500 son, a la vez, múltiplos de 7 y 8.</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Recorremos los números del 1 al 500</span>
+<span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">501</span><span class="p">):</span>
+    <span class="c1"># Verificamos si el número es múltiplo de 7 y de 8</span>
+    <span class="k">if</span> <span class="n">numero</span> <span class="o">%</span> <span class="mi">7</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">numero</span> <span class="o">%</span> <span class="mi">8</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">numero</span><span class="si">}</span><span class="s2"> es múltiplo de 7 y de 8.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<hr></section>
 <section id="ciclo-while">
-<h2><span class="section-number">3.3. </span>Ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#ciclo-while" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3. </span>Ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#ciclo-while" title="Link to this heading">#</a></h2>
 <p>El ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code> ejecuta un bloque de instrucciones mientras haya una condición que se cumpla. La sintaxis de <code class="docutils literal notranslate"><span class="pre">while</span></code> es:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">cond</span><span class="p">:</span>
     <span class="c1"># hacer algo </span>
@@ -600,11 +735,11 @@ o
 <p>El ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code> suele ser muy utilizado en métodos numéricos, donde el número de iteraciones requeridas puede establecerse por el usuario de manera directa o bien mediante la indicación de una tolerancia.</p>
 <p>Por ejemplo, el <a class="reference external" href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Newton">método de Newton</a> es un algoritmo que se utiliza para aproximar  raíces de una función real. Este método se puede establecer como sigue:</p>
 <blockquote>
-<div><p>Sea <span class="math notranslate nohighlight">\(f\)</span> una función real derivable, y sea r un cero real de <span class="math notranslate nohighlight">\(f\)</span>. Si <span class="math notranslate nohighlight">\(x_n\)</span> es una aproximación a <span class="math notranslate nohighlight">\(r\)</span>,
+<div><p>Sea <span class="math notranslate nohighlight">\(f\)</span> una función real derivable, y sea <span class="math notranslate nohighlight">\(r\)</span> un cero real de <span class="math notranslate nohighlight">\(f\)</span>. Si <span class="math notranslate nohighlight">\(x_n\)</span> es una aproximación a <span class="math notranslate nohighlight">\(r\)</span>,
 entonces la siguiente aproximación <span class="math notranslate nohighlight">\(x_{n+1}\)</span> está dada por:</p>
 <div class="math notranslate nohighlight">
 \[ x_{n+1} = x_n - \frac{ f(x_n) }{ f'(x_n) } \]</div>
-<p>Donde <span class="math notranslate nohighlight">\( f' \)</span> denota la derivada de <span class="math notranslate nohighlight">\( f \)</span>. <a class="brackets" href="#newton" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<p>Donde <span class="math notranslate nohighlight">\( f' \)</span> denota la derivada de <span class="math notranslate nohighlight">\( f \)</span>. <a class="footnote-reference brackets" href="#newton" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
 </div></blockquote>
 <p>Vamos a aproximar una de las raíces de la función <span class="math notranslate nohighlight">\( f(x) =  x^3 - 5x^2 + 3\)</span>, para ello necesitamos conocer también la derivada de esta función, derivando se tiene que <span class="math notranslate nohighlight">\(f'(x) = 3x^2 - 10x\)</span>. Observe el siguiente código implementado:</p>
 <div class="cell docutils container">
@@ -637,7 +772,7 @@ N = 5 | xn = 0.8502565872429864
 <p>Ahora veamos otro ejemplo, en donde se combina el uso de <code class="docutils literal notranslate"><span class="pre">while</span></code> con el condicional <code class="docutils literal notranslate"><span class="pre">if-else</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">randint</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¡Bienvenido a Adivina el Número!&quot;</span><span class="p">)</span>
 <span class="n">n</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># Genera un entero aleatorio en el intervalo [1,10]</span>
@@ -656,28 +791,54 @@ N = 5 | xn = 0.8502565872429864
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>¡Bienvenido a Adivina el Número!
-Ingrese un entero entre 1 y 10: 4
-4 no es el número, intenta nuevamente
+Ingrese un entero entre 1 y 10: 3
+3 no es el número, intenta nuevamente
 
-Ingrese un entero entre 1 y 10: 5
-5 no es el número, intenta nuevamente
-
-Ingrese un entero entre 1 y 10: 8
-8 no es el número, intenta nuevamente
-
-Ingrese un entero entre 1 y 10: 1
-1 no es el número, intenta nuevamente
-
-Ingrese un entero entre 1 y 10: 10
-Has adivinado después de 5 intentos
+Ingrese un entero entre 1 y 10: 6
+Has adivinado después de 2 intentos
 </pre></div>
 </div>
 </div>
 </div>
 <p>El código anterior es un juego muy simple de adivinar un número entero entre 1 y 10 que la computadora genera de manera aleatoria mediante la función <code class="docutils literal notranslate"><span class="pre">randint</span></code>. Observa que el ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code>, en principio, se ejecutará de forma indefinida, dado que la condición es la constante booleana <code class="docutils literal notranslate"><span class="pre">True</span></code>; en este caso para <em>romper</em> la ejecución iterativa se hace uso de la instrucción <code class="docutils literal notranslate"><span class="pre">break</span></code>, en conjunto con la sentencia de selección <code class="docutils literal notranslate"><span class="pre">if-else</span></code>, observa que si la condición del <code class="docutils literal notranslate"><span class="pre">if</span></code> se cumple (<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">n</span></code>) entonces el programa rompe el ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code> con la instrucción <code class="docutils literal notranslate"><span class="pre">break</span></code>, en caso contrario simplemente se sigue ejecutando el juego.</p>
+<hr>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Ejemplo <a href="" target="_blank"><i class="fab fa-youtube fa-2x" aria-hidden="true"></i></a></p>
+<p>El algoritmo de Herón es un método iterativo que permite aproximar la raíz cuadrada de un número. Dado un número
+<span class="math notranslate nohighlight">\(S\)</span> del cual queremos calcular la raíz cuadrada, el algoritmo de Herón sigue los siguientes pasos:</p>
+<ol class="arabic simple">
+<li><p>Seleccionar una aproximación inicial <span class="math notranslate nohighlight">\(x_0\)</span> (una elección común es <span class="math notranslate nohighlight">\(S/2\)</span>).</p></li>
+<li><p>Iterar para mejorar la aproximación, cada nueva aproximación <span class="math notranslate nohighlight">\(x_{n+1}\)</span> se calcula utilizando la siguiente fórmula:
+<span class="math notranslate nohighlight">\( x_{n+1} = \frac{1}{2} \left( x_n + \frac{S}{x_n} \right) \)</span></p></li>
+<li><p>Este proceso se repite hasta que la diferencia entre <span class="math notranslate nohighlight">\(x_{n+1}\)</span> y <span class="math notranslate nohighlight">\(x_n\)</span> sea menor que un valor de tolerancia predefinido, lo que indica que la aproximación es suficientemente precisa.</p></li>
+</ol>
+<p>Desarrolla un programa que dado un número <code class="docutils literal notranslate"><span class="pre">S</span></code>, una cantidad máxima de iteraciones <code class="docutils literal notranslate"><span class="pre">max_iter</span></code> y un tolerancia de error <code class="docutils literal notranslate"><span class="pre">tol</span></code>, permita aproximar la raíz cuadrada de un número <span class="math notranslate nohighlight">\(S\)</span>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="mi">144</span>
+<span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-16</span>
+<span class="n">max_iter</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">n_iter</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">x_n</span> <span class="o">=</span> <span class="n">S</span> <span class="o">/</span> <span class="mi">2</span> <span class="c1"># valor de x0</span>
+
+<span class="k">while</span> <span class="n">n_iter</span> <span class="o">&lt;</span> <span class="n">max_iter</span><span class="p">:</span>
+    <span class="n">x_n1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x_n</span> <span class="o">+</span> <span class="n">S</span><span class="o">/</span><span class="n">x_n</span><span class="p">)</span> <span class="c1"># nueva aproximación </span>
+    <span class="n">n_iter</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># aumentamos el número de iteraciones</span>
+    
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x_n1</span> <span class="o">-</span> <span class="n">x_n</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">:</span> <span class="c1"># Verificamos la tolerancia</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Aproximación de la raíz cuadrada de </span><span class="si">{</span><span class="n">S</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">x_n1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Calculada después de </span><span class="si">{</span><span class="n">n_iter</span><span class="si">}</span><span class="s2"> iteraciones&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+    
+    <span class="n">x_n</span> <span class="o">=</span> <span class="n">x_n1</span> 
+</pre></div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </section>
 <section id="sentencia-try-except">
-<h2><span class="section-number">3.4. </span>Sentencia <code class="docutils literal notranslate"><span class="pre">try-except</span></code><a class="headerlink" href="#sentencia-try-except" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4. </span>Sentencia <code class="docutils literal notranslate"><span class="pre">try-except</span></code><a class="headerlink" href="#sentencia-try-except" title="Link to this heading">#</a></h2>
 <p>Cuando consideremos que puede ocurrir un error durante la ejecución de nuestro código, podemos utilizar un bloque <code class="docutils literal notranslate"><span class="pre">try-except</span></code> para manejar la excepción que podría surgir. Básicamente lo que hace es indicarle a Python que intente ejecutar algún código y le dice qué hacer en el caso de que el código genere un tipo particular de excepción.</p>
 <p>La sintaxis básica de <code class="docutils literal notranslate"><span class="pre">try-except</span></code> es:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -702,7 +863,7 @@ Has adivinado después de 5 intentos
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ingrese un número entero: 50
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ingrese un número entero: 10
 Ingrese otro número entero: 0
 Estás intentando dividir por cero
 </pre></div>
@@ -710,23 +871,147 @@ Estás intentando dividir por cero
 </div>
 </div>
 <p>Aquí el código solicita dos números enteros (<code class="docutils literal notranslate"><span class="pre">a</span></code> y <code class="docutils literal notranslate"><span class="pre">b</span></code>) al usuario, y luego en la variable <code class="docutils literal notranslate"><span class="pre">c</span></code> se intenta guardar el resultado de dividir <code class="docutils literal notranslate"><span class="pre">a/b</span></code>. Naturalmente, en el caso de que <code class="docutils literal notranslate"><span class="pre">b=0</span></code>, entonces Python lanzará una excepción del tipo <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code>, así pues, en el bloque <code class="docutils literal notranslate"><span class="pre">except</span></code> deberemos colocar las instrucciones a ejecutar en el caso de que esto ocurra. Lógicamente esto podría ser desde mostrar un simple mensaje como en este caso, o bien, hacer las modificaciones pertinentes en las instrucciones.</p>
-<p>Algunos de los tipos de errores o excepciones más comunes se describen brevemente a continuación:</p>
-<ul class="simple">
-<li><p><strong>SyntaxError</strong>: Ocurre cuando hay un error en la sintaxis del código, como un paréntesis o una comilla que falta.</p></li>
-<li><p><strong>IndentationError</strong>: Se produce cuando la indentación del código no es correcta.</p></li>
-<li><p><strong>TypeError</strong>: Se genera cuando se realiza una operación con un tipo de dato incompatible.</p></li>
-<li><p><strong>ValueError</strong>: Se puede producir cuando el valor de un argumento no es válido.</p></li>
-<li><p><strong>NameError</strong>: Ocurre cuando se intenta usar una variable que no ha sido definida previamente en el programa.</p></li>
-<li><p><strong>IndexError</strong>: Se produce cuando se intenta acceder a un elemento de una secuencia con un índice fuera de rango.</p></li>
-<li><p><strong>KeyError</strong>: Ocurre cuando se intenta acceder a una clave inexistente en un diccionario.</p></li>
-<li><p><strong>FileNotFoundError</strong>: Ocurre cuando se intenta abrir un archivo que no existe.</p></li>
-<li><p><strong>ImportError</strong>: Se produce cuando no se encuentra el módulo que se intenta importar.</p></li>
-<li><p><strong>OSError</strong>: Se genera cuando hay un error al realizar una operación del sistema operativo, como abrir un archivo.</p></li>
-</ul>
-<p>Además de las excepciones incorporadas, siempre podemos definir nuestras propias excepciones para manejar situaciones específicas en los programas.</p>
+<section id="algunos-tipos-de-errores-excepciones-comunes">
+<h3><span class="section-number">3.4.1. </span>Algunos tipos de errores (excepciones) comunes<a class="headerlink" href="#algunos-tipos-de-errores-excepciones-comunes" title="Link to this heading">#</a></h3>
+<section id="syntaxerror">
+<h4><span class="section-number">3.4.1.1. </span>SyntaxError<a class="headerlink" href="#syntaxerror" title="Link to this heading">#</a></h4>
+<p>Ocurre cuando hay un error en la sintaxis del código, como un paréntesis o una comilla que falta. Veamos un ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span>
+                   <span class="o">^</span>
+<span class="ne">SyntaxError</span>: unexpected EOF while parsing
+</pre></div>
+</div>
+</div>
+</div>
+<p>El código anterior no puede ejecutarse debido a que falta el paréntesis de cierre.</p>
+</section>
+<section id="indentationerror">
+<h4><span class="section-number">3.4.1.2. </span>IndentationError<a class="headerlink" href="#indentationerror" title="Link to this heading">#</a></h4>
+<p>Un error de este tipo se produce cuando la indentación del código no es correcta. Por ejemplo, en el siguiente código la instrucción <code class="docutils literal notranslate"><span class="pre">print(letra)</span></code> no está indentada con respecto al ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code>, y en consecuencia Python indica que se esperaba algo de código <em>dentro</em> del ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">letra</span> <span class="ow">in</span> <span class="s2">&quot;Hola&quot;</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">letra</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">letra</span><span class="p">)</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="typeerror">
+<h4><span class="section-number">3.4.1.3. </span>TypeError<a class="headerlink" href="#typeerror" title="Link to this heading">#</a></h4>
+<p>Se genera cuando se realiza una operación con un tipo de dato incompatible. Veamos un ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+<span class="n">a</span> <span class="o">+</span> <span class="n">b</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [12],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Obviamente no podemos sumar un entero con una cadena de caracteres.</p>
+</section>
+<section id="nameerror">
+<h4><span class="section-number">3.4.1.4. </span>NameError<a class="headerlink" href="#nameerror" title="Link to this heading">#</a></h4>
+<p>Ocurre cuando se intenta usar una variable que no ha sido definida previamente en el programa, como en las siguientes líneas, en donde intentamos utilizar una variable <code class="docutils literal notranslate"><span class="pre">z</span></code> que no se ha creado aún.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">z</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [13],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">z</span>
+
+<span class="ne">NameError</span>: name &#39;z&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="valueerror">
+<h4><span class="section-number">3.4.1.5. </span>ValueError<a class="headerlink" href="#valueerror" title="Link to this heading">#</a></h4>
+<p>Un error de este tipo se produce cuando el valor de un argumento pasado a una función no es válido, por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;hola&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">Input In [15],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">int</span><span class="p">(</span><span class="s2">&quot;hola&quot;</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: invalid literal for int() with base 10: &#39;hola&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observa que en este caso la función <code class="docutils literal notranslate"><span class="pre">int</span></code> no puede convertir la cadena de caracteres <code class="docutils literal notranslate"><span class="pre">&quot;hola&quot;</span></code> a un valor de tipo entero,</p>
+</section>
+<section id="indexerror">
+<h4><span class="section-number">3.4.1.6. </span>IndexError<a class="headerlink" href="#indexerror" title="Link to this heading">#</a></h4>
+<p>Se produce cuando se intenta acceder a un elemento de una secuencia con un índice fuera de rango. Por ejemplo, la siguiente lista denominada <code class="docutils literal notranslate"><span class="pre">puntos</span></code> contiene 5 elementos, observa que si intentamos acceder al elemento ubicado en el índice <code class="docutils literal notranslate"><span class="pre">10</span></code> entonces Python nos devolverá un <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">puntos</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>
+<span class="n">puntos</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">Input In [18],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">notas</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">notas</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span>
+
+<span class="ne">IndexError</span>: list index out of range
+</pre></div>
+</div>
+</div>
+</div>
+<p>Además de estos, existen muchos otros tipos de errores que iremos explorando conforme vayamos avanzando en el desarrollo del texto.</p>
+</section>
+</section>
 </section>
 <section id="ejercicios">
-<h2><span class="section-number">3.5. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.5. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">#</a></h2>
 <hr class="docutils" />
 <p>Desarrolle un programa que calcule la suma de los enteros del 1 al 100, es decir: 1 + 2 + 3 + … + 99 + 100</p>
 <hr class="docutils" />
@@ -839,7 +1124,8 @@ perímetro. A continuación, podemos observar un ejemplo de lo que se espera que
 <div class="math notranslate nohighlight">
 \[ \frac{1}{1} + \frac{1}{2} + \frac{1}{3} + \cdots + \frac{1}{n} \]</div>
 <p>El valor de <span class="math notranslate nohighlight">\(n\)</span> deberá ingresarlo el usuario. Por ejemplo, si el usuario ingresa <span class="math notranslate nohighlight">\(n = 5\)</span>, se esperaría que el programa calcule la suma de los primeros 5 términos de la serie, es decir:</p>
-<p>$<span class="math notranslate nohighlight">\( \frac{1}{1} + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} \approx 2.28333\cdots \)</span>$ \</p>
+<div class="math notranslate nohighlight">
+\[ \frac{1}{1} + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} \approx 2.28333\cdots \]</div>
 <hr class="docutils" />
 <p>Desarrolle un programa que cuente y muestre cuántos números múltiplos de 3 y mayores que 15 hay en una lista de números.</p>
 <hr class="docutils" />
@@ -848,6 +1134,15 @@ perímetro. A continuación, podemos observar un ejemplo de lo que se espera que
 <p>Escriba un programa que, dada una lista o tupla de números, determine cuáles son los valores máximos y mínimos. Evite hacer uso de las funciones <code class="docutils literal notranslate"><span class="pre">min</span></code> o <code class="docutils literal notranslate"><span class="pre">max</span></code> nativas de Python.</p>
 <hr class="docutils" />
 <p>Desarrolle un programa que cuente y muestre cuántos números impares mayores que 10 hay en una lista de números.</p>
+<hr class="docutils" />
+<p>Observa el siguiente código y procura identificar qué tipo de error se produciría al ejecutarlo.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese un número: &quot;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese otro número: &quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a/b = </span><span class="si">{</span><span class="n">a</span><span class="o">/</span><span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>¿Cómo solucionarías este error? Reescribe el código.</p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="newton" role="doc-footnote">
@@ -870,7 +1165,7 @@ perímetro. A continuación, podemos observar un ejemplo de lo que se espera que
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -878,38 +1173,105 @@ perímetro. A continuación, podemos observar un ejemplo de lo que se espera que
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Variables%2C%20operadores%20y%20expresiones.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2. </span>Variables, operadores y expresiones</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Variables%2C%20operadores%20y%20expresiones.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Variables, operadores y expresiones</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="Cadenas%20de%20caracteres.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="Cadenas%20de%20caracteres.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">4. </span>Cadenas de caracteres</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Pedro Jorge De Los Santos<br/>
-        
-            &copy; Copyright 2025.<br/>
-          <div class="extra_footer">
-            <div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#condicional-if-elif-else">3.1. Condicional <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ciclo-for">3.2. Ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ciclo-while">3.3. Ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sentencia-try-except">3.4. Sentencia <code class="docutils literal notranslate"><span class="pre">try-except</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algunos-tipos-de-errores-excepciones-comunes">3.4.1. Algunos tipos de errores (excepciones) comunes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#syntaxerror">3.4.1.1. SyntaxError</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indentationerror">3.4.1.2. IndentationError</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#typeerror">3.4.1.3. TypeError</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nameerror">3.4.1.4. NameError</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#valueerror">3.4.1.5. ValueError</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indexerror">3.4.1.6. IndexError</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">3.5. Ejercicios</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Pedro Jorge De Los Santos
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>
     <!-- Default Statcounter code for Python para ingenieros
     https://jorgedelossantos.github.io/apuntes-python/ -->
     <script type="text/javascript">
@@ -929,17 +1291,22 @@ perímetro. A continuación, podemos observar un ejemplo de lo que se espera que
     <!-- End of Statcounter Code -->
 </div>
 
-          </div>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
-      </div>
-    </div>
+</div>
+  </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+</div>
+          </footer>
+        
 
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

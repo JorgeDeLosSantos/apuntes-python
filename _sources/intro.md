@@ -1,27 +1,23 @@
 # Prefacio
 
-```{admonition} Apuntes en desarrollo
-:class: warning
-Actualmente estos apuntes están en desarrollo, tome sus precauciones con respecto al contenido que podría estar incompleto e inconexo.
-
-**Fecha de última actualización: 15/02/2025**
+```{warning}
+Actualmente estos apuntes están en desarrollo, tome sus precauciones con respecto al contenido que podría estar incompleto e inconexo. **Fecha de última actualización: 02/03/2025**
 ```
 
-Estos apuntes de Python han sido desarrollados con el objetivo de que sirvan como herramienta de aprendizaje a los alumnos y profesionistas de las áreas de ciencia e ingeniería, sobre todo aquellas afines a la mecánica, mecatrónica y robótica. 
+Estos apuntes de Python han sido (están siendo) desarrollados con el objetivo de que sirvan como herramienta de aprendizaje a los alumnos y profesionistas de las áreas de ciencia e ingeniería, sobre todo aquellas afines a la mecánica, mecatrónica y robótica.
 
 
-Pedro Jorge De Los Santos
+*Pedro Jorge De Los Santos*
 
 **Guanajuato, México**
 
 
 <a href="https://github.com/JorgeDeLosSantos" target="_blank">
     <i class="fab fa-github fa-2x" aria-hidden="true"></i>
-</a>
-<a href="https://twitter.com/numython" target="_blank">
+</a> <a href="https://twitter.com/numython" target="_blank">
     <i class="fab fa-twitter fa-2x" aria-hidden="true"></i>
 </a>
 
-```python
+<hr>
 
-```
+<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="numython" data-color="#40DCA5" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>

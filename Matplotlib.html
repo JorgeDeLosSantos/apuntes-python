@@ -1,376 +1,391 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="./" >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>9. Matplotlib: visualización gráfica &#8212; Python para Ingenieros</title>
-    
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/customized.css?v=b341d7a2" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/customized.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
-
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Matplotlib';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="10. SciPy" href="SciPy.html" />
+    <link rel="next" title="10. SciPy: algoritmos y métodos numéricos" href="SciPy.html" />
     <link rel="prev" title="8. NumPy: estructuras matriciales" href="NumPy.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Python para Ingenieros</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   Prefacio
-  </a>
- </li>
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Python para Ingenieros - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python para Ingenieros - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Prefacio
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Introducci%C3%B3n.html">1. Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Variables%2C%20operadores%20y%20expresiones.html">2. Variables, operadores y expresiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Estructuras%20de%20control.html">3. Estructuras de control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cadenas%20de%20caracteres.html">4. Cadenas de caracteres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Estructuras%20de%20datos.html">5. Estructuras de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Funciones.html">6. Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Archivos%20de%20texto.html">7. Archivos de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NumPy.html">8. NumPy: estructuras matriciales</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. Matplotlib: visualización gráfica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SciPy.html">10. SciPy: algoritmos y métodos numéricos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pandas.html">11. Pandas: una introducción al análisis de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SymPy.html">12. Sympy: un sistema de álgebra computacional</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Programaci%C3%B3n%20orientada%20a%20objetos.html">13. Programación orientada a objetos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Bases%20de%20datos.html">14. Bases de datos</a></li>
 </ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Introducci%C3%B3n.html">
-   1. Introducción
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Variables%2C%20operadores%20y%20expresiones.html">
-   2. Variables, operadores y expresiones
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Estructuras%20de%20control.html">
-   3. Estructuras de control
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Cadenas%20de%20caracteres.html">
-   4. Cadenas de caracteres
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Estructuras%20de%20datos.html">
-   5. Estructuras de datos
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Funciones.html">
-   6. Funciones
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Archivos%20de%20texto.html">
-   7. Archivos de texto
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="NumPy.html">
-   8. NumPy: estructuras matriciales
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   9. Matplotlib: visualización gráfica
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="SciPy.html">
-   10. SciPy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Pandas.html">
-   11. Pandas: una introducción al análisis de datos
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="SymPy.html">
-   12. Sympy: un sistema de álgebra computacional
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Programaci%C3%B3n%20orientada%20a%20objetos.html">
-   13. Programación orientada a objetos
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Bases%20de%20datos.html">
-   14. Bases de datos
-  </a>
- </li>
-</ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/Matplotlib.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Matplotlib.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
         
         
-        
-        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
     </div>
-</div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
 
-        </div>
+<div class="article-header-buttons">
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#que-es-matplotlib">
-   9.1. ¿Qué es Matplotlib?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#de-matplotlib-jupyter-y-las-graficas-mostradas">
-   9.2. De Matplotlib, Jupyter y las gráficas mostradas
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#una-primera-aproximacion">
-   9.3. Una primera aproximación
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#la-funcion-plot">
-   9.4. La función
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     plot
-    </span>
-   </code>
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#graficando-funciones-matematicas">
-     9.4.1. Graficando funciones matemáticas
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modificando-el-color-estilos-y-grosor-de-linea">
-     9.4.2. Modificando el color, estilos y grosor de línea
-    </a>
-   </li>
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Matplotlib.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#titulo-de-grafica-etiquetas-de-ejes-y-nombres-de-curvas">
-   9.5. Título de gráfica, etiquetas de ejes y nombres de curvas
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#anotaciones">
-   9.6. Anotaciones
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#graficas-en-coordenadas-polares">
-   9.7. Gráficas en coordenadas polares
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#graficas-de-barras">
-   9.8. Gráficas de barras
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#graficas-de-pastel">
-   9.9. Gráficas de pastel
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#la-funcion-subplot-multiples-axes">
-   9.10. La función
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     subplot
-    </span>
-   </code>
-   : múltiples axes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#graficas-de-curvas-parametricas-en-el-espacio">
-   9.11. Gráficas de curvas paramétricas en el espacio
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#graficas-de-superficies">
-   9.12. Gráficas de superficies
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejercicios">
-   9.13. Ejercicios
-  </a>
- </li>
-</ul>
+</div>
 
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Matplotlib: visualización gráfica</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-matplotlib">9.1. ¿Qué es Matplotlib?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-matplotlib-jupyter-y-las-graficas-mostradas">9.2. De Matplotlib, Jupyter y las gráficas mostradas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#una-primera-aproximacion">9.3. Una primera aproximación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-funcion-plot">9.4. La función <code class="docutils literal notranslate"><span class="pre">plot</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graficando-funciones-matematicas">9.4.1. Graficando funciones matemáticas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modificando-el-color-estilos-y-grosor-de-linea">9.4.2. Modificando el color, estilos y grosor de línea</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#titulo-de-grafica-etiquetas-de-ejes-y-nombres-de-curvas">9.5. Título de gráfica, etiquetas de ejes y nombres de curvas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anotaciones">9.6. Anotaciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficas-en-coordenadas-polares">9.7. Gráficas en coordenadas polares</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficas-de-barras">9.8. Gráficas de barras</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficas-de-pastel">9.9. Gráficas de pastel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-funcion-subplot-multiples-axes">9.10. La función <code class="docutils literal notranslate"><span class="pre">subplot</span></code>: múltiples axes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficas-de-curvas-parametricas-en-el-espacio">9.11. Gráficas de curvas paramétricas en el espacio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficas-de-superficies">9.12. Gráficas de superficies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">9.13. Ejercicios</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="matplotlib-visualizacion-grafica">
-<h1><span class="section-number">9. </span>Matplotlib: visualización gráfica<a class="headerlink" href="#matplotlib-visualizacion-grafica" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">9. </span>Matplotlib: visualización gráfica<a class="headerlink" href="#matplotlib-visualizacion-grafica" title="Link to this heading">#</a></h1>
 <section id="que-es-matplotlib">
-<h2><span class="section-number">9.1. </span>¿Qué es Matplotlib?<a class="headerlink" href="#que-es-matplotlib" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.1. </span>¿Qué es Matplotlib?<a class="headerlink" href="#que-es-matplotlib" title="Link to this heading">#</a></h2>
 <p>Matplotlib es una librería Python que permite generar gráficas estáticas, animadas e interactivas.</p>
 </section>
 <section id="de-matplotlib-jupyter-y-las-graficas-mostradas">
-<h2><span class="section-number">9.2. </span>De Matplotlib, Jupyter y las gráficas mostradas<a class="headerlink" href="#de-matplotlib-jupyter-y-las-graficas-mostradas" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.2. </span>De Matplotlib, Jupyter y las gráficas mostradas<a class="headerlink" href="#de-matplotlib-jupyter-y-las-graficas-mostradas" title="Link to this heading">#</a></h2>
 <p>En todo este capítulo se asumirá que las siguientes líneas de código han sido ejecutadas, previamente, para cada porción de código:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 </div>
@@ -379,7 +394,7 @@
 <p>Sí usted ejecuta Python/Matplotlib dentro de un entorno diferente a Jupyter, deberá evitar colocar la instrucción <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code> y en su lugar colocar la instrucción <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> al final de cada código, para que se le muestren las gráficas correspondientes.</p>
 </section>
 <section id="una-primera-aproximacion">
-<h2><span class="section-number">9.3. </span>Una primera aproximación<a class="headerlink" href="#una-primera-aproximacion" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.3. </span>Una primera aproximación<a class="headerlink" href="#una-primera-aproximacion" title="Link to this heading">#</a></h2>
 <p>Una de las características de Matplotlib es la facilidad con la que se puede
 comenzar a trazar gráficas, vea el siguiente código:</p>
 <div class="cell docutils container">
@@ -392,7 +407,7 @@ comenzar a trazar gráficas, vea el siguiente código:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e71272748&gt;]
 </pre></div>
 </div>
-<img alt="_images/Matplotlib_6_1.png" src="_images/Matplotlib_6_1.png" />
+<img alt="_images/c30d825544da4a183c7fec6e9b0f76dd9cc135bd9abcd07139d51564835a9a18.png" src="_images/c30d825544da4a183c7fec6e9b0f76dd9cc135bd9abcd07139d51564835a9a18.png" />
 </div>
 </div>
 <p>La linea anterior produce la gráfica mostrada en la figura, a la función <code class="docutils literal notranslate"><span class="pre">plot</span></code> únicamente se le pasó como argumento una lista de valores numéricos. Un resultado un poco más <em>trabajado</em> se obtiene con el siguiente código:</p>
@@ -409,13 +424,13 @@ comenzar a trazar gráficas, vea el siguiente código:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Matplotlib_8_0.png" src="_images/Matplotlib_8_0.png" />
+<img alt="_images/d2a280321d66a6a4d425368929cb95a80c6904e88148612ab79dda8e009a0a6f.png" src="_images/d2a280321d66a6a4d425368929cb95a80c6904e88148612ab79dda8e009a0a6f.png" />
 </div>
 </div>
 <p>Se puede observar que aquí se adicionan elementos descriptivos: etiquetas, leyendas y anotaciones, que usualmente sirven para describir completamente una información que se proporciona a través de las gráficas.</p>
 </section>
 <section id="la-funcion-plot">
-<h2><span class="section-number">9.4. </span>La función <code class="docutils literal notranslate"><span class="pre">plot</span></code><a class="headerlink" href="#la-funcion-plot" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.4. </span>La función <code class="docutils literal notranslate"><span class="pre">plot</span></code><a class="headerlink" href="#la-funcion-plot" title="Link to this heading">#</a></h2>
 <p>La función <code class="docutils literal notranslate"><span class="pre">plot</span></code> está contenida en el módulo <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> y básicamente con esta se produce cualquier gráfica
 bidimensional en coordenadas rectangulares. Esta función soporta varias maneras de ejecutarla dependiendo la cantidad
 de argumentos que se pasen.</p>
@@ -430,7 +445,7 @@ de argumentos que se pasen.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e71461e80&gt;]
 </pre></div>
 </div>
-<img alt="_images/Matplotlib_11_1.png" src="_images/Matplotlib_11_1.png" />
+<img alt="_images/39bf579dd795414df61414880bb174af8d84358aae7bf57f3f4e73b009c4f167.png" src="_images/39bf579dd795414df61414880bb174af8d84358aae7bf57f3f4e73b009c4f167.png" />
 </div>
 </div>
 <p>Al pasarle un sólo argumento, este se toma como los valores de la coordenada vertical, y se asume que la horizontal varía de 0 a <code class="docutils literal notranslate"><span class="pre">N-1</span></code>, donde <code class="docutils literal notranslate"><span class="pre">N</span></code> es el número de elementos contenidos en la lista de valores que se introducen.</p>
@@ -447,11 +462,11 @@ por ejemplo:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e714bbf98&gt;]
 </pre></div>
 </div>
-<img alt="_images/Matplotlib_13_1.png" src="_images/Matplotlib_13_1.png" />
+<img alt="_images/e422b81e098b9296bcfb68b5cea4360a9c506c84877e3cc8efde2ceeb33d9f11.png" src="_images/e422b81e098b9296bcfb68b5cea4360a9c506c84877e3cc8efde2ceeb33d9f11.png" />
 </div>
 </div>
 <section id="graficando-funciones-matematicas">
-<h3><span class="section-number">9.4.1. </span>Graficando funciones matemáticas<a class="headerlink" href="#graficando-funciones-matematicas" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">9.4.1. </span>Graficando funciones matemáticas<a class="headerlink" href="#graficando-funciones-matematicas" title="Link to this heading">#</a></h3>
 <p>En matemáticas, una función es una relación que asigna elementos de un conjunto de manera
 unívoca a otro conjunto. Usualmente una función matemática se puede representar
 mediante una gráfica en coordenadas cartesianas, colocando uno de los conjuntos en el
@@ -482,7 +497,7 @@ a cada valor de <code class="docutils literal notranslate"><span class="pre">x</
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e7151e400&gt;]
 </pre></div>
 </div>
-<img alt="_images/Matplotlib_17_1.png" src="_images/Matplotlib_17_1.png" />
+<img alt="_images/51432046ad2f3bc9719f5ed08a6031831d5a203f76443b83cfd819d065362173.png" src="_images/51432046ad2f3bc9719f5ed08a6031831d5a203f76443b83cfd819d065362173.png" />
 </div>
 </div>
 <p>De manera similar a lo anterior se procederá a definir y graficar la función <span class="math notranslate nohighlight">\(y = e^{-0.1x} \cos x \)</span> en el intervalo <span class="math notranslate nohighlight">\( 0 \leq x \leq 30 \)</span>:</p>
@@ -498,7 +513,7 @@ a cada valor de <code class="docutils literal notranslate"><span class="pre">x</
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e7154f2e8&gt;]
 </pre></div>
 </div>
-<img alt="_images/Matplotlib_19_1.png" src="_images/Matplotlib_19_1.png" />
+<img alt="_images/0d1049af743e0c01c79bef0399dbbf0f4ffa7cfa9af03de42bb4544338a41beb.png" src="_images/0d1049af743e0c01c79bef0399dbbf0f4ffa7cfa9af03de42bb4544338a41beb.png" />
 </div>
 </div>
 <p>La cantidad de puntos a evaluar es una cuestión muy importante, ya que de esto depende la correcta visualización del
@@ -520,7 +535,7 @@ de manera respectiva, notará la diferencia entre los casos, es evidente que en 
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e71562898&gt;]
 </pre></div>
 </div>
-<img alt="_images/Matplotlib_21_1.png" src="_images/Matplotlib_21_1.png" />
+<img alt="_images/d83df1aad2aa93c175dc8ab4f8b3240df36f8b5b1333dde9a2e902772927cbe5.png" src="_images/d83df1aad2aa93c175dc8ab4f8b3240df36f8b5b1333dde9a2e902772927cbe5.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -536,12 +551,12 @@ de manera respectiva, notará la diferencia entre los casos, es evidente que en 
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e715c19b0&gt;]
 </pre></div>
 </div>
-<img alt="_images/Matplotlib_22_1.png" src="_images/Matplotlib_22_1.png" />
+<img alt="_images/a029b14829f5896e004becda46c023aa359f93476c4e5b600d2d5740ad08a050.png" src="_images/a029b14829f5896e004becda46c023aa359f93476c4e5b600d2d5740ad08a050.png" />
 </div>
 </div>
 </section>
 <section id="modificando-el-color-estilos-y-grosor-de-linea">
-<h3><span class="section-number">9.4.2. </span>Modificando el color, estilos y grosor de línea<a class="headerlink" href="#modificando-el-color-estilos-y-grosor-de-linea" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">9.4.2. </span>Modificando el color, estilos y grosor de línea<a class="headerlink" href="#modificando-el-color-estilos-y-grosor-de-linea" title="Link to this heading">#</a></h3>
 <p>La función <code class="docutils literal notranslate"><span class="pre">plot</span></code> acepta argumentos adicionales que sirven para modificar y controlar las características de
 la línea que se grafica. Por ejemplo, se puede pasar un tercer argumento que contenga una combinación de color y estilo de línea:</p>
 <div class="cell docutils container">
@@ -556,7 +571,7 @@ la línea que se grafica. Por ejemplo, se puede pasar un tercer argumento que co
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e716320f0&gt;]
 </pre></div>
 </div>
-<img alt="_images/Matplotlib_24_1.png" src="_images/Matplotlib_24_1.png" />
+<img alt="_images/8fd46dd770d239a110d9707ab5442654abc54dbf301ced663c9da33526298a81.png" src="_images/8fd46dd770d239a110d9707ab5442654abc54dbf301ced663c9da33526298a81.png" />
 </div>
 </div>
 <p>El código anterior genera una gráfica con una línea en color rojo (<code class="docutils literal notranslate"><span class="pre">r</span></code>) y un estilo de línea discontinua (<code class="docutils literal notranslate"><span class="pre">--</span></code>).</p>
@@ -573,7 +588,7 @@ la línea que se grafica. Por ejemplo, se puede pasar un tercer argumento que co
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e71692cc0&gt;]
 </pre></div>
 </div>
-<img alt="_images/Matplotlib_26_1.png" src="_images/Matplotlib_26_1.png" />
+<img alt="_images/70d71407a2ff2cf891e0a44d25268d52193e4e57a6a0a61725dd9e48333c095d.png" src="_images/70d71407a2ff2cf891e0a44d25268d52193e4e57a6a0a61725dd9e48333c095d.png" />
 </div>
 </div>
 <p>En <a class="reference external" href="https://matplotlib.org/api/markers_api.html">https://matplotlib.org/api/markers_api.html</a> se muestra una tabla con los símbolos (markers)
@@ -591,7 +606,7 @@ disponibles para utilizar en la función <code class="docutils literal notransla
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e726d1978&gt;]
 </pre></div>
 </div>
-<img alt="_images/Matplotlib_28_1.png" src="_images/Matplotlib_28_1.png" />
+<img alt="_images/8fd46dd770d239a110d9707ab5442654abc54dbf301ced663c9da33526298a81.png" src="_images/8fd46dd770d239a110d9707ab5442654abc54dbf301ced663c9da33526298a81.png" />
 </div>
 </div>
 <p>En ambos casos se especifica un cierto estilo de línea y color, con la diferencia
@@ -612,7 +627,7 @@ este no puede ser invocado mediante un sólo caracter, hace falta escribir todo 
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e72740630&gt;]
 </pre></div>
 </div>
-<img alt="_images/Matplotlib_30_1.png" src="_images/Matplotlib_30_1.png" />
+<img alt="_images/404c7cc83446c3abc78600e3385f5c94bd7bcb5bf7eea2332f5c4097a507205f.png" src="_images/404c7cc83446c3abc78600e3385f5c94bd7bcb5bf7eea2332f5c4097a507205f.png" />
 </div>
 </div>
 <p>El grosor de línea se puede controlar mediante el <em>keyword argument</em> <code class="docutils literal notranslate"><span class="pre">linewidth</span></code>, por ejemplo;</p>
@@ -626,7 +641,7 @@ este no puede ser invocado mediante un sólo caracter, hace falta escribir todo 
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e727a3e48&gt;]
 </pre></div>
 </div>
-<img alt="_images/Matplotlib_32_1.png" src="_images/Matplotlib_32_1.png" />
+<img alt="_images/7fa1a9959ba4d796803ab0f7a2202b21ffb6dd217cc164ba18d08517955d980b.png" src="_images/7fa1a9959ba4d796803ab0f7a2202b21ffb6dd217cc164ba18d08517955d980b.png" />
 </div>
 </div>
 <blockquote>
@@ -635,7 +650,7 @@ este no puede ser invocado mediante un sólo caracter, hace falta escribir todo 
 </section>
 </section>
 <section id="titulo-de-grafica-etiquetas-de-ejes-y-nombres-de-curvas">
-<h2><span class="section-number">9.5. </span>Título de gráfica, etiquetas de ejes y nombres de curvas<a class="headerlink" href="#titulo-de-grafica-etiquetas-de-ejes-y-nombres-de-curvas" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.5. </span>Título de gráfica, etiquetas de ejes y nombres de curvas<a class="headerlink" href="#titulo-de-grafica-etiquetas-de-ejes-y-nombres-de-curvas" title="Link to this heading">#</a></h2>
 <p>Por su naturaleza las gráficas nos sirven para presentar y/o visualizar información de ciertos datos, para
 lo cual se hace necesario especificar información descriptiva de lo que se muestra. Es muy común
 que se agreguen etiquetas a los ejes horizontal y vertical, así como el nombre de gráfica. Además, si
@@ -659,7 +674,7 @@ se está graficando más de una curva, se hace necesario especificar a qué refi
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x20e7280dc88&gt;
 </pre></div>
 </div>
-<img alt="_images/Matplotlib_35_1.png" src="_images/Matplotlib_35_1.png" />
+<img alt="_images/fe1e27bc5bdfdfa51d261d349e6db46ba956edddd44cd6caa9c3b7fb59c831fa.png" src="_images/fe1e27bc5bdfdfa51d261d349e6db46ba956edddd44cd6caa9c3b7fb59c831fa.png" />
 </div>
 </div>
 <p>La instrucción <code class="docutils literal notranslate"><span class="pre">xlabel</span></code> coloca una etiqueta al eje horizontal, de manera similar <code class="docutils literal notranslate"><span class="pre">ylabel</span></code> lo hace para el eje
@@ -667,7 +682,7 @@ vertical. Con <code class="docutils literal notranslate"><span class="pre">title
 colocar el recuadro con el <em>nombre</em> asignado a cada curva mediante el <em>keyword argument</em> <code class="docutils literal notranslate"><span class="pre">label</span></code>.</p>
 </section>
 <section id="anotaciones">
-<h2><span class="section-number">9.6. </span>Anotaciones<a class="headerlink" href="#anotaciones" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.6. </span>Anotaciones<a class="headerlink" href="#anotaciones" title="Link to this heading">#</a></h2>
 <p>Con anotaciones nos referimos a cualquier texto que se coloque dentro del <em>Axes</em> de Matplotlib. Usualmente
 utilizadas para indicar ciertas características partículares en una gráfica, o bien alguna nota informativa al respecto.
 La función base para realizar este tipo de tareas es <code class="docutils literal notranslate"><span class="pre">text</span></code>. La sintaxis más simple de <code class="docutils literal notranslate"><span class="pre">text</span></code> es:</p>
@@ -692,7 +707,7 @@ Veamos un ejemplo:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(10, 0.5, &#39;Algo informativo&#39;)
 </pre></div>
 </div>
-<img alt="_images/Matplotlib_38_1.png" src="_images/Matplotlib_38_1.png" />
+<img alt="_images/fa80f2df6515bf31de31999e6b7fb7fdb65f0eeb9aaa193768419900c7e00bbc.png" src="_images/fa80f2df6515bf31de31999e6b7fb7fdb65f0eeb9aaa193768419900c7e00bbc.png" />
 </div>
 </div>
 <p>Note que únicamente colocamos el texto <em>Algo informativo</em>  dentro del gráfico, de manera más específica en las coordenadas (10,0.5).</p>
@@ -716,13 +731,13 @@ Por ejemplo:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(10, 0.5, &#39;Algo informativo&#39;)
 </pre></div>
 </div>
-<img alt="_images/Matplotlib_40_1.png" src="_images/Matplotlib_40_1.png" />
+<img alt="_images/76c03189d7bfb0c6e3e7d9f821ac6d985ad95be8140023b2809de5c3f7f38e44.png" src="_images/76c03189d7bfb0c6e3e7d9f821ac6d985ad95be8140023b2809de5c3f7f38e44.png" />
 </div>
 </div>
 <p>Observe que lo único que se cambió fueron algunas propiedades del texto, tales como el tamaño de la fuente con <code class="docutils literal notranslate"><span class="pre">fontsize</span></code>, el color de fuente con <code class="docutils literal notranslate"><span class="pre">color</span></code> y el tipo de fuente con <code class="docutils literal notranslate"><span class="pre">name</span></code>, con este último se debe tener cuidado, dado que el nombre de la fuente indicada debe estar instalada en la PC que se ejecuta.</p>
 </section>
 <section id="graficas-en-coordenadas-polares">
-<h2><span class="section-number">9.7. </span>Gráficas en coordenadas polares<a class="headerlink" href="#graficas-en-coordenadas-polares" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.7. </span>Gráficas en coordenadas polares<a class="headerlink" href="#graficas-en-coordenadas-polares" title="Link to this heading">#</a></h2>
 <p>Las coordenadas polares o sistema de coordenadas polares son un sistema de coordenadas bidimensional en el que cada punto del plano se determina por una distancia y un ángulo <a class="reference external" href="https://es.wikipedia.org/wiki/Coordenadas_polares">*</a> . Habitualmente
 las funciones en coordenadas polares tienen la forma <span class="math notranslate nohighlight">\( r = f(\theta)\)</span>.</p>
 <p>En Matplotlib se dispone de la función <code class="docutils literal notranslate"><span class="pre">polar</span></code>, la cual traza una gráfica en coordenadas polares, dados como argumentos
@@ -744,40 +759,41 @@ rosa polar, cuya ecuación general está dada por:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20e6e895cc0&gt;]
 </pre></div>
 </div>
-<img alt="_images/Matplotlib_44_1.png" src="_images/Matplotlib_44_1.png" />
+<img alt="_images/12c93c4e51d8226ae406fe6f437c0dc33e26b382d0003951ace4a298ca7cc6bf.png" src="_images/12c93c4e51d8226ae406fe6f437c0dc33e26b382d0003951ace4a298ca7cc6bf.png" />
 </div>
 </div>
 <p>Observe que la función <code class="docutils literal notranslate"><span class="pre">polar</span></code> funciona de manera bastante similar a <code class="docutils literal notranslate"><span class="pre">plot</span></code>, de hecho se le pueden pasar los mismos
 <em>keyword arguments</em> para personalizar el gráfico resultante.</p>
 </section>
 <section id="graficas-de-barras">
-<h2><span class="section-number">9.8. </span>Gráficas de barras<a class="headerlink" href="#graficas-de-barras" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.8. </span>Gráficas de barras<a class="headerlink" href="#graficas-de-barras" title="Link to this heading">#</a></h2>
 </section>
 <section id="graficas-de-pastel">
-<h2><span class="section-number">9.9. </span>Gráficas de pastel<a class="headerlink" href="#graficas-de-pastel" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.9. </span>Gráficas de pastel<a class="headerlink" href="#graficas-de-pastel" title="Link to this heading">#</a></h2>
 <p>Las gráficas de pastel (o de tarta, o gráficos circulares) nos sirven para representar porcentajes y proporciones. Matplotlib dispone de la función <code class="docutils literal notranslate"><span class="pre">pie</span></code>, cuya sintaxis depende del grado de personalización y control que se requiera sobre la gráfica de pastel a dibujar.</p>
 <p>Para ejemplificar el uso de esta función vamos a suponer que se tienen los siguientes datos sobre algunas personas que tienen cierta cantidad de manzanas en <em>su poder</em>:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Nombre</p></th>
-<th class="head text-align:center"><p>Manzanas</p></th>
+<th class="head text-center"><p>Manzanas</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Ana</p></td>
-<td class="text-align:center"><p>20</p></td>
+<td class="text-center"><p>20</p></td>
 </tr>
 <tr class="row-odd"><td><p>Juan</p></td>
-<td class="text-align:center"><p>10</p></td>
+<td class="text-center"><p>10</p></td>
 </tr>
 <tr class="row-even"><td><p>Diana</p></td>
-<td class="text-align:center"><p>25</p></td>
+<td class="text-center"><p>25</p></td>
 </tr>
 <tr class="row-odd"><td><p>Catalina</p></td>
-<td class="text-align:center"><p>30</p></td>
+<td class="text-center"><p>30</p></td>
 </tr>
 </tbody>
 </table>
+</div>
 <p>Para representar el porcentaje del total del cual dispone cada uno, podemos trazar una gráfica de pastel. Para ello realizamos lo siguiente:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -788,7 +804,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Matplotlib_50_0.png" src="_images/Matplotlib_50_0.png" />
+<img alt="_images/a5d836155148f2c9a3ae1c235060925556e29b1c8cc589a5488b8ed69eb1b013.png" src="_images/a5d836155148f2c9a3ae1c235060925556e29b1c8cc589a5488b8ed69eb1b013.png" />
 </div>
 </div>
 <p>Observe que lo primero que hacemos es importar la librería matplotlib, enseguida, en utilizando listas definimos los nombres y el número de manzanas correspondientes. Luego, la función <code class="docutils literal notranslate"><span class="pre">pie</span></code> acepta un primer argumento que contiene los valores absolutos de cada ítem, además, de un <em>keyword argument</em> <code class="docutils literal notranslate"><span class="pre">labels</span></code> que contiene las etiquetas correspondientes.</p>
@@ -802,7 +818,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Matplotlib_53_0.png" src="_images/Matplotlib_53_0.png" />
+<img alt="_images/ce01255bca06be3e095031fa8a6c9ae579c64518837e88308d4a002fb5dbd409.png" src="_images/ce01255bca06be3e095031fa8a6c9ae579c64518837e88308d4a002fb5dbd409.png" />
 </div>
 </div>
 <p>Los combinación de colores se puede especificar de manera manual, pasando una lista de color en formato hexadecimal o RGB.</p>
@@ -816,14 +832,14 @@ rosa polar, cuya ecuación general está dada por:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Matplotlib_55_0.png" src="_images/Matplotlib_55_0.png" />
+<img alt="_images/510430cfcbc22d322ca74cc57a19239419dffb3029fdcd21de6b2cea118b9516.png" src="_images/510430cfcbc22d322ca74cc57a19239419dffb3029fdcd21de6b2cea118b9516.png" />
 </div>
 </div>
 <p>Los colores también se pueden determinar y autocalcular utilizando un mapa de color específico. Enseguida se muestra un ejemplo donde la variación es sobre colores en tonos azules.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">colors</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">cm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">colors</span>
 
 <span class="n">manzanas</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">30</span><span class="p">]</span>
 <span class="n">nombres</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Ana&quot;</span><span class="p">,</span><span class="s2">&quot;Juan&quot;</span><span class="p">,</span><span class="s2">&quot;Diana&quot;</span><span class="p">,</span><span class="s2">&quot;Catalina&quot;</span><span class="p">]</span>
@@ -838,7 +854,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Matplotlib_57_0.png" src="_images/Matplotlib_57_0.png" />
+<img alt="_images/1ef4f57af6fa7a2c16a2e6414eea3af9ae43ceb661a389851a0545bcb0d8ffa1.png" src="_images/1ef4f57af6fa7a2c16a2e6414eea3af9ae43ceb661a389851a0545bcb0d8ffa1.png" />
 </div>
 </div>
 <p>Es posible también segmentar o separar del bloque una o más de las <em>rebanadas</em> de la gráfica de pastel. Para ello se debe pasar una lista o tupla con valores entre <code class="docutils literal notranslate"><span class="pre">0</span></code> y <code class="docutils literal notranslate"><span class="pre">n</span></code> que indican el desfase respecto al centro, <code class="docutils literal notranslate"><span class="pre">0</span></code> indica ningún desfase y <code class="docutils literal notranslate"><span class="pre">n</span></code> un desfase equivalente a <code class="docutils literal notranslate"><span class="pre">n*r</span></code>, donde <code class="docutils literal notranslate"><span class="pre">r</span></code> es el radio de la gráfica de pastel.</p>
@@ -854,12 +870,12 @@ rosa polar, cuya ecuación general está dada por:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Matplotlib_59_0.png" src="_images/Matplotlib_59_0.png" />
+<img alt="_images/a49defa10b91ee1272cc680cf0c3e57cd4afb296641644d8fad16acc95581587.png" src="_images/a49defa10b91ee1272cc680cf0c3e57cd4afb296641644d8fad16acc95581587.png" />
 </div>
 </div>
 </section>
 <section id="la-funcion-subplot-multiples-axes">
-<h2><span class="section-number">9.10. </span>La función <code class="docutils literal notranslate"><span class="pre">subplot</span></code>: múltiples axes<a class="headerlink" href="#la-funcion-subplot-multiples-axes" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.10. </span>La función <code class="docutils literal notranslate"><span class="pre">subplot</span></code>: múltiples axes<a class="headerlink" href="#la-funcion-subplot-multiples-axes" title="Link to this heading">#</a></h2>
 <p>La función <code class="docutils literal notranslate"><span class="pre">subplot</span></code> sirve para insertar <em>axes</em> en un <em>figure</em> organizados de una manera predefinida, usualmente una cuadrícula de m filas y n columnas. En cada uno de esos <em>axes</em> se pueden colocar información por separado.</p>
 <p>En el siguiente ejemplo se muestra el uso de la función <code class="docutils literal notranslate"><span class="pre">subplot</span></code> para crear dos <em>axes</em> apilados de forma vertical:</p>
 <div class="cell docutils container">
@@ -880,7 +896,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x24ad5f03438&gt;]
 </pre></div>
 </div>
-<img alt="_images/Matplotlib_62_1.png" src="_images/Matplotlib_62_1.png" />
+<img alt="_images/e89c7aa502c1fc326f6709b6645273910c041b6f5a8d1f548b2733227dfbfc46.png" src="_images/e89c7aa502c1fc326f6709b6645273910c041b6f5a8d1f548b2733227dfbfc46.png" />
 </div>
 </div>
 <p>La sintaxis básica de <code class="docutils literal notranslate"><span class="pre">subplot</span></code> es:</p>
@@ -911,7 +927,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Velocidad&#39;)
 </pre></div>
 </div>
-<img alt="_images/Matplotlib_64_1.png" src="_images/Matplotlib_64_1.png" />
+<img alt="_images/8e0dedb498e68ca5c4336e53d42c82b0db13ed16180183a565e56d078c970815.png" src="_images/8e0dedb498e68ca5c4336e53d42c82b0db13ed16180183a565e56d078c970815.png" />
 </div>
 </div>
 <p>Se puede observar que, la etiqueta horizontal para el primer <em>axes</em> no es visible, esto se puede <em>arreglar</em> utilizando la función <code class="docutils literal notranslate"><span class="pre">tight_layout</span></code>:</p>
@@ -936,7 +952,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Matplotlib_66_0.png" src="_images/Matplotlib_66_0.png" />
+<img alt="_images/4fff7df577e7b5d543f5b90669626121af840b2c4bebe918dd7c50b0f2cca2d7.png" src="_images/4fff7df577e7b5d543f5b90669626121af840b2c4bebe918dd7c50b0f2cca2d7.png" />
 </div>
 </div>
 <p>Enseguida se muestra un conjunto de 16 <em>axes</em> creados con la función <code class="docutils literal notranslate"><span class="pre">subplot</span></code>, con la intención de que pueda indentificar el orden en el cual Matplotlib los coloca en la rejilla; se puede inferir rapidamente que los numera en orden creciente hacia la derecha y hacia abajo.</p>
@@ -951,7 +967,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Matplotlib_68_0.png" src="_images/Matplotlib_68_0.png" />
+<img alt="_images/0c47cd451f18b22b0fc0ff91c5933810feaf361aeba225c40990a9990bb8a3af.png" src="_images/0c47cd451f18b22b0fc0ff91c5933810feaf361aeba225c40990a9990bb8a3af.png" />
 </div>
 </div>
 <p>Del código anterior se identifica que la función <code class="docutils literal notranslate"><span class="pre">subplot</span></code> también puede recibir los argumentos por separado, es decir, en la forma:</p>
@@ -960,7 +976,7 @@ rosa polar, cuya ecuación general está dada por:</p>
 </div>
 </section>
 <section id="graficas-de-curvas-parametricas-en-el-espacio">
-<h2><span class="section-number">9.11. </span>Gráficas de curvas paramétricas en el espacio<a class="headerlink" href="#graficas-de-curvas-parametricas-en-el-espacio" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.11. </span>Gráficas de curvas paramétricas en el espacio<a class="headerlink" href="#graficas-de-curvas-parametricas-en-el-espacio" title="Link to this heading">#</a></h2>
 <p>Una función vectorial de la forma:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} \vec{r}(t) = \begin{bmatrix}
@@ -977,7 +993,7 @@ trabajar con este tipo de expresiones en el análisis cinemático de partículas
 <p>En el intervalo <span class="math notranslate nohighlight">\( 0 \leq t \leq 4\pi \)</span>. Para ello en Python haríamos lo siguiente:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s2">&quot;3d&quot;</span><span class="p">)</span>
@@ -995,7 +1011,7 @@ trabajar con este tipo de expresiones en el análisis cinemático de partículas
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;mpl_toolkits.mplot3d.art3d.Line3D at 0x20e72b32cc0&gt;]
 </pre></div>
 </div>
-<img alt="_images/Matplotlib_72_1.png" src="_images/Matplotlib_72_1.png" />
+<img alt="_images/009c63005c0c0a366a556e10781f9a397e13e877b62d3f10e55562625b172aff.png" src="_images/009c63005c0c0a366a556e10781f9a397e13e877b62d3f10e55562625b172aff.png" />
 </div>
 </div>
 <p>Ahora explicamos lo referente al código anterior. Observe que en la primera línea importamos la clase <code class="docutils literal notranslate"><span class="pre">Axes3D</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">mpl_toolkits.maplot3d</span></code>, esto nos sirve para poder trabajar con gráficas tridimensionales. Luego, definimos un objeto de la
@@ -1032,12 +1048,12 @@ ejemplo el siguiente código:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Z&#39;)
 </pre></div>
 </div>
-<img alt="_images/Matplotlib_74_1.png" src="_images/Matplotlib_74_1.png" />
+<img alt="_images/0ae5a5a4ae3d615075a2f78a7ce97890b8dcb773d5b5750be60840f1b4d78bdb.png" src="_images/0ae5a5a4ae3d615075a2f78a7ce97890b8dcb773d5b5750be60840f1b4d78bdb.png" />
 </div>
 </div>
 </section>
 <section id="graficas-de-superficies">
-<h2><span class="section-number">9.12. </span>Gráficas de superficies<a class="headerlink" href="#graficas-de-superficies" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.12. </span>Gráficas de superficies<a class="headerlink" href="#graficas-de-superficies" title="Link to this heading">#</a></h2>
 <p>Las gráficas de superficies se utilizan para representar de manera gráfica una función bivariable en el espacio. El procedimiento de graficado para una función de dos variables <span class="math notranslate nohighlight">\( z = f(x,y) \)</span>, implica que se tendría que evaluar dicha función en una región delimitada por ciertos valores para las dos variables independientes. Para poder realizar esto de forma muy conveniente, la librería NumPy proporciona una función llamada <code class="docutils literal notranslate"><span class="pre">meshgrid</span></code>, la cual puede crear una <em>rejilla</em> bidimensional a partir de una lista de valores para cada variable independiente, por ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1070,7 +1086,7 @@ ejemplo el siguiente código:</p>
  &lt;matplotlib.lines.Line2D at 0x20e72c5eba8&gt;]
 </pre></div>
 </div>
-<img alt="_images/Matplotlib_79_1.png" src="_images/Matplotlib_79_1.png" />
+<img alt="_images/5c0a79bf01bb4c5d4f319b41a50a0344087d739eaed8d6d2635da88ee58fc1fe.png" src="_images/5c0a79bf01bb4c5d4f319b41a50a0344087d739eaed8d6d2635da88ee58fc1fe.png" />
 </div>
 </div>
 <p>Observe que los puntos a evaluar en este caso serán <span class="math notranslate nohighlight">\((0,10), (0,20), (1,10), (1,20)\)</span>. La densidad de la rejilla (o el número de puntos a evaluar) depende de la cantidad de valores que contengan los vectores que se le pasen como argumentos a la función <code class="docutils literal notranslate"><span class="pre">meshgrid</span></code>, por ejemplo:</p>
@@ -1084,7 +1100,7 @@ ejemplo el siguiente código:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Matplotlib_81_0.png" src="_images/Matplotlib_81_0.png" />
+<img alt="_images/8e579321a978eb3ca13a7120945f856204762082a3fb66d9b7d7a905ab8e7520.png" src="_images/8e579321a978eb3ca13a7120945f856204762082a3fb66d9b7d7a905ab8e7520.png" />
 </div>
 </div>
 <p>En general, si se requiere evaluar la funcion <span class="math notranslate nohighlight">\( z = f(x,y) \)</span> en la región <span class="math notranslate nohighlight">\( R = \{(x,y)\,|\,a \leq x \leq b, c \leq y \leq d \} \)</span>, entonces se tendrá:</p>
@@ -1097,7 +1113,7 @@ ejemplo el siguiente código:</p>
 <p>Enseguida se muestra el código para graficar la superficie de la función <span class="math notranslate nohighlight">\( z = x^2 + y^2 \)</span>, evaluada en la región <span class="math notranslate nohighlight">\(R = \{(x,y)\,|\, -5 \leq x \leq 5, -5 \leq y \leq 5 \}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s2">&quot;3d&quot;</span><span class="p">)</span>
@@ -1112,14 +1128,14 @@ ejemplo el siguiente código:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Matplotlib_84_0.png" src="_images/Matplotlib_84_0.png" />
+<img alt="_images/439be1f9bcbe6e945f8f4266944b4b927ece559c4d4223b73d8569b1a4b61f0b.png" src="_images/439be1f9bcbe6e945f8f4266944b4b927ece559c4d4223b73d8569b1a4b61f0b.png" />
 </div>
 </div>
 <p><em>Desmenuzando</em> un poco el código anterior, las primeras tres líneas, como se había descrito con anterioridad, sirven para poder crear un <em>Axes</em> que nos permita trabajar con gráficas tridimensionales. Con la función <code class="docutils literal notranslate"><span class="pre">linspace</span></code> se crean los intervalos de evaluación para cada variable independiente, luego, <code class="docutils literal notranslate"><span class="pre">meshgrid</span></code> permite formar la rejilla o puntos sobre los cuales se evaluará la función <span class="math notranslate nohighlight">\( z = f(x,y) \)</span>. La expresión <code class="docutils literal notranslate"><span class="pre">Z</span> <span class="pre">=</span> <span class="pre">X**2</span> <span class="pre">+</span> <span class="pre">Y**2</span></code> es propiamente la evaluación de la función de dos variables. La función <code class="docutils literal notranslate"><span class="pre">plot_surface</span></code> recibe como argumentos las tres matrices <code class="docutils literal notranslate"><span class="pre">X</span></code>,<code class="docutils literal notranslate"><span class="pre">Y</span></code>,<code class="docutils literal notranslate"><span class="pre">Z</span></code> que corresponden a las variables independientes y función, respectivamente. El argumento <code class="docutils literal notranslate"><span class="pre">cmap</span></code> se utiliza para indicar el mapa de color que se utilizará.</p>
 <p>Enseguida se muestra otro ejemplo, en este caso se grafica la función <span class="math notranslate nohighlight">\( z = \cos(x) + \text{sen}(y) \)</span>, evaluada en la región <span class="math notranslate nohighlight">\(R = \{(x,y)\,|\, 0 \leq x \leq 3\pi, 0 \leq y \leq 3\pi \}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s2">&quot;3d&quot;</span><span class="p">)</span>
@@ -1134,13 +1150,13 @@ ejemplo el siguiente código:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Matplotlib_86_0.png" src="_images/Matplotlib_86_0.png" />
+<img alt="_images/c731392017e1ef00b9a3e6ca83662b63a44159af7838ce547efde744ca854e92.png" src="_images/c731392017e1ef00b9a3e6ca83662b63a44159af7838ce547efde744ca854e92.png" />
 </div>
 </div>
 </section>
 <section id="ejercicios">
-<h2><span class="section-number">9.13. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
+<h2><span class="section-number">9.13. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
 <li><p>Gráfique la función <span class="math notranslate nohighlight">\( y = 10 \cos x \)</span> en el intervalo <span class="math notranslate nohighlight">\( 0 \leq x \leq 2\pi\)</span></p></li>
 <li><p>Gráfique la función <span class="math notranslate nohighlight">\( z = t^2 + \frac{1}{3}t \)</span> en el intervalo <span class="math notranslate nohighlight">\( -10 \leq t \leq 20\)</span>. Etiquete el eje horizontal como <code class="docutils literal notranslate"><span class="pre">Tiempo</span></code> y el eje vertical como <code class="docutils literal notranslate"><span class="pre">Aceleración</span></code>.</p></li>
 <li><p>Gráfique la curva parámetrica:</p></li>
@@ -1163,7 +1179,7 @@ ejemplo el siguiente código:</p>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -1171,38 +1187,106 @@ ejemplo el siguiente código:</p>
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="NumPy.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">8. </span>NumPy: estructuras matriciales</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="NumPy.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>NumPy: estructuras matriciales</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="SciPy.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="SciPy.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10. </span>SciPy</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+        <p class="prev-next-title"><span class="section-number">10. </span>SciPy: algoritmos y métodos numéricos</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Pedro Jorge De Los Santos<br/>
-        
-            &copy; Copyright 2025.<br/>
-          <div class="extra_footer">
-            <div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-matplotlib">9.1. ¿Qué es Matplotlib?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-matplotlib-jupyter-y-las-graficas-mostradas">9.2. De Matplotlib, Jupyter y las gráficas mostradas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#una-primera-aproximacion">9.3. Una primera aproximación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-funcion-plot">9.4. La función <code class="docutils literal notranslate"><span class="pre">plot</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graficando-funciones-matematicas">9.4.1. Graficando funciones matemáticas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modificando-el-color-estilos-y-grosor-de-linea">9.4.2. Modificando el color, estilos y grosor de línea</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#titulo-de-grafica-etiquetas-de-ejes-y-nombres-de-curvas">9.5. Título de gráfica, etiquetas de ejes y nombres de curvas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anotaciones">9.6. Anotaciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficas-en-coordenadas-polares">9.7. Gráficas en coordenadas polares</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficas-de-barras">9.8. Gráficas de barras</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficas-de-pastel">9.9. Gráficas de pastel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-funcion-subplot-multiples-axes">9.10. La función <code class="docutils literal notranslate"><span class="pre">subplot</span></code>: múltiples axes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficas-de-curvas-parametricas-en-el-espacio">9.11. Gráficas de curvas paramétricas en el espacio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficas-de-superficies">9.12. Gráficas de superficies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">9.13. Ejercicios</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Pedro Jorge De Los Santos
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>
     <!-- Default Statcounter code for Python para ingenieros
     https://jorgedelossantos.github.io/apuntes-python/ -->
     <script type="text/javascript">
@@ -1222,17 +1306,22 @@ ejemplo el siguiente código:</p>
     <!-- End of Statcounter Code -->
 </div>
 
-          </div>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
-      </div>
-    </div>
+</div>
+  </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+</div>
+          </footer>
+        
 
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
