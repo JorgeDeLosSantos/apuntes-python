@@ -36,6 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/customized.css?v=b341d7a2" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/customized-checkpoint.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -384,12 +385,18 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-vectorial">12.7. Cálculo vectorial</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-varias-variables">12.7. Cálculo de varias variables</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-multivariable">12.7.1. Funciones multivariable</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivadas-parciales">12.7.2. Derivadas parciales</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-gradiente">12.7.3. Vector gradiente</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-multiples">12.7.4. Integrales múltiples</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-vectoriales">12.7.5. Funciones vectoriales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-vectoriales">12.7.5. Funciones vectoriales</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#derivada-de-una-funcion-vectorial">12.7.5.1. Derivada de una función vectorial</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-de-una-funcion-vectorial">12.7.5.2. Integral de una función vectorial</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#longitud-de-arco">12.7.5.3. Longitud de arco</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#curvatura-de-una-funcion-vectorial">12.7.5.4. Curvatura de una función vectorial</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">12.8. Ejercicios</a></li>
@@ -2363,8 +2370,8 @@ x^2 + y^2 = 25
 </section>
 </section>
 </section>
-<section id="calculo-vectorial">
-<h2><span class="section-number">12.7. </span>Cálculo vectorial<a class="headerlink" href="#calculo-vectorial" title="Link to this heading">#</a></h2>
+<section id="calculo-de-varias-variables">
+<h2><span class="section-number">12.7. </span>Cálculo de varias variables<a class="headerlink" href="#calculo-de-varias-variables" title="Link to this heading">#</a></h2>
 <section id="funciones-multivariable">
 <h3><span class="section-number">12.7.1. </span>Funciones multivariable<a class="headerlink" href="#funciones-multivariable" title="Link to this heading">#</a></h3>
 <p>Por escribir</p>
@@ -2415,6 +2422,209 @@ x^2 + y^2 = 25
 </section>
 <section id="funciones-vectoriales">
 <h3><span class="section-number">12.7.5. </span>Funciones vectoriales<a class="headerlink" href="#funciones-vectoriales" title="Link to this heading">#</a></h3>
+<p>Una función vectorial es una función cuyo dominio es conjunto de números reales y cuyo rango es un conjunto de vectores.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">norm</span><span class="p">(),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/080ef16216dcaf168f41d359041850311291ccabe2fa133554a788019558238d.png" src="_images/080ef16216dcaf168f41d359041850311291ccabe2fa133554a788019558238d.png" />
+</div>
+</div>
+<section id="derivada-de-una-funcion-vectorial">
+<h4><span class="section-number">12.7.5.1. </span>Derivada de una función vectorial<a class="headerlink" href="#derivada-de-una-funcion-vectorial" title="Link to this heading">#</a></h4>
+<p>La derivada <span class="math notranslate nohighlight">\(\mathbf{r}'\)</span> de una función vectorial <span class="math notranslate nohighlight">\(\mathbf{r}\)</span> se define casi de la misma manera que las funciones con valores reales:</p>
+<div class="math notranslate nohighlight">
+\[ 
+\frac{d\mathbf{r}}{dt} = \mathbf{r}'(t) = 
+\lim_{h \to 0} \frac{\mathbf{r}(t+h) - \mathbf{r}(t)}{h}
+\]</div>
+<p>si este límite existe. De manera general, si <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span> es una función vectorial dada por:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\mathbf{r}(t) = \begin{bmatrix} f(t) \\ g(t) \\ h(t) \end{bmatrix}
+\end{split}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(f(t)\)</span>, <span class="math notranslate nohighlight">\( g(t) \)</span> y <span class="math notranslate nohighlight">\( h(t) \)</span> son funciones derivables, entonces:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\mathbf{r}'(t) = \begin{bmatrix} f'(t) \\ g'(t) \\ h'(t) \end{bmatrix}
+\end{split}\]</div>
+<p>En SymPy podemos utilizar el método <code class="docutils literal notranslate"><span class="pre">diff</span></code> para derivar una función vectorial creada con la clase <code class="docutils literal notranslate"><span class="pre">Matrix</span></code>. Por ejemplo, vamos a suponer que queremos calcular la derivada para la siguiente función vectorial:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{r}(t) = \begin{bmatrix} \cos t \\ \sin t \\ t \end{bmatrix}
+\end{split}\]</div>
+<p>Entonces, primero creamos la función vectorial:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">t</span><span class="p">])</span>
+<span class="n">r</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/94b59afe89aa92fb11ad007cc41b0977c98883f5e63b1ee5d32ddde07af8e7de.png" src="_images/94b59afe89aa92fb11ad007cc41b0977c98883f5e63b1ee5d32ddde07af8e7de.png" />
+</div>
+</div>
+<p>Y la derivamos utilizando <code class="docutils literal notranslate"><span class="pre">diff</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/03dc89eab7937135f6d7f08a55d9bd1c042e148c8ff8202dbd1d9d7e2bd76ae8.png" src="_images/03dc89eab7937135f6d7f08a55d9bd1c042e148c8ff8202dbd1d9d7e2bd76ae8.png" />
+</div>
+</div>
+<p>En el caso de que en la función vectorial aparezca más de una variable simbólica, entonces se debe indicar explícitamente que la derivada se realizará con respecto al parámetro <span class="math notranslate nohighlight">\(t\)</span>, de lo contrario Python nos lanzará un error, por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="n">a</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">a</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">t</span><span class="p">])</span>
+<span class="n">r</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6bd184b1d496e97e008d70fea1f3f47c144e94c8762599b50bf0ea07231d0628.png" src="_images/6bd184b1d496e97e008d70fea1f3f47c144e94c8762599b50bf0ea07231d0628.png" />
+</div>
+</div>
+<p>Para calcular una derivada de orden superior de una función vectorial podemos encadenar los métodos <code class="docutils literal notranslate"><span class="pre">diff</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">t</span><span class="p">])</span>
+<span class="n">r</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/eb7f3160da2c0bc47014852db4012ea4b45a91677a367e0ba615458446340c63.png" src="_images/eb7f3160da2c0bc47014852db4012ea4b45a91677a367e0ba615458446340c63.png" />
+</div>
+</div>
+<p>O bien especificar mediante un segundo argumento el orden de la derivada:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/eb7f3160da2c0bc47014852db4012ea4b45a91677a367e0ba615458446340c63.png" src="_images/eb7f3160da2c0bc47014852db4012ea4b45a91677a367e0ba615458446340c63.png" />
+</div>
+</div>
+</section>
+<section id="integral-de-una-funcion-vectorial">
+<h4><span class="section-number">12.7.5.2. </span>Integral de una función vectorial<a class="headerlink" href="#integral-de-una-funcion-vectorial" title="Link to this heading">#</a></h4>
+<p>La integral de una función vectorial continua <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span> se puede expresar en términos de las integrales de sus funciones componentes. Sea <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span> la función vectorial dada por:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\mathbf{r}(t) = \begin{bmatrix} f(t) \\ g(t) \\ h(t) \end{bmatrix}
+\end{split}\]</div>
+<p>Entonces:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\int \mathbf{r}(t) \, dt = \begin{bmatrix} 
+\int f(t) \,dt \\ \int g(t) \,dt \\ \int h(t) \,dt 
+\end{bmatrix}
+\end{split}\]</div>
+<p>De manera similar en el caso de una integral definida:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\int_a^b \mathbf{r}(t) \, dt = \begin{bmatrix} 
+\int_a^b f(t) \,dt \\ \int_a^b g(t) \,dt \\ \int_a^b h(t) \,dt 
+\end{bmatrix}
+\end{split}\]</div>
+<p>En SymPy podemos integrar una función vectorial utilizando el método <code class="docutils literal notranslate"><span class="pre">integrate</span></code> de la clase <code class="docutils literal notranslate"><span class="pre">Matrix</span></code>. Para ejemplificar vamos a calcular la integral de la siguiente función vectorial:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{r}(t) = \begin{bmatrix} \cos t \\ \sin t \\ t \end{bmatrix}
+\end{split}\]</div>
+<p>Primero definimos la función:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="mi">2</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">])</span>
+<span class="n">r</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/fac90b0f9abc491827564b622acf504d0c92d8cd2c06ad1fd619b68e1a2810b7.png" src="_images/fac90b0f9abc491827564b622acf504d0c92d8cd2c06ad1fd619b68e1a2810b7.png" />
+</div>
+</div>
+<p>Integramos utilizando el método <code class="docutils literal notranslate"><span class="pre">integrate</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="o">.</span><span class="n">integrate</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/c920c4594457fb33117f12833c05ef870b75a0584a5c662292b801ee3612443b.png" src="_images/c920c4594457fb33117f12833c05ef870b75a0584a5c662292b801ee3612443b.png" />
+</div>
+</div>
+<p>Para evaluar la integral definida</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^{\pi/2} \mathbf{r}(t)
+\]</div>
+<p>Tendríamos que pasarle al método <code class="docutils literal notranslate"><span class="pre">integrate</span></code> una tupla con la variable y los límites de integración:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="o">.</span><span class="n">integrate</span><span class="p">((</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/275609b965073594a6a177d08e1d75cc4c1af14f1286c6ee9a2197034dc06519.png" src="_images/275609b965073594a6a177d08e1d75cc4c1af14f1286c6ee9a2197034dc06519.png" />
+</div>
+</div>
+</section>
+<section id="longitud-de-arco">
+<h4><span class="section-number">12.7.5.3. </span>Longitud de arco<a class="headerlink" href="#longitud-de-arco" title="Link to this heading">#</a></h4>
+</section>
+<section id="curvatura-de-una-funcion-vectorial">
+<h4><span class="section-number">12.7.5.4. </span>Curvatura de una función vectorial<a class="headerlink" href="#curvatura-de-una-funcion-vectorial" title="Link to this heading">#</a></h4>
+<p>La curvatura de la curva dada por una función vectorial <span class="math notranslate nohighlight">\(\mathbf{r}\)</span> está dada por:</p>
+<div class="math notranslate nohighlight">
+\[ 
+\mathbf{\kappa}(t) = \frac{ \left| \mathbf{r}'(t) \times \mathbf{r}''(t) \right| }{ \left| \mathbf{r}'(t) \right|^3}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="n">a</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">a</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">simplify</span><span class="p">(</span> <span class="n">r</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span> <span class="n">r</span><span class="o">.</span><span class="n">diff</span><span class="p">((</span><span class="n">t</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="p">)</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span> <span class="o">/</span> <span class="n">r</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span><span class="o">**</span><span class="mi">3</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/c58516713967b54da2d98ff51a96377ded9954d448be25d794868f0cb8a4f29e.png" src="_images/c58516713967b54da2d98ff51a96377ded9954d448be25d794868f0cb8a4f29e.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">simplify</span><span class="p">(</span> <span class="n">r</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span> <span class="n">r</span><span class="o">.</span><span class="n">diff</span><span class="p">((</span><span class="n">t</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="p">)</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span> <span class="o">/</span> <span class="n">r</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span><span class="o">**</span><span class="mi">3</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/702ba12f4bf2cef7092842f0bdd4dc2b8bfdc07d13bc79cc481075cd1cc7c88c.png" src="_images/702ba12f4bf2cef7092842f0bdd4dc2b8bfdc07d13bc79cc481075cd1cc7c88c.png" />
+</div>
+</div>
+</section>
 </section>
 </section>
 <section id="ejercicios">
@@ -2585,12 +2795,18 @@ vectores fuerza y un conjunto de vectores de posición. Se deberá devolver el m
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-vectorial">12.7. Cálculo vectorial</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-varias-variables">12.7. Cálculo de varias variables</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-multivariable">12.7.1. Funciones multivariable</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivadas-parciales">12.7.2. Derivadas parciales</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-gradiente">12.7.3. Vector gradiente</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-multiples">12.7.4. Integrales múltiples</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-vectoriales">12.7.5. Funciones vectoriales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-vectoriales">12.7.5. Funciones vectoriales</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#derivada-de-una-funcion-vectorial">12.7.5.1. Derivada de una función vectorial</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-de-una-funcion-vectorial">12.7.5.2. Integral de una función vectorial</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#longitud-de-arco">12.7.5.3. Longitud de arco</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#curvatura-de-una-funcion-vectorial">12.7.5.4. Curvatura de una función vectorial</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">12.8. Ejercicios</a></li>

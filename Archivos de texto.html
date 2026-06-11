@@ -36,6 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/customized.css?v=b341d7a2" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/customized-checkpoint.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -320,7 +321,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -336,6 +339,29 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">7.1. Introducción</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abrir-y-cerrar-archivos-de-texto">7.2. Abrir y cerrar archivos de texto</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leer-archivos-de-texto">7.3. Leer archivos de texto</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escribir-en-archivos-de-texto">7.4. Escribir en archivos de texto</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-de-errores-comunes">7.5. Manejo de errores comunes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#archivo-no-encontrado">7.5.1. Archivo no encontrado</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#codificacion">7.5.2. Codificación</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-del-sistema-de-archivos">7.6. Manejo del sistema de archivos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explorar-directorios-y-archivos">7.6.1. Explorar directorios y archivos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-eliminar-renombrar-y-mover-carpetas">7.6.2. Crear, eliminar, renombrar y mover carpetas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mover-copiar-y-eliminar-archivos">7.6.3. Mover, copiar y eliminar archivos</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">7.7. Ejercicios</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -347,7 +373,1281 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="archivos-de-texto">
 <h1><span class="section-number">7. </span>Archivos de texto<a class="headerlink" href="#archivos-de-texto" title="Link to this heading">#</a></h1>
-<p>Por escribirse</p>
+<section id="introduccion">
+<h2><span class="section-number">7.1. </span>Introducción<a class="headerlink" href="#introduccion" title="Link to this heading">#</a></h2>
+<p>En el desarrollo de software, especialmente en el ámbito de la ingeniería, es común la necesidad de almacenar, recuperar y procesar información persistente. Los archivos de texto representan una de las formas más simples y universales de hacerlo.</p>
+<p>Un <a class="reference external" href="https://es.wikipedia.org/wiki/Archivo_de_texto">archivo de texto</a> es un archivo que contiene únicamente caracteres legibles para un ser humano. A diferencia de los archivos binarios, no requiere un formato especial para ser interpretado: puede abrirse y leerse fácilmente con cualquier editor de texto. Este tipo de archivo se utiliza ampliamente para guardar datos estructurados o no estructurados, como resultados de experimentos, datos de sensores, configuraciones, registros de eventos, o incluso scripts de simulación.</p>
+<p>En este capítulo abordaremos cómo leer y registrar información en archivos de texto, así como una breve introducción al manejo del sistema de archivos. El dominio de estos tópicos es esencial para automatizar flujos de trabajo, procesar grandes volúmenes de datos, generar reportes o preparar entradas y salidas para análisis numéricos. Naturalmente, es frecuente que lo anterior forme parte del quehacer diario de un ingeniero en estos tiempos.</p>
+</section>
+<section id="abrir-y-cerrar-archivos-de-texto">
+<h2><span class="section-number">7.2. </span>Abrir y cerrar archivos de texto<a class="headerlink" href="#abrir-y-cerrar-archivos-de-texto" title="Link to this heading">#</a></h2>
+<p>Antes de poder leer o escribir datos en un archivo, es necesario abrirlo. En Python, esto se realiza mediante la función incorporada <code class="docutils literal notranslate"><span class="pre">open</span></code>. Una vez finalizadas las operaciones con el archivo, se debe cerrar explícitamente para liberar los recursos del sistema. Prácticamente, siempre que vayamos a trabajar con archivos de texto, es necesario seguir estos tres pasos:</p>
+<ol class="arabic simple">
+<li><p>Abrir el archivo indicando su ruta (ubicación) y el modo de trabajo. Aquí utilizamos la función <code class="docutils literal notranslate"><span class="pre">open</span></code>.</p></li>
+<li><p>Leer o escribir la información. Aquí usaremos algún método para leer o escribir el archivo.</p></li>
+<li><p>Cerrar el archivo, para esto usamos el método <code class="docutils literal notranslate"><span class="pre">close</span></code>.</p></li>
+</ol>
+<p>Por ejemplo, vamos a suponer que tenemos un archivo de texto denominado <code class="docutils literal notranslate"><span class="pre">texto.txt</span></code>, ubicado en la misma carpeta que nuestro script de Python (o notebook de Jupyter). De este archivo vamos a leer y mostrar su contenido, para esto primero debemos abrir el archivo utilizando la función <code class="docutils literal notranslate"><span class="pre">open</span></code>, la cual recibe como primer argumento la ruta y el nombre del archivo (en este caso <code class="docutils literal notranslate"><span class="pre">&quot;texto.txt&quot;</span></code>), y como segundo argumento el modo de apertura del archivo (en este caso <code class="docutils literal notranslate"><span class="pre">&quot;r&quot;</span></code>, que indica modo lectura):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;texto.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Una vez abierto el archivo, podemos leer el contenido del archivo utilizando alguno de los métodos que tenemos disponibles en el objeto <code class="docutils literal notranslate"><span class="pre">f</span></code> creado previamente, por ejemplo, una manera sería utilizando el método <code class="docutils literal notranslate"><span class="pre">read</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texto</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Look at the stars
+Look how they shine for you
+And everything you do
+Yeah, they were all yellow
+</pre></div>
+</div>
+</div>
+</div>
+<p>Una vez leído y almacenado el contenido, podemos ahora cerrar el archivo utilizando el método <code class="docutils literal notranslate"><span class="pre">close</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Otra manera de abrir y utilizar archivos es con la palabra reservada <code class="docutils literal notranslate"><span class="pre">with</span></code>, la cual nos sirve para crear un bloque de contexto. Veamos el mismo ejemplo anterior:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;texto.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">texto</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Look at the stars
+Look how they shine for you
+And everything you do
+Yeah, they were all yellow
+</pre></div>
+</div>
+</div>
+</div>
+<p>La ventaja de utilizar <code class="docutils literal notranslate"><span class="pre">with</span></code> es que no tenemos que cerrar explícitamente el archivo, algo que puede ser muy conveniente dado que es frecuente <em>olvidar</em> el cierre de los archivos. Incluso si ocurre un error dentro del bloque, Python cerrará el archivo automáticamente.</p>
+</section>
+<section id="leer-archivos-de-texto">
+<h2><span class="section-number">7.3. </span>Leer archivos de texto<a class="headerlink" href="#leer-archivos-de-texto" title="Link to this heading">#</a></h2>
+<p>Para leer un archivo de texto en Python debemos abrirlo utilizando el modo de lectura (<code class="docutils literal notranslate"><span class="pre">'r'</span></code>) y enseguida utilizar uno de los métodos disponibles para leer el contenido del archivo. Vamos a comenzar con el método <code class="docutils literal notranslate"><span class="pre">read</span></code>, este nos permite leer de una sola vez todo el contenido del archivo y nos lo devuelve en una cadena de texto. Para ejemplificar vamos a leer un archivo <code class="docutils literal notranslate"><span class="pre">datos.txt</span></code> que contiene 10 líneas con mediciones de temperaturas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;datos.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">datos</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">datos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.5
+20.1
+22.3
+24.0
+25.6
+26.4
+27.0
+25.8
+23.1
+20.7
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos verificar que la variable <code class="docutils literal notranslate"><span class="pre">datos</span></code> es de tipo <code class="docutils literal notranslate"><span class="pre">str</span></code> (cadena de caracteres):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">datos</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Obviamente, si quisiéramos convertir esta información a una lista de valores numéricos que podamos analizar, entonces nos veríamos en la necesidad de procesar la variable <code class="docutils literal notranslate"><span class="pre">datos</span></code>, una manera podría ser la siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datos_num</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">dato</span><span class="p">)</span> <span class="k">for</span> <span class="n">dato</span> <span class="ow">in</span> <span class="n">datos</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">datos_num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[18.5, 20.1, 22.3, 24.0, 25.6, 26.4, 27.0, 25.8, 23.1, 20.7]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Otro método que podemos usar para leer el contenido de un archivo de texto es <code class="docutils literal notranslate"><span class="pre">readlines</span></code>, el cual también <em>lee</em> de una sola vez todo el contenido del archivo, pero a diferencia de <code class="docutils literal notranslate"><span class="pre">read</span></code> devuelve una lista con todas las líneas del archivo, cada elemento de la lista es un línea. Vamos a leer el mismo archivo previo, pero ahora haciendo uso de <code class="docutils literal notranslate"><span class="pre">readlines</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;datos.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">datos</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">datos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;18.5\n&#39;, &#39;20.1\n&#39;, &#39;22.3\n&#39;, &#39;24.0\n&#39;, &#39;25.6\n&#39;, &#39;26.4\n&#39;, &#39;27.0\n&#39;, &#39;25.8\n&#39;, &#39;23.1\n&#39;, &#39;20.7&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>El método <code class="docutils literal notranslate"><span class="pre">readline</span></code> nos permite leer una línea del archivo cada vez que se invoca, esto es conveniente cuando el archivo es muy grande y resulta inviable leerlo todo de una vez con los métodos previos. Veamos el ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;datos.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">dato</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dato</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observa que en este caso únicamente estamos leyendo y mostrando la primera línea del archivo <code class="docutils literal notranslate"><span class="pre">datos.txt</span></code>. Si queremos leer un par de líneas, debemos entonces invocar dos veces el método <code class="docutils literal notranslate"><span class="pre">readline</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;datos.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">dato1</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dato1</span><span class="p">)</span>
+    <span class="n">dato2</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dato2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.5
+
+20.1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para leer el archivo completo podemos utilizar un ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code> como se muestra enseguida:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;datos.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">dato</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+    <span class="k">while</span> <span class="n">dato</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">dato</span><span class="p">)</span>
+        <span class="n">dato</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.5
+
+20.1
+
+22.3
+
+24.0
+
+25.6
+
+26.4
+
+27.0
+
+25.8
+
+23.1
+
+20.7
+</pre></div>
+</div>
+</div>
+</div>
+<p>Otra manera de leer el contenido de un archivo de texto es iterando directamente sobre el archivo, tal y como se muestra enseguida:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;datos.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">dato</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">dato</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.5
+
+20.1
+
+22.3
+
+24.0
+
+25.6
+
+26.4
+
+27.0
+
+25.8
+
+23.1
+
+20.7
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="escribir-en-archivos-de-texto">
+<h2><span class="section-number">7.4. </span>Escribir en archivos de texto<a class="headerlink" href="#escribir-en-archivos-de-texto" title="Link to this heading">#</a></h2>
+<p>En ingeniería, guardar datos en archivos de texto es una operación común, la información se preserva de forma legible para una persona, pero también de forma estructurada, de tal manera que la computadora también puede leer sin complicaciones esa información.</p>
+<p>En Python, para escribir en un archivo de texto, primero debemos abrirlo con los permisos (o modo) correspondientes de escritura. Existen dos modos de <em>apertura</em> que nos permiten escribir en un archivo de texto:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'w'</span></code>, sobrescribe el contenido existente.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'a'</span></code>, agrega el contenido al final del archivo.</p></li>
+</ul>
+<p>Una vez abierto el archivo podemos utilizar uno de los métodos de escritura disponibles:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">f.write(cadena)</span></code>, nos permite escribir el contenido de una cadena de caracteres en el archivo.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f.writelines(lista)</span></code>,  nos permite escribir multiples líneas contenidas en una lista de cadenas de caracteres.</p></li>
+</ul>
+<p>En el entendido de que <code class="docutils literal notranslate"><span class="pre">f</span></code> es el objeto que se crea cuando abrimos un archivo en modo de escritura.</p>
+<p>Veamos un ejemplo utilizando el modo <code class="docutils literal notranslate"><span class="pre">'w'</span></code> y el método <code class="docutils literal notranslate"><span class="pre">write</span></code> para escribir una cadena de caracteres a un archivo de texto:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Nunca me ha gustado ser sorprendido. Cuando me sucede algo, prefiero estar prevenido.&quot;</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;fragmento.txt&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si al archivo anterior quisiéramos agregarle más texto, entonces tendríamos que utilizar el modo <code class="docutils literal notranslate"><span class="pre">'a'</span></code>, de lo contrario sobrescribiríamos el contenido existente. Observa el siguiente ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mas_texto</span> <span class="o">=</span> <span class="s2">&quot;Te digo a media voz cosas que invento a cada rato&quot;</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;fragmento.txt&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">mas_texto</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para verificar lo que hemos escrito en <code class="docutils literal notranslate"><span class="pre">fragmentos.txt</span></code> podemos abrirlo y leer su contenido:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;fragmento.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">contenido</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">contenido</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nunca me ha gustado ser sorprendido. Cuando me sucede algo, prefiero estar prevenido.Te digo a media voz cosas que invento a cada rato
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podrás notar que las cadenas se han escrito en el archivo, una seguida de la otra, sin salto de línea de por medio. Si quisiéramos agregar un salto de línea o alguna otra separación, entonces tendríamos que agregarla de forma explícita, por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Los amorosos buscan,</span><span class="se">\n</span><span class="s2">los amorosos son los que abandonan,</span><span class="se">\n</span><span class="s2">son los que cambian, los que olvidan.&quot;</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;los_amorosos.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observa que en este caso hemos agregado saltos de línea con el caracter <code class="docutils literal notranslate"><span class="pre">&quot;\n&quot;</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;los_amorosos.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">contenido</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">contenido</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Los amorosos buscan,
+los amorosos son los que abandonan,
+son los que cambian, los que olvidan.
+</pre></div>
+</div>
+</div>
+</div>
+<p>El método <code class="docutils literal notranslate"><span class="pre">writelines</span></code> nos permite escribir una lista de cadenas de caracteres a un archivo de texto, veamos el siguiente ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paises</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;México&quot;</span><span class="p">,</span><span class="s2">&quot;Colombia&quot;</span><span class="p">,</span><span class="s2">&quot;Perú&quot;</span><span class="p">,</span><span class="s2">&quot;Argentina&quot;</span><span class="p">,</span><span class="s2">&quot;España&quot;</span><span class="p">,</span><span class="s2">&quot;Chile&quot;</span><span class="p">,</span><span class="s2">&quot;Venezuela&quot;</span><span class="p">]</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;países.txt&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">paises</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;países.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">contenido</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">contenido</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MéxicoColombiaPerúArgentinaEspañaChileVenezuela
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observa que <code class="docutils literal notranslate"><span class="pre">writelines</span></code> tampoco agrega un separador de líneas y por lo tanto habría que agregarlo de forma <em>manual</em> a cada uno de los elementos de la lista, para el ejemplo anterior:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paises</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;México&quot;</span><span class="p">,</span><span class="s2">&quot;Colombia&quot;</span><span class="p">,</span><span class="s2">&quot;Perú&quot;</span><span class="p">,</span><span class="s2">&quot;Argentina&quot;</span><span class="p">,</span><span class="s2">&quot;España&quot;</span><span class="p">,</span><span class="s2">&quot;Chile&quot;</span><span class="p">,</span><span class="s2">&quot;Venezuela&quot;</span><span class="p">]</span>
+<span class="n">paises_con_salto</span> <span class="o">=</span> <span class="p">[</span><span class="n">pais</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">pais</span> <span class="ow">in</span> <span class="n">paises</span><span class="p">]</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;países.txt&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">paises_con_salto</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="manejo-de-errores-comunes">
+<h2><span class="section-number">7.5. </span>Manejo de errores comunes<a class="headerlink" href="#manejo-de-errores-comunes" title="Link to this heading">#</a></h2>
+<p>Cuando trabajamos con archivos de texto es importante tener cuidado con errores podrían surgir, por ejemplo: intentar abrir archivos que no existen, problemas con los permisos, problemas con la codificación, entre otros. Esto nos lleva a que nuestro programa falle y detenga su ejecución, o bien, que el resultado que obtengamos no sea el correcto. En lo subsiguiente vamos a revisar cómo lidiar con algunos de estos errores.</p>
+<section id="archivo-no-encontrado">
+<h3><span class="section-number">7.5.1. </span>Archivo no encontrado<a class="headerlink" href="#archivo-no-encontrado" title="Link to this heading">#</a></h3>
+<p>Es uno de los errores más comunes cuando trabajamos con archivos de texto, se produce cuando el programa intenta abrir un archivo que no existe en la ruta especificada. En Python, este tipo de error genera una excepción de tipo <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code>. Este tipo de problemas suelen presentarse porque el nombre del archivo se escribe incorrectamente, la ruta relativa o absoluta está mal especificada o bien el archivo ha sido borrado o movido de la ubicación indicada.</p>
+<p>Observa el siguiente ejemplo, en el cual intentamos acceder a un archivo <code class="docutils literal notranslate"><span class="pre">mis_datos.txt</span></code> que no existe en la ubicación actual:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;mis_datos.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">contenido</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">contenido</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">143</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;mis_datos.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">contenido</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">contenido</span><span class="p">)</span>
+
+<span class="nn">File ~\anaconda3\Lib\site-packages\IPython\core\interactiveshell.py:324,</span> in <span class="ni">_modified_open</span><span class="nt">(file, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">317</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}:</span>
+<span class="g g-Whitespace">    </span><span class="mi">318</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">319</span>         <span class="sa">f</span><span class="s2">&quot;IPython won&#39;t let you open fd=</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> by default &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">320</span>         <span class="s2">&quot;as it is likely to crash IPython. If you know what you are doing, &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">321</span>         <span class="s2">&quot;you can use builtins&#39; open.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">322</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">324</span> <span class="k">return</span> <span class="n">io_open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;mis_datos.txt&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Una primera aproximación para lidiar con este error puede ser el uso de la sentencia <code class="docutils literal notranslate"><span class="pre">try-except</span></code>, tal como se muestra enseguida:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;mis_datos.txt&quot;</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">contenido</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El archivo &#39;</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&#39; no se encuentra en la ubicación especificada.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El archivo &#39;mis_datos.txt&#39; no se encuentra en la ubicación especificada.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Otra manera puede ser que verifiquemos primeramente que el archivo existe, por ejemplo con <code class="docutils literal notranslate"><span class="pre">os.path.exists</span></code> de la librería <code class="docutils literal notranslate"><span class="pre">os</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;mis_datos.txt&quot;</span>
+
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">contenido</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El archivo &#39;</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&#39; no existe.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El archivo &#39;mis_datos.txt&#39; no existe.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Naturalmente, en este caso únicamente estamos mostrando al usuario un mensaje que indica que el archivo en cuestión no existe, sin detener el flujo de ejecución del programa, sin embargo, debemos considerar que seguramente tendríamos que programar, además, las acciones a tomar si el archivo que queremos leer no se encuentra, claramente esto dependerá de cada situación particular.</p>
+<p>A continuación, se muestra un ejemplo en el cual intentamos leer un archivo <code class="docutils literal notranslate"><span class="pre">config.txt</span></code> que contiene cierta información para la configuración inicial de una aplicación. En el caso de que el archivo no exista, entonces se crea un nuevo archivo de configuración que contenga unos valores predeterminados, y además dichos valores se almacenan en la variable <code class="docutils literal notranslate"><span class="pre">configuracion</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">archivo_configuracion</span> <span class="o">=</span> <span class="s1">&#39;config.txt&#39;</span>
+<span class="n">valores_predeterminados</span> <span class="o">=</span> <span class="s1">&#39;A=5</span><span class="se">\n</span><span class="s1">B=8</span><span class="se">\n</span><span class="s1">C=10&#39;</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">archivo_configuracion</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">configuracion</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Archivo de configuración no encontrado. Se creará uno nuevo con valores predeterminados.&quot;</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">archivo_configuracion</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">valores_predeterminados</span><span class="p">)</span>
+    <span class="n">configuracion</span> <span class="o">=</span> <span class="n">valores_predeterminados</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">configuracion</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Archivo de configuración no encontrado. Se creará uno nuevo con valores predeterminados.
+A=5
+B=8
+C=10
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="codificacion">
+<h3><span class="section-number">7.5.2. </span>Codificación<a class="headerlink" href="#codificacion" title="Link to this heading">#</a></h3>
+<p>La codificación de caracteres es el método que permite convertir un carácter de un lenguaje natural  en un símbolo de otro sistema de representación, como un número o una secuencia de pulsos electrónicos en un sistema electrónico aplicando normas o reglas de codificación. <a class="footnote-reference brackets" href="#wiki-codificacion" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<p>En una computadora, los caracteres de un sistema de escritura se convierten en bytes para ser procesados y almacenados, y por lo tanto se requiere una representación numérica para que esto sea posible. La codificación utilizada define esa correspondencia entre caracteres y bytes. Existen varias codificaciones, a continuación se muestran algunas de las más comunes:</p>
+<ul class="simple">
+<li><p>ASCII</p></li>
+<li><p>ISO-8859-1 (Latin-1)</p></li>
+<li><p>UTF-8</p></li>
+<li><p>UTF-16</p></li>
+<li><p>cp1252</p></li>
+</ul>
+<p>En Python, cuando leemos o escribimos texto desde o hacia un archivo, hacemos uso de una codificación por defecto, la cual dependerá del sistema operativo y de la región en la cual estemos ubicados. El módulo <code class="docutils literal notranslate"><span class="pre">locale</span></code> nos permite saber qué codificación estamos utilizando por defecto:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">locale</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">locale</span><span class="o">.</span><span class="n">getpreferredencoding</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cp1252
+</pre></div>
+</div>
+</div>
+</div>
+<p>Así pues, cualquier archivo que estemos leyendo o escribiendo lo haremos con esta codificación. Si intentáramos leer un archivo de texto que fue escrito utilizando una codificación diferente, es muy probable que tengamos problemas para representar adecuadamente algunos caracteres o bien definitivamente no poder representarlos. Este es un error frecuente cuando se trabaja con archivos de texto, puesto que muchas veces se descuida el hecho de indicar explícitamente la codificación a utilizar para evitar problemas de compatibilidad entre diversos usuarios.</p>
+<p>Observa el siguiente ejemplo, en cual leemos un archivo de texto que fue guardado con la codificación UTF-8:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;fragmento-stoner.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">contenido</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">contenido</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Se empezÃ³ a preguntar si su vida merecÃ­a la pena, si alguna vez la habÃ­a merecido. 
+Era una duda, sospechaba, que le llegaba a todo el mundo tarde o temprano. 
+Se preguntaba si a los demÃ¡s les sobrevenÃ­a con la misma fuerza impersonal que le llegaba a Ã©l.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notarás que aparecen algunos caracteres extraños, esto debido a que por defecto en nuestra computadora se utiliza la codificación <code class="docutils literal notranslate"><span class="pre">cp1252</span></code> para abrir los archivos de texto. Sin embargo, es muy sencillo especificar la codificación que queremos utilizar para abrir un archivo de texto, para esto hacemos uso del <em>keyword argument</em> <code class="docutils literal notranslate"><span class="pre">encoding</span></code>, tal como se muestra enseguida:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;fragmento-stoner.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">contenido</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">contenido</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Se empezó a preguntar si su vida merecía la pena, si alguna vez la había merecido. 
+Era una duda, sospechaba, que le llegaba a todo el mundo tarde o temprano. 
+Se preguntaba si a los demás les sobrevenía con la misma fuerza impersonal que le llegaba a él.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como puedes ver, ahora los caracteres se representan de la forma correcta. La recomendación es que siempre indiques de forma explícita la codificación que utilizarás para leer/escribir un archivo, esto evitará que tengas problemas de compatibilidad entre diversos sistemas operativos o entre usuarios ubicados en otras regiones cuya codificación por defecto podría ser distinta.</p>
+</section>
+</section>
+<section id="manejo-del-sistema-de-archivos">
+<h2><span class="section-number">7.6. </span>Manejo del sistema de archivos<a class="headerlink" href="#manejo-del-sistema-de-archivos" title="Link to this heading">#</a></h2>
+<p>En ingeniería, además de trabajar con archivos de textos, muchas veces es necesario interactuar con el sistema de archivos para obtener, guardar u organizar la información, es decir, nos vemos en la necesidad de buscar en determinadas ubicaciones, crear, mover, copiar o eliminar tanto carpetas como archivos. En esta sección veremos cómo utilizar algunos de los módulos que proporciona la librería estándar de Python (<code class="docutils literal notranslate"><span class="pre">os</span></code>, <code class="docutils literal notranslate"><span class="pre">shutil</span></code> y <code class="docutils literal notranslate"><span class="pre">pathlib</span></code>) que nos permiten realizar operaciones con las carpetas y archivos de nuestra computadora.</p>
+<p>Para simplificar un poco las líneas de código que escribiremos posteriormente, vamos a importar en este punto los tres módulos que utilizaremos, sólo ten la precaución de que si estás ejecutando los códigos en un script <code class="docutils literal notranslate"><span class="pre">*.py</span></code>, entonces deberás colocar las instrucciones de importación al inicio.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pathlib</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="explorar-directorios-y-archivos">
+<h3><span class="section-number">7.6.1. </span>Explorar directorios y archivos<a class="headerlink" href="#explorar-directorios-y-archivos" title="Link to this heading">#</a></h3>
+<p>Una de las operaciones más básicas que hacemos al trabajar con directorios es determinar el directorio actual de trabajo, esto es necesario debido a que la ubicación de ciertos archivos que necesitamos leer o escribir usualmente está establecida de forma relativa a la carpeta de proyecto en el cual estamos trabajando o al <em>script</em> desde el cual se requiere acceder a la información. En Python, podemos hacer uso de la función <code class="docutils literal notranslate"><span class="pre">getcwd</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">os</span></code> para obtener el directorio actual de trabajo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\delos\Google Drive\My Drive\Apuntes\Apuntes - Python\apuntes-python
+</pre></div>
+</div>
+</div>
+</div>
+<p>Otra operación básica muy común es listar el contenido (archivos y carpetas) de un directorio específico. Observa el siguiente ejemplo, en el cual vamos a listar el contenido de una carpeta llamada <code class="docutils literal notranslate"><span class="pre">img</span></code>, ubicada en el directorio actual de trabajo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cover.pdf&#39;,
+ &#39;cover.svg&#39;,
+ &#39;logo.svg&#39;,
+ &#39;logo.png&#39;,
+ &#39;estructuras-de-control&#39;,
+ &#39;variables&#39;,
+ &#39;cadenas&#39;,
+ &#39;numpy&#39;,
+ &#39;estructuras-de-datos&#39;,
+ &#39;no.svg.txt&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observa que en este caso tenemos algunos archivos (<code class="docutils literal notranslate"><span class="pre">cover.pdf</span></code>, <code class="docutils literal notranslate"><span class="pre">cover.svg</span></code>, <code class="docutils literal notranslate"><span class="pre">logo.svg</span></code>, etc.) y carpetas (<code class="docutils literal notranslate"><span class="pre">variables</span></code>, <code class="docutils literal notranslate"><span class="pre">cadenas</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, etc.)</p>
+<p>Obviamente lo anterior únicamente nos permite <em>ver</em> el contenido de la carpeta indicada, pero no el de las subcarpetas que contiene, por ejemplo, ahí no podemos ver si la carpeta <code class="docutils literal notranslate"><span class="pre">variables</span></code> contiene algún archivo u otra subcarpeta. Si queremos explorar de forma recursiva todo el contenido de un directorio, incluyendo el de sus subcarpetas, podemos utilizar la función <code class="docutils literal notranslate"><span class="pre">walk</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">os</span></code>. Veamos un ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">contenido</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">contenido</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;img&#39;, [&#39;estructuras-de-control&#39;, &#39;variables&#39;, &#39;cadenas&#39;, &#39;numpy&#39;, &#39;estructuras-de-datos&#39;], [&#39;cover.pdf&#39;, &#39;cover.svg&#39;, &#39;logo.svg&#39;, &#39;logo.png&#39;, &#39;no.svg.txt&#39;])
+(&#39;img\\estructuras-de-control&#39;, [], [&#39;estructuras-de-control.svg&#39;])
+(&#39;img\\variables&#39;, [], [&#39;variables_3.svg&#39;, &#39;variables_1.svg&#39;, &#39;variables_2.svg&#39;])
+(&#39;img\\cadenas&#39;, [], [&#39;strings_index.svg&#39;, &#39;strings_negative_index.svg&#39;, &#39;slicing_2.svg&#39;, &#39;slicing_3.svg&#39;, &#39;slicing_4.svg&#39;, &#39;slicing.svg&#39;])
+(&#39;img\\numpy&#39;, [], [&#39;indexing.svg&#39;, &#39;indexing_matrix.svg&#39;])
+(&#39;img\\estructuras-de-datos&#39;, [], [&#39;lista-index.svg&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<p>La función <code class="docutils literal notranslate"><span class="pre">os.walk</span></code> nos devuelve un generador que podemos recorrer con un ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code>. Cada elemento que el generador nos devuelve es una tupla de la forma:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">dirpath</span><span class="p">,</span> <span class="n">dirnames</span><span class="p">,</span> <span class="n">filenames</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Donde <code class="docutils literal notranslate"><span class="pre">dirpath</span></code> es la ruta a cada una de las carpetas contenidas en el directorio raíz pasado como argumento a <code class="docutils literal notranslate"><span class="pre">walk</span></code>, incluyendo el propio directorio raíz. <code class="docutils literal notranslate"><span class="pre">dirnames</span></code> es una lista con el nombre de cada una de las subcarpetas contenidas en <code class="docutils literal notranslate"><span class="pre">dirpath</span></code> y <code class="docutils literal notranslate"><span class="pre">filenames</span></code> una lista con el nombre (incluyendo la extensión) de los archivos contenidos en <code class="docutils literal notranslate"><span class="pre">dirpath</span></code>.</p>
+<p>Así pues, en el ejemplo anterior podemos reemplazar la variable de ciclo <code class="docutils literal notranslate"><span class="pre">contenido</span></code> por <em>tres variables</em> <code class="docutils literal notranslate"><span class="pre">carpeta</span></code>, <code class="docutils literal notranslate"><span class="pre">subcarpetas</span></code>,<code class="docutils literal notranslate"><span class="pre">archivos</span></code> que correspondan a cada uno de los elementos de la tupla devuelta por <code class="docutils literal notranslate"><span class="pre">walk</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">carpeta</span><span class="p">,</span><span class="n">subcarpetas</span><span class="p">,</span><span class="n">archivos</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">carpeta</span><span class="si">}</span><span class="s2"> tiene </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">subcarpetas</span><span class="p">)</span><span class="si">}</span><span class="s2"> subcarpetas y </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">archivos</span><span class="p">)</span><span class="si">}</span><span class="s2"> archivos&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>img tiene 5 subcarpetas y 5 archivos
+img\estructuras-de-control tiene 0 subcarpetas y 1 archivos
+img\variables tiene 0 subcarpetas y 3 archivos
+img\cadenas tiene 0 subcarpetas y 6 archivos
+img\numpy tiene 0 subcarpetas y 2 archivos
+img\estructuras-de-datos tiene 0 subcarpetas y 1 archivos
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observa que en el código anterior hemos simplemente contado la cantidad de archivos y subcarpetas en cada uno de los directorios de <code class="docutils literal notranslate"><span class="pre">img</span></code>. Ahora veamos un ejemplo en el cual contaremos la cantidad de archivos <code class="docutils literal notranslate"><span class="pre">.svg</span></code> que hay dentro de un directorio específico (incluyendo sus subcarpetas):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">contador</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">carpeta</span><span class="p">,</span><span class="n">subcarpetas</span><span class="p">,</span><span class="n">archivos</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">archivo</span> <span class="ow">in</span> <span class="n">archivos</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">&quot;.svg&quot;</span> <span class="ow">in</span> <span class="n">archivo</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Archivo SVG encontrado: </span><span class="si">{</span><span class="n">archivo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">contador</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Se encontraron en total </span><span class="si">{</span><span class="n">contador</span><span class="si">}</span><span class="s2"> archivos SVG&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Archivo SVG encontrado: cover.svg
+Archivo SVG encontrado: logo.svg
+Archivo SVG encontrado: no.svg.txt
+Archivo SVG encontrado: estructuras-de-control.svg
+Archivo SVG encontrado: variables_3.svg
+Archivo SVG encontrado: variables_1.svg
+Archivo SVG encontrado: variables_2.svg
+Archivo SVG encontrado: strings_index.svg
+Archivo SVG encontrado: strings_negative_index.svg
+Archivo SVG encontrado: slicing_2.svg
+Archivo SVG encontrado: slicing_3.svg
+Archivo SVG encontrado: slicing_4.svg
+Archivo SVG encontrado: slicing.svg
+Archivo SVG encontrado: indexing.svg
+Archivo SVG encontrado: indexing_matrix.svg
+Archivo SVG encontrado: lista-index.svg
+Se encontraron en total 16 archivos SVG
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observa que el código anterior es bastante mejorable, puesto que está contando por ahí un archivo <code class="docutils literal notranslate"><span class="pre">no.svg.txt</span></code>, el cual realmente es un archivo de texto <code class="docutils literal notranslate"><span class="pre">*.txt</span></code>. Modificamos un poco para evitar ese detalle:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">contador</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">carpeta</span><span class="p">,</span><span class="n">subcarpetas</span><span class="p">,</span><span class="n">archivos</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">archivo</span> <span class="ow">in</span> <span class="n">archivos</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">archivo</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.svg&quot;</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Archivo SVG encontrado: </span><span class="si">{</span><span class="n">archivo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">contador</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Se encontraron en total </span><span class="si">{</span><span class="n">contador</span><span class="si">}</span><span class="s2"> archivos SVG&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Archivo SVG encontrado: cover.svg
+Archivo SVG encontrado: logo.svg
+Archivo SVG encontrado: estructuras-de-control.svg
+Archivo SVG encontrado: variables_3.svg
+Archivo SVG encontrado: variables_1.svg
+Archivo SVG encontrado: variables_2.svg
+Archivo SVG encontrado: strings_index.svg
+Archivo SVG encontrado: strings_negative_index.svg
+Archivo SVG encontrado: slicing_2.svg
+Archivo SVG encontrado: slicing_3.svg
+Archivo SVG encontrado: slicing_4.svg
+Archivo SVG encontrado: slicing.svg
+Archivo SVG encontrado: indexing.svg
+Archivo SVG encontrado: indexing_matrix.svg
+Archivo SVG encontrado: lista-index.svg
+Se encontraron en total 15 archivos SVG
+</pre></div>
+</div>
+</div>
+</div>
+<p>El módulo <code class="docutils literal notranslate"><span class="pre">pathlib</span></code> proporciona la clase <code class="docutils literal notranslate"><span class="pre">Path</span></code>, la cual nos permite también listar o explorar el contenido de un directorio, de una forma incluso un poco más <em>moderna</em> y conveniente. Veamos un ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">elemento</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>img\cover.pdf
+img\cover.svg
+img\logo.svg
+img\logo.png
+img\estructuras-de-control
+img\variables
+img\cadenas
+img\numpy
+img\estructuras-de-datos
+img\no.svg.txt
+img\estructuras-de-control\estructuras-de-control.svg
+img\variables\variables_3.svg
+img\variables\variables_1.svg
+img\variables\variables_2.svg
+img\cadenas\strings_index.svg
+img\cadenas\strings_negative_index.svg
+img\cadenas\slicing_2.svg
+img\cadenas\slicing_3.svg
+img\cadenas\slicing_4.svg
+img\cadenas\slicing.svg
+img\numpy\indexing.svg
+img\numpy\indexing_matrix.svg
+img\estructuras-de-datos\lista-index.svg
+</pre></div>
+</div>
+</div>
+</div>
+<p>El método <code class="docutils literal notranslate"><span class="pre">rglob</span></code> de <code class="docutils literal notranslate"><span class="pre">Path</span></code> nos permite <em>explorar</em> de forma recursiva todo el contenido de un directorio especificado. El caracter <code class="docutils literal notranslate"><span class="pre">*</span></code> pasado como argumento indica que estamos buscando cualquier elemento. El método <code class="docutils literal notranslate"><span class="pre">rglob</span></code> es muy poderoso y nos permite pasar un <a class="reference external" href="https://docs.python.org/dev/library/pathlib.html#pathlib-pattern-language">patrón</a> que puede expresar de forma concisa que estamos buscando ciertos tipos de directorios o archivos. Observa el siguiente ejemplo, en el cual buscamos archivos <code class="docutils literal notranslate"><span class="pre">SVG</span></code> que estén contenidos únicamente en subcarpetas que comiencen con la letra <code class="docutils literal notranslate"><span class="pre">v</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">archivo_svg</span> <span class="ow">in</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;v*/*.svg&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">archivo_svg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>img\variables\variables_3.svg
+img\variables\variables_1.svg
+img\variables\variables_2.svg
+</pre></div>
+</div>
+</div>
+</div>
+<p>Una de las ventajas de usar <code class="docutils literal notranslate"><span class="pre">pathlib.Path.glob</span></code> es que nos devuelve un generador de objetos de la clase <code class="docutils literal notranslate"><span class="pre">Path</span></code> con los cuales podemos hacer operaciones adicionales. Observa el siguiente ejemplo en el cual listamos cada uno de los de archivos con el tamaño correspondiente, esta información puede accederse directamente a través del objeto <code class="docutils literal notranslate"><span class="pre">archivo</span></code> que resulta en cada iteración:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">archivo</span> <span class="ow">in</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;v*/*.svg&quot;</span><span class="p">):</span>
+    <span class="n">file_name</span> <span class="o">=</span> <span class="n">archivo</span><span class="o">.</span><span class="n">name</span>
+    <span class="n">file_size</span> <span class="o">=</span> <span class="n">archivo</span><span class="o">.</span><span class="n">stat</span><span class="p">()</span><span class="o">.</span><span class="n">st_size</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Archivo: </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2"> | Tamaño: </span><span class="si">{</span><span class="n">file_size</span><span class="si">}</span><span class="s2"> bytes&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Archivo: variables_3.svg | Tamaño: 9958 bytes
+Archivo: variables_1.svg | Tamaño: 12025 bytes
+Archivo: variables_2.svg | Tamaño: 7936 bytes
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="crear-eliminar-renombrar-y-mover-carpetas">
+<h3><span class="section-number">7.6.2. </span>Crear, eliminar, renombrar y mover carpetas<a class="headerlink" href="#crear-eliminar-renombrar-y-mover-carpetas" title="Link to this heading">#</a></h3>
+<p>La creación y eliminación de carpetas es una operación muy común cuando trabajamos almacenando u organizando archivos. En Python disponemos de la función <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">os</span></code> para poder crear carpetas.</p>
+<p>Veamos un ejemplo, vamos a crear una carpeta llamada <code class="docutils literal notranslate"><span class="pre">demo</span></code> dentro de nuestro directorio actual de trabajo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Obviamente en este punto la carpeta <code class="docutils literal notranslate"><span class="pre">demo</span></code> no contiene ningún archivo o subcarpeta y lo podemos verificar con <code class="docutils literal notranslate"><span class="pre">os.listdir</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si intentamos crear nuevamente la carpeta con la función <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> Python nos lanzará un <code class="docutils literal notranslate"><span class="pre">FileExistsError</span></code>, indicando que la carpeta ya existe:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileExistsError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">297</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">)</span>
+
+<span class="ne">FileExistsError</span>: [WinError 183] Cannot create a file when that file already exists: &#39;demo&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos crear subcarpetas dentro de <code class="docutils literal notranslate"><span class="pre">demo</span></code>, observa el siguiente ejemplo en donde creamos tres subcarpetas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;demo/sensor_01&quot;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;demo/sensor_02&quot;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;demo/sensor_03&quot;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;sensor_01&#39;, &#39;sensor_02&#39;, &#39;sensor_03&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora observa el siguiente ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;demo/sensor_04/mediciones&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">303</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;demo/sensor_04/mediciones&quot;</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [WinError 3] The system cannot find the path specified: &#39;demo/sensor_04/mediciones&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python nos devuelve un <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> porque estamos intentando crear una carpeta llamada <code class="docutils literal notranslate"><span class="pre">mediciones</span></code> dentro de una carpeta denominada <code class="docutils literal notranslate"><span class="pre">sensor_04</span></code> ubicada en <code class="docutils literal notranslate"><span class="pre">demo</span></code>, sin embargo, la carpeta <code class="docutils literal notranslate"><span class="pre">sensor_04</span></code> actualmente no existe y la función <code class="docutils literal notranslate"><span class="pre">os.mkdir</span></code> no puede resolver este detalle. Esta situación se puede resolver utilizando la función <code class="docutils literal notranslate"><span class="pre">os.makedirs</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s2">&quot;demo/sensor_04/mediciones&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>La ventaja de <code class="docutils literal notranslate"><span class="pre">makedirs</span></code> es que puede crear todas las carpetas <em>intermedias</em> que hagan falta. Además de esto, <code class="docutils literal notranslate"><span class="pre">makedirs</span></code> puede manejar también el caso cuando una carpeta ya existe y la intentamos crear, observa el siguiente ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Bueno, sabemos que efectivamente <code class="docutils literal notranslate"><span class="pre">demo</span></code> ya existe, con el argumento <code class="docutils literal notranslate"><span class="pre">exist_ok=True</span></code> la función <code class="docutils literal notranslate"><span class="pre">makedirs</span></code> evita lanzar una excepción si el directorio ya ha sido creado.</p>
+<p>Ahora veremos cómo eliminar una carpeta. El módulo <code class="docutils literal notranslate"><span class="pre">os</span></code> nos proporciona la función <code class="docutils literal notranslate"><span class="pre">rmdir</span></code> a la cual únicamente le pasamos como argumento la ruta de la carpeta que queremos eliminar. Observa el siguiente ejemplo en el cual eliminaremos la carpeta <code class="docutils literal notranslate"><span class="pre">sensor_03</span></code> ubicada dentro de <code class="docutils literal notranslate"><span class="pre">demo</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">)</span> <span class="p">)</span> <span class="c1"># listamos contenido de demo antes de eliminar sensor_03</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Borramos demo/sensor_03&quot;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">rmdir</span><span class="p">(</span><span class="s2">&quot;demo/sensor_03&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;sensor_01&#39;, &#39;sensor_02&#39;, &#39;sensor_03&#39;, &#39;sensor_04&#39;]
+Borramos demo/sensor_03
+[&#39;sensor_01&#39;, &#39;sensor_02&#39;, &#39;sensor_04&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Tratamos de hacer lo mismo con <code class="docutils literal notranslate"><span class="pre">sensor_04</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">rmdir</span><span class="p">(</span><span class="s2">&quot;demo/sensor_04&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">316</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">os</span><span class="o">.</span><span class="n">rmdir</span><span class="p">(</span><span class="s2">&quot;demo/sensor_04&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="ne">OSError</span>: [WinError 145] The directory is not empty: &#39;demo/sensor_04&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observa que en este caso la función <code class="docutils literal notranslate"><span class="pre">os.rmdir</span></code> nos devuelve un <code class="docutils literal notranslate"><span class="pre">OSError</span></code>, debido a que no es capaz de borrar carpetas que no estén vacías, recuerda que en este caso <code class="docutils literal notranslate"><span class="pre">sensor_04</span></code> contiene una subcarpeta denominada <code class="docutils literal notranslate"><span class="pre">mediciones</span></code>.</p>
+<p>Para borrar carpetas que no estén vacías podemos hacer uso de la función <code class="docutils literal notranslate"><span class="pre">rmtree</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">shutil</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="s2">&quot;demo/sensor_04&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;sensor_01&#39;, &#39;sensor_02&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hay que tener precaución con esta función, puesto que borrará todo el contenido de la carpeta.</p>
+<p>Para renombrar una carpeta podemos utilizar la función <code class="docutils literal notranslate"><span class="pre">os.rename</span></code>, la cual recibe dos argumentos: <code class="docutils literal notranslate"><span class="pre">src</span></code> y <code class="docutils literal notranslate"><span class="pre">dst</span></code>, donde <code class="docutils literal notranslate"><span class="pre">src</span></code> es la ruta de la carpeta a renombrar y <code class="docutils literal notranslate"><span class="pre">dst</span></code> la nueva ruta (incluyendo el nuevo nombre). Por ejemplo, vamos a suponer que queremos renombrar la carpeta <code class="docutils literal notranslate"><span class="pre">sensor_02</span></code> (ubicada dentro de <code class="docutils literal notranslate"><span class="pre">demo</span></code>) como <code class="docutils literal notranslate"><span class="pre">s2</span></code>, entonces:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;demo/sensor_02&quot;</span><span class="p">,</span> <span class="s2">&quot;demo/s2&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;sensor_01&#39;, &#39;s2&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>La misma función <code class="docutils literal notranslate"><span class="pre">os.rename</span></code> nos puede servir también para mover una carpeta, simplemente cambiando la ruta en el segundo argumento <code class="docutils literal notranslate"><span class="pre">dst</span></code> que recibe. Para ejemplificar vamos a crear una carpeta <code class="docutils literal notranslate"><span class="pre">mediciones</span></code> dentro de <code class="docutils literal notranslate"><span class="pre">demo</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;demo/mediciones&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;sensor_01&#39;, &#39;s2&#39;, &#39;mediciones&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Y ahora moveremos esta carpeta <code class="docutils literal notranslate"><span class="pre">mediciones</span></code> para esté contenida dentro de <code class="docutils literal notranslate"><span class="pre">s2</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;demo/mediciones&quot;</span><span class="p">,</span><span class="s2">&quot;demo/s2/mediciones&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Verificamos que en efecto ahora <code class="docutils literal notranslate"><span class="pre">mediciones</span></code> está dentro de <code class="docutils literal notranslate"><span class="pre">s2</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">elemento</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>demo\sensor_01
+demo\s2
+demo\s2\mediciones
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hay que tener cuidado con la función <code class="docutils literal notranslate"><span class="pre">os.rename</span></code>, la carpeta que queremos renombrar o mover debe existir, de lo contrario nos lanzará un <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;demo/sensor_04&quot;</span><span class="p">,</span><span class="s2">&quot;demo/s4&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">337</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;demo/sensor_04&quot;</span><span class="p">,</span><span class="s2">&quot;demo/s4&quot;</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [WinError 2] The system cannot find the file specified: &#39;demo/sensor_04&#39; -&gt; &#39;demo/s4&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>El módulo <code class="docutils literal notranslate"><span class="pre">shutil</span></code> también nos permite tanto mover como copiar carpetas. Con <code class="docutils literal notranslate"><span class="pre">shutil.move</span></code> podemos mover una carpeta, pasándole como argumentos el origen y el destino:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="s2">&quot;demo/s2/mediciones&quot;</span><span class="p">,</span> <span class="s2">&quot;demo/sensor_01/mediciones&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">elemento</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>demo\sensor_01
+demo\s2
+demo\sensor_01\mediciones
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observa que ahora la carpeta <code class="docutils literal notranslate"><span class="pre">mediciones</span></code> se encuentra dentro de <code class="docutils literal notranslate"><span class="pre">sensor_01</span></code>. Con <code class="docutils literal notranslate"><span class="pre">shutil.copytree</span></code> podemos copiar una carpeta y todo su contenido de un directorio a otro. Por ejemplo, vamos a copiar la carpeta <code class="docutils literal notranslate"><span class="pre">sensor_01</span></code> a la carpeta <code class="docutils literal notranslate"><span class="pre">s2</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shutil</span><span class="o">.</span><span class="n">copytree</span><span class="p">(</span><span class="s2">&quot;demo/sensor_01&quot;</span><span class="p">,</span> <span class="s2">&quot;demo/s2/sensor_01&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">elemento</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>demo\sensor_01
+demo\s2
+demo\sensor_01\mediciones
+demo\s2\sensor_01
+demo\s2\sensor_01\mediciones
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podrás notar que dentro de <code class="docutils literal notranslate"><span class="pre">demo/s2</span></code> tenemos una carpeta <code class="docutils literal notranslate"><span class="pre">sensor_01</span></code>, además de la carpeta <code class="docutils literal notranslate"><span class="pre">sensor_01</span></code> que ya teníamos en <code class="docutils literal notranslate"><span class="pre">demo</span></code>.</p>
+</section>
+<section id="mover-copiar-y-eliminar-archivos">
+<h3><span class="section-number">7.6.3. </span>Mover, copiar y eliminar archivos<a class="headerlink" href="#mover-copiar-y-eliminar-archivos" title="Link to this heading">#</a></h3>
+<p>Para explicar cómo mover, copiar y eliminar archivos, vamos a crear primero un conjunto de carpetas y archivos que usaremos para la demostración. Primero, vamos a crear una carpeta <code class="docutils literal notranslate"><span class="pre">sensor_data</span></code> dentro de nuestra carpeta <code class="docutils literal notranslate"><span class="pre">demo</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sensor_data_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;demo&#39;</span><span class="p">,</span><span class="s1">&#39;sensor_data&#39;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">sensor_data_dir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Y ahora creamos algunos archivos txt y los ponemos dentro de <code class="docutils literal notranslate"><span class="pre">demo/sensor_data</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sensores</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;sensor_01&quot;</span><span class="p">,</span><span class="s2">&quot;sensor_02&quot;</span><span class="p">]</span>
+<span class="n">meses</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;enero&quot;</span><span class="p">,</span><span class="s2">&quot;febrero&quot;</span><span class="p">,</span><span class="s2">&quot;marzo&quot;</span><span class="p">,</span><span class="s2">&quot;abril&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">sensor</span> <span class="ow">in</span> <span class="n">sensores</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">mes</span> <span class="ow">in</span> <span class="n">meses</span><span class="p">:</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sensor_data_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sensor</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">mes</span><span class="si">}</span><span class="s2">.txt&quot;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Only for test&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos listar los archivos recién creados usando <code class="docutils literal notranslate"><span class="pre">os.listdir</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">sensor_data_dir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;sensor_01_enero.txt&#39;,
+ &#39;sensor_01_febrero.txt&#39;,
+ &#39;sensor_01_marzo.txt&#39;,
+ &#39;sensor_01_abril.txt&#39;,
+ &#39;sensor_02_enero.txt&#39;,
+ &#39;sensor_02_febrero.txt&#39;,
+ &#39;sensor_02_marzo.txt&#39;,
+ &#39;sensor_02_abril.txt&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finalmente, vamos a crear algunas carpetas: <code class="docutils literal notranslate"><span class="pre">sensor_01</span></code>, <code class="docutils literal notranslate"><span class="pre">sensor_02</span></code> y <code class="docutils literal notranslate"><span class="pre">backup</span></code>, dentro de <code class="docutils literal notranslate"><span class="pre">demo/sensor_data</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sensor_data_dir</span><span class="p">,</span><span class="s1">&#39;sensor_01&#39;</span><span class="p">))</span>
+<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sensor_data_dir</span><span class="p">,</span><span class="s1">&#39;sensor_02&#39;</span><span class="p">))</span>
+<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sensor_data_dir</span><span class="p">,</span><span class="s1">&#39;backup&#39;</span><span class="p">))</span>
+<span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">sensor_data_dir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;sensor_01_enero.txt&#39;,
+ &#39;sensor_01_febrero.txt&#39;,
+ &#39;sensor_01_marzo.txt&#39;,
+ &#39;sensor_01_abril.txt&#39;,
+ &#39;sensor_02_enero.txt&#39;,
+ &#39;sensor_02_febrero.txt&#39;,
+ &#39;sensor_02_marzo.txt&#39;,
+ &#39;sensor_02_abril.txt&#39;,
+ &#39;sensor_01&#39;,
+ &#39;sensor_02&#39;,
+ &#39;backup&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Perfecto, hasta acá tenemos ya creado el conjunto de archivos y carpetas que usaremos para mostrar cómo realizar las operaciones con archivos.</p>
+<p>Comenzaremos considerando el siguiente escenario: debemos mover todos los archivos txt a la carpeta que le corresponde de acuerdo con el número de sensor, por ejemplo, <code class="docutils literal notranslate"><span class="pre">sensor_01_enero.txt</span></code> tenemos que moverlo a <code class="docutils literal notranslate"><span class="pre">demo/sensor_data/sensor_01</span></code>.</p>
+<p>Usaremos <code class="docutils literal notranslate"><span class="pre">shutil.move</span></code> para efectuar esta operación. Comenzaremos con un sólo archivo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">src</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sensor_data_dir</span><span class="p">,</span><span class="s1">&#39;sensor_01_enero.txt&#39;</span><span class="p">)</span>
+<span class="n">dst_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sensor_data_dir</span><span class="p">,</span><span class="s1">&#39;sensor_01&#39;</span><span class="p">)</span>
+<span class="n">dst</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dst_dir</span><span class="p">,</span><span class="s1">&#39;sensor_01_enero.txt&#39;</span><span class="p">)</span>
+<span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">dst</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;demo\\sensor_data\\sensor_01\\sensor_01_enero.txt&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Y ahora podemos verificar que <code class="docutils literal notranslate"><span class="pre">sensor_01_enero.txt</span></code> se encuentra dentro de <code class="docutils literal notranslate"><span class="pre">demo/sensor_data/sensor_01</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">sensor_data_dir</span><span class="p">)</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">elemento</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>demo\sensor_data\sensor_01_febrero.txt
+demo\sensor_data\sensor_01_marzo.txt
+demo\sensor_data\sensor_01_abril.txt
+demo\sensor_data\sensor_02_enero.txt
+demo\sensor_data\sensor_02_febrero.txt
+demo\sensor_data\sensor_02_marzo.txt
+demo\sensor_data\sensor_02_abril.txt
+demo\sensor_data\sensor_01
+demo\sensor_data\sensor_02
+demo\sensor_data\backup
+demo\sensor_data\sensor_01\sensor_01_enero.txt
+</pre></div>
+</div>
+</div>
+</div>
+<p>Movamos ahora el resto de archivos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">archivo</span> <span class="ow">in</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">sensor_data_dir</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.txt&quot;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="s2">&quot;sensor_01&quot;</span> <span class="ow">in</span> <span class="n">archivo</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">archivo</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sensor_data_dir</span><span class="p">,</span><span class="s1">&#39;sensor_01&#39;</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="s2">&quot;sensor_02&quot;</span> <span class="ow">in</span> <span class="n">archivo</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">archivo</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sensor_data_dir</span><span class="p">,</span><span class="s1">&#39;sensor_02&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Y volvemos a verificar en dónde están nuestros archivos txt:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">sensor_data_dir</span><span class="p">)</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">elemento</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>demo\sensor_data\sensor_01
+demo\sensor_data\sensor_02
+demo\sensor_data\backup
+demo\sensor_data\sensor_01\sensor_01_enero.txt
+demo\sensor_data\sensor_01\sensor_01_febrero.txt
+demo\sensor_data\sensor_01\sensor_01_marzo.txt
+demo\sensor_data\sensor_01\sensor_01_abril.txt
+demo\sensor_data\sensor_02\sensor_02_enero.txt
+demo\sensor_data\sensor_02\sensor_02_febrero.txt
+demo\sensor_data\sensor_02\sensor_02_marzo.txt
+demo\sensor_data\sensor_02\sensor_02_abril.txt
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observa que ahora todos los archivos están en la carpeta que les corresponde.</p>
+<p>¿Qué pasa si quisiéramos hacer un respaldo de todos los archivos txt existentes? Para esto podemos hacer copias de los archivos y colocarlas en la carpeta <code class="docutils literal notranslate"><span class="pre">backup</span></code>. La función <code class="docutils literal notranslate"><span class="pre">shutil.copy</span></code> nos permite realizar esta operación:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">archivo</span> <span class="ow">in</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">sensor_data_dir</span><span class="p">)</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;sensor_*/*.txt&quot;</span><span class="p">):</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">archivo</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sensor_data_dir</span><span class="p">,</span><span class="s1">&#39;backup&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Verificamos que en <code class="docutils literal notranslate"><span class="pre">backup</span></code> tenemos una copia de los archivos</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">sensor_data_dir</span><span class="p">)</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">elemento</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>demo\sensor_data\sensor_01
+demo\sensor_data\sensor_02
+demo\sensor_data\backup
+demo\sensor_data\sensor_01\sensor_01_enero.txt
+demo\sensor_data\sensor_01\sensor_01_febrero.txt
+demo\sensor_data\sensor_01\sensor_01_marzo.txt
+demo\sensor_data\sensor_01\sensor_01_abril.txt
+demo\sensor_data\sensor_02\sensor_02_enero.txt
+demo\sensor_data\sensor_02\sensor_02_febrero.txt
+demo\sensor_data\sensor_02\sensor_02_marzo.txt
+demo\sensor_data\sensor_02\sensor_02_abril.txt
+demo\sensor_data\backup\sensor_01_enero.txt
+demo\sensor_data\backup\sensor_01_febrero.txt
+demo\sensor_data\backup\sensor_01_marzo.txt
+demo\sensor_data\backup\sensor_01_abril.txt
+demo\sensor_data\backup\sensor_02_enero.txt
+demo\sensor_data\backup\sensor_02_febrero.txt
+demo\sensor_data\backup\sensor_02_marzo.txt
+demo\sensor_data\backup\sensor_02_abril.txt
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para eliminar un archivo podemos utilizar <code class="docutils literal notranslate"><span class="pre">os.remove</span></code>. En la siguiente celda vamos a eliminar el archivo <code class="docutils literal notranslate"><span class="pre">sensor_01_enero.txt</span></code> contenido en la carpeta de <code class="docutils literal notranslate"><span class="pre">backup</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sensor_data_dir</span><span class="p">,</span><span class="s1">&#39;backup&#39;</span><span class="p">,</span><span class="s1">&#39;sensor_01_enero.txt&#39;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span> <span class="n">file_path</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Verificamos con <code class="docutils literal notranslate"><span class="pre">os.listdir</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sensor_data_dir</span><span class="p">,</span><span class="s1">&#39;backup&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;sensor_01_febrero.txt&#39;,
+ &#39;sensor_01_marzo.txt&#39;,
+ &#39;sensor_01_abril.txt&#39;,
+ &#39;sensor_02_enero.txt&#39;,
+ &#39;sensor_02_febrero.txt&#39;,
+ &#39;sensor_02_marzo.txt&#39;,
+ &#39;sensor_02_abril.txt&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="ejercicios">
+<h2><span class="section-number">7.7. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Escribe un programa que, dado un archivo <code class="docutils literal notranslate"><span class="pre">datos.txt</span></code> con formato:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Juan</span><span class="p">,</span><span class="mi">25</span>
+<span class="n">Ana</span><span class="p">,</span><span class="mi">30</span>
+<span class="n">Luis</span><span class="p">,</span><span class="mi">22</span>
+</pre></div>
+</div>
+<p>Convierte los datos en una lista de diccionarios, por ejemplo, para el archivo de ejemplo debería devolver:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span><span class="s2">&quot;nombre&quot;</span><span class="p">:</span> <span class="s2">&quot;Juan&quot;</span><span class="p">,</span> <span class="s2">&quot;edad&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;nombre&quot;</span><span class="p">:</span> <span class="s2">&quot;Ana&quot;</span><span class="p">,</span> <span class="s2">&quot;edad&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;nombre&quot;</span><span class="p">:</span> <span class="s2">&quot;Luis&quot;</span><span class="p">,</span> <span class="s2">&quot;edad&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">}]</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>Escribe una función que reciba como argumento la ruta de un archivo txt y que devuelva la palabra que más se repite en el texto y cuántas veces lo hace.</p>
+<hr class="docutils" />
+<p>Desarrolla un programa que dado un directorio cuente y muestre la cantidad de archivos, agrupados por tipo.</p>
+<hr class="docutils" />
+<p>Imagina que tienes una carpeta llamada <code class="docutils literal notranslate"><span class="pre">Descargas</span></code> con archivos <code class="docutils literal notranslate"><span class="pre">.jpg</span></code>, <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> y <code class="docutils literal notranslate"><span class="pre">.txt</span></code>. Escribe un script que:</p>
+<ul class="simple">
+<li><p>Verifique si existen las carpetas <code class="docutils literal notranslate"><span class="pre">Imágenes</span></code>, <code class="docutils literal notranslate"><span class="pre">Documentos</span></code> y <code class="docutils literal notranslate"><span class="pre">Texto</span></code>. Si no existen, que las cree.</p></li>
+<li><p>Mueva cada archivo de la carpeta Descargas a su carpeta correspondiente según su extensión.</p></li>
+</ul>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="wiki-codificacion" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://es.wikipedia.org/wiki/Codificaci%C3%B3n_de_caracteres">https://es.wikipedia.org/wiki/Codificación_de_caracteres</a></p>
+</aside>
+</aside>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -404,6 +1704,36 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">7.1. Introducción</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abrir-y-cerrar-archivos-de-texto">7.2. Abrir y cerrar archivos de texto</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leer-archivos-de-texto">7.3. Leer archivos de texto</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escribir-en-archivos-de-texto">7.4. Escribir en archivos de texto</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-de-errores-comunes">7.5. Manejo de errores comunes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#archivo-no-encontrado">7.5.1. Archivo no encontrado</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#codificacion">7.5.2. Codificación</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-del-sistema-de-archivos">7.6. Manejo del sistema de archivos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explorar-directorios-y-archivos">7.6.1. Explorar directorios y archivos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-eliminar-renombrar-y-mover-carpetas">7.6.2. Crear, eliminar, renombrar y mover carpetas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mover-copiar-y-eliminar-archivos">7.6.3. Mover, copiar y eliminar archivos</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">7.7. Ejercicios</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

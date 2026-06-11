@@ -36,6 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/customized.css?v=b341d7a2" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/customized-checkpoint.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -58,6 +59,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Programación orientada a objetos';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -320,7 +323,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -336,6 +341,22 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-programacion-orientada-a-objetos">13.1. Introducción a la programación orientada a objetos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clases-atributos-y-metodos">13.2. Clases, atributos y métodos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encapsulamiento">13.3. Encapsulamiento</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herencia">13.4. Herencia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polimorfismo">13.5. Polimorfismo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#composicion">13.6. Composición</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-magicos-dunder-methods">13.7. Métodos <em>mágicos</em> (<em>dunder methods</em>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#un-poco-mas-sobre-los-metodos">13.8. Un poco más sobre los métodos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">13.9. Ejercicios</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -347,7 +368,302 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="programacion-orientada-a-objetos">
 <h1><span class="section-number">13. </span>Programación orientada a objetos<a class="headerlink" href="#programacion-orientada-a-objetos" title="Link to this heading">#</a></h1>
-<p>Por escribirse</p>
+<section id="introduccion-a-la-programacion-orientada-a-objetos">
+<h2><span class="section-number">13.1. </span>Introducción a la programación orientada a objetos<a class="headerlink" href="#introduccion-a-la-programacion-orientada-a-objetos" title="Link to this heading">#</a></h2>
+<p>La Programación Orientada a Objetos (POO) es un paradigma que organiza el código en torno a objetos, los cuales representan entidades del mundo real o conceptos abstractos. Un objeto posee ciertos datos (atributos) y comportamientos (métodos).</p>
+<p>Este enfoque permite reutilización de código, facilidad de mantenimiento y escalabilidad, sobre todo pensando en proyectos que implican más allá de unos cientos de líneas.</p>
+</section>
+<section id="clases-atributos-y-metodos">
+<h2><span class="section-number">13.2. </span>Clases, atributos y métodos<a class="headerlink" href="#clases-atributos-y-metodos" title="Link to this heading">#</a></h2>
+<p>En la programación orientada a objetos, las clases, atributos y métodos, son conceptos básicos que debemos comprender para asimilar el paradigma.</p>
+<p>Una <strong>clase</strong> nos permite definir las propiedades que tiene un objeto (<strong>atributos</strong>) y cómo se comportará (<strong>métodos</strong>). Una analogía que puede servir es el proceso de fabricación de una máquina. Para poder fabricarla debemos generar un conjunto de planos de fabricación, ensamblaje e integración que especifiquen las dimensiones, geometría, materiales, proceso de fabricación, instrucciones de ensamble, etc. Todas estas especificaciones garantizarán que tendremos una máquina de acuerdo con lo que se planeó en el proceso de diseño. En la POO, una clase es como el plano de fabricación: un conjunto de instrucciones que servirán para construir el objeto con ciertos atributos y métodos. Piensa en los atributos como las propiedades de la máquina (peso, costo, velocidad, temperatura, potencia, etc.) y en los métodos como las acciones o comportamiento que puede tener (encender, apagar, acelerar, detener, alertar, etc.).</p>
+<p>Los atributos de una clase pueden entenderse como variables que pertenecen a cada instancia (u objeto) creada a partir de esa clase. Los métodos son funciones definidas dentro de la clase que pueden acceder y modificar los atributos del objeto.</p>
+<p>En Python para definir una clase se utiliza la palabra reservada <code class="docutils literal notranslate"><span class="pre">class</span></code>, con una sintaxis básica como se muestra enseguida:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">NombreDeLaClase</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">atributo1</span><span class="p">,</span><span class="o">...</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">atributo1</span> <span class="o">=</span> <span class="n">atributo1</span>
+        <span class="c1"># más atributos e instrucciones de inicialización</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">metodo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># instrucciones para hacer algo</span>
+</pre></div>
+</div>
+<p>El método <code class="docutils literal notranslate"><span class="pre">__init__</span></code> es un método especial, usualmente conocido como el <em>constructor</em>, que se ejecuta cuando se crea un nuevo objeto de la clase;  <code class="docutils literal notranslate"><span class="pre">self</span></code> es una referencia al propio objeto dentro de una clase y nos permite acceder a los atributos y métodos del objeto dentro de la clase.</p>
+<p>Vamos a crear una clase <code class="docutils literal notranslate"><span class="pre">Vector</span></code> para ir ejemplificando lo anterior. Por ahora, la clase <code class="docutils literal notranslate"><span class="pre">Vector</span></code> tendrá tres atributos: las componentes cartesianas <span class="math notranslate nohighlight">\(x,y,z\)</span> del vector.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vector</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">z</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cuándo hacemos <code class="docutils literal notranslate"><span class="pre">self.x</span> <span class="pre">=</span> <span class="pre">x</span></code>  implica que el valor pasado como argumento <code class="docutils literal notranslate"><span class="pre">x</span></code> lo almacenamos como el atributo con ese mismo nombre.</p>
+<p>Para crear un objeto de la clase <code class="docutils literal notranslate"><span class="pre">Vector</span></code> debemos <em>llamar</em> a la clase como lo hacemos con una función, pasando como argumentos los parámetros definidos en el <em>constructor</em> (método <code class="docutils literal notranslate"><span class="pre">__init__</span></code>), exceptuando a <code class="docutils literal notranslate"><span class="pre">self</span></code> que no se pasa explícitamente al crear el objeto:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hemos creado aquí un objeto de la clase <code class="docutils literal notranslate"><span class="pre">Vector</span></code>, puedes verificarlo con <code class="docutils literal notranslate"><span class="pre">type</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">u</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;__main__.Vector&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos acceder de la forma habitual a los atributos del objeto:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;u = (</span><span class="si">{</span><span class="n">u</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">u</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">u</span><span class="o">.</span><span class="n">z</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span> <span class="c1"># accedemos a los atributos</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>u = (1, 0, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vamos a agregar un método <code class="docutils literal notranslate"><span class="pre">magnitud</span></code> a nuestra clase, el cual simplemente calculará la magnitud del vector:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vector</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">z</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">magnitud</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Creamos un par de objetos de esta clase:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Y usamos el método recién agregado para calcular la magnitud de ambos vectores:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Magnitud de u = </span><span class="si">{</span><span class="n">u</span><span class="o">.</span><span class="n">magnitud</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Magnitud de v = </span><span class="si">{</span><span class="n">v</span><span class="o">.</span><span class="n">magnitud</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Magnitud de u = 2.449489742783178
+Magnitud de v = 1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observa que los métodos de la clase deben definirse siempre con <code class="docutils literal notranslate"><span class="pre">self</span></code> como primer parámetro, pero este no se pasa como argumento al momento de invocar el método, tal y como puedes notar en <code class="docutils literal notranslate"><span class="pre">magnitud</span></code> que no le pasamos argumento alguno.</p>
+<p>Los métodos también permiten que el objeto interactúe con objetos de su misma clase. Para ejemplificar vamos a agregar un método <code class="docutils literal notranslate"><span class="pre">producto_punto</span></code> a nuestra clase. Recuerda que el producto punto es una operación que se define entre dos vectores. Este método recibe un argumento <code class="docutils literal notranslate"><span class="pre">other</span></code> que corresponde al otro objeto de tipo <code class="docutils literal notranslate"><span class="pre">Vector</span></code> con el cual se realiza la operación:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vector</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">z</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">magnitud</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">producto_punto</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">*</span><span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">*</span><span class="n">other</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span><span class="o">*</span><span class="n">other</span><span class="o">.</span><span class="n">z</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Creamos ahora un par de objetos de tipo <code class="docutils literal notranslate"><span class="pre">Vector</span></code> y usamos <code class="docutils literal notranslate"><span class="pre">producto_punto</span></code> para calcular el producto punto:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">producto_punto</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Da exactamente lo mismo si usamos el método <code class="docutils literal notranslate"><span class="pre">producto_punto</span></code> del objeto <code class="docutils literal notranslate"><span class="pre">v</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">producto_punto</span><span class="p">(</span><span class="n">u</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hasta ahora hemos implementado un par de métodos que devuelven un valor numérico (escalar). Pero también es posible, y común, que un método devuelva otro objeto de la misma clase. Por ejemplo, al sumar dos vectores, el resultado no es un número, sino otro vector. Si quisiéramos implementar un método que sume dos vectores, este debería devolver otro objeto de la clase <code class="docutils literal notranslate"><span class="pre">Vector</span></code>. Veamos a continuación la implementación:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vector</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">z</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">magnitud</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">producto_punto</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">*</span><span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">*</span><span class="n">other</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span><span class="o">*</span><span class="n">other</span><span class="o">.</span><span class="n">z</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">sumar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Vector</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">+</span><span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">+</span><span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span><span class="o">+</span><span class="n">other</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Definimos un par de vectores y usamos el método <code class="docutils literal notranslate"><span class="pre">sumar</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">sumar</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Comprobamos que <code class="docutils literal notranslate"><span class="pre">w</span></code> es un objeto de la clase <code class="docutils literal notranslate"><span class="pre">Vector</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;__main__.Vector&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Y mostramos las componentes del vector:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;w = (</span><span class="si">{</span><span class="n">w</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">w</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">w</span><span class="o">.</span><span class="n">z</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>w = (0, 3, -5)
+</pre></div>
+</div>
+</div>
+</div>
+<p>En general, los atributos de un objeto se pueden modificar por asignación, por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># modificando el atributo &quot;x&quot; del vector &quot;w&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;w = (</span><span class="si">{</span><span class="n">w</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">w</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">w</span><span class="o">.</span><span class="n">z</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>w = (0, 3, -5)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Es más, podemos agregar nuevos atributos al objeto:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span><span class="o">.</span><span class="n">atributox</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1000</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si quieres ver todos los atributos actuales de un objeto puedes utilizar la función <code class="docutils literal notranslate"><span class="pre">vars</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">vars</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;x&#39;: 0, &#39;y&#39;: 3, &#39;z&#39;: -5, &#39;atributox&#39;: -1000}
+</pre></div>
+</div>
+</div>
+</div>
+<p>En este punto es bueno que sepas que existen maneras de evitar que se agreguen atributos a un objeto o que se modifique el valor, el cual es un comportamiento típicamente deseable en muchos diseños. Esto es algo que trataremos en la siguiente sección.</p>
+</section>
+<section id="encapsulamiento">
+<h2><span class="section-number">13.3. </span>Encapsulamiento<a class="headerlink" href="#encapsulamiento" title="Link to this heading">#</a></h2>
+</section>
+<section id="herencia">
+<h2><span class="section-number">13.4. </span>Herencia<a class="headerlink" href="#herencia" title="Link to this heading">#</a></h2>
+</section>
+<section id="polimorfismo">
+<h2><span class="section-number">13.5. </span>Polimorfismo<a class="headerlink" href="#polimorfismo" title="Link to this heading">#</a></h2>
+</section>
+<section id="composicion">
+<h2><span class="section-number">13.6. </span>Composición<a class="headerlink" href="#composicion" title="Link to this heading">#</a></h2>
+</section>
+<section id="metodos-magicos-dunder-methods">
+<h2><span class="section-number">13.7. </span>Métodos <em>mágicos</em> (<em>dunder methods</em>)<a class="headerlink" href="#metodos-magicos-dunder-methods" title="Link to this heading">#</a></h2>
+</section>
+<section id="un-poco-mas-sobre-los-metodos">
+<h2><span class="section-number">13.8. </span>Un poco más sobre los métodos<a class="headerlink" href="#un-poco-mas-sobre-los-metodos" title="Link to this heading">#</a></h2>
+</section>
+<section id="ejercicios">
+<h2><span class="section-number">13.9. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Implementa una clase <code class="docutils literal notranslate"><span class="pre">Triangulo</span></code> que reciba tres lados y verifique que forman un triángulo válido. Debe incluir los siguientes atributos y métodos:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lados</span></code>: un atributo para guardar en forma de lista los lados del triángulo.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">area</span></code>: un atributo que debe calcular y devolver el área del triángulo.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">es_equilatero()</span></code>: un método que determina si el triángulo es equilátero, debe devolver un booleano.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">es_rectangulo()</span></code>: un método que determina si es un triángulo rectángulo, debe devolver un booleano.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">angulos()</span></code>: un método que calcula y devuelve los ángulos internos del triángulo.</p></li>
+</ul>
+<hr class="docutils" />
+<p>Crea una clase denominada <code class="docutils literal notranslate"><span class="pre">Engrane</span></code>, la cual debe tener los siguientes atributos:</p>
+<ul class="simple">
+<li><p>Número de dientes</p></li>
+<li><p>Módulo</p></li>
+<li><p>Diámetro</p></li>
+</ul>
+<p>El constructor debe recibir únicamente los argumentos asociados el número de dientes y módulo. El diámetro es un atributo que debe calcularse, y debes cuidar que no pueda modificarse directamente por asignación.</p>
+<hr class="docutils" />
+<p>Programa una clase llamada <code class="docutils literal notranslate"><span class="pre">MyString</span></code> que debes heredar del tipo <code class="docutils literal notranslate"><span class="pre">str</span></code> de Python. Realiza las modificaciones necesarias para que el operador <code class="docutils literal notranslate"><span class="pre">+</span></code> agregue un espacio a la concatenación. Por ejemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">MyString</span><span class="p">(</span><span class="s1">&#39;hola&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>En lo anterior la salida esperada es:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hola</span> <span class="n">hola</span>
+</pre></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -359,16 +675,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-base-py"
         },
         kernelOptions: {
-            name: "python3",
+            name: "conda-base-py",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-base-py'</script>
 
                 </article>
               
@@ -404,6 +720,29 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-programacion-orientada-a-objetos">13.1. Introducción a la programación orientada a objetos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clases-atributos-y-metodos">13.2. Clases, atributos y métodos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encapsulamiento">13.3. Encapsulamiento</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herencia">13.4. Herencia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polimorfismo">13.5. Polimorfismo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#composicion">13.6. Composición</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-magicos-dunder-methods">13.7. Métodos <em>mágicos</em> (<em>dunder methods</em>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#un-poco-mas-sobre-los-metodos">13.8. Un poco más sobre los métodos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">13.9. Ejercicios</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

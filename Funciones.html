@@ -36,6 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/customized.css?v=b341d7a2" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/customized-checkpoint.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -58,6 +59,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Funciones';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -353,6 +356,14 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-y-los-argumentos-con-nombre">6.2.2. Funciones y los argumentos con nombre</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ambito-de-una-funcion">6.3. Ámbito de una función</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#las-funciones-lambda">6.4. Las funciones <code class="docutils literal notranslate"><span class="pre">lambda</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-de-primera-clase">6.5. Funciones de primera clase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion">6.6. Recursión</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decoradores">6.7. Decoradores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulos">6.8. Módulos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentacion-de-funciones">6.9. Documentación de funciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">6.10. Ejercicios</a></li>
 </ul>
             </nav>
         </div>
@@ -912,6 +923,81 @@ Dentro del cuerpo de la función el parámetro <code class="docutils literal not
 son los nombres de los argumentos y los valores corresponden a cada valor asignado al argumento.</p>
 </section>
 </section>
+<section id="ambito-de-una-funcion">
+<h2><span class="section-number">6.3. </span>Ámbito de una función<a class="headerlink" href="#ambito-de-una-funcion" title="Link to this heading">#</a></h2>
+</section>
+<section id="las-funciones-lambda">
+<h2><span class="section-number">6.4. </span>Las funciones <code class="docutils literal notranslate"><span class="pre">lambda</span></code><a class="headerlink" href="#las-funciones-lambda" title="Link to this heading">#</a></h2>
+</section>
+<section id="funciones-de-primera-clase">
+<h2><span class="section-number">6.5. </span>Funciones de primera clase<a class="headerlink" href="#funciones-de-primera-clase" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">h</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">funs</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">h</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">fun</span> <span class="ow">in</span> <span class="n">funs</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fun</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+27
+81
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="recursion">
+<h2><span class="section-number">6.6. </span>Recursión<a class="headerlink" href="#recursion" title="Link to this heading">#</a></h2>
+</section>
+<section id="decoradores">
+<h2><span class="section-number">6.7. </span>Decoradores<a class="headerlink" href="#decoradores" title="Link to this heading">#</a></h2>
+</section>
+<section id="modulos">
+<h2><span class="section-number">6.8. </span>Módulos<a class="headerlink" href="#modulos" title="Link to this heading">#</a></h2>
+</section>
+<section id="documentacion-de-funciones">
+<h2><span class="section-number">6.9. </span>Documentación de funciones<a class="headerlink" href="#documentacion-de-funciones" title="Link to this heading">#</a></h2>
+</section>
+<section id="ejercicios">
+<h2><span class="section-number">6.10. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Desarrolla una función denominada <code class="docutils literal notranslate"><span class="pre">genera_contrasenia_segura</span></code>, la cual no recibirá argumento. Esta función debe devolver una contraseña con una longitud de 12 caracteres, con al menos una mayúscula, al menos un número y al menos un caracter especial. Procura que las posiciones de cada tipo de caracter sean aleatorias.</p>
+<hr class="docutils" />
+<p>Escribe una función denominada <code class="docutils literal notranslate"><span class="pre">producto_punto</span></code>, que reciba dos vectores (en forma de lista) como argumentos. La función deberá calcular y devolver el producto punto de dichos vectores.</p>
+<hr class="docutils" />
+<p>Desarrolla una función denominada <code class="docutils literal notranslate"><span class="pre">producto_cruz</span></code>, que reciba dos vectores (en forma de lista) como argumentos. La función deberá calcular y devolver el producto cruz de dichos vectores. Considera que la función únicamente debe aceptar vectores de tres componentes y deberá lanzar un error en el caso de que se le pasen vectores que no cumplan esta condición.</p>
+<hr class="docutils" />
+<p>Para un estado de esfuerzo plano los esfuerzos principales pueden determinarse mediante la siguiente ecuación:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_{máx,mín} = \frac{\sigma_x + \sigma_y}{2} \pm 
+\sqrt{\left( \frac{\sigma_x - \sigma_y}{2} \right)^2 + \tau_{xy}^2}
+\]</div>
+<p>Crea una función denominada <code class="docutils literal notranslate"><span class="pre">esfuerzos_principales</span></code>, la cual deberá recibir como argumentos <span class="math notranslate nohighlight">\(\sigma_x\)</span>, <span class="math notranslate nohighlight">\(\sigma_y\)</span> y <span class="math notranslate nohighlight">\(\tau_{xy}\)</span>, y deberá calcular y devolver los esfuerzos principales <span class="math notranslate nohighlight">\(\sigma_{máx}\)</span> y <span class="math notranslate nohighlight">\(\sigma_{mín}\)</span>.</p>
+<hr class="docutils" />
+<p>El criterio de Goodman-modificado es un criterio de falla por fatiga dado por la siguiente ecuación:</p>
+<div class="math notranslate nohighlight">
+\[ 
+\frac{\sigma_a}{S_e} + \frac{\sigma_m}{S_{ut}} = \frac{1}{n}
+\]</div>
+<p>Desarrolla una función <code class="docutils literal notranslate"><span class="pre">goodman_modificado</span></code> que calcule el factor de seguridad <span class="math notranslate nohighlight">\(n\)</span>, dados como argumentos de entrada las componentes media (<span class="math notranslate nohighlight">\(\sigma_m\)</span>) y alternante (<span class="math notranslate nohighlight">\(\sigma_a\)</span>) del esfuerzo, la resistencia a la tensión (<span class="math notranslate nohighlight">\(S_{ut}\)</span>) y el límite de resistencia a la fatiga (<span class="math notranslate nohighlight">\(S_e\)</span>).</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -923,16 +1009,16 @@ son los nombres de los argumentos y los valores corresponden a cada valor asigna
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-base-py"
         },
         kernelOptions: {
-            name: "python3",
+            name: "conda-base-py",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-base-py'</script>
 
                 </article>
               
@@ -988,6 +1074,14 @@ son los nombres de los argumentos y los valores corresponden a cada valor asigna
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-y-los-argumentos-con-nombre">6.2.2. Funciones y los argumentos con nombre</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ambito-de-una-funcion">6.3. Ámbito de una función</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#las-funciones-lambda">6.4. Las funciones <code class="docutils literal notranslate"><span class="pre">lambda</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-de-primera-clase">6.5. Funciones de primera clase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion">6.6. Recursión</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decoradores">6.7. Decoradores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulos">6.8. Módulos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentacion-de-funciones">6.9. Documentación de funciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">6.10. Ejercicios</a></li>
 </ul>
   </nav></div>
 

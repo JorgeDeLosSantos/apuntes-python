@@ -1,15 +1,13 @@
 # Prefacio
 
 ```{warning}
-Actualmente estos apuntes están en desarrollo, tome sus precauciones con respecto al contenido que podría estar incompleto e inconexo. **Fecha de última actualización: 02/03/2025**
+Actualmente estos apuntes están en desarrollo, tome sus precauciones con respecto al contenido que podría estar incompleto e inconexo. **Fecha de última actualización: 11/06/2026**
 ```
 
-Estos apuntes de Python han sido (están siendo) desarrollados con el objetivo de que sirvan como herramienta de aprendizaje a los alumnos y profesionistas de las áreas de ciencia e ingeniería, sobre todo aquellas afines a la mecánica, mecatrónica y robótica.
+Estos apuntes de Python están siendo desarrollados con el objetivo de que sirvan como herramienta de aprendizaje a los alumnos y profesionistas de las áreas de ciencia e ingeniería, sobre todo aquellas afines a la mecánica, mecatrónica y robótica.
 
 
 *Pedro Jorge De Los Santos*
-
-**Guanajuato, México**
 
 
 <a href="https://github.com/JorgeDeLosSantos" target="_blank">
