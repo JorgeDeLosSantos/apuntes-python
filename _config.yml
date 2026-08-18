@@ -1,9 +1,0 @@
-# in _config.yml
-title: Python para Ingenieros
-author: Pedro Jorge De Los Santos
-logo: img/logo.png
-execute:
-  execute_notebooks: "off"
-latex:
-  latex_documents:
-     targetname: book.tex

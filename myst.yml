@@ -1,0 +1,39 @@
+version: 1
+project:
+  title: Python para Ingenieros
+  authors:
+    - name: Pedro Jorge De Los Santos
+  copyright: '2026'
+  
+  numbering:
+    headings: true
+    title: true
+
+  exclude:
+    - .venv
+    - old_/**
+    - _other_files/**
+    - sol_to_excercises/**
+    - _build/**
+  toc:
+    - file: intro.md
+    - file: Introducción.ipynb
+    - file: Variables, operadores y expresiones.ipynb
+    - file: Estructuras de control.ipynb
+    - file: Cadenas de caracteres.ipynb
+    - file: Estructuras de datos.ipynb
+    - file: Funciones.ipynb
+    - file: Archivos de texto.ipynb
+    - file: NumPy.ipynb
+    - file: Matplotlib.ipynb
+    - file: SciPy.ipynb
+    - file: Pandas.ipynb
+    - file: SymPy.ipynb
+    - file: Programación orientada a objetos.ipynb
+    - file: Bases de datos.ipynb
+
+site:
+  options:
+    logo: img/logo.png
+    folders: true
+  template: book-theme
