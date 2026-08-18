@@ -1,306 +1,471 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="./" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Introducción &#8212; Python para Ingenieros</title>
-    
-  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    <title>1. Introducción &#8212; Python para Ingenieros</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-      
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/customized.css?v=b341d7a2" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/customized-checkpoint.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Introducción';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Variables, operadores y expresiones" href="Variables%2C%20operadores%20y%20expresiones.html" />
+    <link rel="next" title="2. Variables, operadores y expresiones" href="Variables%2C%20operadores%20y%20expresiones.html" />
     <link rel="prev" title="Prefacio" href="intro.html" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-
-
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-        <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
+    
+    
+    
+  </div>
   
-  <img src="_static/logo.png" class="logo" alt="logo">
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
   
   
-  <h1 class="site-logo" id="site-title">Python para Ingenieros</h1>
   
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Python para Ingenieros - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python para Ingenieros - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Prefacio
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Variables%2C%20operadores%20y%20expresiones.html">2. Variables, operadores y expresiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Estructuras%20de%20control.html">3. Estructuras de control</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Cadenas%20de%20caracteres.html">5. Cadenas de caracteres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Estructuras%20de%20datos.html">6. Estructuras de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Funciones.html">7. Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Archivos%20de%20texto.html">8. Archivos de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NumPy.html">9. NumPy: estructuras matriciales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Matplotlib.html">10. Matplotlib: visualización gráfica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SciPy.html">11. SciPy: algoritmos y métodos numéricos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pandas.html">12. Pandas: una introducción al análisis de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SymPy.html">13. Sympy: un sistema de álgebra computacional</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Programaci%C3%B3n%20orientada%20a%20objetos.html">14. Programación orientada a objetos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Bases%20de%20datos.html">15. Bases de datos</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Introducción.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
 </a>
-</div>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
 
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   Prefacio
-  </a>
- </li>
-</ul>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Introducción
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Variables%2C%20operadores%20y%20expresiones.html">
-   Variables, operadores y expresiones
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Cadenas%20de%20caracteres.html">
-   Cadenas de caracteres
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Listas%2C%20tuplas%20y%20diccionarios.html">
-   Listas, tuplas y diccionarios
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Estructuras%20de%20control.html">
-   Estructuras de control
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Funciones.html">
-   Funciones
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="NumPy.html">
-   NumPy: estructuras matriciales
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Matplotlib.html">
-   Matplotlib: visualización gráfica
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Pandas.html">
-   Pandas: una introducción al análisis de datos
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="SymPy.html">
-   Sympy: un sistema de álgebra computacional
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Programaci%C3%B3n%20orientada%20a%20objetos.html">
-   Programación orientada a objetos
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="wxpython-guis.html">
-   Interfaces gráficas con wxPython
-  </a>
- </li>
-</ul>
-
-</nav>
-
- <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
 
-          
 
 
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
     </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/Introducción.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-    
+  
 </div>
-        <!-- Source interaction buttons -->
-
-
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
-
-        <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Introducción.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
 </div>
+              
+              
 
-    </div>
-
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introducción</h1>
     <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#que-es-python">
-   ¿Qué es Python?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#instalando-python">
-   Instalando Python
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#el-notebook-de-jupyter-como-una-calculadora-basica">
-   El notebook de Jupyter como una calculadora básica
-  </a>
- </li>
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-python">1.1. ¿Qué es Python?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-como-herramienta-para-ingenieria">1.2. Python como herramienta para ingeniería</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalando-python">1.3. Instalando Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comprobando-la-instalacion">1.3.1. Comprobando la instalación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instalando-paquetes-con-pip">1.3.2. Instalando paquetes con <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instalando-jupyter">1.3.3. Instalando Jupyter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-alternativas">1.3.4. Otras alternativas</a></li>
 </ul>
-
-        </nav>
-        
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-notebook-de-jupyter-como-una-calculadora-basica">1.4. El notebook de Jupyter como una calculadora básica</a></li>
+</ul>
+            </nav>
+        </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="section" id="introduccion">
-<h1>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="que-es-python">
-<h2>¿Qué es Python?<a class="headerlink" href="#que-es-python" title="Permalink to this headline">¶</a></h2>
-<p>Python es un lenguaje de programación, interpretado, de alto nivel y propósito general, además de ser un proyecto libre y de código abierto, con una comunidad enorme implicada en el desarrollo y mantenimiento de librerías que hacen posible el <em>multidominio</em> actual de Python.</p>
-<p>Dada su concepción como lenguaje de propósito general, Python es utilizado en una diversidad de aplicaciones,
-desde desarrollo web, encriptación, análisis de datos, procesamiento de imágenes, aprendizaje automático,
-computación simbólica, etc.</p>
-<p>Las características de este lenguaje le hacen propicio para el prototipado de aplicaciones, dado que es muy
-sencillo y rápido revisar y modificar el código desarrollado. Otra característica muy notable de Python
-es su sintaxis simple y fácil de aprender, lo cual ayuda al momento de introducirse en el desarrollo de
-algoritmos o el mundo propio de la programación de computadoras.</p>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introduccion">
+<h1><span class="section-number">1. </span>Introducción<a class="headerlink" href="#introduccion" title="Link to this heading">#</a></h1>
+<section id="que-es-python">
+<h2><span class="section-number">1.1. </span>¿Qué es Python?<a class="headerlink" href="#que-es-python" title="Link to this heading">#</a></h2>
+<p>Python es un lenguaje de programación de alto nivel y propósito general. Se caracteriza por poseer una sintaxis relativamente sencilla y legible, lo que facilita escribir, revisar y modificar programas. Es además un proyecto libre y de código abierto, respaldado por una extensa comunidad de usuarios y desarrolladores.</p>
+<p>Al ser un lenguaje de propósito general, Python puede utilizarse para resolver problemas muy diversos. Actualmente se emplea en áreas como el desarrollo web, el análisis de datos, el procesamiento de imágenes, el aprendizaje automático, la computación científica y el cálculo simbólico.</p>
+<p>Python es también un lenguaje interpretado, característica que facilita probar instrucciones y modificar programas rápidamente. Esto resulta especialmente útil durante el aprendizaje, la experimentación y el desarrollo de prototipos.</p>
+<p>Una de las principales fortalezas de Python es su amplio ecosistema de bibliotecas. Algunas de ellas, como <strong>NumPy</strong>, <strong>SciPy</strong>, <strong>Matplotlib</strong>, <strong>pandas</strong> y <strong>SymPy</strong>, proporcionan herramientas para realizar cálculos científicos, analizar datos, generar gráficos o trabajar con expresiones matemáticas.</p>
+<p>Esta combinación de una sintaxis legible, un amplio ecosistema y la posibilidad de utilizar el mismo lenguaje en problemas muy diferentes ha convertido a Python en una herramienta ampliamente utilizada en numerosos ámbitos, entre ellos la ciencia y la ingeniería.</p>
+</section>
+<section id="python-como-herramienta-para-ingenieria">
+<h2><span class="section-number">1.2. </span>Python como herramienta para ingeniería<a class="headerlink" href="#python-como-herramienta-para-ingenieria" title="Link to this heading">#</a></h2>
+<p>En ingeniería es habitual trabajar con modelos matemáticos, datos experimentales, simulaciones y procedimientos de cálculo que pueden llegar a ser repetitivos o difíciles de realizar manualmente. En este contexto, la programación constituye una herramienta que permite automatizar tareas, implementar métodos de cálculo y analizar resultados de una manera sistemática y reproducible.</p>
+<p>Python resulta especialmente útil para este propósito debido a la combinación de una sintaxis relativamente sencilla y un amplio ecosistema de bibliotecas orientadas al cálculo científico. Estas herramientas permiten ampliar considerablemente las capacidades básicas del lenguaje y adaptarlo a distintos tipos de problemas técnicos.</p>
+<p>A lo largo de estos apuntes utilizaremos Python para tareas como:</p>
+<ul class="simple">
+<li><p>resolver sistemas de ecuaciones;</p></li>
+<li><p>trabajar con vectores y matrices;</p></li>
+<li><p>representar funciones y datos mediante gráficos;</p></li>
+<li><p>implementar métodos numéricos;</p></li>
+<li><p>analizar conjuntos de datos;</p></li>
+<li><p>realizar cálculos simbólicos;</p></li>
+<li><p>automatizar procedimientos repetitivos.</p></li>
+</ul>
+<p>Estas capacidades pueden aplicarse en numerosas áreas de la ingeniería. En mecánica, por ejemplo, pueden facilitar el análisis de sistemas de fuerzas o el estudio del movimiento de mecanismos; en mecatrónica y robótica, permiten trabajar con transformaciones, trayectorias y modelos matemáticos; y en otras disciplinas resultan útiles para procesar mediciones, analizar señales, resolver modelos o visualizar resultados.</p>
+<p>Una ventaja importante de Python es que permite integrar dentro de un mismo flujo de trabajo el planteamiento matemático de un problema, su implementación computacional, la obtención de resultados y su posterior análisis. De esta manera, la programación se convierte en una herramienta de apoyo para estudiar y resolver problemas propios de la ingeniería.</p>
+<p>Este será precisamente el enfoque de los apuntes: aprender los fundamentos de Python mientras se aplican progresivamente a problemas, cálculos y pequeñas herramientas de interés científico y de ingeniería.</p>
+</section>
+<section id="instalando-python">
+<h2><span class="section-number">1.3. </span>Instalando Python<a class="headerlink" href="#instalando-python" title="Link to this heading">#</a></h2>
+<p>Para comenzar a trabajar con los ejemplos de estos apuntes necesitaremos disponer de una instalación de <strong>Python 3</strong> en nuestra computadora. Al instalar Python obtenemos, entre otras herramientas, el intérprete encargado de ejecutar las instrucciones y programas que escribiremos.</p>
+<p>La forma recomendada para seguir estos apuntes consiste en instalar Python desde su <a class="reference external" href="https://www.python.org">sitio web oficial</a>.</p>
+<p>Desde la sección de descargas puede obtenerse el instalador correspondiente al sistema operativo utilizado. En general, es recomendable trabajar con una versión reciente de Python 3; salvo que se indique lo contrario, los ejemplos de estos apuntes no dependerán de una versión específica.</p>
+<blockquote>
+<div><p><strong>Nota para usuarios de Windows:</strong> durante la instalación puede aparecer una opción para agregar Python al <code class="docutils literal notranslate"><span class="pre">PATH</span></code> del sistema. Activarla facilita posteriormente la ejecución de Python desde una terminal.</p>
+</div></blockquote>
+<section id="comprobando-la-instalacion">
+<h3><span class="section-number">1.3.1. </span>Comprobando la instalación<a class="headerlink" href="#comprobando-la-instalacion" title="Link to this heading">#</a></h3>
+<p>Una vez finalizada la instalación, podemos comprobar que Python se encuentra disponible abriendo una terminal o consola de comandos y ejecutando:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>--version
+</pre></div>
 </div>
-<div class="section" id="instalando-python">
-<h2>Instalando Python<a class="headerlink" href="#instalando-python" title="Permalink to this headline">¶</a></h2>
-<p>En estos apuntes se utilizará la distribución Anaconda de Python, la cual contiene el intérprete y las librerías del
-<em>core</em>, pero que además incluye la mayoría de librerías utilizadas para el desarrollo de aplicaciones de corte
-técnico-científico.</p>
-<p>La descarga de Anaconda puede realizarla desde el sitio https://www.anaconda.com/download/, selecciona el
-paquete de descarga conforme al sistema operativo (Windows, macOS o Linux) así como la arquitectura de su PC.
-La instalación suele ser muy sencilla, puede seguir las instrucciones dadas en el <em>How to install ANACONDA</em> de
-la misma página.</p>
+<p>Dependiendo del sistema operativo y de la configuración utilizada, también puede ser necesario emplear:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>--version
+</pre></div>
 </div>
-<div class="section" id="el-notebook-de-jupyter-como-una-calculadora-basica">
-<h2>El notebook de Jupyter como una calculadora básica<a class="headerlink" href="#el-notebook-de-jupyter-como-una-calculadora-basica" title="Permalink to this headline">¶</a></h2>
-<p>Una vez instalado Anaconda puede testear la correcta instalación abriendo el Jupyter Notebook, la cual es una aplicación web en la cual puede escribir código, texto, ecuaciones, etc., y que básicamente es donde se desarrollaron estos apuntes. Puede
-buscar esta aplicación en la carpeta de instalación correspondiente.</p>
+<p>Si la instalación es correcta, aparecerá en pantalla la versión de Python disponible, por ejemplo:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Python 3.x.x
+</pre></div>
+</div>
+<p>No es necesario comprender todavía qué ocurre internamente al ejecutar estos comandos. Por el momento basta con comprobar que nuestra computadora puede localizar y ejecutar el intérprete de Python.</p>
+</section>
+<section id="instalando-paquetes-con-pip">
+<h3><span class="section-number">1.3.2. </span>Instalando paquetes con <code class="docutils literal notranslate"><span class="pre">pip</span></code><a class="headerlink" href="#instalando-paquetes-con-pip" title="Link to this heading">#</a></h3>
+<p>Python incluye una biblioteca estándar con numerosas herramientas, pero una parte importante de sus capacidades proviene de paquetes desarrollados por la comunidad.</p>
+<p>Para instalar estos paquetes se utiliza habitualmente <strong><code class="docutils literal notranslate"><span class="pre">pip</span></code></strong>, el gestor de paquetes del ecosistema de Python. Podemos comprobar que se encuentra disponible mediante:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>--version
+</pre></div>
+</div>
+<p>La estructura general para instalar un paquete es:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>nombre_paquete
+</pre></div>
+</div>
+<p>Por ejemplo, para instalar NumPy podríamos utilizar:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>numpy
+</pre></div>
+</div>
+<p>A lo largo de estos apuntes utilizaremos bibliotecas como <strong>NumPy</strong>, <strong>SciPy</strong>, <strong>Matplotlib</strong>, <strong>pandas</strong> y <strong>SymPy</strong>, entre otras. No es necesario instalarlas todas desde este momento; iremos incorporándolas conforme sean necesarias.</p>
+</section>
+<section id="instalando-jupyter">
+<h3><span class="section-number">1.3.3. </span>Instalando Jupyter<a class="headerlink" href="#instalando-jupyter" title="Link to this heading">#</a></h3>
+<p>Aunque Python puede utilizarse de distintas maneras, buena parte de los ejemplos de estos apuntes se desarrollarán utilizando <strong>Jupyter</strong>, un entorno interactivo que permite combinar texto, ecuaciones, código y resultados dentro de un mismo documento.</p>
+<p>Una de las opciones disponibles es instalar <strong>JupyterLab</strong> utilizando <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>jupyterlab
+</pre></div>
+</div>
+<p>Una vez instalado, podemos iniciarlo desde la terminal mediante:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>lab
+</pre></div>
+</div>
+<p>Normalmente se abrirá una nueva pestaña en el navegador desde la cual podremos crear y ejecutar notebooks de Python.</p>
+<p>En la siguiente sección veremos con mayor detalle cómo trabajar dentro de este entorno.</p>
+</section>
+<section id="otras-alternativas">
+<h3><span class="section-number">1.3.4. </span>Otras alternativas<a class="headerlink" href="#otras-alternativas" title="Link to this heading">#</a></h3>
+<p>Aunque la instalación local mediante la página oficial es la vía principal recomendada, existen otras alternativas populares:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.anaconda.com/download">Anaconda / Miniconda:</a> Es una distribución enfocada en cálculo científico que incluye Python, Jupyter y un gestor de entornos propio (conda). Si ya la tienes instalada en tu equipo, puedes utilizarla sin problemas para seguir el curso.</p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/">Google Colab:</a> Permite ejecutar notebooks de Jupyter directamente en la nube desde el navegador, sin instalar nada localmente. Es una opción excelente para trabajar desde equipos con restricciones o para realizar pruebas rápidas.</p></li>
+</ul>
+<p>Recomendación:</p>
+<div class="tip admonition">
+<p class="admonition-title">Recomendación</p>
+<p>Para temas posteriores como el manejo del sistema de archivos local, la ejecución de scripts <code class="docutils literal notranslate"><span class="pre">.py</span></code> independientes o la estructuración de proyectos, es preferible contar con la instalación local de Python.</p>
+</div>
+</section>
+</section>
+<section id="el-notebook-de-jupyter-como-una-calculadora-basica">
+<h2><span class="section-number">1.4. </span>El notebook de Jupyter como una calculadora básica<a class="headerlink" href="#el-notebook-de-jupyter-como-una-calculadora-basica" title="Link to this heading">#</a></h2>
+<p>Una vez instalado Anaconda podemos <em>testear</em> la correcta instalación abriendo el Jupyter Notebook, la cual es una aplicación web en la cual podemos escribir código, texto, ecuaciones, etc. Puede buscar esta aplicación en la carpeta de instalación correspondiente de Anaconda.</p>
 <p>A partir de este momento puede ingresar código Python en las celdas y teclear <strong>Shift + Enter</strong> para ejecutar la instrucción y la celda le devolverá lo que resulte de esto. Por ejemplo, si escribe un número cualesquiera y presiona la combinación indicada, la consola le devolverá justamente el mismo número:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -340,8 +505,7 @@ buscar esta aplicación en la carpeta de instalación correspondiente.</p>
 </div>
 </div>
 </div>
-<p>Naturalmente Python maneja sin complicaciones las cantidades negativas. Una multiplicación la realiza
-con el operador *:</p>
+<p>Una multiplicación la realizamos con el operador <code class="docutils literal notranslate"><span class="pre">*</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">50</span><span class="o">*</span><span class="mi">25</span>
@@ -354,7 +518,7 @@ con el operador *:</p>
 </div>
 </div>
 </div>
-<p>Para las divisiones utiliza el operador /:</p>
+<p>Para las divisiones utiliza el operador <code class="docutils literal notranslate"><span class="pre">/</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
@@ -367,7 +531,7 @@ con el operador *:</p>
 </div>
 </div>
 </div>
-<p>Puede elevar a una potencia utilizando como operador el doble asterisco:</p>
+<p>Puede elevar a una potencia utilizando como operador el doble asterisco (<code class="docutils literal notranslate"><span class="pre">**</span></code>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">13</span><span class="o">**</span><span class="mi">2</span>
@@ -418,8 +582,8 @@ con el operador *:</p>
 </div>
 </div>
 <p>Puede ampliar la capacidad de las funcionalidades <em>built-in</em> de Python si importa alguna librería, como <code class="docutils literal notranslate"><span class="pre">math</span></code>, pero claro, esto será un tema a tratar con posterioridad.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -430,49 +594,123 @@ con el operador *:</p>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-base-py"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "conda-base-py",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-base-py'</script>
 
-              </div>
+                </article>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
-        
-    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">Prefacio</a>
-    <a class='right-next' id="next-link" href="Variables%2C%20operadores%20y%20expresiones.html" title="next page">Variables, operadores y expresiones</a>
 
-    </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Pedro Jorge De Los Santos<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Prefacio</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="Variables%2C%20operadores%20y%20expresiones.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Variables, operadores y expresiones</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-python">1.1. ¿Qué es Python?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-como-herramienta-para-ingenieria">1.2. Python como herramienta para ingeniería</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalando-python">1.3. Instalando Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comprobando-la-instalacion">1.3.1. Comprobando la instalación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instalando-paquetes-con-pip">1.3.2. Instalando paquetes con <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instalando-jupyter">1.3.3. Instalando Jupyter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-alternativas">1.3.4. Otras alternativas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-notebook-de-jupyter-como-una-calculadora-basica">1.4. El notebook de Jupyter como una calculadora básica</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Pedro Jorge De Los Santos
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    
-  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
-
-
-    
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

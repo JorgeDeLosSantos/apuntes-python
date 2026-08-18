@@ -1,7 +1,8 @@
+# -*- coding: utf-8 -*-
 import glob
 import os
 from PyPDF2 import PdfFileWriter, PdfFileReader
- 
+
 def merger(output_path, input_paths):
     pdf_writer = PdfFileWriter()
  
@@ -16,8 +17,8 @@ def merger(output_path, input_paths):
  
     with open(output_path, 'wb') as fh:
         pdf_writer.write(fh)
- 
- 
+
+
 if __name__ == '__main__':
     paths = ["img//cover.pdf",
             "Fundamentos del lenguaje.pdf",

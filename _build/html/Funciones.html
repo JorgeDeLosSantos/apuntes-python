@@ -1,320 +1,389 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="./" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Funciones &#8212; Python para Ingenieros</title>
-    
-  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    <title>6. Funciones &#8212; Python para Ingenieros</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-      
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/customized.css?v=b341d7a2" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/customized-checkpoint.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Funciones';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="NumPy: estructuras matriciales" href="NumPy.html" />
-    <link rel="prev" title="Estructuras de control" href="Estructuras%20de%20control.html" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-
-
-
+    <link rel="next" title="7. Archivos de texto" href="Archivos%20de%20texto.html" />
+    <link rel="prev" title="5. Estructuras de datos" href="Estructuras%20de%20datos.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-        <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
+    
+    
+    
+  </div>
   
-  <img src="_static/logo.png" class="logo" alt="logo">
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
   
   
-  <h1 class="site-logo" id="site-title">Python para Ingenieros</h1>
   
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Python para Ingenieros - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python para Ingenieros - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Prefacio
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Introducci%C3%B3n.html">1. Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Variables%2C%20operadores%20y%20expresiones.html">2. Variables, operadores y expresiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Estructuras%20de%20control.html">3. Estructuras de control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cadenas%20de%20caracteres.html">4. Cadenas de caracteres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Estructuras%20de%20datos.html">5. Estructuras de datos</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Archivos%20de%20texto.html">7. Archivos de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NumPy.html">8. NumPy: estructuras matriciales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Matplotlib.html">9. Matplotlib: visualización gráfica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SciPy.html">10. SciPy: algoritmos y métodos numéricos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pandas.html">11. Pandas: una introducción al análisis de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SymPy.html">12. Sympy: un sistema de álgebra computacional</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Programaci%C3%B3n%20orientada%20a%20objetos.html">13. Programación orientada a objetos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Bases%20de%20datos.html">14. Bases de datos</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Funciones.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
 </a>
-</div>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
 
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   Prefacio
-  </a>
- </li>
-</ul>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="Introducci%C3%B3n.html">
-   Introducción
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Variables%2C%20operadores%20y%20expresiones.html">
-   Variables, operadores y expresiones
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Cadenas%20de%20caracteres.html">
-   Cadenas de caracteres
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Listas%2C%20tuplas%20y%20diccionarios.html">
-   Listas, tuplas y diccionarios
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Estructuras%20de%20control.html">
-   Estructuras de control
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Funciones
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="NumPy.html">
-   NumPy: estructuras matriciales
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Matplotlib.html">
-   Matplotlib: visualización gráfica
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Pandas.html">
-   Pandas: una introducción al análisis de datos
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="SymPy.html">
-   Sympy: un sistema de álgebra computacional
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Programaci%C3%B3n%20orientada%20a%20objetos.html">
-   Programación orientada a objetos
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="wxpython-guis.html">
-   Interfaces gráficas con wxPython
-  </a>
- </li>
-</ul>
-
-</nav>
-
- <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
 
-          
 
 
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
     </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/Funciones.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-    
+  
 </div>
-        <!-- Source interaction buttons -->
-
-
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
-
-        <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Funciones.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
 </div>
+              
+              
 
-    </div>
-
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Funciones</h1>
     <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#funciones-built-in">
-   Funciones
-   <em>
-    built-in
-   </em>
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#la-funcion-print">
-     La función
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       print
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#la-funcion-input">
-     La función
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       input
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#funciones-definidas-por-el-usuario">
-   Funciones definidas por el usuario
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#funciones-con-una-cantidad-de-parametros-indeterminada">
-     Funciones con una cantidad de parámetros indeterminada
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#funciones-y-los-argumentos-con-nombre">
-     Funciones y los argumentos con nombre
-    </a>
-   </li>
-  </ul>
- </li>
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-built-in">6.1. Funciones <em>built-in</em></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-funcion-print">6.1.1. La función <code class="docutils literal notranslate"><span class="pre">print</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-funcion-input">6.1.2. La función <code class="docutils literal notranslate"><span class="pre">input</span></code></a></li>
 </ul>
-
-        </nav>
-        
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-definidas-por-el-usuario">6.2. Funciones definidas por el usuario</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-con-una-cantidad-de-parametros-indeterminada">6.2.1. Funciones con una cantidad de parámetros indeterminada</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-y-los-argumentos-con-nombre">6.2.2. Funciones y los argumentos con nombre</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ambito-de-una-funcion">6.3. Ámbito de una función</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#las-funciones-lambda">6.4. Las funciones <code class="docutils literal notranslate"><span class="pre">lambda</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-de-primera-clase">6.5. Funciones de primera clase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion">6.6. Recursión</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decoradores">6.7. Decoradores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulos">6.8. Módulos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentacion-de-funciones">6.9. Documentación de funciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">6.10. Ejercicios</a></li>
+</ul>
+            </nav>
+        </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="section" id="funciones">
-<h1>Funciones<a class="headerlink" href="#funciones" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="funciones">
+<h1><span class="section-number">6. </span>Funciones<a class="headerlink" href="#funciones" title="Link to this heading">#</a></h1>
 <p>Las funciones son <em>porciones de código</em> que nos sirven para modularizar
 nuestros programas y evitar en muchos casos la repetitividad de código.
 De manera general una función recibe algunos valores de entrada, los <em>procesa</em> y
 devuelve algunos valores de salida (o bien modifica algunas variables).</p>
-<div class="section" id="funciones-built-in">
-<h2>Funciones <em>built-in</em><a class="headerlink" href="#funciones-built-in" title="Permalink to this headline">¶</a></h2>
-<p>Python dispone de algunas funciones nativas que se <em>cargan</em> automáticamente cuando se
+<section id="funciones-built-in">
+<h2><span class="section-number">6.1. </span>Funciones <em>built-in</em><a class="headerlink" href="#funciones-built-in" title="Link to this heading">#</a></h2>
+<p>Python dispone de algunas funciones nativas que se <em>cargan</em> cuando se
 inicia el intérprete. Por ejemplo la función <code class="docutils literal notranslate"><span class="pre">max</span></code> devuelve el mayor valor numérico de
 una lista de números:</p>
 <div class="cell docutils container">
@@ -400,8 +469,8 @@ pasarle dos argumentos: un número real y la cantidad de lugares decimales a con
 </div>
 </div>
 </div>
-<div class="section" id="la-funcion-print">
-<h3>La función <code class="docutils literal notranslate"><span class="pre">print</span></code><a class="headerlink" href="#la-funcion-print" title="Permalink to this headline">¶</a></h3>
+<section id="la-funcion-print">
+<h3><span class="section-number">6.1.1. </span>La función <code class="docutils literal notranslate"><span class="pre">print</span></code><a class="headerlink" href="#la-funcion-print" title="Link to this heading">#</a></h3>
 <p>La función <code class="docutils literal notranslate"><span class="pre">print</span></code> se utiliza para mostrar en pantalla el <em>valor</em> (o la representación) de los objetos Python. A <code class="docutils literal notranslate"><span class="pre">print</span></code> le podemos pasar un sólo argumento, por ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -514,9 +583,9 @@ hola
 <p class="admonition-title">print y los strings formateados</p>
 <p>Si te interesa obtener información acerca de <code class="docutils literal notranslate"><span class="pre">print</span></code> y su uso conjunto con strings formateados, revisa el capítulo dedicado a los strings.</p>
 </div>
-</div>
-<div class="section" id="la-funcion-input">
-<h3>La función <code class="docutils literal notranslate"><span class="pre">input</span></code><a class="headerlink" href="#la-funcion-input" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="la-funcion-input">
+<h3><span class="section-number">6.1.2. </span>La función <code class="docutils literal notranslate"><span class="pre">input</span></code><a class="headerlink" href="#la-funcion-input" title="Link to this heading">#</a></h3>
 <p>En Python, la función <code class="docutils literal notranslate"><span class="pre">input</span></code> permite obtener entrada por teclado, con la finalidad de <em>tomar</em> información proporcionada por el usuario. La sintaxis de <code class="docutils literal notranslate"><span class="pre">input</span></code> es:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
 </pre></div>
@@ -593,12 +662,12 @@ Hola Jorge bienvenido
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="funciones-definidas-por-el-usuario">
-<h2>Funciones definidas por el usuario<a class="headerlink" href="#funciones-definidas-por-el-usuario" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="funciones-definidas-por-el-usuario">
+<h2><span class="section-number">6.2. </span>Funciones definidas por el usuario<a class="headerlink" href="#funciones-definidas-por-el-usuario" title="Link to this heading">#</a></h2>
 <p>Además de las funciones nativas de Python, es posible definir nuestras propias funciones. En Python, de manera general, una función se define siguiendo la estructura mostrada a continuación:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nombre_fun</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">argN</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">nombre_fun</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">argN</span><span class="p">):</span>
     <span class="c1"># Cuerpo de la función</span>
     <span class="c1"># .</span>
     <span class="c1"># .</span>
@@ -617,7 +686,7 @@ indicar los valores a devolver, mismos que se colocarán separados por comas.</p
 y devuelve un saludo (string) formado mediante concatenación:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">saluda</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">saluda</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Hola &quot;</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="s2">&quot;, bienvenido.&quot;</span>
     <span class="k">return</span> <span class="n">s</span>
 </pre></div>
@@ -642,7 +711,7 @@ a algunas cadenas ya establecidas dentro de la función.</p>
 indica si este es par.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">espar</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">espar</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">n</span><span class="o">%</span><span class="k">2</span> == 0:
         <span class="n">s</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="k">else</span><span class="p">:</span>
@@ -671,7 +740,7 @@ True
 <p>Naturalmente, las funciones pueden recibir más de un argumento. Por ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mayor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">mayor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
     <span class="n">m</span> <span class="o">=</span> <span class="n">a</span>
     <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>
         <span class="n">m</span> <span class="o">=</span> <span class="n">b</span>
@@ -700,7 +769,7 @@ una comparación con la sentencia <code class="docutils literal notranslate"><sp
 con comas los valores a devolver.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calcula_rectangulo</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">h</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">calcula_rectangulo</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">h</span><span class="p">):</span>
     <span class="n">A</span> <span class="o">=</span> <span class="n">b</span><span class="o">*</span><span class="n">h</span>
     <span class="n">P</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">b</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">h</span>
     <span class="k">return</span> <span class="n">A</span><span class="p">,</span> <span class="n">P</span>
@@ -737,8 +806,8 @@ Perímetro: 240
 </div>
 </div>
 </div>
-<div class="section" id="funciones-con-una-cantidad-de-parametros-indeterminada">
-<h3>Funciones con una cantidad de parámetros indeterminada<a class="headerlink" href="#funciones-con-una-cantidad-de-parametros-indeterminada" title="Permalink to this headline">¶</a></h3>
+<section id="funciones-con-una-cantidad-de-parametros-indeterminada">
+<h3><span class="section-number">6.2.1. </span>Funciones con una cantidad de parámetros indeterminada<a class="headerlink" href="#funciones-con-una-cantidad-de-parametros-indeterminada" title="Link to this heading">#</a></h3>
 <p>En ocasiones el número de parámetros que deberá recibir una función no puede ser algo fijo.
 Las definiciones de función en Python tienen la flexibilidad de poder recibir una cantidad
 variable de argumentos de entrada.</p>
@@ -746,7 +815,7 @@ variable de argumentos de entrada.</p>
 el promedio de una cierta cantidad de números pasados como argumentos:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">promedio</span><span class="p">(</span><span class="o">*</span><span class="n">numeros</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">promedio</span><span class="p">(</span><span class="o">*</span><span class="n">numeros</span><span class="p">):</span>
     <span class="n">suma</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numeros</span><span class="p">:</span>
@@ -778,15 +847,15 @@ a Python que la cantidad de argumentos de entrada es indeterminada, en principio
 de la información es algo que el programador debe tener en cuenta. Dentro del cuerpo de la función
 se debe considerar que el parámetro <code class="docutils literal notranslate"><span class="pre">numeros</span></code> será una tupla cuya cantidad de elementos dependerá
 de la cantidad de argumentos ingresados.</p>
-</div>
-<div class="section" id="funciones-y-los-argumentos-con-nombre">
-<h3>Funciones y los argumentos con nombre<a class="headerlink" href="#funciones-y-los-argumentos-con-nombre" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="funciones-y-los-argumentos-con-nombre">
+<h3><span class="section-number">6.2.2. </span>Funciones y los argumentos con nombre<a class="headerlink" href="#funciones-y-los-argumentos-con-nombre" title="Link to this heading">#</a></h3>
 <p>Una función en Python se puede <em>mandar a llamar</em> pasándo los argumentos de manera posicional, es
 decir, en el orden que fueron definidos en la función, o bien, haciendo uso del nombre del parámetro correspondiente
 al argumento que se introduce, por ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cuenta_cuantas</span><span class="p">(</span><span class="n">frase</span><span class="p">,</span> <span class="n">letra</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">cuenta_cuantas</span><span class="p">(</span><span class="n">frase</span><span class="p">,</span> <span class="n">letra</span><span class="p">):</span>
     <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">car</span> <span class="ow">in</span> <span class="n">frase</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">car</span> <span class="ow">is</span> <span class="n">letra</span><span class="p">:</span>
@@ -820,7 +889,7 @@ en que los argumentos son pasados, es indistinto.</p>
 sin necesidad de escribirlos de manera explícita. Observe la siguiente función:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">muestra_puntos</span><span class="p">(</span><span class="o">**</span><span class="n">personas</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">muestra_puntos</span><span class="p">(</span><span class="o">**</span><span class="n">personas</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">persona</span> <span class="ow">in</span> <span class="n">personas</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">persona</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot; tiene &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">persona</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; puntos&quot;</span><span class="p">)</span>
 </pre></div>
@@ -852,9 +921,84 @@ asteriscos antes del nombre del parámetro, indican que no se tiene predetermina
 pasarán, pero además, indica que cada argumento a introducir deberá ser un argumento con nombre.
 Dentro del cuerpo de la función el parámetro <code class="docutils literal notranslate"><span class="pre">**personas</span></code> es un diccionario cuyas claves
 son los nombres de los argumentos y los valores corresponden a cada valor asignado al argumento.</p>
+</section>
+</section>
+<section id="ambito-de-una-funcion">
+<h2><span class="section-number">6.3. </span>Ámbito de una función<a class="headerlink" href="#ambito-de-una-funcion" title="Link to this heading">#</a></h2>
+</section>
+<section id="las-funciones-lambda">
+<h2><span class="section-number">6.4. </span>Las funciones <code class="docutils literal notranslate"><span class="pre">lambda</span></code><a class="headerlink" href="#las-funciones-lambda" title="Link to this heading">#</a></h2>
+</section>
+<section id="funciones-de-primera-clase">
+<h2><span class="section-number">6.5. </span>Funciones de primera clase<a class="headerlink" href="#funciones-de-primera-clase" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">h</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span>
+</pre></div>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">funs</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">h</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">fun</span> <span class="ow">in</span> <span class="n">funs</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fun</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+27
+81
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="recursion">
+<h2><span class="section-number">6.6. </span>Recursión<a class="headerlink" href="#recursion" title="Link to this heading">#</a></h2>
+</section>
+<section id="decoradores">
+<h2><span class="section-number">6.7. </span>Decoradores<a class="headerlink" href="#decoradores" title="Link to this heading">#</a></h2>
+</section>
+<section id="modulos">
+<h2><span class="section-number">6.8. </span>Módulos<a class="headerlink" href="#modulos" title="Link to this heading">#</a></h2>
+</section>
+<section id="documentacion-de-funciones">
+<h2><span class="section-number">6.9. </span>Documentación de funciones<a class="headerlink" href="#documentacion-de-funciones" title="Link to this heading">#</a></h2>
+</section>
+<section id="ejercicios">
+<h2><span class="section-number">6.10. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Desarrolla una función denominada <code class="docutils literal notranslate"><span class="pre">genera_contrasenia_segura</span></code>, la cual no recibirá argumento. Esta función debe devolver una contraseña con una longitud de 12 caracteres, con al menos una mayúscula, al menos un número y al menos un caracter especial. Procura que las posiciones de cada tipo de caracter sean aleatorias.</p>
+<hr class="docutils" />
+<p>Escribe una función denominada <code class="docutils literal notranslate"><span class="pre">producto_punto</span></code>, que reciba dos vectores (en forma de lista) como argumentos. La función deberá calcular y devolver el producto punto de dichos vectores.</p>
+<hr class="docutils" />
+<p>Desarrolla una función denominada <code class="docutils literal notranslate"><span class="pre">producto_cruz</span></code>, que reciba dos vectores (en forma de lista) como argumentos. La función deberá calcular y devolver el producto cruz de dichos vectores. Considera que la función únicamente debe aceptar vectores de tres componentes y deberá lanzar un error en el caso de que se le pasen vectores que no cumplan esta condición.</p>
+<hr class="docutils" />
+<p>Para un estado de esfuerzo plano los esfuerzos principales pueden determinarse mediante la siguiente ecuación:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_{máx,mín} = \frac{\sigma_x + \sigma_y}{2} \pm 
+\sqrt{\left( \frac{\sigma_x - \sigma_y}{2} \right)^2 + \tau_{xy}^2}
+\]</div>
+<p>Crea una función denominada <code class="docutils literal notranslate"><span class="pre">esfuerzos_principales</span></code>, la cual deberá recibir como argumentos <span class="math notranslate nohighlight">\(\sigma_x\)</span>, <span class="math notranslate nohighlight">\(\sigma_y\)</span> y <span class="math notranslate nohighlight">\(\tau_{xy}\)</span>, y deberá calcular y devolver los esfuerzos principales <span class="math notranslate nohighlight">\(\sigma_{máx}\)</span> y <span class="math notranslate nohighlight">\(\sigma_{mín}\)</span>.</p>
+<hr class="docutils" />
+<p>El criterio de Goodman-modificado es un criterio de falla por fatiga dado por la siguiente ecuación:</p>
+<div class="math notranslate nohighlight">
+\[ 
+\frac{\sigma_a}{S_e} + \frac{\sigma_m}{S_{ut}} = \frac{1}{n}
+\]</div>
+<p>Desarrolla una función <code class="docutils literal notranslate"><span class="pre">goodman_modificado</span></code> que calcule el factor de seguridad <span class="math notranslate nohighlight">\(n\)</span>, dados como argumentos de entrada las componentes media (<span class="math notranslate nohighlight">\(\sigma_m\)</span>) y alternante (<span class="math notranslate nohighlight">\(\sigma_a\)</span>) del esfuerzo, la resistencia a la tensión (<span class="math notranslate nohighlight">\(S_{ut}\)</span>) y el límite de resistencia a la fatiga (<span class="math notranslate nohighlight">\(S_e\)</span>).</p>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -865,49 +1009,131 @@ son los nombres de los argumentos y los valores corresponden a cada valor asigna
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-base-py"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "conda-base-py",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-base-py'</script>
 
-              </div>
+                </article>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
-        
-    <a class='left-prev' id="prev-link" href="Estructuras%20de%20control.html" title="previous page">Estructuras de control</a>
-    <a class='right-next' id="next-link" href="NumPy.html" title="next page">NumPy: estructuras matriciales</a>
 
-    </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Pedro Jorge De Los Santos<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Estructuras%20de%20datos.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Estructuras de datos</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="Archivos%20de%20texto.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Archivos de texto</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-built-in">6.1. Funciones <em>built-in</em></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-funcion-print">6.1.1. La función <code class="docutils literal notranslate"><span class="pre">print</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-funcion-input">6.1.2. La función <code class="docutils literal notranslate"><span class="pre">input</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-definidas-por-el-usuario">6.2. Funciones definidas por el usuario</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-con-una-cantidad-de-parametros-indeterminada">6.2.1. Funciones con una cantidad de parámetros indeterminada</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-y-los-argumentos-con-nombre">6.2.2. Funciones y los argumentos con nombre</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ambito-de-una-funcion">6.3. Ámbito de una función</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#las-funciones-lambda">6.4. Las funciones <code class="docutils literal notranslate"><span class="pre">lambda</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-de-primera-clase">6.5. Funciones de primera clase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion">6.6. Recursión</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decoradores">6.7. Decoradores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulos">6.8. Módulos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentacion-de-funciones">6.9. Documentación de funciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">6.10. Ejercicios</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Pedro Jorge De Los Santos
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    
-  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
-
-
-    
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

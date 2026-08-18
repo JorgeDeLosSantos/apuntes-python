@@ -2,9 +2,13 @@
 title: Python para Ingenieros
 author: Pedro Jorge De Los Santos
 logo: img/logo.png
-copyright: "2021"
+copyright: "2026"
 execute:
   execute_notebooks: "off"
-latex:
-  latex_documents:
-     targetname: book.tex
+
+exclude_patterns:
+  - ".venv"
+  - "old_/**"
+  - "_other_files/**"
+  - "sol_to_excercises/**"
+  - "_build/**"

@@ -1,15 +1,20 @@
 # In _toc.yml
-- file: intro
-- file: Introducción
-- file: Variables, operadores y expresiones
-- file: Cadenas de caracteres
-- file: Listas, tuplas y diccionarios
-- file: Estructuras de control
-- file: Funciones
-- file: NumPy
-- file: Matplotlib
-- file: Pandas
-- file: SymPy
-- file: Programación orientada a objetos
-- file: wxpython-guis
-
+format: jb-book
+root: intro
+options: 
+  numbered: true
+chapters:
+    - file: Introducción
+    - file: Variables, operadores y expresiones
+    - file: Estructuras de control
+    - file: Cadenas de caracteres
+    - file: Estructuras de datos
+    - file: Funciones
+    - file: Archivos de texto
+    - file: NumPy
+    - file: Matplotlib
+    - file: SciPy
+    - file: Pandas
+    - file: SymPy
+    - file: Programación orientada a objetos
+    - file: Bases de datos
