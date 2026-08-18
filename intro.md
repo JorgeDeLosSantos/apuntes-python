@@ -1,3 +1,7 @@
+---
+numbering:
+  title: false
+---
 # Prefacio
 
 ```{warning}
