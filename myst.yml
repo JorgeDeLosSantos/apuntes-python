@@ -17,7 +17,7 @@ project:
     - _build/**
   toc:
     - file: intro.md
-    - file: Introducción.ipynb
+    - file: Introduccion.ipynb
     - file: Variables, operadores y expresiones.ipynb
     - file: Estructuras de control.ipynb
     - file: Cadenas de caracteres.ipynb
@@ -29,7 +29,7 @@ project:
     - file: SciPy.ipynb
     - file: Pandas.ipynb
     - file: SymPy.ipynb
-    - file: Programación orientada a objetos.ipynb
+    - file: Programacion orientada a objetos.ipynb
     - file: Bases de datos.ipynb
 
 site:
