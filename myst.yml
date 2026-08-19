@@ -37,6 +37,7 @@ site:
     logo: img/logo.png
     folders: true
     favicon: img/logo.png
+
   template: book-theme
   hide_authors: true
   parts:
