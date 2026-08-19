@@ -2,7 +2,7 @@ version: 1
 project:
   title: Python para Ingenieros
   authors:
-    - name: Pedro Jorge De Los Santos
+    - name: P.J. De Los Santos
   copyright: '2026'
   
   numbering:
@@ -36,4 +36,9 @@ site:
   options:
     logo: img/logo.png
     folders: true
+    favicon: img/logo.png
   template: book-theme
+  hide_authors: true
+  parts:
+    footer: footer.md
+  
