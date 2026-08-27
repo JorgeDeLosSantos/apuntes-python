@@ -103,5 +103,8 @@ venv.bak/
 # mypy
 .mypy_cache/
 
+# MyST generated snippets
+_generated/
+
 # MyST build outputs
 _build

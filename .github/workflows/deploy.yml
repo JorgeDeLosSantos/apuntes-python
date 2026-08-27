@@ -37,6 +37,8 @@ jobs:
           node-version: 18.x
       - name: Install Jupyter Book (via myst)
         run: npm install -g jupyter-book
+      - name: Generate last update date
+        run: python scripts/generate_last_update.py
       - name: Build HTML Assets
         run: jupyter-book build --html
       - name: Inject Statcounter
